@@ -20,10 +20,11 @@ EDA_Agent_handover_2026-10-22/
 ├── requirements.txt          依赖清单（已验证版本组合）
 ├── .env.example              配置模板（复制为 code/.env 后填密钥）
 ├── SHA256SUMS.txt            全包文件校验值
-├── code/                     13 个源码/脚本文件
+├── code/                     14 个源码/脚本文件
+├── designs/                  第二个设计（同步 FIFO），用于验证工程通用性
 ├── docs/                     进度报告 + 两张 StateGraph 图（PNG/Mermaid 源）
 ├── patches/                  Testbench v2 / v3 与闭环离线测试
-└── evidence/                 三轮运行与两个故障案例的真实日志
+└── evidence/                 计数器三轮、两个故障案例、FIFO 的真实日志
 ```
 
 ## 5 分钟验证
@@ -62,6 +63,8 @@ copy ..\.env.example .env      # 然后填入 DEEPSEEK_API_KEY 与 EDA_SSH_HOST
 | 真的有 VCS 跑过 | `evidence/counter_v82/vcs_007/vcs_compile.log` 首行是 `Chronologic VCS (TM) I-2014.03_Full64` |
 | 真的修好了 bug | 对比 `evidence/case1_compile_failed/` 与 `case1_fixed/` 的 `run_summary.json`（`compile_failed` → `passed_by_marker`） |
 | 覆盖率不是编的 | `evidence/counter_v82/vcs_007/coverage_dashboard.txt` 里有 `Total Coverage Summary` 原始表格 |
+| 换一个工程也能跑 | `evidence/fifo_sync_v1/run_summary.json`：独立工程 `fifo_sync_v1`、351 检查点、覆盖率 96.61% |
+| 本地也能复现 | `designs/fifo/` 可用 ModelSim 直接编译仿真（351 检查点全过） |
 
 ## 安全声明
 
