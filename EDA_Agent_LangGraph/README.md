@@ -33,10 +33,10 @@ EDA_Agent_handover_2026-10-22/
 ├── .env.example              配置模板（复制为 code/.env 后填密钥）
 ├── SHA256SUMS.txt            全包文件校验值
 ├── code/                     14 个源码/脚本文件
-├── designs/                  第二个设计（同步 FIFO），用于验证工程通用性
+├── designs/                  第二设计（同步 FIFO）；256 位加法器仅保留日志
 ├── docs/                     进度报告 + 两张 StateGraph 图（PNG/Mermaid 源）
 ├── patches/                  Testbench v2 / v3 与闭环离线测试
-└── evidence/                 计数器三轮、两个故障案例、FIFO 的真实日志
+└── evidence/                 计数器五轮、两个故障案例、FIFO 与加法器的真实日志
 ```
 
 ## 5 分钟验证
@@ -65,7 +65,7 @@ copy ..\.env.example .env      # 然后填入 DEEPSEEK_API_KEY 与 EDA_SSH_HOST
 | --- | --- |
 | 怎么装、怎么点、报错怎么办 | `使用说明.md` |
 | 做到了哪、还差什么、代码怎么组织 | `交接说明.md` |
-| 三轮迭代数据、覆盖率分析、闭环验收 | `docs/项目进度报告_2026-10-22.md` |
+| 五轮迭代数据、覆盖率分析、闭环验收 | `docs/项目进度报告_2026-10-22.md` |
 | 工作流长什么样 | `docs/gen_graph.png`、`docs/loop_graph.png` |
 
 ## 快速判断这份包是否可信
