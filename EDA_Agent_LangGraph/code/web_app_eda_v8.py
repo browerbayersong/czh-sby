@@ -633,7 +633,11 @@ with st.expander('🔗 Linux 工程目录与 VCS 执行（v8.2）', expanded=Fal
             autofix_run = st.form_submit_button('④ 自动纠错闭环', use_container_width=True,
                                                 disabled=(preview is None or not bool(preview['sources'])))
 
-    if check_connection or upload_only or vcs_run or autofix_run:
+    ssh_action = check_connection or upload_only or vcs_run or autofix_run
+    if ssh_action and not (ssh_password or '').strip():
+        st.warning('SSH 密码为空：请先在「SSH 密码」框输入密码再点按钮。'
+                   '密码不落盘，刷新页面或重启服务后需要重新输入。')
+    elif ssh_action:
         if st.session_state.pending_reply:
             st.error('Agent 正在生成回答，请等待当前任务完成。')
         else:
