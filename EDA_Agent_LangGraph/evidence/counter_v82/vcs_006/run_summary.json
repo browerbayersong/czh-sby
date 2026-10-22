@@ -1,0 +1,34 @@
+{
+  "run_id": "7f4a859f130c49c2b724c4cb075264fb",
+  "mode": "vcs",
+  "file_count": 2,
+  "when": "2026-10-21T22:59:17",
+  "project_directory": "/home/IC/Desktop/EDA_Projects/counter_v82",
+  "remote_directory": "/home/IC/Desktop/EDA_Projects/counter_v82/runs/vcs_006",
+  "source_snapshot": "/home/IC/Desktop/EDA_Projects/counter_v82/runs/vcs_006/src",
+  "run_label": "vcs_006",
+  "upload_ok": true,
+  "status": "passed_by_marker",
+  "compile_exit_code": 0,
+  "compile_command": "/opt/Synopsys/VCS2014/bin/vcs -full64 -sverilog -timescale=1ns/1ps -cm line+cond+fsm+tgl+branch -cm_dir ../build/cov.vdb -top tb_counter_8bit -o ../build/simv +incdir+generated/rtl +incdir+generated/tb generated/rtl/counter_8bit.v generated/tb/tb_counter_8bit.v",
+  "sources": [
+    "generated/rtl/counter_8bit.v",
+    "generated/tb/tb_counter_8bit.v"
+  ],
+  "excluded_sources": [],
+  "sim_exit_code": 0,
+  "coverage": {
+    "score": 92.53,
+    "line": 97.58,
+    "cond": null,
+    "toggle": 100.0,
+    "fsm": null,
+    "branch": 80.0
+  },
+  "coverage_exit_code": 0,
+  "sync": {
+    "created": 0,
+    "updated_with_backup": 1,
+    "unchanged": 1
+  }
+}

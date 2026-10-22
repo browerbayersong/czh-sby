@@ -763,9 +763,30 @@ with st.expander('🔗 Linux 工程目录与 VCS 执行（v8.2）', expanded=Fal
                       delta=(f"{s['checks_delta']:+d}" if s.get('checks_delta') else None))
 
             show = pd.DataFrame(metric_rows)
-            if '失败模式' in show.columns:
-                show = show.drop(columns=['失败模式'])
+            for hidden in ('失败模式', '_scenarios', '_seeds'):
+                if hidden in show.columns:
+                    show = show.drop(columns=[hidden])
             st.dataframe(show.tail(15), use_container_width=True, hide_index=True)
+
+            detail = []
+            if s.get('latest_passed') is not None:
+                detail.append(f"通过 {s['latest_passed']}/{s.get('latest_checks')}")
+            if s.get('latest_scenarios'):
+                detail.append(f"场景 {s['latest_scenarios']} 类")
+            if s.get('latest_seeds'):
+                detail.append(f"随机种子 {s['latest_seeds']} 个")
+            if s.get('latest_bins'):
+                detail.append(f"功能覆盖 {s['latest_bins']}")
+            if s.get('latest_ended'):
+                detail.append(f"结束标记 {s['latest_ended']}")
+            if detail:
+                st.caption('最新一轮：' + ' · '.join(detail))
+            if s.get('scenario_detail') or s.get('seed_detail'):
+                with st.expander('最新一轮的场景与种子', expanded=False):
+                    if s.get('scenario_detail'):
+                        st.write('场景：' + '、'.join(s['scenario_detail']))
+                    if s.get('seed_detail'):
+                        st.write('种子：' + '、'.join(str(x) for x in s['seed_detail']))
 
             if s.get('coverage_series'):
                 st.caption('覆盖率趋势（仅统计已接入 urg 的运行）')

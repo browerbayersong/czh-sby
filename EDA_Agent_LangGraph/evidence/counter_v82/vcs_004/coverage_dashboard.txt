@@ -1,0 +1,21 @@
+Dashboard
+
+Date: Wed Oct 21 22:44:00 2026
+
+User: IC
+
+Version: I-2014.03
+Command line: urg -dir ../build/cov.vdb -format text -report ../build/covReport 
+
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 88.53  90.14 --      95.45 --      80.00 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME            
+ 88.53  90.14 --      95.45 --      80.00 tb_counter_8bit 
+
