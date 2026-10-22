@@ -1,0 +1,24 @@
+{
+  "run_id": "72014252588a40319d888fdaff85442e",
+  "mode": "vcs",
+  "file_count": 2,
+  "when": "2026-10-21T23:27:21",
+  "project_directory": "/home/IC/Desktop/EDA_Projects/counter_autofix",
+  "remote_directory": "/home/IC/Desktop/EDA_Projects/counter_autofix/runs/vcs_003",
+  "source_snapshot": "/home/IC/Desktop/EDA_Projects/counter_autofix/runs/vcs_003/src",
+  "run_label": "vcs_003",
+  "upload_ok": true,
+  "status": "compile_failed",
+  "compile_exit_code": 255,
+  "compile_command": "/opt/Synopsys/VCS2014/bin/vcs -full64 -sverilog -timescale=1ns/1ps -cm line+cond+fsm+tgl+branch -cm_dir ../build/cov.vdb -top tb_counter_8bit -o ../build/simv +incdir+generated/rtl +incdir+generated/tb generated/rtl/counter_8bit.v generated/tb/tb_counter_8bit.v",
+  "sources": [
+    "generated/rtl/counter_8bit.v",
+    "generated/tb/tb_counter_8bit.v"
+  ],
+  "excluded_sources": [],
+  "sync": {
+    "created": 0,
+    "updated_with_backup": 0,
+    "unchanged": 2
+  }
+}

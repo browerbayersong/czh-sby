@@ -1,0 +1,882 @@
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03_Full64; Runtime version I-2014.03_Full64;  Oct 21 23:49 2026
+[INFO] tb_counter_8bit v2 start
+[PASS] #1 t=3000 count=00
+[FAIL] #2 t=16000 exp=00 got=01
+[FAIL] #3 t=26000 exp=00 got=02
+[FAIL] #4 t=36000 exp=00 got=03
+[FAIL] #5 t=46000 exp=01 got=04
+[FAIL] #6 t=56000 exp=02 got=05
+[FAIL] #7 t=66000 exp=03 got=06
+[FAIL] #8 t=76000 exp=04 got=07
+[FAIL] #9 t=86000 exp=05 got=08
+[PASS] #10 t=98000 count=00
+[PASS] #11 t=106000 count=01
+[FAIL] #12 t=116000 exp=01 got=02
+[FAIL] #13 t=126000 exp=02 got=03
+[FAIL] #14 t=136000 exp=03 got=04
+[FAIL] #15 t=146000 exp=04 got=05
+[FAIL] #16 t=156000 exp=05 got=06
+[FAIL] #17 t=166000 exp=06 got=07
+[FAIL] #18 t=176000 exp=07 got=08
+[FAIL] #19 t=186000 exp=08 got=09
+[FAIL] #20 t=196000 exp=09 got=0a
+[FAIL] #21 t=206000 exp=0a got=0b
+[FAIL] #22 t=216000 exp=0b got=0c
+[FAIL] #23 t=226000 exp=0c got=0d
+[FAIL] #24 t=236000 exp=0d got=0e
+[FAIL] #25 t=246000 exp=0e got=0f
+[FAIL] #26 t=256000 exp=0f got=10
+[FAIL] #27 t=266000 exp=10 got=11
+[FAIL] #28 t=276000 exp=11 got=12
+[FAIL] #29 t=286000 exp=12 got=13
+[FAIL] #30 t=296000 exp=13 got=14
+[FAIL] #31 t=306000 exp=14 got=15
+[FAIL] #32 t=316000 exp=15 got=16
+[FAIL] #33 t=326000 exp=16 got=17
+[FAIL] #34 t=336000 exp=17 got=18
+[FAIL] #35 t=346000 exp=18 got=19
+[FAIL] #36 t=356000 exp=19 got=1a
+[FAIL] #37 t=366000 exp=1a got=1b
+[FAIL] #38 t=376000 exp=1b got=1c
+[FAIL] #39 t=386000 exp=1c got=1d
+[FAIL] #40 t=396000 exp=1d got=1e
+[FAIL] #41 t=406000 exp=1e got=1f
+[FAIL] #42 t=416000 exp=1f got=20
+[FAIL] #43 t=426000 exp=20 got=21
+[FAIL] #44 t=436000 exp=21 got=22
+[FAIL] #45 t=446000 exp=22 got=23
+[FAIL] #46 t=456000 exp=23 got=24
+[FAIL] #47 t=466000 exp=24 got=25
+[FAIL] #48 t=476000 exp=25 got=26
+[FAIL] #49 t=486000 exp=26 got=27
+[FAIL] #50 t=496000 exp=27 got=28
+[FAIL] #51 t=506000 exp=28 got=29
+[FAIL] #52 t=516000 exp=29 got=2a
+[FAIL] #53 t=526000 exp=2a got=2b
+[FAIL] #54 t=536000 exp=2b got=2c
+[FAIL] #55 t=546000 exp=2c got=2d
+[FAIL] #56 t=556000 exp=2d got=2e
+[FAIL] #57 t=566000 exp=2e got=2f
+[FAIL] #58 t=576000 exp=2f got=30
+[FAIL] #59 t=586000 exp=30 got=31
+[FAIL] #60 t=596000 exp=31 got=32
+[FAIL] #61 t=606000 exp=32 got=33
+[FAIL] #62 t=616000 exp=33 got=34
+[FAIL] #63 t=626000 exp=34 got=35
+[FAIL] #64 t=636000 exp=35 got=36
+[FAIL] #65 t=646000 exp=36 got=37
+[FAIL] #66 t=656000 exp=37 got=38
+[FAIL] #67 t=666000 exp=38 got=39
+[FAIL] #68 t=676000 exp=39 got=3a
+[FAIL] #69 t=686000 exp=3a got=3b
+[FAIL] #70 t=696000 exp=3b got=3c
+[FAIL] #71 t=706000 exp=3c got=3d
+[FAIL] #72 t=716000 exp=3d got=3e
+[FAIL] #73 t=726000 exp=3e got=3f
+[FAIL] #74 t=736000 exp=3f got=40
+[FAIL] #75 t=746000 exp=40 got=41
+[FAIL] #76 t=756000 exp=41 got=42
+[FAIL] #77 t=766000 exp=42 got=43
+[FAIL] #78 t=776000 exp=43 got=44
+[FAIL] #79 t=786000 exp=44 got=45
+[FAIL] #80 t=796000 exp=45 got=46
+[FAIL] #81 t=806000 exp=46 got=47
+[FAIL] #82 t=816000 exp=47 got=48
+[FAIL] #83 t=826000 exp=48 got=49
+[FAIL] #84 t=836000 exp=49 got=4a
+[FAIL] #85 t=846000 exp=4a got=4b
+[FAIL] #86 t=856000 exp=4b got=4c
+[FAIL] #87 t=866000 exp=4c got=4d
+[FAIL] #88 t=876000 exp=4d got=4e
+[FAIL] #89 t=886000 exp=4e got=4f
+[FAIL] #90 t=896000 exp=4f got=50
+[FAIL] #91 t=906000 exp=50 got=51
+[FAIL] #92 t=916000 exp=51 got=52
+[FAIL] #93 t=926000 exp=52 got=53
+[FAIL] #94 t=936000 exp=53 got=54
+[FAIL] #95 t=946000 exp=54 got=55
+[FAIL] #96 t=956000 exp=55 got=56
+[FAIL] #97 t=966000 exp=56 got=57
+[FAIL] #98 t=976000 exp=57 got=58
+[FAIL] #99 t=986000 exp=58 got=59
+[FAIL] #100 t=996000 exp=59 got=5a
+[FAIL] #101 t=1006000 exp=5a got=5b
+[FAIL] #102 t=1016000 exp=5b got=5c
+[FAIL] #103 t=1026000 exp=5c got=5d
+[FAIL] #104 t=1036000 exp=5d got=5e
+[FAIL] #105 t=1046000 exp=5e got=5f
+[FAIL] #106 t=1056000 exp=5f got=60
+[FAIL] #107 t=1066000 exp=60 got=61
+[FAIL] #108 t=1076000 exp=61 got=62
+[FAIL] #109 t=1086000 exp=62 got=63
+[FAIL] #110 t=1096000 exp=63 got=64
+[FAIL] #111 t=1106000 exp=64 got=65
+[FAIL] #112 t=1116000 exp=65 got=66
+[FAIL] #113 t=1126000 exp=66 got=67
+[FAIL] #114 t=1136000 exp=67 got=68
+[FAIL] #115 t=1146000 exp=68 got=69
+[FAIL] #116 t=1156000 exp=69 got=6a
+[FAIL] #117 t=1166000 exp=6a got=6b
+[FAIL] #118 t=1176000 exp=6b got=6c
+[FAIL] #119 t=1186000 exp=6c got=6d
+[FAIL] #120 t=1196000 exp=6d got=6e
+[FAIL] #121 t=1206000 exp=6e got=6f
+[FAIL] #122 t=1216000 exp=6f got=70
+[FAIL] #123 t=1226000 exp=70 got=71
+[FAIL] #124 t=1236000 exp=71 got=72
+[FAIL] #125 t=1246000 exp=72 got=73
+[FAIL] #126 t=1256000 exp=73 got=74
+[FAIL] #127 t=1266000 exp=74 got=75
+[FAIL] #128 t=1276000 exp=75 got=76
+[FAIL] #129 t=1286000 exp=76 got=77
+[FAIL] #130 t=1296000 exp=77 got=78
+[FAIL] #131 t=1306000 exp=78 got=79
+[FAIL] #132 t=1316000 exp=79 got=7a
+[FAIL] #133 t=1326000 exp=7a got=7b
+[FAIL] #134 t=1336000 exp=7b got=7c
+[FAIL] #135 t=1346000 exp=7c got=7d
+[FAIL] #136 t=1356000 exp=7d got=7e
+[FAIL] #137 t=1366000 exp=7e got=7f
+[FAIL] #138 t=1376000 exp=7f got=80
+[PASS] #139 t=1388000 count=00
+[PASS] #140 t=1396000 count=01
+[PASS] #141 t=1406000 count=02
+[PASS] #142 t=1416000 count=03
+[PASS] #143 t=1426000 count=04
+[PASS] #144 t=1436000 count=05
+[PASS] #145 t=1446000 count=06
+[PASS] #146 t=1456000 count=07
+[PASS] #147 t=1466000 count=08
+[PASS] #148 t=1476000 count=09
+[PASS] #149 t=1486000 count=0a
+[PASS] #150 t=1496000 count=0b
+[PASS] #151 t=1506000 count=0c
+[PASS] #152 t=1516000 count=0d
+[PASS] #153 t=1526000 count=0e
+[PASS] #154 t=1536000 count=0f
+[PASS] #155 t=1546000 count=10
+[PASS] #156 t=1556000 count=11
+[PASS] #157 t=1566000 count=12
+[PASS] #158 t=1576000 count=13
+[PASS] #159 t=1586000 count=14
+[PASS] #160 t=1596000 count=15
+[PASS] #161 t=1606000 count=16
+[PASS] #162 t=1616000 count=17
+[PASS] #163 t=1626000 count=18
+[PASS] #164 t=1636000 count=19
+[PASS] #165 t=1646000 count=1a
+[PASS] #166 t=1656000 count=1b
+[PASS] #167 t=1666000 count=1c
+[PASS] #168 t=1676000 count=1d
+[PASS] #169 t=1686000 count=1e
+[PASS] #170 t=1696000 count=1f
+[PASS] #171 t=1706000 count=20
+[PASS] #172 t=1716000 count=21
+[PASS] #173 t=1726000 count=22
+[PASS] #174 t=1736000 count=23
+[PASS] #175 t=1746000 count=24
+[PASS] #176 t=1756000 count=25
+[PASS] #177 t=1766000 count=26
+[PASS] #178 t=1776000 count=27
+[PASS] #179 t=1786000 count=28
+[PASS] #180 t=1796000 count=29
+[PASS] #181 t=1806000 count=2a
+[PASS] #182 t=1816000 count=2b
+[PASS] #183 t=1826000 count=2c
+[PASS] #184 t=1836000 count=2d
+[PASS] #185 t=1846000 count=2e
+[PASS] #186 t=1856000 count=2f
+[PASS] #187 t=1866000 count=30
+[PASS] #188 t=1876000 count=31
+[PASS] #189 t=1886000 count=32
+[PASS] #190 t=1896000 count=33
+[PASS] #191 t=1906000 count=34
+[PASS] #192 t=1916000 count=35
+[PASS] #193 t=1926000 count=36
+[PASS] #194 t=1936000 count=37
+[PASS] #195 t=1946000 count=38
+[PASS] #196 t=1956000 count=39
+[PASS] #197 t=1966000 count=3a
+[PASS] #198 t=1976000 count=3b
+[PASS] #199 t=1986000 count=3c
+[PASS] #200 t=1996000 count=3d
+[PASS] #201 t=2006000 count=3e
+[PASS] #202 t=2016000 count=3f
+[PASS] #203 t=2026000 count=40
+[PASS] #204 t=2036000 count=41
+[PASS] #205 t=2046000 count=42
+[PASS] #206 t=2056000 count=43
+[PASS] #207 t=2066000 count=44
+[PASS] #208 t=2076000 count=45
+[PASS] #209 t=2086000 count=46
+[PASS] #210 t=2096000 count=47
+[PASS] #211 t=2106000 count=48
+[PASS] #212 t=2116000 count=49
+[PASS] #213 t=2126000 count=4a
+[PASS] #214 t=2136000 count=4b
+[PASS] #215 t=2146000 count=4c
+[PASS] #216 t=2156000 count=4d
+[PASS] #217 t=2166000 count=4e
+[PASS] #218 t=2176000 count=4f
+[PASS] #219 t=2186000 count=50
+[PASS] #220 t=2196000 count=51
+[PASS] #221 t=2206000 count=52
+[PASS] #222 t=2216000 count=53
+[PASS] #223 t=2226000 count=54
+[PASS] #224 t=2236000 count=55
+[PASS] #225 t=2246000 count=56
+[PASS] #226 t=2256000 count=57
+[PASS] #227 t=2266000 count=58
+[PASS] #228 t=2276000 count=59
+[PASS] #229 t=2286000 count=5a
+[PASS] #230 t=2296000 count=5b
+[PASS] #231 t=2306000 count=5c
+[PASS] #232 t=2316000 count=5d
+[PASS] #233 t=2326000 count=5e
+[PASS] #234 t=2336000 count=5f
+[PASS] #235 t=2346000 count=60
+[PASS] #236 t=2356000 count=61
+[PASS] #237 t=2366000 count=62
+[PASS] #238 t=2376000 count=63
+[PASS] #239 t=2386000 count=64
+[PASS] #240 t=2396000 count=65
+[PASS] #241 t=2406000 count=66
+[PASS] #242 t=2416000 count=67
+[PASS] #243 t=2426000 count=68
+[PASS] #244 t=2436000 count=69
+[PASS] #245 t=2446000 count=6a
+[PASS] #246 t=2456000 count=6b
+[PASS] #247 t=2466000 count=6c
+[PASS] #248 t=2476000 count=6d
+[PASS] #249 t=2486000 count=6e
+[PASS] #250 t=2496000 count=6f
+[PASS] #251 t=2506000 count=70
+[PASS] #252 t=2516000 count=71
+[PASS] #253 t=2526000 count=72
+[PASS] #254 t=2536000 count=73
+[PASS] #255 t=2546000 count=74
+[PASS] #256 t=2556000 count=75
+[PASS] #257 t=2566000 count=76
+[PASS] #258 t=2576000 count=77
+[PASS] #259 t=2586000 count=78
+[PASS] #260 t=2596000 count=79
+[PASS] #261 t=2606000 count=7a
+[PASS] #262 t=2616000 count=7b
+[PASS] #263 t=2626000 count=7c
+[PASS] #264 t=2636000 count=7d
+[PASS] #265 t=2646000 count=7e
+[PASS] #266 t=2656000 count=7f
+[PASS] #267 t=2666000 count=80
+[PASS] #268 t=2676000 count=81
+[PASS] #269 t=2686000 count=82
+[PASS] #270 t=2696000 count=83
+[PASS] #271 t=2706000 count=84
+[PASS] #272 t=2716000 count=85
+[PASS] #273 t=2726000 count=86
+[PASS] #274 t=2736000 count=87
+[PASS] #275 t=2746000 count=88
+[PASS] #276 t=2756000 count=89
+[PASS] #277 t=2766000 count=8a
+[PASS] #278 t=2776000 count=8b
+[PASS] #279 t=2786000 count=8c
+[PASS] #280 t=2796000 count=8d
+[PASS] #281 t=2806000 count=8e
+[PASS] #282 t=2816000 count=8f
+[PASS] #283 t=2826000 count=90
+[PASS] #284 t=2836000 count=91
+[PASS] #285 t=2846000 count=92
+[PASS] #286 t=2856000 count=93
+[PASS] #287 t=2866000 count=94
+[PASS] #288 t=2876000 count=95
+[PASS] #289 t=2886000 count=96
+[PASS] #290 t=2896000 count=97
+[PASS] #291 t=2906000 count=98
+[PASS] #292 t=2916000 count=99
+[PASS] #293 t=2926000 count=9a
+[PASS] #294 t=2936000 count=9b
+[PASS] #295 t=2946000 count=9c
+[PASS] #296 t=2956000 count=9d
+[PASS] #297 t=2966000 count=9e
+[PASS] #298 t=2976000 count=9f
+[PASS] #299 t=2986000 count=a0
+[PASS] #300 t=2996000 count=a1
+[PASS] #301 t=3006000 count=a2
+[PASS] #302 t=3016000 count=a3
+[PASS] #303 t=3026000 count=a4
+[PASS] #304 t=3036000 count=a5
+[PASS] #305 t=3046000 count=a6
+[PASS] #306 t=3056000 count=a7
+[PASS] #307 t=3066000 count=a8
+[PASS] #308 t=3076000 count=a9
+[PASS] #309 t=3086000 count=aa
+[PASS] #310 t=3096000 count=ab
+[PASS] #311 t=3106000 count=ac
+[PASS] #312 t=3116000 count=ad
+[PASS] #313 t=3126000 count=ae
+[PASS] #314 t=3136000 count=af
+[PASS] #315 t=3146000 count=b0
+[PASS] #316 t=3156000 count=b1
+[PASS] #317 t=3166000 count=b2
+[PASS] #318 t=3176000 count=b3
+[PASS] #319 t=3186000 count=b4
+[PASS] #320 t=3196000 count=b5
+[PASS] #321 t=3206000 count=b6
+[PASS] #322 t=3216000 count=b7
+[PASS] #323 t=3226000 count=b8
+[PASS] #324 t=3236000 count=b9
+[PASS] #325 t=3246000 count=ba
+[PASS] #326 t=3256000 count=bb
+[PASS] #327 t=3266000 count=bc
+[PASS] #328 t=3276000 count=bd
+[PASS] #329 t=3286000 count=be
+[PASS] #330 t=3296000 count=bf
+[PASS] #331 t=3306000 count=c0
+[PASS] #332 t=3316000 count=c1
+[PASS] #333 t=3326000 count=c2
+[PASS] #334 t=3336000 count=c3
+[PASS] #335 t=3346000 count=c4
+[PASS] #336 t=3356000 count=c5
+[PASS] #337 t=3366000 count=c6
+[PASS] #338 t=3376000 count=c7
+[PASS] #339 t=3386000 count=c8
+[PASS] #340 t=3396000 count=c9
+[PASS] #341 t=3406000 count=ca
+[PASS] #342 t=3416000 count=cb
+[PASS] #343 t=3426000 count=cc
+[PASS] #344 t=3436000 count=cd
+[PASS] #345 t=3446000 count=ce
+[PASS] #346 t=3456000 count=cf
+[PASS] #347 t=3466000 count=d0
+[PASS] #348 t=3476000 count=d1
+[PASS] #349 t=3486000 count=d2
+[PASS] #350 t=3496000 count=d3
+[PASS] #351 t=3506000 count=d4
+[PASS] #352 t=3516000 count=d5
+[PASS] #353 t=3526000 count=d6
+[PASS] #354 t=3536000 count=d7
+[PASS] #355 t=3546000 count=d8
+[PASS] #356 t=3556000 count=d9
+[PASS] #357 t=3566000 count=da
+[PASS] #358 t=3576000 count=db
+[PASS] #359 t=3586000 count=dc
+[PASS] #360 t=3596000 count=dd
+[PASS] #361 t=3606000 count=de
+[PASS] #362 t=3616000 count=df
+[PASS] #363 t=3626000 count=e0
+[PASS] #364 t=3636000 count=e1
+[PASS] #365 t=3646000 count=e2
+[PASS] #366 t=3656000 count=e3
+[PASS] #367 t=3666000 count=e4
+[PASS] #368 t=3676000 count=e5
+[PASS] #369 t=3686000 count=e6
+[PASS] #370 t=3696000 count=e7
+[PASS] #371 t=3706000 count=e8
+[PASS] #372 t=3716000 count=e9
+[PASS] #373 t=3726000 count=ea
+[PASS] #374 t=3736000 count=eb
+[PASS] #375 t=3746000 count=ec
+[PASS] #376 t=3756000 count=ed
+[PASS] #377 t=3766000 count=ee
+[PASS] #378 t=3776000 count=ef
+[PASS] #379 t=3786000 count=f0
+[PASS] #380 t=3796000 count=f1
+[PASS] #381 t=3806000 count=f2
+[PASS] #382 t=3816000 count=f3
+[PASS] #383 t=3826000 count=f4
+[PASS] #384 t=3836000 count=f5
+[PASS] #385 t=3846000 count=f6
+[PASS] #386 t=3856000 count=f7
+[PASS] #387 t=3866000 count=f8
+[PASS] #388 t=3876000 count=f9
+[PASS] #389 t=3886000 count=fa
+[PASS] #390 t=3896000 count=fb
+[PASS] #391 t=3906000 count=fc
+[PASS] #392 t=3916000 count=fd
+[PASS] #393 t=3926000 count=fe
+[PASS] #394 t=3936000 count=ff
+[PASS] #395 t=3946000 count=00
+[PASS] #396 t=3956000 count=01
+[PASS] #397 t=3966000 count=02
+[PASS] #398 t=3976000 count=03
+[PASS] #399 t=3986000 count=04
+[PASS] #400 t=3996000 count=05
+[PASS] #401 t=4006000 count=06
+[PASS] #402 t=4016000 count=07
+[PASS] #403 t=4026000 count=08
+[PASS] #404 t=4036000 count=09
+[PASS] #405 t=4046000 count=0a
+[PASS] #406 t=4056000 count=0b
+[PASS] #407 t=4066000 count=0c
+[PASS] #408 t=4076000 count=0d
+[PASS] #409 t=4086000 count=0e
+[PASS] #410 t=4096000 count=0f
+[PASS] #411 t=4106000 count=10
+[PASS] #412 t=4116000 count=11
+[PASS] #413 t=4126000 count=12
+[PASS] #414 t=4136000 count=13
+[PASS] #415 t=4146000 count=14
+[PASS] #416 t=4156000 count=15
+[PASS] #417 t=4166000 count=16
+[PASS] #418 t=4176000 count=17
+[PASS] #419 t=4186000 count=18
+[PASS] #420 t=4196000 count=19
+[PASS] #421 t=4206000 count=1a
+[PASS] #422 t=4216000 count=1b
+[PASS] #423 t=4226000 count=1c
+[PASS] #424 t=4236000 count=1d
+[PASS] #425 t=4246000 count=1e
+[PASS] #426 t=4256000 count=1f
+[PASS] #427 t=4266000 count=20
+[PASS] #428 t=4276000 count=21
+[PASS] #429 t=4286000 count=22
+[PASS] #430 t=4296000 count=23
+[PASS] #431 t=4306000 count=24
+[PASS] #432 t=4316000 count=25
+[PASS] #433 t=4326000 count=26
+[PASS] #434 t=4336000 count=27
+[PASS] #435 t=4346000 count=28
+[PASS] #436 t=4356000 count=29
+[PASS] #437 t=4366000 count=2a
+[PASS] #438 t=4376000 count=2b
+[PASS] #439 t=4386000 count=2c
+[PASS] #440 t=4396000 count=2d
+[PASS] #441 t=4406000 count=2e
+[PASS] #442 t=4416000 count=2f
+[PASS] #443 t=4426000 count=30
+[PASS] #444 t=4436000 count=31
+[PASS] #445 t=4446000 count=32
+[PASS] #446 t=4456000 count=33
+[PASS] #447 t=4466000 count=34
+[PASS] #448 t=4476000 count=35
+[PASS] #449 t=4486000 count=36
+[PASS] #450 t=4496000 count=37
+[PASS] #451 t=4506000 count=38
+[PASS] #452 t=4516000 count=39
+[PASS] #453 t=4526000 count=3a
+[PASS] #454 t=4536000 count=3b
+[PASS] #455 t=4546000 count=3c
+[PASS] #456 t=4556000 count=3d
+[PASS] #457 t=4566000 count=3e
+[PASS] #458 t=4576000 count=3f
+[PASS] #459 t=4586000 count=40
+[PASS] #460 t=4596000 count=41
+[PASS] #461 t=4606000 count=42
+[PASS] #462 t=4616000 count=43
+[PASS] #463 t=4626000 count=44
+[PASS] #464 t=4636000 count=45
+[PASS] #465 t=4646000 count=46
+[PASS] #466 t=4656000 count=47
+[PASS] #467 t=4666000 count=48
+[PASS] #468 t=4676000 count=49
+[PASS] #469 t=4686000 count=4a
+[PASS] #470 t=4696000 count=4b
+[PASS] #471 t=4706000 count=4c
+[PASS] #472 t=4716000 count=4d
+[PASS] #473 t=4726000 count=4e
+[PASS] #474 t=4736000 count=4f
+[PASS] #475 t=4746000 count=50
+[PASS] #476 t=4756000 count=51
+[PASS] #477 t=4766000 count=52
+[PASS] #478 t=4776000 count=53
+[PASS] #479 t=4786000 count=54
+[PASS] #480 t=4796000 count=55
+[PASS] #481 t=4806000 count=56
+[PASS] #482 t=4816000 count=57
+[PASS] #483 t=4826000 count=58
+[PASS] #484 t=4836000 count=59
+[PASS] #485 t=4846000 count=5a
+[PASS] #486 t=4856000 count=5b
+[PASS] #487 t=4866000 count=5c
+[PASS] #488 t=4876000 count=5d
+[PASS] #489 t=4886000 count=5e
+[PASS] #490 t=4896000 count=5f
+[PASS] #491 t=4906000 count=60
+[PASS] #492 t=4916000 count=61
+[PASS] #493 t=4926000 count=62
+[PASS] #494 t=4936000 count=63
+[PASS] #495 t=4946000 count=64
+[PASS] #496 t=4956000 count=65
+[PASS] #497 t=4966000 count=66
+[PASS] #498 t=4976000 count=67
+[PASS] #499 t=4986000 count=68
+[PASS] #500 t=4996000 count=69
+[PASS] #501 t=5006000 count=6a
+[PASS] #502 t=5016000 count=6b
+[PASS] #503 t=5026000 count=6c
+[PASS] #504 t=5036000 count=6d
+[PASS] #505 t=5046000 count=6e
+[PASS] #506 t=5056000 count=6f
+[PASS] #507 t=5066000 count=70
+[PASS] #508 t=5076000 count=71
+[PASS] #509 t=5086000 count=72
+[PASS] #510 t=5096000 count=73
+[PASS] #511 t=5106000 count=74
+[PASS] #512 t=5116000 count=75
+[PASS] #513 t=5126000 count=76
+[PASS] #514 t=5136000 count=77
+[PASS] #515 t=5146000 count=78
+[PASS] #516 t=5156000 count=79
+[PASS] #517 t=5166000 count=7a
+[PASS] #518 t=5176000 count=7b
+[PASS] #519 t=5186000 count=7c
+[PASS] #520 t=5196000 count=7d
+[PASS] #521 t=5206000 count=7e
+[PASS] #522 t=5216000 count=7f
+[PASS] #523 t=5226000 count=80
+[PASS] #524 t=5236000 count=81
+[PASS] #525 t=5246000 count=82
+[PASS] #526 t=5256000 count=83
+[PASS] #527 t=5266000 count=84
+[PASS] #528 t=5276000 count=85
+[PASS] #529 t=5286000 count=86
+[PASS] #530 t=5296000 count=87
+[PASS] #531 t=5306000 count=88
+[PASS] #532 t=5316000 count=89
+[PASS] #533 t=5326000 count=8a
+[PASS] #534 t=5336000 count=8b
+[PASS] #535 t=5346000 count=8c
+[PASS] #536 t=5356000 count=8d
+[PASS] #537 t=5366000 count=8e
+[PASS] #538 t=5376000 count=8f
+[PASS] #539 t=5386000 count=90
+[PASS] #540 t=5396000 count=91
+[PASS] #541 t=5406000 count=92
+[PASS] #542 t=5416000 count=93
+[PASS] #543 t=5426000 count=94
+[PASS] #544 t=5436000 count=95
+[PASS] #545 t=5446000 count=96
+[PASS] #546 t=5456000 count=97
+[PASS] #547 t=5466000 count=98
+[PASS] #548 t=5476000 count=99
+[PASS] #549 t=5486000 count=9a
+[PASS] #550 t=5496000 count=9b
+[PASS] #551 t=5506000 count=9c
+[PASS] #552 t=5516000 count=9d
+[PASS] #553 t=5526000 count=9e
+[PASS] #554 t=5536000 count=9f
+[PASS] #555 t=5546000 count=a0
+[PASS] #556 t=5556000 count=a1
+[PASS] #557 t=5566000 count=a2
+[PASS] #558 t=5576000 count=a3
+[PASS] #559 t=5586000 count=a4
+[PASS] #560 t=5596000 count=a5
+[PASS] #561 t=5606000 count=a6
+[PASS] #562 t=5616000 count=a7
+[PASS] #563 t=5626000 count=a8
+[PASS] #564 t=5636000 count=a9
+[PASS] #565 t=5646000 count=aa
+[PASS] #566 t=5656000 count=ab
+[PASS] #567 t=5666000 count=ac
+[PASS] #568 t=5676000 count=ad
+[PASS] #569 t=5686000 count=ae
+[PASS] #570 t=5696000 count=af
+[PASS] #571 t=5706000 count=b0
+[PASS] #572 t=5716000 count=b1
+[PASS] #573 t=5726000 count=b2
+[PASS] #574 t=5736000 count=b3
+[PASS] #575 t=5746000 count=b4
+[PASS] #576 t=5756000 count=b5
+[PASS] #577 t=5766000 count=b6
+[PASS] #578 t=5776000 count=b7
+[PASS] #579 t=5786000 count=b8
+[PASS] #580 t=5796000 count=b9
+[PASS] #581 t=5806000 count=ba
+[PASS] #582 t=5816000 count=bb
+[PASS] #583 t=5826000 count=bc
+[PASS] #584 t=5836000 count=bd
+[PASS] #585 t=5846000 count=be
+[PASS] #586 t=5856000 count=bf
+[PASS] #587 t=5866000 count=c0
+[PASS] #588 t=5876000 count=c1
+[PASS] #589 t=5886000 count=c2
+[PASS] #590 t=5896000 count=c3
+[PASS] #591 t=5906000 count=c4
+[PASS] #592 t=5916000 count=c5
+[PASS] #593 t=5926000 count=c6
+[PASS] #594 t=5936000 count=c7
+[PASS] #595 t=5946000 count=c8
+[PASS] #596 t=5956000 count=c9
+[PASS] #597 t=5966000 count=ca
+[PASS] #598 t=5976000 count=cb
+[PASS] #599 t=5986000 count=cc
+[PASS] #600 t=5996000 count=cd
+[PASS] #601 t=6006000 count=ce
+[PASS] #602 t=6016000 count=cf
+[PASS] #603 t=6026000 count=d0
+[PASS] #604 t=6036000 count=d1
+[PASS] #605 t=6046000 count=d2
+[PASS] #606 t=6056000 count=d3
+[PASS] #607 t=6066000 count=d4
+[PASS] #608 t=6076000 count=d5
+[PASS] #609 t=6086000 count=d6
+[PASS] #610 t=6096000 count=d7
+[PASS] #611 t=6106000 count=d8
+[PASS] #612 t=6116000 count=d9
+[PASS] #613 t=6126000 count=da
+[PASS] #614 t=6136000 count=db
+[PASS] #615 t=6146000 count=dc
+[PASS] #616 t=6156000 count=dd
+[PASS] #617 t=6166000 count=de
+[PASS] #618 t=6176000 count=df
+[PASS] #619 t=6186000 count=e0
+[PASS] #620 t=6196000 count=e1
+[PASS] #621 t=6206000 count=e2
+[PASS] #622 t=6216000 count=e3
+[PASS] #623 t=6226000 count=e4
+[PASS] #624 t=6236000 count=e5
+[PASS] #625 t=6246000 count=e6
+[PASS] #626 t=6256000 count=e7
+[PASS] #627 t=6266000 count=e8
+[PASS] #628 t=6276000 count=e9
+[PASS] #629 t=6286000 count=ea
+[PASS] #630 t=6296000 count=eb
+[PASS] #631 t=6306000 count=ec
+[PASS] #632 t=6316000 count=ed
+[PASS] #633 t=6326000 count=ee
+[PASS] #634 t=6336000 count=ef
+[PASS] #635 t=6346000 count=f0
+[PASS] #636 t=6356000 count=f1
+[PASS] #637 t=6366000 count=f2
+[PASS] #638 t=6376000 count=f3
+[PASS] #639 t=6386000 count=f4
+[PASS] #640 t=6396000 count=f5
+[PASS] #641 t=6406000 count=f6
+[PASS] #642 t=6416000 count=f7
+[PASS] #643 t=6426000 count=f8
+[PASS] #644 t=6436000 count=f9
+[PASS] #645 t=6446000 count=fa
+[PASS] #646 t=6456000 count=fb
+[PASS] #647 t=6466000 count=fc
+[PASS] #648 t=6476000 count=fd
+[PASS] #649 t=6486000 count=fe
+[PASS] #650 t=6496000 count=ff
+[PASS] #651 t=6508000 count=00
+[PASS] #652 t=6516000 count=01
+[INFO] random phase start, seed=12648430
+[FAIL] #653 t=6526000 exp=01 got=02
+[FAIL] #654 t=6536000 exp=02 got=03
+[FAIL] #655 t=6546000 exp=03 got=04
+[PASS] #656 t=6551000 count=00
+[FAIL] #657 t=6566000 exp=00 got=01
+[FAIL] #658 t=6576000 exp=00 got=02
+[FAIL] #659 t=6586000 exp=00 got=03
+[FAIL] #660 t=6596000 exp=00 got=04
+[FAIL] #661 t=6606000 exp=00 got=05
+[FAIL] #662 t=6616000 exp=01 got=06
+[FAIL] #663 t=6626000 exp=02 got=07
+[FAIL] #664 t=6636000 exp=03 got=08
+[FAIL] #665 t=6646000 exp=03 got=09
+[FAIL] #666 t=6656000 exp=03 got=0a
+[FAIL] #667 t=6666000 exp=04 got=0b
+[FAIL] #668 t=6676000 exp=05 got=0c
+[FAIL] #669 t=6686000 exp=05 got=0d
+[FAIL] #670 t=6696000 exp=05 got=0e
+[FAIL] #671 t=6706000 exp=05 got=0f
+[FAIL] #672 t=6716000 exp=06 got=10
+[FAIL] #673 t=6726000 exp=06 got=11
+[FAIL] #674 t=6736000 exp=06 got=12
+[FAIL] #675 t=6746000 exp=07 got=13
+[FAIL] #676 t=6756000 exp=08 got=14
+[FAIL] #677 t=6766000 exp=08 got=15
+[FAIL] #678 t=6776000 exp=09 got=16
+[FAIL] #679 t=6786000 exp=0a got=17
+[FAIL] #680 t=6796000 exp=0a got=18
+[FAIL] #681 t=6806000 exp=0a got=19
+[FAIL] #682 t=6816000 exp=0b got=1a
+[FAIL] #683 t=6826000 exp=0b got=1b
+[FAIL] #684 t=6836000 exp=0c got=1c
+[FAIL] #685 t=6846000 exp=0c got=1d
+[FAIL] #686 t=6856000 exp=0c got=1e
+[FAIL] #687 t=6866000 exp=0c got=1f
+[FAIL] #688 t=6876000 exp=0c got=20
+[FAIL] #689 t=6886000 exp=0c got=21
+[FAIL] #690 t=6896000 exp=0c got=22
+[FAIL] #691 t=6906000 exp=0d got=23
+[FAIL] #692 t=6916000 exp=0d got=24
+[FAIL] #693 t=6926000 exp=0e got=25
+[FAIL] #694 t=6936000 exp=0e got=26
+[FAIL] #695 t=6946000 exp=0f got=27
+[FAIL] #696 t=6956000 exp=10 got=28
+[FAIL] #697 t=6966000 exp=10 got=29
+[FAIL] #698 t=6976000 exp=10 got=2a
+[FAIL] #699 t=6986000 exp=10 got=2b
+[FAIL] #700 t=6996000 exp=11 got=2c
+[FAIL] #701 t=7006000 exp=12 got=2d
+[PASS] #702 t=7011000 count=00
+[PASS] #703 t=7026000 count=01
+[PASS] #704 t=7036000 count=02
+[PASS] #705 t=7046000 count=03
+[FAIL] #706 t=7056000 exp=03 got=04
+[FAIL] #707 t=7066000 exp=03 got=05
+[FAIL] #708 t=7076000 exp=03 got=06
+[FAIL] #709 t=7086000 exp=04 got=07
+[FAIL] #710 t=7096000 exp=04 got=08
+[FAIL] #711 t=7106000 exp=05 got=09
+[FAIL] #712 t=7116000 exp=06 got=0a
+[FAIL] #713 t=7126000 exp=06 got=0b
+[FAIL] #714 t=7136000 exp=06 got=0c
+[FAIL] #715 t=7146000 exp=07 got=0d
+[FAIL] #716 t=7156000 exp=07 got=0e
+[FAIL] #717 t=7166000 exp=08 got=0f
+[FAIL] #718 t=7176000 exp=09 got=10
+[FAIL] #719 t=7186000 exp=09 got=11
+[FAIL] #720 t=7196000 exp=0a got=12
+[FAIL] #721 t=7206000 exp=0b got=13
+[FAIL] #722 t=7216000 exp=0b got=14
+[PASS] #723 t=7221000 count=00
+[FAIL] #724 t=7236000 exp=00 got=01
+[FAIL] #725 t=7246000 exp=00 got=02
+[FAIL] #726 t=7256000 exp=01 got=03
+[FAIL] #727 t=7266000 exp=01 got=04
+[FAIL] #728 t=7276000 exp=02 got=05
+[FAIL] #729 t=7286000 exp=02 got=06
+[FAIL] #730 t=7296000 exp=02 got=07
+[FAIL] #731 t=7306000 exp=02 got=08
+[FAIL] #732 t=7316000 exp=03 got=09
+[FAIL] #733 t=7326000 exp=03 got=0a
+[FAIL] #734 t=7336000 exp=04 got=0b
+[FAIL] #735 t=7346000 exp=05 got=0c
+[FAIL] #736 t=7356000 exp=05 got=0d
+[FAIL] #737 t=7366000 exp=05 got=0e
+[FAIL] #738 t=7376000 exp=06 got=0f
+[FAIL] #739 t=7386000 exp=06 got=10
+[FAIL] #740 t=7396000 exp=06 got=11
+[FAIL] #741 t=7406000 exp=06 got=12
+[FAIL] #742 t=7416000 exp=06 got=13
+[FAIL] #743 t=7426000 exp=07 got=14
+[FAIL] #744 t=7436000 exp=07 got=15
+[FAIL] #745 t=7446000 exp=07 got=16
+[FAIL] #746 t=7456000 exp=08 got=17
+[FAIL] #747 t=7466000 exp=09 got=18
+[FAIL] #748 t=7476000 exp=0a got=19
+[FAIL] #749 t=7486000 exp=0b got=1a
+[FAIL] #750 t=7496000 exp=0c got=1b
+[FAIL] #751 t=7506000 exp=0c got=1c
+[FAIL] #752 t=7516000 exp=0d got=1d
+[FAIL] #753 t=7526000 exp=0d got=1e
+[FAIL] #754 t=7536000 exp=0e got=1f
+[FAIL] #755 t=7546000 exp=0f got=20
+[FAIL] #756 t=7556000 exp=10 got=21
+[FAIL] #757 t=7566000 exp=11 got=22
+[FAIL] #758 t=7576000 exp=11 got=23
+[FAIL] #759 t=7586000 exp=12 got=24
+[FAIL] #760 t=7596000 exp=13 got=25
+[FAIL] #761 t=7606000 exp=13 got=26
+[FAIL] #762 t=7616000 exp=14 got=27
+[FAIL] #763 t=7626000 exp=15 got=28
+[FAIL] #764 t=7636000 exp=16 got=29
+[FAIL] #765 t=7646000 exp=17 got=2a
+[FAIL] #766 t=7656000 exp=17 got=2b
+[FAIL] #767 t=7666000 exp=18 got=2c
+[PASS] #768 t=7671000 count=00
+[PASS] #769 t=7686000 count=01
+[PASS] #770 t=7696000 count=02
+[PASS] #771 t=7706000 count=03
+[PASS] #772 t=7711000 count=00
+[FAIL] #773 t=7726000 exp=00 got=01
+[FAIL] #774 t=7736000 exp=01 got=02
+[FAIL] #775 t=7746000 exp=02 got=03
+[FAIL] #776 t=7756000 exp=03 got=04
+[FAIL] #777 t=7766000 exp=04 got=05
+[FAIL] #778 t=7776000 exp=04 got=06
+[FAIL] #779 t=7786000 exp=05 got=07
+[FAIL] #780 t=7796000 exp=05 got=08
+[FAIL] #781 t=7806000 exp=05 got=09
+[FAIL] #782 t=7816000 exp=05 got=0a
+[FAIL] #783 t=7826000 exp=06 got=0b
+[FAIL] #784 t=7836000 exp=07 got=0c
+[FAIL] #785 t=7846000 exp=08 got=0d
+[FAIL] #786 t=7856000 exp=09 got=0e
+[FAIL] #787 t=7866000 exp=0a got=0f
+[FAIL] #788 t=7876000 exp=0b got=10
+[PASS] #789 t=7881000 count=00
+[PASS] #790 t=7896000 count=01
+[FAIL] #791 t=7906000 exp=01 got=02
+[FAIL] #792 t=7916000 exp=01 got=03
+[FAIL] #793 t=7926000 exp=02 got=04
+[FAIL] #794 t=7936000 exp=02 got=05
+[FAIL] #795 t=7946000 exp=02 got=06
+[FAIL] #796 t=7956000 exp=02 got=07
+[FAIL] #797 t=7966000 exp=03 got=08
+[PASS] #798 t=7971000 count=00
+[FAIL] #799 t=7986000 exp=00 got=01
+[FAIL] #800 t=7996000 exp=00 got=02
+[FAIL] #801 t=8006000 exp=01 got=03
+[FAIL] #802 t=8016000 exp=01 got=04
+[FAIL] #803 t=8026000 exp=01 got=05
+[FAIL] #804 t=8036000 exp=01 got=06
+[FAIL] #805 t=8046000 exp=01 got=07
+[FAIL] #806 t=8056000 exp=01 got=08
+[FAIL] #807 t=8066000 exp=02 got=09
+[FAIL] #808 t=8076000 exp=02 got=0a
+[FAIL] #809 t=8086000 exp=02 got=0b
+[FAIL] #810 t=8096000 exp=02 got=0c
+[FAIL] #811 t=8106000 exp=02 got=0d
+[FAIL] #812 t=8116000 exp=03 got=0e
+[FAIL] #813 t=8126000 exp=04 got=0f
+[PASS] #814 t=8131000 count=00
+[FAIL] #815 t=8146000 exp=00 got=01
+[FAIL] #816 t=8156000 exp=00 got=02
+[FAIL] #817 t=8166000 exp=01 got=03
+[FAIL] #818 t=8176000 exp=02 got=04
+[FAIL] #819 t=8186000 exp=03 got=05
+[PASS] #820 t=8191000 count=00
+[PASS] #821 t=8206000 count=01
+[PASS] #822 t=8216000 count=02
+[PASS] #823 t=8226000 count=03
+[FAIL] #824 t=8236000 exp=03 got=04
+[PASS] #825 t=8241000 count=00
+[FAIL] #826 t=8256000 exp=00 got=01
+[FAIL] #827 t=8266000 exp=01 got=02
+[FAIL] #828 t=8276000 exp=01 got=03
+[FAIL] #829 t=8286000 exp=02 got=04
+[FAIL] #830 t=8296000 exp=02 got=05
+[FAIL] #831 t=8306000 exp=03 got=06
+[FAIL] #832 t=8316000 exp=03 got=07
+[PASS] #833 t=8321000 count=00
+[PASS] #834 t=8336000 count=01
+[FAIL] #835 t=8346000 exp=01 got=02
+[FAIL] #836 t=8356000 exp=02 got=03
+[FAIL] #837 t=8366000 exp=02 got=04
+[FAIL] #838 t=8376000 exp=02 got=05
+[FAIL] #839 t=8386000 exp=03 got=06
+[FAIL] #840 t=8396000 exp=03 got=07
+[FAIL] #841 t=8406000 exp=04 got=08
+[FAIL] #842 t=8416000 exp=04 got=09
+[FAIL] #843 t=8426000 exp=04 got=0a
+[FAIL] #844 t=8436000 exp=04 got=0b
+[FAIL] #845 t=8446000 exp=05 got=0c
+[FAIL] #846 t=8456000 exp=05 got=0d
+[FAIL] #847 t=8466000 exp=06 got=0e
+[FAIL] #848 t=8476000 exp=07 got=0f
+[FAIL] #849 t=8486000 exp=07 got=10
+[FAIL] #850 t=8496000 exp=08 got=11
+[FAIL] #851 t=8506000 exp=09 got=12
+[FAIL] #852 t=8516000 exp=09 got=13
+[FAIL] #853 t=8526000 exp=0a got=14
+[FAIL] #854 t=8536000 exp=0b got=15
+[FAIL] #855 t=8546000 exp=0c got=16
+[FAIL] #856 t=8556000 exp=0c got=17
+[FAIL] #857 t=8566000 exp=0c got=18
+[PASS] #858 t=8571000 count=00
+[FAIL] #859 t=8586000 exp=00 got=01
+[FAIL] #860 t=8596000 exp=00 got=02
+[FAIL] #861 t=8606000 exp=01 got=03
+[FAIL] #862 t=8616000 exp=02 got=04
+[FAIL] #863 t=8626000 exp=03 got=05
+[FAIL] #864 t=8636000 exp=03 got=06
+[INFO] random phase done, seed=778987422
+======================================
+ total checks = 864, passed = 540, failed = 324
+ scenarios: reset, hold, increment, async_reset, en_edge,
+            reset_at_7f, wrap, reset_at_ff, random(seed=778987422)
+ TEST FAILED (324 errors)
+======================================
+$finish called from file "generated/tb/tb_counter_8bit.v", line 169.
+$finish at simulation time              8636000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 8636000 ps
+CPU Time:      0.080 seconds;       Data structure size:   0.0Mb
+Wed Oct 21 23:49:25 2026

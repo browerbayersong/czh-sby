@@ -1,0 +1,10 @@
+# 核心依赖（与本机 venv 一致）
+langgraph==1.2.16
+langchain==1.4.6
+langchain-openai==1.7.2
+python-dotenv==1.2.4
+
+# 开发工具：langgraph dev（Studio/API 服务）、图形可视化
+langgraph-cli[inmem]==0.4.37
+grandalf==0.8
+jupyterlab==4.6.4

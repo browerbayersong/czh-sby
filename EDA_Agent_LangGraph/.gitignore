@@ -1,0 +1,20 @@
+# 密钥与本地配置
+.env
+*.env
+!.env.example
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# 运行产物
+shadow/
+autofix.log
+*.log.tmp
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
