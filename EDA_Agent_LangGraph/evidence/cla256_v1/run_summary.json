@@ -1,0 +1,39 @@
+{
+  "run_id": "a579234a202642dfb3f1b410fb31e9e5",
+  "mode": "vcs",
+  "file_count": 7,
+  "when": "2026-10-22T13:58:16",
+  "project_directory": "/home/IC/Desktop/EDA_Projects/cla256_v1",
+  "remote_directory": "/home/IC/Desktop/EDA_Projects/cla256_v1/runs/vcs_001",
+  "source_snapshot": "/home/IC/Desktop/EDA_Projects/cla256_v1/runs/vcs_001/src",
+  "run_label": "vcs_001",
+  "upload_ok": true,
+  "status": "passed_by_marker",
+  "compile_exit_code": 0,
+  "compile_command": "/opt/Synopsys/VCS2014/bin/vcs -full64 -sverilog -timescale=1ns/1ps -cm line+cond+fsm+tgl+branch -cm_dir ../build/cov.vdb -top tb_top_adder -o ../build/simv +incdir+generated/rtl +incdir+generated/tb generated/rtl/16bit_adder.v generated/rtl/256_top.v generated/rtl/256bit_adder.v generated/rtl/3bit_CGLA.v generated/rtl/4bit_adder.v generated/rtl/64bit_adder.v generated/tb/tb_top_adder.v",
+  "sources": [
+    "generated/rtl/16bit_adder.v",
+    "generated/rtl/256_top.v",
+    "generated/rtl/256bit_adder.v",
+    "generated/rtl/3bit_CGLA.v",
+    "generated/rtl/4bit_adder.v",
+    "generated/rtl/64bit_adder.v",
+    "generated/tb/tb_top_adder.v"
+  ],
+  "excluded_sources": [],
+  "sim_exit_code": 0,
+  "coverage": {
+    "score": 99.47,
+    "line": 99.47,
+    "cond": null,
+    "toggle": 99.27,
+    "fsm": null,
+    "branch": 99.67
+  },
+  "coverage_exit_code": 0,
+  "sync": {
+    "created": 7,
+    "updated_with_backup": 0,
+    "unchanged": 0
+  }
+}

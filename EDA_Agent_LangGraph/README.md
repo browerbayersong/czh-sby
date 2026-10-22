@@ -63,7 +63,8 @@ copy ..\.env.example .env      # 然后填入 DEEPSEEK_API_KEY 与 EDA_SSH_HOST
 | 真的有 VCS 跑过 | `evidence/counter_v82/vcs_007/vcs_compile.log` 首行是 `Chronologic VCS (TM) I-2014.03_Full64` |
 | 真的修好了 bug | 对比 `evidence/case1_compile_failed/` 与 `case1_fixed/` 的 `run_summary.json`（`compile_failed` → `passed_by_marker`） |
 | 覆盖率不是编的 | `evidence/counter_v82/vcs_007/coverage_dashboard.txt` 里有 `Total Coverage Summary` 原始表格 |
-| 换一个工程也能跑 | `evidence/fifo_sync_v1/run_summary.json`：独立工程 `fifo_sync_v1`、351 检查点、覆盖率 96.61% |
+| 换一个工程也能跑 | `evidence/fifo_sync_v1/run_summary.json`：独立工程、351 检查点、覆盖率 96.61% |
+| 多文件层次设计也能跑 | `evidence/cla256_v1/run_summary.json`：7 个源文件、1005 检查点、覆盖率 99.47% |
 | 本地也能复现 | `designs/fifo/` 可用 ModelSim 直接编译仿真（351 检查点全过） |
 
 ## 安全声明
