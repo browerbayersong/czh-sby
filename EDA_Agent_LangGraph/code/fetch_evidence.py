@@ -90,7 +90,20 @@ def main() -> int:
                 ok_all = False
                 continue
 
-            n_src = fetch_tree(sftp, posixpath.join(run_dir, 'src'), local / 'src', suffixes=())
+            # 只按清单下载源码：src/ 下还有 VCS 编译产物（csrc、cm.log、ucli.key），不归档
+            manifest = json.loads((local / 'snapshot_manifest.json').read_text(encoding='utf-8'))
+            expected = manifest.get('files_sha256', {})
+            n_src = 0
+            for rel in expected:
+                remote = posixpath.join(run_dir, 'src', *rel.split('/'))
+                target = local / 'src' / rel
+                target.parent.mkdir(parents=True, exist_ok=True)
+                try:
+                    sftp.get(remote, str(target))
+                    n_src += 1
+                except OSError as exc:
+                    print(f'  下载失败 {rel}: {exc}')
+
             for name in ('vcs_compile.log', 'vcs_sim.log'):
                 try:
                     sftp.get(posixpath.join(run_dir, 'build', name), str(local / name))
@@ -102,8 +115,6 @@ def main() -> int:
             except OSError:
                 pass
 
-            manifest = json.loads((local / 'snapshot_manifest.json').read_text(encoding='utf-8'))
-            expected = manifest.get('files_sha256', {})
             bad = []
             for rel, want in expected.items():
                 f = local / 'src' / rel

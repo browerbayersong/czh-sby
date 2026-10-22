@@ -1,0 +1,11 @@
+{
+  "format": "eda-agent-snapshot-v1",
+  "chat_id": "afb4f4d6313746fca5f703f787cd0666",
+  "project_name": "counter_v82",
+  "label": "vcs_006",
+  "created_at": "2026-10-21T22:59:17",
+  "files_sha256": {
+    "generated/rtl/counter_8bit.v": "9e1effa931b00b418b12b181eec3b0a6e0832c326351c7b8be3390589ec4f822",
+    "generated/tb/tb_counter_8bit.v": "d2ab67beb099a478fba2da80cb5c47595f2d84c6945df1476c94282362b8623a"
+  }
+}
