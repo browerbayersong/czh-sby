@@ -900,6 +900,9 @@ def remote_job(cfg: SSHSettings, workspace: Path, chat_id: str,
                    if k not in {'compile_log', 'sim_log', 'coverage_text'}}
         summary_json = json.dumps(summary, ensure_ascii=False, indent=2)
         _local_write(local_dir, 'run_summary.json', summary_json)
+        # 本地也留一份快照清单，供运行历史页展示每轮源码的 SHA-256
+        _local_write(local_dir, 'snapshot_manifest.json',
+                     json.dumps(snapshot_manifest, ensure_ascii=False, indent=2))
         try:
             with sftp.open(posixpath.join(run_dir, 'run_summary.json'), 'wb') as marker:
                 marker.write(summary_json.encode('utf-8'))

@@ -8,6 +8,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 from typing import Any
@@ -96,6 +97,44 @@ def collect_run_metrics(chat: dict) -> list[dict[str, Any]]:
             '_seeds': log.get('seeds') or [],
         })
     return rows
+
+
+def load_run_detail(entry: dict, workspace: Path) -> dict[str, Any]:
+    """读取单轮的摘要、快照清单与日志状态（严格限制在工作空间内）。"""
+    detail: dict[str, Any] = {
+        'label': entry.get('run_label', '?'),
+        'summary': {}, 'manifest': {},
+        'has_compile_log': False, 'has_sim_log': False,
+        'error_excerpt': '',
+    }
+    local = entry.get('local_directory')
+    if not local:
+        return detail
+    d = Path(local)
+    try:
+        d.resolve().relative_to(workspace.resolve())
+    except (ValueError, OSError):
+        return detail
+
+    for name, key in (('run_summary.json', 'summary'), ('snapshot_manifest.json', 'manifest')):
+        f = d / name
+        if f.is_file():
+            try:
+                detail[key] = json.loads(f.read_text(encoding='utf-8'))
+            except ValueError:
+                pass
+
+    detail['has_compile_log'] = (d / 'vcs_compile.log').is_file()
+    detail['has_sim_log'] = (d / 'vcs_sim.log').is_file()
+
+    status = detail['summary'].get('status') or entry.get('status')
+    if status and status != 'passed_by_marker':
+        log = d / ('vcs_compile.log' if status == 'compile_failed' else 'vcs_sim.log')
+        if log.is_file():
+            text = log.read_text(encoding='utf-8', errors='replace')
+            hits = [ln for ln in text.splitlines() if '[FAIL]' in ln or 'Error-' in ln]
+            detail['error_excerpt'] = '\n'.join(hits[:10] if hits else text.splitlines()[-15:])
+    return detail
 
 
 def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:

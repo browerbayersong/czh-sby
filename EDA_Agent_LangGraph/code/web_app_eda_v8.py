@@ -730,16 +730,28 @@ with st.expander('🔗 Linux 工程目录与 VCS 执行（v8.2）', expanded=Fal
         rid = str(last.get('run_id', ''))
         if re.fullmatch(r'[0-9a-f]{32}', rid):
             run_dir = safe_workspace_subfolder(chat, 'remote_runs') / rid
-            for log_name in ('vcs_compile.log', 'vcs_sim.log'):
-                local_log = run_dir / log_name
-                if not local_log.is_symlink() and local_log.is_file() and local_log.resolve().is_relative_to(workspace(chat).resolve()):
+            root = workspace(chat).resolve()
+
+            def _log_viewer(chat_id: str, run_id: str, base: str, safe_root) -> None:
+                base_path = Path(base)
+                for log_name in ('vcs_compile.log', 'vcs_sim.log'):
+                    local_log = base_path / log_name
+                    if (local_log.is_symlink() or not local_log.is_file()
+                            or not local_log.resolve().is_relative_to(safe_root)):
+                        continue
                     if st.checkbox(f'显示 {log_name}（末尾 14000 字符）', value=False,
-                                   key=f'v8_show_log_{chat["id"]}_{rid}_{log_name}'):
+                                   key=f'v8_show_log_{chat_id}_{run_id}_{log_name}'):
                         log_text = local_log.read_text(encoding='utf-8', errors='replace')
                         st.code(log_text[-14000:], language='text')
                         st.download_button(f'下载 {log_name}', data=log_text,
-                                           file_name=f'{rid[:8]}_{log_name}', mime='text/plain',
-                                           key=f'v8_download_{chat["id"]}_{rid}_{log_name}')
+                                           file_name=f'{run_id[:8]}_{log_name}', mime='text/plain',
+                                           key=f'v8_download_{chat_id}_{run_id}_{log_name}')
+
+            # 用 fragment 把日志查看限制在局部重跑，减少整页 DOM 重排（缓解 removeChild）
+            try:
+                st.fragment(_log_viewer)(chat['id'], rid, str(run_dir), root)
+            except Exception:  # 旧版 Streamlit 没有 fragment
+                _log_viewer(chat['id'], rid, str(run_dir), root)
 
     with st.expander('📊 结果分析（本对话）', expanded=False):
         import pandas as pd
@@ -809,6 +821,60 @@ with st.expander('🔗 Linux 工程目录与 VCS 执行（v8.2）', expanded=Fal
                 key='v8_export_analysis_' + chat['id'],
                 help='包含汇总指标、逐轮指标、覆盖率趋势与失败轮次，可直接粘进报告。',
             )
+
+    with st.expander('📜 运行历史（逐轮查看）', expanded=False):
+        from eda_analysis import load_run_detail
+
+        hist = [h for h in chat.get('remote_history', []) if h.get('mode') == 'vcs']
+        if not hist:
+            st.caption('还没有 VCS 运行记录。')
+        else:
+            labels = [h.get('run_label') for h in hist][::-1]
+            pick = st.selectbox('选择轮次（最新在前）', labels, key='v8_hist_' + chat['id'])
+            entry = next(h for h in hist if h.get('run_label') == pick)
+            det = load_run_detail(entry, workspace(chat))
+            summary = det.get('summary') or {}
+
+            h1, h2, h3, h4 = st.columns(4)
+            h1.metric('状态', summary.get('status') or entry.get('status') or '?')
+            h2.metric('编译/仿真码',
+                      f"{summary.get('compile_exit_code')}/{summary.get('sim_exit_code')}")
+            cov = (summary.get('coverage') or {}).get('score')
+            h3.metric('覆盖率', f'{cov:.2f}%' if cov is not None else '—')
+            h4.metric('源文件数', len(summary.get('sources') or []))
+
+            if summary.get('sources'):
+                st.caption('编译源文件：' + '、'.join(summary['sources']))
+            if summary.get('compile_config_used') is not None:
+                mode_txt = 'compile_cfg.json' if summary['compile_config_used'] else '自动扫描'
+                defs = summary.get('defines') or []
+                st.caption('编译配置：' + mode_txt
+                           + (f" · defines: {', '.join(defs)}" if defs else ''))
+
+            files = (det.get('manifest') or {}).get('files_sha256') or {}
+            if files:
+                st.caption(f'源码快照 SHA-256（{len(files)} 个文件）：')
+                st.dataframe([{'文件': k, 'SHA-256': v} for k, v in files.items()],
+                             use_container_width=True, hide_index=True)
+            else:
+                st.caption('该轮没有本地快照清单（旧版本运行或未回填）。')
+
+            if det.get('error_excerpt'):
+                st.caption('错误摘要：')
+                st.code(det['error_excerpt'], language='text')
+
+            dl1, dl2 = st.columns(2)
+            base = Path(entry.get('local_directory') or '')
+            for col, name, flag in ((dl1, 'vcs_compile.log', det.get('has_compile_log')),
+                                    (dl2, 'vcs_sim.log', det.get('has_sim_log'))):
+                with col:
+                    f = base / name
+                    if flag and f.is_file():
+                        st.download_button(
+                            f'下载 {name}', data=f.read_bytes(),
+                            file_name=f'{pick}_{name}', mime='text/plain',
+                            key=f'v8_hist_dl_{chat["id"]}_{pick}_{name}',
+                        )
 
     auto_res = st.session_state.get('v8_autofix_' + chat['id'])
     if auto_res:
