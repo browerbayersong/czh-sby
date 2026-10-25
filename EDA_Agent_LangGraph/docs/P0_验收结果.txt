@@ -1,0 +1,13 @@
+[PASS] 闭环是 StateGraph（5 节点）  analyze,finalize,patch,simulate,stage
+[PASS] 状态字段齐备  6/6
+[PASS] 条件边：通过/中止/到上限/继续修复  5 种
+[PASS] 条件边：补丁失败不再重跑  
+[PASS] 失败分类（语法/断言/崩溃/环境/无标记）  5 类
+[PASS] 采纳只写真正变化的文件  generated/rtl/b.v
+[PASS] 未采纳文件不被改动  
+[PASS] 验收案例①：编译失败 → 修复通过  compile_failed → passed_by_marker
+[PASS] 验收案例②：断言失败 → 修复通过  failed → passed_by_marker
+[PASS] 每轮记录字段完整（_record 实测）  changed_files,error_type,index,log_excerpt,run_label,status
+[PASS] 改动文件被正确识别  generated/rtl/a.v
+
+11/11 项通过
