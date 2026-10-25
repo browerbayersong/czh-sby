@@ -546,7 +546,7 @@ def _ensure_project(sftp, chat_id: str, remote_base: str, project_name: str) -> 
 
 def _next_named_run(sftp, project: str, mode: str) -> tuple[str, str]:
     """Atomic mkdir of sequential vcs_001/upload_001 etc, no existing run touched."""
-    prefix = 'vcs' if mode == 'vcs' else 'upload'
+    prefix = {'vcs': 'vcs', 'dc': 'dc', 'icc': 'icc'}.get(mode, 'upload')
     parent = posixpath.join(project, 'runs')
     for n in range(1, 10000):
         label = f'{prefix}_{n:03d}'

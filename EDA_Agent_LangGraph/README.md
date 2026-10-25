@@ -67,6 +67,7 @@ copy ..\.env.example .env      # 然后填入 DEEPSEEK_API_KEY 与 EDA_SSH_HOST
 | 做到了哪、还差什么、代码怎么组织 | `交接说明.md` |
 | 五轮迭代数据、覆盖率分析、闭环验收 | `docs/项目进度报告_2026-10-22.md` |
 | 第三方 P1 评估与整改答复 | `docs/P1评估报告_2026-10-22.md`、`docs/P1整改说明.md` |
+| P2 工程化说明（编译配置 / 历史页 / 验收） | `docs/P2_完成说明.md` |
 | 工作流长什么样 | `docs/gen_graph.png`、`docs/loop_graph.png` |
 
 ## 快速判断这份包是否可信
