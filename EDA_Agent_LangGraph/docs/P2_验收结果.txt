@@ -1,0 +1,12 @@
+[PASS] 测试：远程执行回归  
+[PASS] 测试：日志解析  
+[PASS] 测试：P2 离线（配置/边界）  
+[PASS] 测试：远程层回归（超时/失败）  
+[PASS] 测试：闭环逻辑  
+[PASS] 工具路径可用环境变量覆盖  /opt/custom/vcs | /opt/custom/urg
+[PASS] 运行历史：每轮带 SHA-256 清单  6/13 轮有清单
+[PASS] 运行历史：详情可读（摘要/日志）  最新带清单的轮次可读
+[PASS] 前端异常缓解：日志查看用 fragment  fragment + 回退
+[PASS] 换工程可用（FIFO / 加法器）  fifo_sync_v1:通过 cla256_v1:通过 counter_v82:通过
+
+10/10 项通过
