@@ -8,7 +8,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-sys.path.insert(0, r'E:\LangGraph')
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent if Path(__file__).resolve().parent.name == 'patches' else Path(__file__).resolve().parent))
 from eda_remote_v8 import (  # noqa: E402
     RemoteError,
     _validate_tb,
@@ -84,6 +84,24 @@ def main() -> int:
             else:
                 raise AssertionError(f'应当拒绝：{label}')
         print('PASS: 6 类非法配置均被拒绝')
+
+        # 2b) .f 里的 include 与 JSON 的 include 走同一套校验
+        (ws / 'compile_cfg.json').write_text(json.dumps({'filelist': ['files.f']}),
+                                             encoding='utf-8')
+        (ws / 'files.f').write_text(
+            '+incdir+/etc\n+incdir+../../old/include\ngenerated/rtl/a.v\n', encoding='utf-8')
+        try:
+            load_compile_config(ws, files)
+        except RemoteError:
+            print('PASS: .f 中的越界 include 被拒绝')
+        else:
+            raise AssertionError('.f 越界 include 未被拒绝')
+
+        (ws / 'files.f').write_text(
+            '+incdir+generated/rtl/inc\ngenerated/rtl/a.v\n', encoding='utf-8')
+        cfg = load_compile_config(ws, files)
+        assert cfg['incdirs'] == ['generated/rtl/inc'], cfg
+        print('PASS: .f 中的合法 include 被接受')
 
         # 3) 无配置时返回 None
         (ws / 'compile_cfg.json').unlink()

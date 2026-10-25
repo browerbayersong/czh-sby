@@ -68,6 +68,7 @@ def _record(state: LoopState) -> dict:
     originals = state.get('originals') or {}
     return {
         'index': state.get('iteration', 0),
+        'run_id': run.get('run_id', ''),
         'run_label': run.get('run_label', ''),
         'status': run.get('status', 'unknown'),
         'error_type': state.get('error_type', ''),
@@ -75,6 +76,8 @@ def _record(state: LoopState) -> dict:
         'sim_exit_code': run.get('sim_exit_code'),
         'coverage': run.get('coverage') or {},
         'remote_directory': run.get('remote_directory', ''),
+        'local_directory': run.get('local_directory', ''),
+        'sources': run.get('sources') or [],
         'changed_files': [rel for rel in sorted(working) if working[rel] != originals.get(rel)],
         'log_excerpt': state.get('log_excerpt', ''),
         'failure_summary': state.get('failure_summary', ''),
@@ -101,12 +104,15 @@ def simulate_node(state: LoopState) -> dict:
     )
     return {
         'run': {
+            'run_id': run.get('run_id', ''),
             'run_label': run.get('run_label', ''),
             'status': run.get('status', 'unknown'),
             'compile_exit_code': run.get('compile_exit_code'),
             'sim_exit_code': run.get('sim_exit_code'),
             'coverage': run.get('coverage') or {},
             'remote_directory': run.get('remote_directory', ''),
+            'local_directory': run.get('local_directory', ''),
+            'sources': run.get('sources') or [],
             'compile_log': run.get('compile_log', '') or '',
             'sim_log': run.get('sim_log', '') or '',
         },

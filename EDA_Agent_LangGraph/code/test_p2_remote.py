@@ -10,7 +10,7 @@ from unittest import mock
 
 import paramiko
 
-sys.path.insert(0, r'E:\LangGraph')
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent if Path(__file__).resolve().parent.name == 'patches' else Path(__file__).resolve().parent))
 import eda_remote_v8 as r  # noqa: E402
 
 

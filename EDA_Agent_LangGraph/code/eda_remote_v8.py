@@ -203,6 +203,20 @@ def local_source_files(workspace: Path) -> list[tuple[str, Path]]:
             files.append((rel, path))
             if len(files) > MAX_FILES or total > MAX_TOTAL_BYTES:
                 raise RemoteError('工程文件数量或总容量超出安全上限')
+    # 编译配置与 .f 也纳入快照：否则影子目录/远端拿不到配置，两端行为会不一致
+    for path in sorted(root.iterdir()):
+        if path.is_symlink() or not path.is_file():
+            continue
+        if path.name != COMPILE_CFG_NAME and path.suffix.lower() != '.f':
+            continue
+        rel = path.name
+        if path.stat().st_size > MAX_FILE_BYTES:
+            raise RemoteError(f'上传文件超过 {MAX_FILE_BYTES} 字节：{rel}')
+        total += path.stat().st_size
+        files.append((rel, path))
+        if len(files) > MAX_FILES or total > MAX_TOTAL_BYTES:
+            raise RemoteError('工程文件数量或总容量超出安全上限')
+
     if not files:
         raise RemoteError('此对话还没有保存的工程文件。请先生成、审阅并保存，或者导入 RTL。')
     return files
@@ -252,6 +266,14 @@ def source_manifest(files: list[tuple[str, Path]]) -> dict[str, Any]:
                            if rel in selected and (n.lower().startswith('tb') or 'testbench' in n.lower()))
     return {'sources': selected, 'incdirs': incdirs,
             'testbenches': tb_candidates, 'modules': sorted(owners), 'excluded': sorted(skipped)}
+
+
+def manifest_for_compile(files: list[tuple[str, Path]],
+                         compile_plan: dict[str, Any] | None) -> dict[str, Any]:
+    """模块归属检查的范围：显式 filelist 时只看选中的文件。"""
+    explicit = set(compile_plan['sources']) if (compile_plan and compile_plan.get('sources')) else set()
+    subset = [(rel, local) for rel, local in files if rel in explicit] if explicit else files
+    return source_manifest(subset)
 
 
 def file_preview(workspace: Path) -> dict[str, Any]:
@@ -392,11 +414,13 @@ def load_compile_config(workspace: Path, files: list[tuple[str, Path]]) -> dict[
             sources.append(rel)
 
     sources = [_norm_rel(rel, available, 'filelist') for rel in sources]
-    if not sources:
+    # 显式写了 filelist 却解析为空，视为配置错误；完全不写则允许（只带宏/顶层）
+    if 'filelist' in data and not sources:
         raise RemoteError('compile_cfg.json 的 filelist 为空')
 
-    for rel in data.get('incdirs', []) or []:
-        incdirs.append(_norm_incdir(rel, available))
+    # include 目录无论来自 .f 还是 JSON，都必须经过同一套校验
+    all_incdirs = list(incdirs) + list(data.get('incdirs') or [])
+    incdirs = [_norm_incdir(rel, available) for rel in all_incdirs]
     defines = _norm_defines(data.get('defines')) + _norm_defines(defines)
 
     tb_top = data.get('tb_top')
@@ -799,8 +823,8 @@ def remote_job(cfg: SSHSettings, workspace: Path, chat_id: str,
     manifest: dict[str, Any] | None = None
     compile_plan: dict[str, Any] | None = None
     if mode == 'vcs':
-        manifest = source_manifest(files)
         compile_plan = load_compile_config(workspace, files)
+        manifest = manifest_for_compile(files, compile_plan)
         if compile_plan and compile_plan.get('tb_top'):
             tb_top = compile_plan['tb_top']
         _validate_tb(tb_top, manifest)
@@ -832,14 +856,14 @@ def remote_job(cfg: SSHSettings, workspace: Path, chat_id: str,
             build_dir = posixpath.join(run_dir, 'build')
             _create_new_dir(sftp, build_dir)
             q = shlex.quote
-            if compile_plan:
+            if compile_plan and compile_plan.get('sources'):
                 relsrc = compile_plan['sources']
                 incdirs = compile_plan['incdirs']
                 defines = compile_plan['defines']
             else:
                 relsrc = manifest['sources']
-                incdirs = manifest['incdirs']
-                defines = []
+                incdirs = compile_plan['incdirs'] if compile_plan else manifest['incdirs']
+                defines = compile_plan['defines'] if compile_plan else []
             include_args = ['+incdir+' + d for d in incdirs if d]
             define_args = ['+define+' + d for d in defines]
             # run from src/ so v7 generated/rtl and inputs/ paths still work.

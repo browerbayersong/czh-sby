@@ -9,7 +9,7 @@ import tempfile
 import types
 from pathlib import Path
 
-sys.path.insert(0, r'E:\LangGraph')
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent if Path(__file__).resolve().parent.name == 'patches' else Path(__file__).resolve().parent))
 import eda_autofix as fa  # noqa: E402
 
 BAD = 'module a; endmodule\n'

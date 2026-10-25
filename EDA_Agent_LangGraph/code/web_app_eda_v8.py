@@ -635,9 +635,8 @@ with st.expander('🔗 Linux 工程目录与 VCS 执行（v8.2）', expanded=Fal
 
     ssh_action = check_connection or upload_only or vcs_run or autofix_run
     if ssh_action and not (ssh_password or '').strip():
-        st.warning('SSH 密码为空：请先在「SSH 密码」框输入密码再点按钮。'
-                   '密码不落盘，刷新页面或重启服务后需要重新输入。')
-    elif ssh_action:
+        st.caption('未填写密码：将尝试 SSH Agent / 默认密钥认证；若失败，请填写密码后重试。')
+    if ssh_action:
         if st.session_state.pending_reply:
             st.error('Agent 正在生成回答，请等待当前任务完成。')
         else:
@@ -658,6 +657,23 @@ with st.expander('🔗 Linux 工程目录与 VCS 执行（v8.2）', expanded=Fal
                             box.update(label=f"闭环结束：{res['final_status']}（{len(res['iterations'])} 轮）",
                                        state='complete' if res['ok'] else 'error')
                         st.session_state['v8_autofix_' + chat['id']] = res
+                        # 闭环各轮也写入持久化历史，历史页才能像普通运行一样查看文件/哈希/日志
+                        for item in res.get('iterations') or []:
+                            chat.setdefault('remote_history', []).append({
+                                'run_id': item.get('run_id', ''),
+                                'mode': 'autofix',
+                                'status': item.get('status', ''),
+                                'when': now(),
+                                'run_label': item.get('run_label', ''),
+                                'remote_directory': item.get('remote_directory', ''),
+                                'local_directory': item.get('local_directory', ''),
+                                'sources': item.get('sources') or [],
+                                'compile_exit_code': item.get('compile_exit_code'),
+                                'sim_exit_code': item.get('sim_exit_code'),
+                                'coverage': item.get('coverage') or {},
+                            })
+                        chat['updated_at'] = now()
+                        save_data()
                     elif check_connection:
                         check = connection_probe(cfg)
                         st.success('SSH 连接和安全的工具路径探测成功。')
@@ -676,7 +692,7 @@ with st.expander('🔗 Linux 工程目录与 VCS 执行（v8.2）', expanded=Fal
                                                       'excluded_sources', 'coverage', 'coverage_error') if k in r}
                         chat['remote_project_config'] = {'remote_base': remote_base.strip(), 'project_name': project_name.strip()}
                         chat.setdefault('remote_history', []).append(meta)
-                        chat['remote_history'] = chat['remote_history'][-30:]
+                        chat['remote_history'] = chat['remote_history'][-500:]
                         chat['updated_at'] = now()
                         save_data()
                         st.success('工程上传完成。' if mode == 'upload' else f"VCS 运行结束，判定：{r['status']}")
@@ -825,7 +841,7 @@ with st.expander('🔗 Linux 工程目录与 VCS 执行（v8.2）', expanded=Fal
     with st.expander('📜 运行历史（逐轮查看）', expanded=False):
         from eda_analysis import load_run_detail
 
-        hist = [h for h in chat.get('remote_history', []) if h.get('mode') == 'vcs']
+        hist = [h for h in chat.get('remote_history', []) if h.get('mode') in ('vcs', 'autofix')]
         if not hist:
             st.caption('还没有 VCS 运行记录。')
         else:
