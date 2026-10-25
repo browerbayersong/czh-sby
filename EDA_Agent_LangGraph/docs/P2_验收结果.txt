@@ -4,9 +4,9 @@
 [PASS] 测试：远程层回归（超时/失败）  
 [PASS] 测试：闭环逻辑  
 [PASS] 工具路径可用环境变量覆盖  /opt/custom/vcs | /opt/custom/urg
-[FAIL] 运行历史：每轮都有 SHA-256 清单  6/13；缺：vcs_001, vcs_002, vcs_003, vcs_005, vcs_010, vcs_012
+[PASS] 运行历史：每轮都有 SHA-256 清单  13/13
 [PASS] 运行历史：详情可读（摘要/日志）  至少一轮可读
 [PASS] 前端：日志查看已用 fragment 缓解（不证明已修复）  fragment + 回退
 [PASS] 换工程可用（FIFO / 加法器 / 计数器）  fifo_sync_v1:通过 cla256_v1:通过 counter_v82:通过
 
-9/10 项通过
+10/10 项通过

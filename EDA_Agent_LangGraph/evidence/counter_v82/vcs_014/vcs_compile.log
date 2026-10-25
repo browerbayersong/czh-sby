@@ -1,0 +1,21 @@
+                         Chronologic VCS (TM)
+         Version I-2014.03_Full64 -- Thu Oct 22 14:32:48 2026
+               Copyright (c) 1991-2014 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'generated/rtl/counter_8bit.v'
+Parsing design file 'generated/tb/tb_counter_8bit.v'
+
+Error-[SE] Syntax error
+  Following verilog source has syntax error :
+  "generated/tb/tb_counter_8bit.v", 25: token is 'bins'
+      integer     bins [0:9];
+                      ^
+  System verilog  keyword 'bins' is not expected to be used in this context.
+
+1 error
+CPU time: .242 seconds to compile
