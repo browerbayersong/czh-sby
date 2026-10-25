@@ -22,14 +22,14 @@ from typing import Any
 
 from eda_agent_v8_core import safe_rel_name, SPECIAL_NAMES
 
-VCS_BINARY = '/opt/Synopsys/VCS2014/bin/vcs'
-URG_BINARY = '/opt/Synopsys/VCS2014/bin/urg'
+VCS_BINARY = os.environ.get('EDA_VCS_BIN', '/opt/Synopsys/VCS2014/bin/vcs')
+URG_BINARY = os.environ.get('EDA_URG_BIN', '/opt/Synopsys/VCS2014/bin/urg')
 COVERAGE_METRICS = 'line+cond+fsm+tgl+branch'
 COVERAGE_TIMEOUT = 120
 # 覆盖率会显著增加仿真收尾时的内存/磁盘开销；资源紧张时可用 EDA_COVERAGE=0 关掉
 COVERAGE_ENABLED = os.environ.get('EDA_COVERAGE', '1').strip().lower() not in {'0', 'false', 'off', 'no'}
-DC_BINARY = '/opt/Synopsys/Synplify2015/bin/dc_shell'
-ICC_BINARY = '/opt/Synopsys/ICC2016/bin/icc_shell'
+DC_BINARY = os.environ.get('EDA_DC_BIN', '/opt/Synopsys/Synplify2015/bin/dc_shell')
+ICC_BINARY = os.environ.get('EDA_ICC_BIN', '/opt/Synopsys/ICC2016/bin/icc_shell')
 SOURCE_SUFFIXES = frozenset({'.v', '.sv', '.vh', '.svh', '.f', '.tcl', '.sdc', '.txt', '.py', '.sh', '.mk', '.md', '.json', '.yml', '.yaml', '.cfg', '.ini', '.xdc'})
 VERILOG_SUFFIXES = frozenset({'.v', '.sv'})
 MAX_FILES = 512
@@ -264,6 +264,157 @@ def file_preview(workspace: Path) -> dict[str, Any]:
         error = str(exc)
     return {'file_count': len(fs), 'total_bytes': sum(p.stat().st_size for _, p in fs),
             'vcs_preview_error': error, **manifest}
+
+
+COMPILE_CFG_NAME = 'compile_cfg.json'
+ALLOWED_VCS_OPTIONS = frozenset({
+    '-sverilog', '+v2k', '-timescale=1ns/1ps', '+lint=all', '+lint=context',
+})
+DEFINE_NAME_RE = re.compile(r'^[A-Za-z_][A-Za-z0-9_]*$')
+DEFINE_VALUE_RE = re.compile(r'^[A-Za-z0-9_.+-]*$')
+
+
+def _parse_filelist(text: str, origin: str) -> dict[str, list[str]]:
+    """解析 .f：支持 +incdir+、+define+ 与源码路径；其余指令直接拒绝。"""
+    files: list[str] = []
+    incdirs: list[str] = []
+    defines: list[str] = []
+    for raw in text.splitlines():
+        line = raw.split('//', 1)[0].strip()
+        if not line or line.startswith('#'):
+            continue
+        line = line.rstrip('\\').strip()
+        for token in line.split():
+            if token.startswith('+incdir+'):
+                incdirs.extend(x for x in token[len('+incdir+'):].split('+') if x)
+            elif token.startswith('+define+'):
+                defines.extend(x for x in token[len('+define+'):].split('+') if x)
+            elif token.startswith(('-y', '+libext', '-v')):
+                raise RemoteError(f'{origin}：暂不支持 filelist 指令 {token}')
+            elif token.startswith('-'):
+                raise RemoteError(f'{origin}：filelist 中出现未支持的选项 {token}')
+            else:
+                files.append(token)
+    return {'files': files, 'incdirs': incdirs, 'defines': defines}
+
+
+def _norm_local(rel: str, workspace: Path, what: str) -> str:
+    """本地配置文件的相对路径校验：必须在工作空间内、不允许符号链接。"""
+    norm = posixpath.normpath(str(rel).replace('\\', '/').strip())
+    if not norm or norm.startswith('/') or norm.startswith('..') or ':' in norm:
+        raise RemoteError(f'{what} 路径不合法：{rel}')
+    target = (workspace / norm)
+    if target.is_symlink() or not target.is_file():
+        raise RemoteError(f'{what} 不存在：{rel}')
+    if not target.resolve().is_relative_to(workspace.resolve()):
+        raise RemoteError(f'{what} 超出工作空间：{rel}')
+    return norm
+
+
+def _norm_rel(rel: str, available: set[str], what: str) -> str:
+    norm = posixpath.normpath(str(rel).replace('\\', '/').strip())
+    if not norm or norm.startswith('/') or norm.startswith('..') or ':' in norm:
+        raise RemoteError(f'{what} 路径不合法：{rel}')
+    if norm not in available:
+        raise RemoteError(f'{what} 引用了未上传的文件：{rel}')
+    return norm
+
+
+def _norm_incdir(rel: str, available: set[str]) -> str:
+    norm = posixpath.normpath(str(rel).replace('\\', '/').strip().rstrip('/'))
+    if not norm or norm.startswith('/') or norm.startswith('..') or ':' in norm:
+        raise RemoteError(f'include 目录不合法：{rel}')
+    if not any(f.startswith(norm + '/') for f in available):
+        raise RemoteError(f'include 目录下没有已上传文件：{rel}')
+    return norm
+
+
+def _norm_defines(raw) -> list[str]:
+    items: list[str] = []
+    if isinstance(raw, dict):
+        for key, value in raw.items():
+            items.append(f'{key}={value}' if value not in (None, '') else str(key))
+    elif isinstance(raw, list):
+        items = [str(x) for x in raw]
+    elif raw:
+        raise RemoteError('defines 必须是对象或数组')
+
+    out: list[str] = []
+    for item in items:
+        name, _, value = item.partition('=')
+        if not DEFINE_NAME_RE.fullmatch(name):
+            raise RemoteError(f'宏名不合法：{item}')
+        if value and not DEFINE_VALUE_RE.fullmatch(value):
+            raise RemoteError(f'宏值不合法：{item}')
+        out.append(item)
+    return sorted(set(out))
+
+
+def load_compile_config(workspace: Path, files: list[tuple[str, Path]]) -> dict[str, Any] | None:
+    """读取可选的 compile_cfg.json；没有则返回 None（沿用自动扫描）。"""
+    cfg_path = workspace / COMPILE_CFG_NAME
+    if not cfg_path.is_file():
+        return None
+    try:
+        data = json.loads(cfg_path.read_text(encoding='utf-8'))
+    except (OSError, ValueError) as exc:
+        raise RemoteError(f'{COMPILE_CFG_NAME} 解析失败：{exc}') from exc
+    if not isinstance(data, dict):
+        raise RemoteError(f'{COMPILE_CFG_NAME} 必须是 JSON 对象')
+    unknown = set(data) - {'filelist', 'defines', 'incdirs', 'tb_top', 'options'}
+    if unknown:
+        raise RemoteError(f'{COMPILE_CFG_NAME} 含未知字段：{sorted(unknown)}')
+
+    available = {rel for rel, _ in files}
+    sources: list[str] = []
+    incdirs: list[str] = []
+    defines: list[str] = []
+
+    raw_list = data.get('filelist', [])
+    if isinstance(raw_list, str):
+        raw_list = [raw_list]
+    if not isinstance(raw_list, list):
+        raise RemoteError('filelist 必须是数组或字符串')
+    for item in raw_list:
+        if not isinstance(item, str):
+            raise RemoteError('filelist 元素必须是字符串')
+        rel = item.replace('\\', '/').strip()
+        if not rel:
+            continue
+        if rel.endswith('.f'):
+            rel = _norm_local(rel, workspace, 'filelist')
+            parsed = _parse_filelist(
+                (workspace / rel).read_text(encoding='utf-8', errors='replace'), rel)
+            sources.extend(parsed['files'])
+            incdirs.extend(parsed['incdirs'])
+            defines.extend(parsed['defines'])
+        else:
+            sources.append(rel)
+
+    sources = [_norm_rel(rel, available, 'filelist') for rel in sources]
+    if not sources:
+        raise RemoteError('compile_cfg.json 的 filelist 为空')
+
+    for rel in data.get('incdirs', []) or []:
+        incdirs.append(_norm_incdir(rel, available))
+    defines = _norm_defines(data.get('defines')) + _norm_defines(defines)
+
+    tb_top = data.get('tb_top')
+    if tb_top is not None and (not isinstance(tb_top, str) or not NAME_RE.fullmatch(tb_top)):
+        raise RemoteError('compile_cfg.json 的 tb_top 不合法')
+
+    options = data.get('options', []) or []
+    if not isinstance(options, list) or any(opt not in ALLOWED_VCS_OPTIONS for opt in options):
+        raise RemoteError(f'options 只允许：{sorted(ALLOWED_VCS_OPTIONS)}')
+
+    return {
+        'sources': sources,
+        'incdirs': sorted(set(incdirs)),
+        'defines': defines,
+        'tb_top': tb_top,
+        'options': list(dict.fromkeys(options)),
+        'used': True,
+    }
 
 
 def _lstat_dir(sftp, path: str) -> bool:
@@ -646,8 +797,12 @@ def remote_job(cfg: SSHSettings, workspace: Path, chat_id: str,
     _checked_project_name(project_name)
     files = local_source_files(workspace)
     manifest: dict[str, Any] | None = None
+    compile_plan: dict[str, Any] | None = None
     if mode == 'vcs':
         manifest = source_manifest(files)
+        compile_plan = load_compile_config(workspace, files)
+        if compile_plan and compile_plan.get('tb_top'):
+            tb_top = compile_plan['tb_top']
         _validate_tb(tb_top, manifest)
     run_id = uuid4().hex  # local metadata identity only; never appears in Linux path
     ssh = ssh_connect(cfg)
@@ -677,13 +832,23 @@ def remote_job(cfg: SSHSettings, workspace: Path, chat_id: str,
             build_dir = posixpath.join(run_dir, 'build')
             _create_new_dir(sftp, build_dir)
             q = shlex.quote
-            relsrc = manifest['sources']
-            include_args = ['+incdir+' + d for d in manifest['incdirs'] if d]
+            if compile_plan:
+                relsrc = compile_plan['sources']
+                incdirs = compile_plan['incdirs']
+                defines = compile_plan['defines']
+            else:
+                relsrc = manifest['sources']
+                incdirs = manifest['incdirs']
+                defines = []
+            include_args = ['+incdir+' + d for d in incdirs if d]
+            define_args = ['+define+' + d for d in defines]
             # run from src/ so v7 generated/rtl and inputs/ paths still work.
             args = [VCS_BINARY, '-full64', '-sverilog', '-timescale=1ns/1ps']
+            if compile_plan:
+                args += [o for o in compile_plan['options'] if o not in args]
             if COVERAGE_ENABLED:
                 args += ['-cm', COVERAGE_METRICS, '-cm_dir', '../build/cov.vdb']
-            args += ['-top', tb_top, '-o', '../build/simv'] + include_args + relsrc
+            args += ['-top', tb_top, '-o', '../build/simv'] + define_args + include_args + relsrc
             compile_cmd = (f'cd {q(src_dir)} && timeout {COMPILE_TIMEOUT}s '
                            + ' '.join(q(a) for a in args)
                            + ' > ../build/vcs_compile.log 2>&1')
@@ -691,7 +856,8 @@ def remote_job(cfg: SSHSettings, workspace: Path, chat_id: str,
             c_log = _read_remote_log(sftp, 'vcs_compile.log', build_dir)
             result.update(compile_exit_code=code, compile_log=c_log,
                           compile_command=' '.join(q(a) for a in args),
-                          sources=relsrc, excluded_sources=manifest['excluded'])
+                          sources=relsrc, excluded_sources=manifest['excluded'],
+                          compile_config_used=bool(compile_plan), defines=defines)
             if code != 0:
                 result['status'] = 'compile_failed'
             else:
