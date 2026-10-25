@@ -1,0 +1,7 @@
+{
+  "filelist": ["files.f"],
+  "defines": {"SIM_CFG": "1"},
+  "incdirs": ["generated/rtl/inc"],
+  "tb_top": "tb_counter_top",
+  "options": ["-sverilog"]
+}

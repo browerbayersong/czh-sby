@@ -1,0 +1,15 @@
+{
+  "format": "eda-agent-snapshot-v1",
+  "chat_id": "ffffffffffffffffffffffffffffffff",
+  "project_name": "p2cfg_sv",
+  "label": "vcs_002",
+  "created_at": "2026-10-25T21:57:01",
+  "files_sha256": {
+    "generated/rtl/counter_top.sv": "9e26667933cb0e8898b72e3e1284eafa66649127767497d0a497b078d1d9f2ed",
+    "generated/rtl/inc/cfg.vh": "2eacca35dadd2bd4175be818f668ec27daa1326b1e791245fb41ce80312fac8f",
+    "generated/rtl/pkg_defs.sv": "d06a070dadf7b2bb8c5edab041762ebefd528269c6cc68855c89d1fcde5db1a0",
+    "generated/tb/tb_counter_top.sv": "35b51821cbd5863c4300c49d378074cf0e24be47b3fb117ad1cdf58a25e55fa8",
+    "compile_cfg.json": "58a85af6f8dccb1f45a8f678ac94e842f3e0da0fe7222da7091edcf4655fc035",
+    "files.f": "3bd9eb5da2d6bfcbbcc01e7f0eccab7fc38b015b2e6d67b5e0af4d2975c8fefa"
+  }
+}

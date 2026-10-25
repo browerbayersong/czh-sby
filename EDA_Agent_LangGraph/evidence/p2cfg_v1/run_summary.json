@@ -1,0 +1,40 @@
+{
+  "run_id": "606fa6ebd5474f3081729130e28a9f63",
+  "mode": "vcs",
+  "file_count": 6,
+  "when": "2026-10-25T21:57:01",
+  "project_directory": "/home/IC/Desktop/EDA_Projects/p2cfg_sv",
+  "remote_directory": "/home/IC/Desktop/EDA_Projects/p2cfg_sv/runs/vcs_002",
+  "source_snapshot": "/home/IC/Desktop/EDA_Projects/p2cfg_sv/runs/vcs_002/src",
+  "run_label": "vcs_002",
+  "upload_ok": true,
+  "status": "passed_by_marker",
+  "compile_exit_code": 0,
+  "compile_command": "/opt/Synopsys/VCS2014/bin/vcs -full64 -sverilog -timescale=1ns/1ps -cm line+cond+fsm+tgl+branch -cm_dir ../build/cov.vdb -top tb_counter_top -o ../build/simv +define+SIM_CFG=1 +define+FROM_F=1 +incdir+generated/rtl/inc generated/rtl/pkg_defs.sv generated/rtl/counter_top.sv generated/tb/tb_counter_top.sv",
+  "sources": [
+    "generated/rtl/pkg_defs.sv",
+    "generated/rtl/counter_top.sv",
+    "generated/tb/tb_counter_top.sv"
+  ],
+  "excluded_sources": [],
+  "compile_config_used": true,
+  "defines": [
+    "SIM_CFG=1",
+    "FROM_F=1"
+  ],
+  "sim_exit_code": 0,
+  "coverage": {
+    "score": 76.85,
+    "line": 88.89,
+    "cond": null,
+    "toggle": 61.67,
+    "fsm": null,
+    "branch": 80.0
+  },
+  "coverage_exit_code": 0,
+  "sync": {
+    "created": 6,
+    "updated_with_backup": 0,
+    "unchanged": 0
+  }
+}

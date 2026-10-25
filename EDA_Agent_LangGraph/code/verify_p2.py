@@ -161,12 +161,29 @@ def check_projects() -> None:
     record('换工程可用（FIFO / 加法器 / 计数器）', all(status.values()), detail)
 
 
+def check_compile_config_run() -> None:
+    """真实跑过一次带 compile_cfg.json 的 VCS（宏/include/SV package 顺序）。"""
+    for base in _evidence_dirs():
+        f = base / 'p2cfg_v1' / 'run_summary.json'
+        if f.is_file():
+            try:
+                s = json.loads(f.read_text(encoding='utf-8'))
+            except ValueError:
+                continue
+            ok = s.get('compile_config_used') is True and s.get('status') == 'passed_by_marker'
+            record('配置工程实机运行（宏/include/package）', ok,
+                   f"status={s.get('status')} defines={s.get('defines')} sources={len(s.get('sources') or [])}")
+            return
+    record('配置工程实机运行（宏/include/package）', False, '未找到 evidence/p2cfg_v1')
+
+
 def main() -> int:
     run_tests()
     check_env_override()
     check_history()
     check_fragment()
     check_projects()
+    check_compile_config_run()
 
     print('\n===== P2 验收结果 =====')
     width = max(len(name) for name, _, _ in results)
