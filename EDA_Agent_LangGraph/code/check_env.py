@@ -9,6 +9,7 @@ from __future__ import annotations
 import importlib
 import os
 import sys
+from pathlib import Path
 from importlib.metadata import PackageNotFoundError, version
 
 from dotenv import load_dotenv
@@ -24,15 +25,9 @@ REQUIRED = [
     ("langchain", "langchain"),
     ("langchain-openai", "langchain_openai"),
     ("python-dotenv", "dotenv"),
+    ("streamlit", "streamlit"),
+    ("paramiko", "paramiko"),
 ]
-
-
-def mask(value: str) -> str:
-    if not value:
-        return "<未设置>"
-    if len(value) <= 8:
-        return value[:2] + "***"
-    return f"{value[:6]}...{value[-4:]}"
 
 
 def main() -> int:
@@ -48,22 +43,22 @@ def main() -> int:
             print(f"  FAIL {pkg:<16} {exc!r}")
 
     print("\n[.env 配置]")
-    loaded = load_dotenv()
+    loaded = load_dotenv(Path(__file__).with_name('.env'))
     print(f"  .env 已加载: {loaded}")
 
     for key in ("OPENAI_API_KEY", "OPENAI_BASE_URL",
                 "DEEPSEEK_API_KEY", "DEEPSEEK_BASE_URL", "DEEPSEEK_MODEL"):
         value = os.getenv(key, "")
-        shown = mask(value) if key.endswith("_KEY") else (value or "<未设置>")
+        if key.endswith('_KEY'):
+            shown = '<已设置>' if value and value != 'sk-xxx' else '<未设置>'
+        else:
+            shown = value or '<未设置>'
         print(f"  {key:<17} = {shown}")
 
-    placeholders = [
-        key for key in ("OPENAI_API_KEY", "DEEPSEEK_API_KEY")
-        if os.getenv(key, "") in ("", "sk-xxx")
-    ]
-    if placeholders:
-        print(f"\n  提示：{', '.join(placeholders)} 仍是占位符，替换为真实密钥后才能调用 API。")
-    elif not ok:
+    api_key = os.getenv('DEEPSEEK_API_KEY') or os.getenv('OPENAI_API_KEY') or ''
+    if api_key in ('', 'sk-xxx'):
+        print("\n  提示：尚未配置模型 API Key；可运行离线测试，真实生成与纠错需要配置密钥。")
+    if not ok:
         print("\n  提示：依赖缺失，请先按 README 安装。")
 
     return 0 if ok else 1

@@ -1,0 +1,52 @@
+{
+  "run": "upload_20261025_152824_49115388",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 448,
+      "sha256": "b0dd0b9ac96bc8654ffebf95025b5e495e810435916e1e374bac41de05c6bf26"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 1469,
+      "sha256": "5458f4952dc301324d0f3944bc39e295f98a30fc02eaea70c022248418b7d087"
+    },
+    {
+      "path": "build/report_captures/manifest.json",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/dc_power.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/dc_timing.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/icc_drc.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/icc_lvs.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/pt_power.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/pt_timing.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/dc_power.txt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/icc_drc.txt",
+      "error": "[Errno 2] No such file"
+    }
+  ],
+  "status": "completed"
+}

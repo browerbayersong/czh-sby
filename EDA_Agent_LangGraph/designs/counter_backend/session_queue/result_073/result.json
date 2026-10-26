@@ -1,0 +1,31 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90",
+  "entries": [
+    {
+      "name": "license",
+      "size": 4096,
+      "mode": "0o40755"
+    },
+    {
+      "name": "aci",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "fe_TSMCHOME_tpdn90g3_130a",
+      "size": 4096,
+      "mode": "0o40755"
+    },
+    {
+      "name": "fe_TSMCHOME_tpdn90g18_130a",
+      "size": 4096,
+      "mode": "0o40755"
+    },
+    {
+      "name": "fe_TSMCHOME_tpdn90g2_130a",
+      "size": 4096,
+      "mode": "0o40755"
+    }
+  ],
+  "status": "completed"
+}

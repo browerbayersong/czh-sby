@@ -1,0 +1,25 @@
+Read-only original report excerpt
+PT statistical wire-load power estimate
+
+****************************************
+Report : Averaged Power
+	-verbose
+	-nosplit
+Design : counter_8bit
+Version: K-2015.06
+Date   : Sun Oct 25 15:26:25 2026
+****************************************
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 1.723e-06   (11.41%)
+  Cell Internal Power  = 1.301e-05   (86.20%)
+  Cell Leakage Power   = 3.597e-07   ( 2.38%)
+                         ---------
+Total Power            = 1.510e-05  (100.00%)
+
+1

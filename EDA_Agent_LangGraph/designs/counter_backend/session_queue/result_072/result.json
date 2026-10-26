@@ -1,0 +1,100 @@
+{
+  "run": "upload_20261025_140252_6c3cbddf",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 447,
+      "sha256": "5011c0f160fe69b962ad62e3b8f03fb23e0a1680d23e8ffa25ee81c1c606a862"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 363139,
+      "sha256": "fbc683436e881754eb721f0fc46da531b125cd9b467ee53a44f28cb5085ef366"
+    },
+    {
+      "path": "build/icc/routing_drc.rpt",
+      "bytes": 15793,
+      "sha256": "88e17a3834481ee1d23d73591d73de196493bd2cce8442ae66fc085e264fc28d"
+    },
+    {
+      "path": "build/icc/pg_connectivity.rpt",
+      "bytes": 673,
+      "sha256": "270d4f5bec68e231a704f9f392037fbb4897b37e7d36fbbf3f0e9b6a9756dd31"
+    },
+    {
+      "path": "build/icc/lvs.rpt",
+      "bytes": 9682,
+      "sha256": "1aa5d264c7fe768d16f74738a3f688fbd3c5a9272e34690d0fccc6bb76a59178"
+    },
+    {
+      "path": "build/icc/physical.rpt",
+      "bytes": 16892,
+      "sha256": "907909e4d124c6a7ff5bd301abf7a500eb6f6188090113d3bc0d96e3608ce6bd"
+    },
+    {
+      "path": "build/icc/area.rpt",
+      "bytes": 979,
+      "sha256": "47483fd3557cba2fe3d569ee2b8bedfd241fb1a791e76090354cfb3d5f8fbfa2"
+    },
+    {
+      "path": "build/icc/timing_setup.rpt",
+      "bytes": 1670,
+      "sha256": "270deb695f44c1d1060aa9859e3ef5d2324ff6c827552ef9f09333055a03e1d7"
+    },
+    {
+      "path": "build/icc/timing_hold.rpt",
+      "bytes": 1670,
+      "sha256": "498a1c7d1c240cac01b204105a17a70a5914ae6c860e819cade140faea169198"
+    },
+    {
+      "path": "build/icc/constraints.rpt",
+      "bytes": 1445,
+      "sha256": "8a1c990c826a6b4d6600729db80f07b309da5d94a0aefb1ae088abe33e177571"
+    },
+    {
+      "path": "build/icc/power.rpt",
+      "bytes": 2156,
+      "sha256": "924917f41ae6b85a417d735457840e607e3702db10d4bf57fa15d3bac5f2c1cd"
+    },
+    {
+      "path": "build/icc/library_check.rpt",
+      "bytes": 103,
+      "sha256": "a3e5d99d188b4ec417111738730014c6c1065a63392ff9107e934bb9ffb8af4c"
+    },
+    {
+      "path": "build/icc/units.rpt",
+      "bytes": 429,
+      "sha256": "09659dedcdc0d6d0e0086d98620b8433704dc59b6c1a0b666178236e562951a0"
+    },
+    {
+      "path": "build/icc/rc_model.txt",
+      "bytes": 154,
+      "sha256": "e8f02bc5ba30b010441790f8d0dedcdb4b903daeff0184215b764b659abc8f9d"
+    },
+    {
+      "path": "build/icc/counter_8bit.routed.v",
+      "bytes": 2706,
+      "sha256": "5a958c6258f22257c67916fba439530ea8a1b35b976ab689d7513e41d036c85c"
+    },
+    {
+      "path": "build/icc/counter_8bit.sdc",
+      "bytes": 1742,
+      "sha256": "c9238e7112e79321b606064c3370ffe666a61eab25de45e2d02e2226edbc57d1"
+    },
+    {
+      "path": "build/icc/counter_8bit.spef",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/icc/counter_8bit.gds",
+      "bytes": 4096,
+      "sha256": "7010e6f51689d5e20a37edfabaf225c28dbe1f2bfa95f4dede0c73100652667e"
+    },
+    {
+      "path": "build/icc/activity_annotation.rpt",
+      "bytes": 203,
+      "sha256": "f11e406037dc92dcc9f80f02d40f5ae204c93ed66bc2358dbc3f69998089a099"
+    }
+  ],
+  "status": "completed"
+}

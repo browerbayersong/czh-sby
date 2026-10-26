@@ -1,0 +1,26 @@
+{
+  "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_003",
+  "entries": [
+    {
+      "name": "run_summary.json",
+      "size": 530,
+      "mode": "0o100664"
+    },
+    {
+      "name": "build",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "src",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "snapshot_manifest.json",
+      "size": 1283,
+      "mode": "0o100664"
+    }
+  ],
+  "status": "completed"
+}

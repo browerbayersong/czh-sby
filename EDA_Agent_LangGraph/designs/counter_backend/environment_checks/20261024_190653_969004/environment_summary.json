@@ -1,0 +1,34 @@
+{
+  "when": "2026-10-24T19:08:29",
+  "host": "192.168.142.128",
+  "user": "IC",
+  "status": "inventory_collected",
+  "sections": {
+    "identity_and_resources": {
+      "exit_code": 0,
+      "command": "id -un; uname -srmo; df -h /home/IC /tmp; free -m",
+      "log": "identity_and_resources.txt"
+    },
+    "tool_paths": {
+      "exit_code": 0,
+      "command": "for t in dc_shell dct_shell design_vision icc_shell pt_shell lc_shell vcs urg; do command -v \"$t\" || true; done; find /opt/Synopsys /opt/synopsys /usr/local -maxdepth 6 -type f \\( -name dc_shell -o -name design_vision -o -name icc_shell -o -name pt_shell -o -name lc_shell \\) -print 2>/dev/null | head -n 60",
+      "log": "tool_paths.txt"
+    },
+    "technology_candidates": {
+      "exit_code": 0,
+      "command": "timeout 45s find /home/IC /opt /usr/local -maxdepth 7 \\( -name .ssh -o -name .cache -o -name .git -o -name cov.vdb -o -name runs -o -name .mozilla -o -name .config -o -name .local -o -name .gnome2 -o -name .gconf \\) -prune -o -type f \\( -name \"*.tf\" -o -name \"*.tluplus\" -o -name \"*.tlup\" -o -name \"*.db\" -o -name \"*.lib\" -o -name \"*.lef\" -o -name \"*tech2itf*\" \\) -print 2>/dev/null | head -n 260",
+      "log": "technology_candidates.txt"
+    },
+    "reference_flow_candidates": {
+      "exit_code": 0,
+      "command": "timeout 40s find /home/IC/Desktop /home/IC/Document /home/IC/Documents /opt/Synopsys -maxdepth 6 \\( -name .git -o -name cov.vdb -o -name runs -o -name .ssh \\) -prune -o -type f \\( -name \"*.tcl\" -o -name \"*.sdc\" -o -name \".synopsys_dc.setup\" -o -name \".synopsys_icc.setup\" -o -name \"*icc*readme*\" \\) -print 2>/dev/null | head -n 180; for p in /home/IC/.synopsys_dc.setup /home/IC/.synopsys_icc.setup; do if test -f \"$p\"; then printf \"\\nSETUP_PATH %s\\n\" \"$p\"; grep -E \"(target_library|link_library|search_path|mw_reference|tech_file|tlu|\\.db|\\.tf)\" \"$p\" | head -n 35; fi; done",
+      "log": "reference_flow_candidates.txt"
+    },
+    "physical_library_candidates": {
+      "exit_code": 0,
+      "command": "timeout 35s find /home/IC /opt -maxdepth 7 \\( -name .ssh -o -name .cache -o -name .git -o -name cov.vdb -o -name runs -o -name .mozilla -o -name .config -o -name .local \\) -prune -o \\( -type d \\( -name FRAM -o -name CEL -o -name milkyway -o -iname \"*smic*\" -o -iname \"*saed*\" -o -iname \"*tsmc*\" -o -iname \"*nangate*\" \\) -o -type f -name lib \\) -print 2>/dev/null | head -n 130",
+      "log": "physical_library_candidates.txt"
+    }
+  },
+  "scope": "bounded inventory only; executable paths do not prove licenses or usable process libraries"
+}

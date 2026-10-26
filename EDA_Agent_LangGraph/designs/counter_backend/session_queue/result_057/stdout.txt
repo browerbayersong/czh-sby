@@ -1,0 +1,17 @@
+2.6.32-573.el6.x86_64
+ 13:38:13 up 10 min,  1 user,  load average: 1.45, 0.51, 0.25
+             total       used       free     shared    buffers     cached
+Mem:          1991       1269        721          3         37        511
+-/+ buffers/cache:        719       1271 
+Swap:            0          0          0 
+Filesystem                 1024-blocks     Used Available Capacity Mounted on
+/dev/mapper/vg_eda-lv_root   515420624 86832468 402399564      18% /
+eth0      Link encap:Ethernet  HWaddr A4:DB:30:35:75:57  
+          inet addr:192.168.142.129  Bcast:192.168.142.255  Mask:255.255.255.0
+          inet6 addr: fe80::a6db:30ff:fe35:7557/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:472 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:377 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:106948 (104.4 KiB)  TX bytes:99263 (96.9 KiB)
+

@@ -1,0 +1,93 @@
+{
+  "run": "upload_20261025_153507_cb2b9962",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 449,
+      "sha256": "4aaa11dbbde19e7019f580283f3c6daab469052613421a86e6268838b709c8fd"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 2014,
+      "sha256": "29d92086d4ed7468356bc6f1a1418f3f0e100cd15e6c50354f22e29ef1460500"
+    },
+    {
+      "path": "build/report_captures/manifest.json",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/dc_power.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/dc_power.txt",
+      "bytes": 1432,
+      "sha256": "10901c8958e3bdeb9992ac15a5fd958add57b952b47c20fbd45f2813a207a17a"
+    },
+    {
+      "path": "build/report_captures/dc_power.png.json",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/dc_timing.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/dc_timing.txt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/dc_timing.png.json",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/icc_drc.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/icc_drc.txt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/icc_drc.png.json",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/icc_lvs.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/icc_lvs.txt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/icc_lvs.png.json",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/pt_power.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/pt_power.txt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/pt_power.png.json",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/pt_timing.png",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/pt_timing.txt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/report_captures/pt_timing.png.json",
+      "error": "[Errno 2] No such file"
+    }
+  ],
+  "status": "completed"
+}

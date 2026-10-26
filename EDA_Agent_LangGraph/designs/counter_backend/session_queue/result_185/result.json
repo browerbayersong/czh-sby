@@ -1,0 +1,16 @@
+{
+  "run": "upload_20261026_130102_35ef2344",
+  "files": [
+    {
+      "path": "snapshot_manifest.json",
+      "bytes": 4190,
+      "sha256": "531ec90fcd19f13b424ba25cb3532b0303d6f681b76da1f4e9c0344e61f9fe57"
+    },
+    {
+      "path": "src/generated/scripts/drc_ai_candidate_20261026_ai_01_02.tcl",
+      "bytes": 2812,
+      "sha256": "24c433828b94cc8473163be88d5238357c504c5f72f4d4c7173800ecae3f4f8a"
+    }
+  ],
+  "status": "completed"
+}

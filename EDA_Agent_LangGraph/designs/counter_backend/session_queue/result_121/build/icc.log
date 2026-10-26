@@ -1,0 +1,232 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+foreach command {route_zrt_detail route_zrt_eco remove_routes create_route_guide set_route_zrt_detail_options copy_mw_lib} {
+    puts "EDA_ECO_HELP_BEGIN $command"
+    if {[catch {help -verbose $command} message]} {puts $message}
+    puts "EDA_ECO_HELP_END $command"
+}
+EDA_ECO_HELP_BEGIN route_zrt_detail
+ route_zrt_detail     # run zrt detail route
+   [-incremental (false|true)]
+                          (do incremental routing (default false))
+   [-initial_drc_from_input (false|true)]
+                          (Use the drcs in the cell as the initial drc if ture (default false))
+   [-start_iteration <int>]
+                          (start iteration for detail route (default 0): 
+                           Range: 0 to 1000)
+   [-max_number_iterations <int>]
+                          (max number of detail route iterations (default 40): 
+                           Range: 0 to 1000)
+   [-coordinates <{{llx1 lly1} {urx1 ury1} ....}>]
+                          (area routing bounding box(es))
+
+EDA_ECO_HELP_END route_zrt_detail
+EDA_ECO_HELP_BEGIN route_zrt_eco
+ route_zrt_eco        # run zrt eco route
+   [-nets <nets>]         (eco route the nets provided (with this option open net driven option is ignored))
+   [-max_detail_route_iterations <int>]
+                          (max number of detailed routing iterations: 
+                           Range: 1 to 1000)
+   [-utilize_dangling_wires (false|true)]
+                          (utilize dangling wires (default true))
+   [-reroute (any_nets|modified_nets_only|modified_nets_first_then_others)]
+                          (reroute strategy to fix drc (default any_nets))
+   [-max_reported_nets <int>]
+                          (max number of changed nets to be reported (default 100). -1 means all nets changed by the command will be reported.: 
+                           Range: -1 to 2147483647)
+   [-open_net_driven (false|true)]
+                          (check and fix drcs on open nets (default false). this options is ignored if -nets is specified.)
+   [-reuse_existing_global_route (false|true)]
+                          (do incremental routing in gr (default false))
+
+EDA_ECO_HELP_END route_zrt_eco
+EDA_ECO_HELP_BEGIN remove_routes
+Information: No commands matched 'remove_routes'. (CMD-040)
+EDA_ECO_HELP_END remove_routes
+EDA_ECO_HELP_BEGIN create_route_guide
+ create_route_guide   # Create route guide
+   -coordinate rect       (route guide bounding box)
+   [-no_signal_layers string]
+                          (layers on which signal routing isn't allowed)
+   [-no_preroute_layers string]
+                          (layers on which preroute isn't allowed)
+   [-preferred_direction_only_layers string]
+                          (layers on which non-preferred wire isn't allowed)
+   [-zero_min_spacing]    (allow zero min spacing)
+   [-repair_as_single_sbox]
+                          (repair as single sbox)
+   [-horizontal_track_utilization percentage]
+                          (horizontal track utilization: 
+                           Range: 0 to 1000)
+   [-vertical_track_utilization percentage]
+                          (vertical track utilization: 
+                           Range: 0 to 1000)
+   [-track_utilization_layers string]
+                          (layers on which track utilization will be set by horizontal_track_utilization or vertical_track_utilization)
+   [-switch_preferred_direction_layers string]
+                          (switch preferred direction on specified layers)
+   [-name string]         (route guide name)
+   [-access_preference string]
+                          (Specifies varying degrees of wire/via access preference for router to connect to existing shapes in a given rectangular region)
+   [-single_layer_routing string]
+                          (layers on which single layer routing should be encouraged)
+   [-max_number_of_pattern string]
+                          ({layer1 number1 type1 layer2 number2 type2 ...})
+   [-design_boundary_blockage string]
+                          (layers on which router will follow design boundary blockage rules)
+
+EDA_ECO_HELP_END create_route_guide
+EDA_ECO_HELP_BEGIN set_route_zrt_detail_options
+ set_route_zrt_detail_options # set zrt router detail route options
+   [-antenna  (false|true)]
+                          (flag if analyze/optimize antenna (default: true))
+   [-antenna_fixing_preference  (hop_layers|use_diodes)]
+                          (specify prefence of hop layers vs use diodes to fix antenna violations (default: hop_layers))
+   [-antenna_on_iteration <int>]
+                          (iteration number that antenna get turned on (default: 1): 
+                           Range: 1 to 19)
+   [-antenna_verbose_level <int>]
+                          (Verbose level for analyze/optimize antenna (default: 1): 
+                           Range: 0 to 2)
+   [-check_antenna_on_pg  (false|true)]
+                          (flag if check/fix antenna on PG nets (default: false))
+   [-continue_after_large_design_rule_value_error  (false|true)]
+                          (if terminate on large design rule values (default: false))
+   [-detail_route_special_design_rule_fixing_stage  (none|early_routing|late_routing)]
+                          (special design rule fixing stage to be none/early_routing/late_routing. List of design rules is: {iso-dense fat wire via keepout enclosure rule}. (default: late_routing))
+   [-eco_route_special_design_rule_fixing_stage  (none|early_routing|late_routing)]
+                          (special design rule fixing stage to be none/early_routing/late_routing. List of design rules is: {iso-dense fat wire via keepout enclosure rule}. (default: late_routing))
+   [-post_process_special_design_rule_fixing_stage  (none|early_routing|late_routing)]
+                          (special design rule fixing stage to be none/early_routing/late_routing. List of design rules is: {iso-dense fat wire via keepout enclosure rule}. (default: late_routing))
+   [-group_route_special_design_rule_fixing_stage  (none|early_routing|late_routing)]
+                          (special design rule fixing stage to be none/early_routing/late_routing. List of design rules is: {iso-dense fat wire via keepout enclosure rule}. (default: late_routing))
+   [-incremental_detail_route_special_design_rule_fixing_stage  (none|early_routing|late_routing)]
+                          (special design rule fixing stage to be none/early_routing/late_routing. List of design rules is: {iso-dense fat wire via keepout enclosure rule}. (default: late_routing))
+   [-check_pin_min_area_min_length  (false|true)]
+                          (check min area and min lenght on pins (default: true))
+   [-check_port_min_area_min_length  (false|true)]
+                          (check min area and min lenght on ports (default: true))
+   [-elapsed_time_limit <int>]
+                          (max elapsed wall-clock time in minutes (default: -1): 
+                           Range: -1 to 2147483647)
+   [-default_diode_protection <real>]
+                          (default antenna protection for diode (default: 0.000000): 
+                           Range: 0 to 1e+06)
+   [-default_gate_size <real>]
+                          (default gate size for antenna computation (default: -1.000000): 
+                           Range: -1 to 1e+06)
+   [-default_port_external_antenna_area <int>]
+                          (default port antenna area for antenna computation (default: 0.000000): 
+                           Range: 0 to 1e+06)
+   [-default_port_external_gate_size <int>]
+                          (default port gate size for antenna computation (default: -1.000000): 
+                           Range: -1 to 1e+06)
+   [-default  (false|true)]
+                          (To set the default value to all options (default: false))
+   [-diagonal_min_width  (false|true)]
+                          (use diagonal distance for min width drc (default: true))
+   [-check_patchable_drc_from_fixed_shapes  (false|true)]
+                          (check select patchable drcs from fixed shapes (default: false))
+   [-diode_insertion_mode  (new_and_spare|spare|new)]
+                          (specify whether to use new and spare diodes, spare diodes only or new diodes only (default: new_and_spare))
+   [-diode_libcell_names list of names in curly braces]
+                          (libcell names for diode insertion)
+   [-diode_preference  (none|spare|new)]
+                          (specify prefence of spare diodes over new diodes (default: none))
+   [-drc_convergence_effort_level  (low|medium|high)]
+                          (Effort level to stop DR if not converging (default: medium))
+   [-eco_route_use_soft_spacing_for_timing_optimization  (false|true)]
+                          (enable timing soft rules during eco route (default: true))
+   [-force_max_number_iterations  (false|true)]
+                          (force max number of iterations when DRCs do not converge (default: false))
+   [-generate_extra_off_grid_pin_tracks  (false|true)]
+                          (generate extra tracks for off-grid pins (default: false))
+   [-generate_off_grid_feed_through_tracks  (off|low|medium|high)]
+                          (generate extra tracks for off-grid feedthroughs (default: low))
+   [-hop_layers_to_fix_antenna  (false|true)]
+                          (do layer hopping to fix antenna violations (default: true))
+   [-ignore_drc <list of drc names and bool pairs e.g, {{same_net_metal_space true} {same_net_enclosed_cut_space false}}>(false|true)]
+                          (ignore this drc (default: false)(same_net_metal_space|same_net_enclosed_cut_space|all_same_net_drc_for_frozen_net))
+   [-insert_diodes_during_routing  (false|true)]
+                          (enable diode insertion during routing (default: false))
+   [-macro_pin_antenna_mode  (normal|jump|top_layer)]
+                          (specify how macro pins are treated for antenna consideration (default: normal))
+   [-max_antenna_pin_count <int>]
+                          (fix antenna on nets with number of pins less than given value (default: -1): 
+                           Range: -1 to 1000000)
+   [-merge_gates_for_antenna  (false|true)]
+                          (flag if merge gates for antenna analysis (default: true))
+   [-optimize_tie_off_effort_level  (off|low|high)]
+                          (Effort level for optimize wire length and via counts for tie offs (default: low))
+   [-optimize_wire_via_effort_level  (off|low|medium|high)]
+                          (Effort level for optimize wire length and via counts (default: low))
+   [-pin_taper_mode  (default_width|pin_width|off)]
+                          (control pin tapering width (default: default_width))
+   [-port_antenna_mode  (float|jump|top_layer)]
+                          (specify how port (top level pin) are treated for antenna consideration (default: float))
+   [-repair_shorts_over_macros_effort_level  (off|low|medium|high)]
+                          (effort level for repairing shorts over macros with automatic wire deletion and ECO routing step (default: off))
+   [-report_ignore_drc <{"drc_name1" "drc_name2" ...}>]
+                          (specify the drc types to be excluded from the additional report)
+   [-reuse_filler_locations_for_diodes  (false|true)]
+                          (reuse filler cell location to insert diodes (default: true))
+   [-save_after_iterations <list of integers>]
+                          (save CEL after specified iterations (default: empty list))
+   [-save_cell_prefix <prefix to use for the saved cell name>]
+                          (use the prefix specified for the saved cell names (default: DR))
+   [-skip_antenna_fixing_for_nets list of net names]
+                          (skip antenna fixing for nets)
+   [-timing_driven  (false|true)]
+                          (enable timing driven mode (default: false))
+   [-top_layer_antenna_fix_threshold <int>]
+                          (fix antenna within (safe ratio) * (1 + top_layer_antenna_fix_threshold * 0.1)) (default: -1): 
+                           Range: -1 to 10)
+   [-use_default_width_for_min_area_min_len_stub  (false|true)]
+                          (use default width rather than contact width for stub (default: false))
+   [-use_lower_hierarchy_for_port_diodes  (false|true)]
+                          (use hierarchy of other pins of the net when inserting diodes for boundary ports (default: false))
+   [-use_wide_wire_effort_level  (off|low|high)]
+                          (Effort level for using NDR wires and vias within tapering limit (default: off))
+   [-use_wide_wire_to_input_pin  (false|true)]
+                          (control pin taper to input pins (default: false))
+   [-use_wide_wire_to_macro_pin  (false|true)]
+                          (control pin taper to macro pins (default: false))
+   [-use_wide_wire_to_output_pin  (false|true)]
+                          (control pin taper to output pins (default: false))
+   [-use_wide_wire_to_pad_pin  (same_as_macro_pin|false|true)]
+                          (control pin taper to pad pins (default: same_as_macro_pin))
+   [-use_wide_wire_to_port  (same_as_macro_pin|false|true)]
+                          (control pin taper to port pins (default: same_as_macro_pin))
+   [-user_defined_partition <4 coords in curly braces>]
+                          (add a user-defined partition for routing (in db units). this partiton is used in additon to the automatically generated partitions.)
+   [-var_spacing_to_same_net  (false|true)]
+                          (apply var spacing to same net (default: false))
+
+EDA_ECO_HELP_END set_route_zrt_detail_options
+EDA_ECO_HELP_BEGIN copy_mw_lib
+ copy_mw_lib          # Copy a milkyway library
+   [-from mw_lib]         (Specifies the source library to copy)
+   -to lib_name           (Name of the destination library)
+
+EDA_ECO_HELP_END copy_mw_lib
+exit
+
+Memory usage for main task 92 Mbytes.
+Memory usage for this session 92 Mbytes.
+CPU usage for this session 2 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

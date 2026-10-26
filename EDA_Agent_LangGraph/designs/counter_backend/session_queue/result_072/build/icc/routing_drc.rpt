@@ -1,0 +1,260 @@
+Turn off antenna since no rule is specified
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M6
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Error: Cell add_20/U2 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell add_20/U2). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell add_20/U2). (ZRT-065)
+Warning: Ignore net count[0]'s connection to port A (cell add_20/U2). (ZRT-065)
+Warning: Ignore net N2's connection to port Y (cell add_20/U2). (ZRT-065)
+Error: Cell add_20/U1 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell add_20/U1). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell add_20/U1). (ZRT-065)
+Warning: Ignore net count[7]'s connection to port B (cell add_20/U1). (ZRT-065)
+Warning: Ignore net add_20/carry[7]'s connection to port A (cell add_20/U1). (ZRT-065)
+Warning: Ignore net N9's connection to port Y (cell add_20/U1). (ZRT-065)
+Error: Cell add_20/U1_1_1 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell add_20/U1_1_1). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell add_20/U1_1_1). (ZRT-065)
+Warning: Ignore net add_20/carry[2]'s connection to port CO (cell add_20/U1_1_1). (ZRT-065)
+Warning: Ignore net count[1]'s connection to port A (cell add_20/U1_1_1). (ZRT-065)
+Warning: Ignore net count[0]'s connection to port B (cell add_20/U1_1_1). (ZRT-065)
+Warning: Ignore net N3's connection to port S (cell add_20/U1_1_1). (ZRT-065)
+Error: Cell add_20/U1_1_2 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell add_20/U1_1_2). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell add_20/U1_1_2). (ZRT-065)
+Warning: Ignore net add_20/carry[3]'s connection to port CO (cell add_20/U1_1_2). (ZRT-065)
+Warning: Ignore net count[2]'s connection to port A (cell add_20/U1_1_2). (ZRT-065)
+Warning: Ignore net add_20/carry[2]'s connection to port B (cell add_20/U1_1_2). (ZRT-065)
+Warning: Ignore net N4's connection to port S (cell add_20/U1_1_2). (ZRT-065)
+Error: Cell add_20/U1_1_3 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell add_20/U1_1_3). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell add_20/U1_1_3). (ZRT-065)
+Warning: Ignore net add_20/carry[4]'s connection to port CO (cell add_20/U1_1_3). (ZRT-065)
+Warning: Ignore net count[3]'s connection to port A (cell add_20/U1_1_3). (ZRT-065)
+Warning: Ignore net add_20/carry[3]'s connection to port B (cell add_20/U1_1_3). (ZRT-065)
+Warning: Ignore net N5's connection to port S (cell add_20/U1_1_3). (ZRT-065)
+Error: Cell add_20/U1_1_4 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell add_20/U1_1_4). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell add_20/U1_1_4). (ZRT-065)
+Warning: Ignore net add_20/carry[5]'s connection to port CO (cell add_20/U1_1_4). (ZRT-065)
+Warning: Ignore net count[4]'s connection to port A (cell add_20/U1_1_4). (ZRT-065)
+Warning: Ignore net add_20/carry[4]'s connection to port B (cell add_20/U1_1_4). (ZRT-065)
+Warning: Ignore net N6's connection to port S (cell add_20/U1_1_4). (ZRT-065)
+Error: Cell add_20/U1_1_5 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell add_20/U1_1_5). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell add_20/U1_1_5). (ZRT-065)
+Warning: Ignore net add_20/carry[6]'s connection to port CO (cell add_20/U1_1_5). (ZRT-065)
+Warning: Ignore net count[5]'s connection to port A (cell add_20/U1_1_5). (ZRT-065)
+Warning: Ignore net add_20/carry[5]'s connection to port B (cell add_20/U1_1_5). (ZRT-065)
+Warning: Ignore net N7's connection to port S (cell add_20/U1_1_5). (ZRT-065)
+Error: Cell add_20/U1_1_6 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell add_20/U1_1_6). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell add_20/U1_1_6). (ZRT-065)
+Warning: Ignore net add_20/carry[7]'s connection to port CO (cell add_20/U1_1_6). (ZRT-065)
+Warning: Ignore net count[6]'s connection to port A (cell add_20/U1_1_6). (ZRT-065)
+Warning: Ignore net add_20/carry[6]'s connection to port B (cell add_20/U1_1_6). (ZRT-065)
+Warning: Ignore net N8's connection to port S (cell add_20/U1_1_6). (ZRT-065)
+Error: Cell U20 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell U20). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell U20). (ZRT-065)
+Warning: Ignore net N9's connection to port B1 (cell U20). (ZRT-065)
+Warning: Ignore net en's connection to port B0 (cell U20). (ZRT-065)
+Warning: Ignore net n2's connection to port Y (cell U20). (ZRT-065)
+Warning: Ignore net n10's connection to port A1 (cell U20). (ZRT-065)
+Warning: Ignore net count[7]'s connection to port A0 (cell U20). (ZRT-065)
+Error: Cell U19 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell U19). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell U19). (ZRT-065)
+Warning: Ignore net en's connection to port B1 (cell U19). (ZRT-065)
+Warning: Ignore net N2's connection to port B0 (cell U19). (ZRT-065)
+Warning: Ignore net n9's connection to port Y (cell U19). (ZRT-065)
+Warning: Ignore net n10's connection to port A1 (cell U19). (ZRT-065)
+Warning: Ignore net count[0]'s connection to port A0 (cell U19). (ZRT-065)
+Error: Cell U18 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell U18). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell U18). (ZRT-065)
+Warning: Ignore net en's connection to port B1 (cell U18). (ZRT-065)
+Warning: Ignore net N3's connection to port B0 (cell U18). (ZRT-065)
+Warning: Ignore net n8's connection to port Y (cell U18). (ZRT-065)
+Warning: Ignore net n10's connection to port A1 (cell U18). (ZRT-065)
+Warning: Ignore net count[1]'s connection to port A0 (cell U18). (ZRT-065)
+Error: Cell U17 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell U17). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell U17). (ZRT-065)
+Warning: Ignore net en's connection to port B1 (cell U17). (ZRT-065)
+Warning: Ignore net N4's connection to port B0 (cell U17). (ZRT-065)
+Warning: Ignore net n7's connection to port Y (cell U17). (ZRT-065)
+Warning: Ignore net n10's connection to port A1 (cell U17). (ZRT-065)
+Warning: Ignore net count[2]'s connection to port A0 (cell U17). (ZRT-065)
+Error: Cell U16 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell U16). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell U16). (ZRT-065)
+Warning: Ignore net en's connection to port B1 (cell U16). (ZRT-065)
+Warning: Ignore net N5's connection to port B0 (cell U16). (ZRT-065)
+Warning: Ignore net n6's connection to port Y (cell U16). (ZRT-065)
+Warning: Ignore net n10's connection to port A1 (cell U16). (ZRT-065)
+Warning: Ignore net count[3]'s connection to port A0 (cell U16). (ZRT-065)
+Error: Cell U15 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell U15). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell U15). (ZRT-065)
+Warning: Ignore net en's connection to port B1 (cell U15). (ZRT-065)
+Warning: Ignore net N6's connection to port B0 (cell U15). (ZRT-065)
+Warning: Ignore net n5's connection to port Y (cell U15). (ZRT-065)
+Warning: Ignore net n10's connection to port A1 (cell U15). (ZRT-065)
+Warning: Ignore net count[4]'s connection to port A0 (cell U15). (ZRT-065)
+Error: Cell U14 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell U14). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell U14). (ZRT-065)
+Warning: Ignore net en's connection to port B1 (cell U14). (ZRT-065)
+Warning: Ignore net N7's connection to port B0 (cell U14). (ZRT-065)
+Warning: Ignore net n4's connection to port Y (cell U14). (ZRT-065)
+Warning: Ignore net n10's connection to port A1 (cell U14). (ZRT-065)
+Warning: Ignore net count[5]'s connection to port A0 (cell U14). (ZRT-065)
+Error: Cell U13 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell U13). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell U13). (ZRT-065)
+Warning: Ignore net en's connection to port B1 (cell U13). (ZRT-065)
+Warning: Ignore net N8's connection to port B0 (cell U13). (ZRT-065)
+Warning: Ignore net n3's connection to port Y (cell U13). (ZRT-065)
+Warning: Ignore net n10's connection to port A1 (cell U13). (ZRT-065)
+Warning: Ignore net count[6]'s connection to port A0 (cell U13). (ZRT-065)
+Error: Cell U12 is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell U12). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell U12). (ZRT-065)
+Warning: Ignore net en's connection to port A (cell U12). (ZRT-065)
+Warning: Ignore net n10's connection to port Y (cell U12). (ZRT-065)
+Error: Cell count_reg_6_ is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell count_reg_6_). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell count_reg_6_). (ZRT-065)
+Warning: Ignore net n3's connection to port D (cell count_reg_6_). (ZRT-065)
+Warning: Ignore net rst_n's connection to port RN (cell count_reg_6_). (ZRT-065)
+Warning: Ignore net count[6]'s connection to port Q (cell count_reg_6_). (ZRT-065)
+Warning: Ignore net clk's connection to port CK (cell count_reg_6_). (ZRT-065)
+Error: Cell count_reg_5_ is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell count_reg_5_). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell count_reg_5_). (ZRT-065)
+Warning: Ignore net n4's connection to port D (cell count_reg_5_). (ZRT-065)
+Warning: Ignore net rst_n's connection to port RN (cell count_reg_5_). (ZRT-065)
+Warning: Ignore net count[5]'s connection to port Q (cell count_reg_5_). (ZRT-065)
+Warning: Ignore net clk's connection to port CK (cell count_reg_5_). (ZRT-065)
+Error: Cell count_reg_4_ is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell count_reg_4_). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell count_reg_4_). (ZRT-065)
+Warning: Ignore net n5's connection to port D (cell count_reg_4_). (ZRT-065)
+Warning: Ignore net rst_n's connection to port RN (cell count_reg_4_). (ZRT-065)
+Warning: Ignore net count[4]'s connection to port Q (cell count_reg_4_). (ZRT-065)
+Warning: Ignore net clk's connection to port CK (cell count_reg_4_). (ZRT-065)
+Error: Cell count_reg_3_ is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell count_reg_3_). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell count_reg_3_). (ZRT-065)
+Warning: Ignore net n6's connection to port D (cell count_reg_3_). (ZRT-065)
+Warning: Ignore net rst_n's connection to port RN (cell count_reg_3_). (ZRT-065)
+Warning: Ignore net count[3]'s connection to port Q (cell count_reg_3_). (ZRT-065)
+Warning: Ignore net clk's connection to port CK (cell count_reg_3_). (ZRT-065)
+Error: Cell count_reg_2_ is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell count_reg_2_). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell count_reg_2_). (ZRT-065)
+Warning: Ignore net n7's connection to port D (cell count_reg_2_). (ZRT-065)
+Warning: Ignore net rst_n's connection to port RN (cell count_reg_2_). (ZRT-065)
+Warning: Ignore net count[2]'s connection to port Q (cell count_reg_2_). (ZRT-065)
+Warning: Ignore net clk's connection to port CK (cell count_reg_2_). (ZRT-065)
+Error: Cell count_reg_1_ is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell count_reg_1_). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell count_reg_1_). (ZRT-065)
+Warning: Ignore net n8's connection to port D (cell count_reg_1_). (ZRT-065)
+Warning: Ignore net rst_n's connection to port RN (cell count_reg_1_). (ZRT-065)
+Warning: Ignore net count[1]'s connection to port Q (cell count_reg_1_). (ZRT-065)
+Warning: Ignore net clk's connection to port CK (cell count_reg_1_). (ZRT-065)
+Error: Cell count_reg_0_ is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell count_reg_0_). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell count_reg_0_). (ZRT-065)
+Warning: Ignore net n9's connection to port D (cell count_reg_0_). (ZRT-065)
+Warning: Ignore net rst_n's connection to port RN (cell count_reg_0_). (ZRT-065)
+Warning: Ignore net count[0]'s connection to port Q (cell count_reg_0_). (ZRT-065)
+Warning: Ignore net clk's connection to port CK (cell count_reg_0_). (ZRT-065)
+Error: Cell count_reg_7_ is not placed. (ZRT-064)
+Warning: Ignore net VSS's connection to port VSS (cell count_reg_7_). (ZRT-065)
+Warning: Ignore net VDD's connection to port VDD (cell count_reg_7_). (ZRT-065)
+Warning: Ignore net n2's connection to port D (cell count_reg_7_). (ZRT-065)
+Warning: Ignore net rst_n's connection to port RN (cell count_reg_7_). (ZRT-065)
+Warning: Ignore net count[7]'s connection to port Q (cell count_reg_7_). (ZRT-065)
+Warning: Ignore net clk's connection to port CK (cell count_reg_7_). (ZRT-065)
+Via on layer (VIA5) needs more than one tracks
+Warning: Layer M5 pitch 0.280 may be too small: wire/via-down 0.280, wire/via-up 0.420. (ZRT-026)
+Transition layer name: M5(4)
+
+
+Start checking for open nets ... 
+
+Total number of nets = 13, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+
+Check 13 nets, 0 have Errors
+
+[CHECK OPEN NETS] Elapsed real time: 0:00:00 
+[CHECK OPEN NETS] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[CHECK OPEN NETS] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[CHECK OPEN NETS] Total (MB): Used   12  Alloctr   12  Proc 1276 
+Printing options for 'set_route_zrt_common_options'
+
+Printing options for 'set_route_zrt_detail_options'
+
+
+Begin full DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+[DRC CHECK] Elapsed real time: 0:00:00 
+[DRC CHECK] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[DRC CHECK] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[DRC CHECK] Total (MB): Used   15  Alloctr   15  Proc 1278 
+Warning: No antenna rules defined, Skip antenna analysis. (ZRT-309)
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	0
+
+
+Total Wire Length =                    0 micron
+Total Number of Contacts =             0
+Total Number of Wires =                0
+Total Number of PtConns =              0
+Total Number of Routed Wires =       0
+Total Routed Wire Length =           0 micron
+Total Number of Routed Contacts =       0
+	Layer       M1 :          0 micron
+	Layer       M2 :          0 micron
+	Layer       M3 :          0 micron
+	Layer       M4 :          0 micron
+	Layer       M5 :          0 micron
+	Layer       M6 :          0 micron
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 0 vias)
+ 
+ 
+  Total double via conversion rate    =  0.00% (0 / 0 vias)
+ 
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 0 vias)
+ 
+ 
+Excluded 153 ports of 25 unplaced cells connected to 36 nets for routing
+
+
+Verify Summary:
+
+Total number of nets = 13, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 153 ports of 25 unplaced cells connected to 36 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 0
+Total number of antenna violations = no antenna rules defined
+Total number of voltage-area violations = no voltage-areas defined
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+1

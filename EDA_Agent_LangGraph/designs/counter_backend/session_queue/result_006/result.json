@@ -1,0 +1,4 @@
+{
+  "status": "error",
+  "error": "RemoteError: 远程命令超过 65 秒。已关闭 SSH 通道；实际 EDA 命令另有 Linux timeout 限制。"
+}

@@ -1,0 +1,118 @@
+                                        
+                                 PrimeTime (R)
+                                        
+                 Version K-2015.06 for linux64 - May 21, 2015 
+                                        
+                    Copyright (c) 1988 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+source generated/scripts/config.tcl
+VSS
+VSS
+source generated/scripts/physical_target.tcl
+EDA_SOURCE_ROUTING_DRC_COUNT 1
+proc eda_pt_wireload {} {
+    global EDA_TOP EDA_DB EDA_SAIF EDA_PHYSICAL_DIRECTORY EDA_SOURCE_DRC_COUNT
+    file mkdir ../build/pt_estimate
+    set source_saif [file normalize $EDA_SAIF]
+    set stage_directory [file normalize ../build/pt_estimate]
+    set analysis_saif $stage_directory/counter.saif
+    file copy $source_saif $analysis_saif
+    if {![file readable $analysis_saif] || [file size $analysis_saif] == 0} {error "Analysis SAIF is not readable"}
+    set_app_var power_enable_analysis true
+    set_app_var power_analysis_mode averaged
+    redirect -file ../build/pt_estimate/report_power_manual.txt {man report_power}
+    set_app_var search_path [concat [get_app_var search_path] [list [file dirname $EDA_DB]]]
+    set_app_var link_path [concat [list *] [list $EDA_DB]]
+    read_verilog $EDA_PHYSICAL_DIRECTORY/counter_8bit.routed.v
+    current_design $EDA_TOP
+    if {![link_design $EDA_TOP]} {error "Physical netlist linking failed"}
+    read_sdc $EDA_PHYSICAL_DIRECTORY/counter_8bit.sdc
+    set_operating_conditions -library typical typical
+    set_wire_load_mode enclosed
+    set_wire_load_model -name tsmc090_wl10 -library typical [current_design]
+    set_propagated_clock [all_clocks]
+    foreach port {VDD VSS} value {1 0} {
+        if {[sizeof_collection [get_ports -quiet $port]]} {set_case_analysis $value [get_ports $port]}
+    }
+    if {[file exists inputs/dc/counter_8bit_namemap.tcl]} {source inputs/dc/counter_8bit_namemap.tcl}
+    redirect -file ../build/pt_estimate/activity_annotation.rpt {
+        if {![read_saif -strip_path tb_counter_8bit/u_dut $analysis_saif]} {error "SAIF annotation failed"}
+    }
+    update_timing
+    redirect -file ../build/pt_estimate/check_timing.rpt {check_timing -verbose}
+    redirect -file ../build/pt_estimate/units.rpt {report_units}
+    redirect -file ../build/pt_estimate/timing_setup.rpt {report_timing -delay_type max -max_paths 10 -slack_lesser_than 1000 -significant_digits 6 -nosplit}
+    redirect -file ../build/pt_estimate/timing_hold.rpt {report_timing -delay_type min -max_paths 10 -slack_lesser_than 1000 -significant_digits 6 -nosplit}
+    redirect -file ../build/pt_estimate/constraints.rpt {report_constraint -all_violators -nosplit}
+    update_power
+    redirect -file ../build/pt_estimate/power.rpt {report_power -nosplit}
+    redirect -file ../build/pt_estimate/activity_coverage.rpt {report_switching_activity -coverage}
+    set scope [open ../build/pt_estimate/analysis_scope.txt w]
+    puts $scope "Input: routed netlist $EDA_PHYSICAL_DIRECTORY/counter_8bit.routed.v"
+    puts $scope "Connectivity/LVS clean; source routing DRC count: $EDA_SOURCE_DRC_COUNT. Manufacturing clearance is not claimed."
+    puts $scope "Interconnect: tsmc090_wl10 statistical wire-load model supplied by the same logical library."
+    puts $scope "PVT: TT, 1.0 V, 25 C. Activity: verified RTL SAIF, with tool annotation coverage recorded."
+    puts $scope "No SPEF is read. This is an estimated netlist analysis, not detailed post-route extraction or signoff."
+    close $scope
+    puts "EDA_STAGE_COMPLETE PT_WIRELOAD_ESTIMATE"
+}
+if {[catch {eda_pt_wireload} message]} {
+    puts "EDA_FATAL $message"
+    exit 2
+}
+Loading db file '/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db'
+Loading verilog file '/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_8bit.routed.v'
+Linking design counter_8bit...
+Information: Removing 1 unneeded designs..... (LNK-034)
+Information: 620 (99.04%) library cells are unused in library typical..... (LNK-045)
+Information: total 620 library cells are unused (LNK-046)
+Design 'counter_8bit' was successfully linked.
+Information: There are 38 leaf cells, ports, hiers and 50 nets in the design (LNK-047)
+
+Reading SDC version 2.0...
+1
+Information: Checked out license 'PrimeTime-PX' (PT-019)
+1
+Information: Running averaged power analysis... (PWR-601)
+Information: Running power calculation with 2 threads. (PWR-602)
+EDA_STAGE_COMPLETE PT_WIRELOAD_ESTIMATE
+exit
+Information: Defining new variable 'target_handle'. (CMD-041)
+Information: Defining new variable 'EDA_DB'. (CMD-041)
+Information: Defining new variable 'EDA_GDS_MAP'. (CMD-041)
+Information: Defining new variable 'EDA_INPUT_TRANSITION'. (CMD-041)
+Information: Defining new variable 'target_name'. (CMD-041)
+Information: Defining new variable 'EDA_OUTPUT_DELAY'. (CMD-041)
+Information: Defining new variable 'EDA_CORE_UTILIZATION'. (CMD-041)
+Information: Defining new variable 'EDA_SOURCE_DRC_COUNT'. (CMD-041)
+Information: Defining new variable 'EDA_CLOCK_PERIOD'. (CMD-041)
+Information: Defining new variable 'target_pattern'. (CMD-041)
+Information: Defining new variable 'EDA_CLOCK_UNCERTAINTY'. (CMD-041)
+Information: Defining new variable 'EDA_POWER_NET'. (CMD-041)
+Information: Defining new variable 'EDA_PHYSICAL_DIRECTORY'. (CMD-041)
+Information: Defining new variable 'target_count'. (CMD-041)
+Information: Defining new variable 'EDA_INPUT_DELAY'. (CMD-041)
+Information: Defining new variable 'EDA_GROUND_NET'. (CMD-041)
+Information: Defining new variable 'EDA_LEF_TECH'. (CMD-041)
+Information: Defining new variable 'target_report'. (CMD-041)
+Information: Defining new variable 'physical_label'. (CMD-041)
+Information: Defining new variable 'EDA_TOP'. (CMD-041)
+Information: Defining new variable 'EDA_TECH'. (CMD-041)
+Information: Defining new variable 'EDA_SAIF'. (CMD-041)
+Information: Defining new variable 'message'. (CMD-041)
+Information: Defining new variable 'EDA_OUTPUT_LOAD'. (CMD-041)
+Information: Defining new variable 'EDA_MW_REF'. (CMD-041)
+Information: Defining new variable 'unused'. (CMD-041)
+
+Timing updates: 1 (0 implicit, 1 explicit) (0 incremental, 1 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+Maximum memory usage for this session: 384.70 MB
+CPU usage for this session: 1 seconds 
+Elapsed time for this session: 4 seconds
+Diagnostics summary: 2 warnings, 33 informationals
+
+Thank you for using pt_shell!

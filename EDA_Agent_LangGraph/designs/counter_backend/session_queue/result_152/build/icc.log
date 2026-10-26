@@ -1,0 +1,40 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+set env(DISPLAY) :0
+:0
+if {[catch {
+    puts [exec timeout 80s /usr/bin/python generated/scripts/capture_reports.py 2>@1]
+} message]} {
+    puts "EDA_REPORT_CAPTURE_FAILED $message"
+    exit 2
+}
+{"capture_bounds": [0, 0, 1718, 840], "captured_epoch": 1792914171.6546891, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "3de0485cde29b6a17e0c2c18ff170ca8c1642685e9e1b87db3ce2f54b8733889", "width": 1718, "window_title": null}
+{"capture_bounds": [0, 0, 1718, 840], "captured_epoch": 1792914173.3613091, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "12b99869b9ed9f0fbdd3e17771ad1e9c698b8a3d600f0aa8112b0de59747fc4a", "width": 1718, "window_title": null}
+{"capture_bounds": [0, 0, 1718, 840], "captured_epoch": 1792914175.066282, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "aa0bdb966bda83d69b3944cb6dfc346ff435c8d81bd5af30ec6d55bdde125955", "width": 1718, "window_title": null}
+{"capture_bounds": [0, 0, 1718, 840], "captured_epoch": 1792914176.7403469, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "42babd0455c584e97578e1cb0ddbf6d597217b2ab72179529a9e6da422822084", "width": 1718, "window_title": null}
+{"capture_bounds": [0, 0, 1718, 840], "captured_epoch": 1792914178.443917, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "4ce12dbfda38a9e557662ee05a38d5a46d3c3fad965913777d1313b2dbd943ce", "width": 1718, "window_title": null}
+{"capture_bounds": [0, 0, 1718, 840], "captured_epoch": 1792914179.9576881, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "8fafa85f6fad990e1219df63bfd13d149910a3d571c8163699e5006c020b254a", "width": 1718, "window_title": null}
+EDA_ORIGINAL_REPORT_CAPTURES_COMPLETE 6
+puts "EDA_REPORT_CAPTURES_SAVED"
+EDA_REPORT_CAPTURES_SAVED
+exit 0
+
+Memory usage for main task 92 Mbytes.
+Memory usage for this session 92 Mbytes.
+CPU usage for this session 6 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

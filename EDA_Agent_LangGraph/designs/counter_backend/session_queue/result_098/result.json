@@ -1,0 +1,13 @@
+{
+  "run_id": "d80ae60f1cd74703a0a672af5c7ffc9d",
+  "run_label": "upload_20261025_143204_d80ae60f",
+  "mode": "upload",
+  "when": "2026-10-25T14:32:04",
+  "file_count": 21,
+  "upload_ok": true,
+  "status": "completed",
+  "project_directory": "/home/IC/Desktop/EDA_Projects/counter_backend",
+  "remote_directory": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143204_d80ae60f",
+  "source_snapshot": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143204_d80ae60f/src",
+  "local_directory": "D:\\课程设计\\czh\\EDA_Agent_LangGraph\\designs\\counter_backend\\remote_runs\\d80ae60f1cd74703a0a672af5c7ffc9d"
+}

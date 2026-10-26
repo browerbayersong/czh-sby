@@ -1,0 +1,54 @@
+****************************************
+Report : Averaged Power
+	-verbose
+	-nosplit
+Design : counter_8bit
+Version: K-2015.06
+Date   : Sun Oct 25 15:26:25 2026
+****************************************
+
+Library(s) Used:
+
+    typical (File: /opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db)
+
+
+Operating Conditions: typical   Library: typical
+Wire Load Model Mode: enclosed
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   counter_8bit tsmc090_wl10 typical      user-specified
+add_20             counter_8bit_DW01_inc_0 tsmc090_wl10 typical inherited from higher level
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network           9.424e-06    0.0000    0.0000 9.424e-06 (62.43%)  i
+register                1.633e-06 9.916e-07 1.557e-07 2.781e-06 (18.42%)  
+combinational           1.955e-06 7.314e-07 2.040e-07 2.891e-06 (19.15%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 1.723e-06   (11.41%)
+  Cell Internal Power  = 1.301e-05   (86.20%)
+  Cell Leakage Power   = 3.597e-07   ( 2.38%)
+                         ---------
+Total Power            = 1.510e-05  (100.00%)
+
+1

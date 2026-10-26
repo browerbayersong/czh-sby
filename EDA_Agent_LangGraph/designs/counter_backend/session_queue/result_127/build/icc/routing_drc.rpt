@@ -1,0 +1,116 @@
+Turn off antenna since no rule is specified
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M6
+Warning: Ignore 1 top cell ports with no pins. (ZRT-027)
+Via on layer (VIA5) needs more than one tracks
+Warning: Layer M5 pitch 0.280 may be too small: wire/via-down 0.280, wire/via-up 0.420. (ZRT-026)
+Transition layer name: M5(4)
+
+
+Start checking for open nets ... 
+
+Total number of nets = 36, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+
+Check 36 nets, 0 have Errors
+
+[CHECK OPEN NETS] Elapsed real time: 0:00:00 
+[CHECK OPEN NETS] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[CHECK OPEN NETS] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[CHECK OPEN NETS] Total (MB): Used   12  Alloctr   12  Proc 1249 
+Printing options for 'set_route_zrt_common_options'
+
+Printing options for 'set_route_zrt_detail_options'
+-drc_convergence_effort_level                           :	 high                
+-generate_extra_off_grid_pin_tracks                     :	 true                
+
+
+Begin full DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+Checked	1/1 Partitions, Violations =	8
+[DRC CHECK] Elapsed real time: 0:00:00 
+[DRC CHECK] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[DRC CHECK] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[DRC CHECK] Total (MB): Used   15  Alloctr   16  Proc 1249 
+Warning: No antenna rules defined, Skip antenna analysis. (ZRT-309)
+Information: Merged away 1 aligned/redundant DRCs. (ZRT-305)
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	7
+	Diff net spacing : 2
+	Less than minimum width : 1
+	Same net spacing : 1
+	Short : 3
+
+
+Total Wire Length =                    769 micron
+Total Number of Contacts =             231
+Total Number of Wires =                201
+Total Number of PtConns =              40
+Total Number of Routed Wires =       201
+Total Routed Wire Length =           756 micron
+Total Number of Routed Contacts =       231
+	Layer        M1 :         22 micron
+	Layer        M2 :        322 micron
+	Layer        M3 :        343 micron
+	Layer        M4 :         46 micron
+	Layer        M5 :         35 micron
+	Layer        M6 :          0 micron
+	Via        via4 :          8
+	Via        via3 :         13
+	Via        via2 :        102
+	Via        via1 :         49
+	Via   via1(rot) :          3
+	Via       via1v :         55
+	Via       via1h :          1
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 231 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 108     vias)
+        Un-optimized = 100.00% (108     vias)
+    Layer VIA2       =  0.00% (0      / 102     vias)
+        Un-optimized = 100.00% (102     vias)
+    Layer VIA3       =  0.00% (0      / 13      vias)
+        Un-optimized = 100.00% (13      vias)
+    Layer VIA4       =  0.00% (0      / 8       vias)
+        Un-optimized = 100.00% (8       vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 231 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 108     vias)
+    Layer VIA2       =  0.00% (0      / 102     vias)
+    Layer VIA3       =  0.00% (0      / 13      vias)
+    Layer VIA4       =  0.00% (0      / 8       vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 231 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 108     vias)
+        Un-optimized = 100.00% (108     vias)
+    Layer VIA2       =  0.00% (0      / 102     vias)
+        Un-optimized = 100.00% (102     vias)
+    Layer VIA3       =  0.00% (0      / 13      vias)
+        Un-optimized = 100.00% (13      vias)
+    Layer VIA4       =  0.00% (0      / 8       vias)
+        Un-optimized = 100.00% (8       vias)
+ 
+
+
+Verify Summary:
+
+Total number of nets = 36, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 7
+Total number of antenna violations = no antenna rules defined
+Total number of voltage-area violations = no voltage-areas defined
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+1

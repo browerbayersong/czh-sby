@@ -1,0 +1,71 @@
+{
+  "run": "upload_20261025_145423_44a6b08b",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 450,
+      "sha256": "4e9e75095e1d9dea514582f5085cb8a0e040889991c7fad33ce5a0dba0ff2221"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 409682,
+      "sha256": "60c0be1dcca5fda382bceb051fc9378f7eab264052ddb70296addc89021f6b94"
+    },
+    {
+      "path": "build/icc/routing_drc.rpt",
+      "bytes": 4123,
+      "sha256": "1c0ee4aca9f5061fc8e5c00a9ce4b2fbacca36b0c61641c65c95efff053139fe"
+    },
+    {
+      "path": "build/icc/pg_connectivity.rpt",
+      "bytes": 693,
+      "sha256": "ca94f2341c80c73c214485503c4197c3c47887e353644fe858912e5bd41144b3"
+    },
+    {
+      "path": "build/icc/lvs.rpt",
+      "bytes": 1661,
+      "sha256": "d2d5eaced304a124a5d0ad1866e47833593dc46aad9563bf6f16db92cca8c974"
+    },
+    {
+      "path": "build/icc/area.rpt",
+      "bytes": 1252,
+      "sha256": "78245e32a916f87b648a34db9db51dc2c44b32071a5a4a607fe70efc603271a3"
+    },
+    {
+      "path": "build/icc/physical.rpt",
+      "bytes": 21135,
+      "sha256": "6e340842ffdf11e3472e9e642135f8c9d1467f5e2346c1444f149a73ec3faeb1"
+    },
+    {
+      "path": "build/icc/counter_8bit.routed.v",
+      "bytes": 2696,
+      "sha256": "d144772c9147bfe80b08ccdab69c1dbf51c671558c86e60cce5460bcf903b326"
+    },
+    {
+      "path": "build/icc/counter_8bit.sdc",
+      "bytes": 3750,
+      "sha256": "78d94c51ec3cfb22398e7efa3f12035b7d88533c220394e2a25cb4e230696bee"
+    },
+    {
+      "path": "build/icc/counter_8bit.gds",
+      "bytes": 28672,
+      "sha256": "150cbba824dd121e8279a2b1543c5f8378d3ecce41fcee53647868cb5ecaba01"
+    },
+    {
+      "path": "build/icc/rc_model.json",
+      "bytes": 1967,
+      "sha256": "af028ecc10d336db16de840b0ff0e7300af3e3e66c948a90dbcb63169e77c861"
+    },
+    {
+      "path": "build/icc/units.rpt",
+      "bytes": 429,
+      "sha256": "251563b689b2c2975c1989e2a7e1d95a5805ee3115a2beea58502cd249d94a26"
+    },
+    {
+      "path": "build/icc/placement_legality.rpt",
+      "bytes": 4504,
+      "sha256": "b92f855aa7ba00a4df61e11e6876477b4cafb4ea4da4eba9790a0619d3c18209"
+    }
+  ],
+  "status": "completed"
+}

@@ -1,0 +1,23 @@
+{
+  "round": 1,
+  "baseline": "../counter_first_run",
+  "baseline_vcs_run": "counter_first_run/runs/vcs_001",
+  "baseline_checks": 824,
+  "baseline_coverage_score": 91.76,
+  "motivation": "处理首次 DeepSeek 静态审查提出的初始复位检查时刻过晚的问题。",
+  "implementation": "由当前助手依据已保存的模型审查意见修改测试平台；本轮准备阶段未重新调用 DeepSeek 生成代码。",
+  "changes": [
+    "初始 rst_n 设置为高电平，在 1ns 拉低，2ns 检查清零；首个时钟上升沿在 5ns。",
+    "保留基线的首个时钟沿后复位检查、保持、320次加一、运行中复位和500次随机使能检查。",
+    "不修改 DUT、参考模型、比较条件和失败判定。"
+  ],
+  "expected_checks_if_completed": 825,
+  "vcs_status": "passed_by_marker",
+  "actual_checks": 825,
+  "actual_passed": 825,
+  "actual_failed": 0,
+  "actual_coverage": {"score": 92.01, "line": 88.54, "branch": 87.5, "toggle": 100.0},
+  "local_run_summary": "remote_runs/a15ff7eb7988408a83b170273a7eb70d/run_summary.json",
+  "coverage_score_delta_percentage_points": 0.25,
+  "note": "数据已用本机回收的 VCS 日志与 URG dashboard 核验。覆盖率是工具报告的测试层次总分，不等同于 DUT 验证充分性。"
+}

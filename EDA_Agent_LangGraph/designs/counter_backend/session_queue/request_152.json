@@ -1,0 +1,27 @@
+{
+  "run": "upload_20261025_154213_3a20548a",
+  "action": "fetch",
+  "paths": [
+    "build/icc.status.json",
+    "build/icc.log",
+    "build/report_captures/manifest.json",
+    "build/report_captures/dc_power.png",
+    "build/report_captures/dc_power.txt",
+    "build/report_captures/dc_power.png.json",
+    "build/report_captures/dc_timing.png",
+    "build/report_captures/dc_timing.txt",
+    "build/report_captures/dc_timing.png.json",
+    "build/report_captures/icc_drc.png",
+    "build/report_captures/icc_drc.txt",
+    "build/report_captures/icc_drc.png.json",
+    "build/report_captures/icc_lvs.png",
+    "build/report_captures/icc_lvs.txt",
+    "build/report_captures/icc_lvs.png.json",
+    "build/report_captures/pt_power.png",
+    "build/report_captures/pt_power.txt",
+    "build/report_captures/pt_power.png.json",
+    "build/report_captures/pt_timing.png",
+    "build/report_captures/pt_timing.txt",
+    "build/report_captures/pt_timing.png.json"
+  ]
+}

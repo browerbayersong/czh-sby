@@ -1,0 +1,36 @@
+{
+  "run": "upload_20261025_143839_f96edb1f",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 448,
+      "sha256": "4b2356b55c87fb232aaf0aa45448fea8bdfc5689467d8458560601293a9729df"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 409990,
+      "sha256": "6709c46ebae842bd186479b888994be6c61dd86b38297c3813adf35f6325f28c"
+    },
+    {
+      "path": "build/icc/routing_drc.rpt",
+      "bytes": 4119,
+      "sha256": "bd3e786178a77090d5e26c2a6b756d440ed8665ab05186322c492df8fda78931"
+    },
+    {
+      "path": "build/icc/pg_connectivity.rpt",
+      "bytes": 693,
+      "sha256": "ca94f2341c80c73c214485503c4197c3c47887e353644fe858912e5bd41144b3"
+    },
+    {
+      "path": "build/icc/lvs.rpt",
+      "bytes": 1523,
+      "sha256": "f23f81b7d92bcb3974ce28f3c63e71aa2c20ce1899cb950084be0a273a2db162"
+    },
+    {
+      "path": "build/icc/counter_8bit.gds",
+      "bytes": 28672,
+      "sha256": "b6fdf5948e5890e929c99f00c7d62b576e74bf5892c4ed561d220cb783a10d74"
+    }
+  ],
+  "status": "completed"
+}

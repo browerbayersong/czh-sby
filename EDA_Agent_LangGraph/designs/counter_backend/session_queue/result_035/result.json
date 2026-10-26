@@ -1,0 +1,16 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/magma",
+  "entries": [
+    {
+      "name": "ProcessLibraryandIPSupportUserguide.pdf",
+      "size": 863881,
+      "mode": "0o100664"
+    },
+    {
+      "name": "stdlib.tcl",
+      "size": 4989,
+      "mode": "0o100664"
+    }
+  ],
+  "status": "completed"
+}

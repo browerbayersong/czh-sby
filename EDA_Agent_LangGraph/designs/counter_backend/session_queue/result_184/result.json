@@ -1,0 +1,41 @@
+{
+  "run": "upload_20261026_131119_06234e60",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 454,
+      "sha256": "6044371390cd0e30820615f52fe35c966f76686caa4345811372e4a540fa03f5"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 3227,
+      "sha256": "6a131c557a6b579ce4c38094b90c8bf6b51c2e09359fb252fa686af5eaa88d4e"
+    },
+    {
+      "path": "build/drc_verify/routing_drc.rpt",
+      "bytes": 4166,
+      "sha256": "0d6e03dc620d24c1a5c9c4905d83d183397e35af97afaceb1e443268f5d80cbe"
+    },
+    {
+      "path": "build/drc_verify/pg_connectivity.rpt",
+      "bytes": 707,
+      "sha256": "3f2bd264db5a359b97c4fb7e4d0c1cf9a658a9e4da4bfd65e8e7907789f9c439"
+    },
+    {
+      "path": "build/drc_verify/lvs.rpt",
+      "bytes": 1480,
+      "sha256": "00924a8349a87c4117922245f399e371c082ac498620028f12eac4bee0061f21"
+    },
+    {
+      "path": "build/drc_verify/placement_legality.rpt",
+      "bytes": 149012,
+      "sha256": "8ef4767b46bc07a0d6a82c116fff5629dfcc47e0ddb0403e5ea106275e20e9ea"
+    },
+    {
+      "path": "build/drc_verify/saved_netlist.v",
+      "bytes": 2697,
+      "sha256": "971dc5132e94c79a37b5742f083e32d73f889cb5c83d4ae4b04e00df74e2368c"
+    }
+  ],
+  "status": "completed"
+}

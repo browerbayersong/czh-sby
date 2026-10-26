@@ -1,0 +1,219 @@
+Create error cell counter_8bit_lvs.err ...
+
+-- LVS START : --
+WARNING : The boundary ((1.810,-0.210),(86.000,28.610)) of metal Layer1 is out of top cell boundary ((0.000,0.000),(28.960,28.680)).
+Total area error in layer 0 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 1 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+ERROR : area  [(1.670,28.540), (1.810,28.680)]	0.0196 um sqr.
+ERROR : area  [(14.270,28.540), (14.410,28.680)]	0.0196 um sqr.
+ERROR : area  [(27.150,28.540), (27.290,28.680)]	0.0196 um sqr.
+ERROR : area  [(1.670,0.000), (1.810,0.140)]	0.0196 um sqr.
+ERROR : area  [(27.150,0.000), (27.290,0.140)]	0.0196 um sqr.
+Total area error in layer 2 is 5.  Elapsed =    0:00:00, CPU =    0:00:00
+ERROR : area  [(0.000,1.670), (0.140,1.810)]	0.0196 um sqr.
+ERROR : area  [(0.000,14.270), (0.140,14.410)]	0.0196 um sqr.
+ERROR : area  [(0.000,26.870), (0.140,27.010)]	0.0196 um sqr.
+ERROR : area  [(28.820,1.670), (28.960,1.810)]	0.0196 um sqr.
+ERROR : area  [(28.820,14.270), (28.960,14.410)]	0.0196 um sqr.
+ERROR : area  [(28.820,26.870), (28.960,27.010)]	0.0196 um sqr.
+Total area error in layer 3 is 6.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 4 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 5 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 6 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 7 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 8 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 9 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 10 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 11 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 12 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 13 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 14 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 15 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+ERROR : INPUT PortInst add_20/U2 A(6658) in net count[0](6912) is floating.
+
+ERROR : OUTPUT PortInst add_20/U2 Y(6659) in net N2(6913) is floating.
+
+ERROR : INPUT PortInst add_20/U1 B(6662) in net count[7](6914) is floating.
+
+ERROR : INPUT PortInst add_20/U1 A(6663) in net add_20/carry[7](6915) is floating.
+
+ERROR : OUTPUT PortInst add_20/U1 Y(6664) in net N9(6916) is floating.
+
+ERROR : OUTPUT PortInst add_20/U1_1_1 CO(6667) in net add_20/carry[2](6917) is floating.
+
+ERROR : INPUT PortInst add_20/U1_1_1 A(6668) in net count[1](6918) is floating.
+
+ERROR : INPUT PortInst add_20/U1_1_1 B(6669) in net count[0](6912) is floating.
+
+ERROR : OUTPUT PortInst add_20/U1_1_1 S(6670) in net N3(6919) is floating.
+
+ERROR : INPUT PortInst add_20/U1_1_2 B(6675) in net add_20/carry[2](6917) is floating.
+
+ERROR : INPUT PortInst add_20/U1_1_3 B(6681) in net add_20/carry[3](6920) is floating.
+
+ERROR : OUTPUT PortInst add_20/U1_1_2 CO(6673) in net add_20/carry[3](6920) is floating.
+
+ERROR : INPUT PortInst add_20/U1_1_2 A(6674) in net count[2](6921) is floating.
+
+ERROR : OUTPUT PortInst add_20/U1_1_2 S(6676) in net N4(6922) is floating.
+
+ERROR : INPUT PortInst add_20/U1_1_3 A(6680) in net count[3](6924) is floating.
+
+ERROR : OUTPUT PortInst add_20/U1_1_3 S(6682) in net N5(6925) is floating.
+
+ERROR : INPUT PortInst add_20/U1_1_4 B(6687) in net add_20/carry[4](6923) is floating.
+
+ERROR : INPUT PortInst add_20/U1_1_5 B(6693) in net add_20/carry[5](6926) is floating.
+
+ERROR : OUTPUT PortInst add_20/U1_1_3 CO(6679) in net add_20/carry[4](6923) is floating.
+
+ERROR : OUTPUT PortInst add_20/U1_1_4 CO(6685) in net add_20/carry[5](6926) is floating.
+
+ERROR : There are more errors than default Max Error Number 20.
+** Total Floating ports are 20.
+** Total Floating Nets are 12.
+** Total SHORT Nets are 0.
+ERROR : Logical Net VSS is open.
+	Node 20 is in the region ((38,25),(45,26)).
+	Node 121 is in the region ((38,12),(82,13)).
+	Node 123 is in the region ((38,0),(86,0)).
+	Total seperated nodes are 3.
+	Potential connection region ((37, -1), (46, 26)).
+ERROR : Logical Net VDD is open.
+	Node 19 is in the region ((38,27),(45,28)).
+	Node 120 is in the region ((38,14),(82,15)).
+	Node 122 is in the region ((38,1),(86,2)).
+	Total seperated nodes are 3.
+	Potential connection region ((37, 1), (46, 28)).
+ERROR : Logical Net clk is open.
+	Node 7 is in the region ((0,26),(0,27)).
+	Node 15 is in the region ((39,26),(39,27)).
+	Node 21 is in the region ((75,13),(76,14)).
+	Node 25 is in the region ((69,13),(70,14)).
+	Node 30 is in the region ((63,13),(63,14)).
+	Node 33 is in the region ((57,13),(57,14)).
+	Node 37 is in the region ((51,13),(51,14)).
+	Node 44 is in the region ((45,13),(45,14)).
+	Node 45 is in the region ((39,13),(39,14)).
+	Total seperated nodes are 9.
+	Potential connection region ((-1, 13), (76, 27)).
+ERROR : Logical Net rst_n is open.
+	Node 8 is in the region ((0,14),(0,14)).
+	Node 17 is in the region ((40,26),(43,27)).
+	Node 23 is in the region ((77,13),(80,14)).
+	Node 27 is in the region ((71,13),(74,14)).
+	Node 31 is in the region ((64,13),(68,14)).
+	Node 35 is in the region ((58,13),(62,14)).
+	Node 39 is in the region ((52,13),(56,14)).
+	Node 42 is in the region ((46,13),(50,14)).
+	Node 47 is in the region ((40,13),(43,14)).
+	Total seperated nodes are 9.
+	Potential connection region ((-1, 13), (78, 27)).
+ERROR : Logical Net n3 is open.
+	Node 48 is in the region ((40,13),(40,14)).
+	Node 53 is in the region ((84,0),(85,2)).
+	Total seperated nodes are 2.
+	Potential connection region ((39, 1), (85, 14)).
+ERROR : Logical Net n4 is open.
+	Node 43 is in the region ((46,13),(46,14)).
+	Node 58 is in the region ((82,0),(82,2)).
+	Total seperated nodes are 2.
+	Potential connection region ((45, 1), (83, 14)).
+ERROR : Logical Net n5 is open.
+	Node 40 is in the region ((52,13),(52,14)).
+	Node 61 is in the region ((80,0),(80,2)).
+	Total seperated nodes are 2.
+	Potential connection region ((51, 1), (81, 14)).
+ERROR : Logical Net n6 is open.
+	Node 36 is in the region ((58,13),(59,14)).
+	Node 68 is in the region ((78,0),(78,2)).
+	Total seperated nodes are 2.
+	Potential connection region ((58, 1), (79, 14)).
+ERROR : Logical Net n7 is open.
+	Node 32 is in the region ((64,13),(65,14)).
+	Node 73 is in the region ((75,0),(76,2)).
+	Total seperated nodes are 2.
+	Potential connection region ((64, 1), (76, 14)).
+ERROR : Logical Net n8 is open.
+	Node 28 is in the region ((71,13),(71,14)).
+	Node 76 is in the region ((73,0),(73,2)).
+	Total seperated nodes are 2.
+	Potential connection region ((70, 1), (74, 14)).
+ERROR : Logical Net n9 is open.
+	Node 24 is in the region ((77,13),(77,14)).
+	Node 81 is in the region ((71,0),(71,2)).
+	Total seperated nodes are 2.
+	Potential connection region ((70, 1), (78, 14)).
+ERROR : Logical Net n10 is open.
+	Node 49 is in the region ((85,0),(85,1)).
+	Node 52 is in the region ((84,0),(84,1)).
+	Node 57 is in the region ((81,0),(82,1)).
+	Node 63 is in the region ((79,0),(79,1)).
+	Node 67 is in the region ((77,0),(77,1)).
+	Node 72 is in the region ((75,0),(75,1)).
+	Node 78 is in the region ((72,0),(73,1)).
+	Node 83 is in the region ((70,0),(70,1)).
+	Node 87 is in the region ((68,0),(68,1)).
+	Total seperated nodes are 9.
+	Potential connection region ((67, -1), (86, 2)).
+ERROR : Logical Net n2 is open.
+	Node 18 is in the region ((40,26),(40,27)).
+	Node 88 is in the region ((69,0),(69,2)).
+	Total seperated nodes are 2.
+	Potential connection region ((39, 1), (70, 27)).
+ERROR : Logical Net en is open.
+	Node 9 is in the region ((0,1),(0,1)).
+	Node 50 is in the region ((85,1),(85,1)).
+	Node 55 is in the region ((82,0),(83,1)).
+	Node 60 is in the region ((80,0),(81,1)).
+	Node 65 is in the region ((78,0),(78,1)).
+	Node 70 is in the region ((76,0),(76,1)).
+	Node 75 is in the region ((74,0),(74,1)).
+	Node 80 is in the region ((71,0),(72,1)).
+	Node 85 is in the region ((69,0),(69,1)).
+	Node 89 is in the region ((67,0),(68,1)).
+	Total seperated nodes are 10.
+	Potential connection region ((-1, 0), (86, 2)).
+ERROR : Logical Net N8 is open.
+	Node 54 is in the region ((83,0),(83,1)).
+	Node 92 is in the region ((64,0),(64,1)).
+	Total seperated nodes are 2.
+	Potential connection region ((63, -1), (84, 2)).
+ERROR : Logical Net count[6] is open.
+	Node 13 is in the region ((14,28),(14,28)).
+	Node 46 is in the region ((44,13),(45,14)).
+	Node 51 is in the region ((83,0),(83,1)).
+	Node 93 is in the region ((65,0),(66,1)).
+	Total seperated nodes are 4.
+	Potential connection region ((13, 0), (84, 29)).
+ERROR : Logical Net N7 is open.
+	Node 59 is in the region ((81,0),(81,1)).
+	Node 97 is in the region ((60,0),(60,1)).
+	Total seperated nodes are 2.
+	Potential connection region ((59, -1), (82, 2)).
+ERROR : Logical Net count[5] is open.
+	Node 12 is in the region ((27,28),(27,28)).
+	Node 41 is in the region ((51,13),(51,14)).
+	Node 56 is in the region ((81,0),(81,1)).
+	Node 94 is in the region ((61,0),(62,1)).
+	Total seperated nodes are 4.
+	Potential connection region ((26, 0), (82, 29)).
+ERROR : Logical Net add_20/carry[6] is open.
+	Node 96 is in the region ((64,0),(64,1)).
+	Node 95 is in the region ((62,0),(62,1)).
+	Total seperated nodes are 2.
+	Potential connection region ((61, -1), (65, 2)).
+ERROR : Logical Net N6 is open.
+	Node 64 is in the region ((79,0),(79,1)).
+	Node 98 is in the region ((56,0),(56,1)).
+	Total seperated nodes are 2.
+	Potential connection region ((55, -1), (80, 2)).
+ERROR : There are more errors than default Max Error Number 20.
+** Total OPEN Nets are 20.
+** Total Electrical Equivalent Error are 0.
+** Total Must Joint Error are 0.
+
+-- LVS END : --
+Elapsed =    0:00:00, CPU =    0:00:00
+Update error cell ...
+1

@@ -1,0 +1,383 @@
+                                        
+                                 PrimeTime (R)
+                                        
+                 Version K-2015.06 for linux64 - May 21, 2015 
+                                        
+                    Copyright (c) 1988 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+foreach command {read_parasitics read_saif report_power report_switching_activity report_timing report_constraint report_units report_annotated_parasitics read_sdc set_power_analysis_options set_switching_activity} {
+    puts "EDA_HELP_BEGIN $command"
+    if {[catch {help -verbose $command} message]} {puts $message}
+    puts "EDA_HELP_END $command"
+}
+EDA_HELP_BEGIN read_parasitics
+ read_parasitics      # Backannotate RC parasitics
+   [-format file_fmt]     (Parasitics file format: 
+                           Values: GPD, SBPF, SPEF, DSPF, RSPF, PARA)
+   [-complete_with completion_type]
+                          (Type of completion: 
+                           Values: WLM, ZERO)
+   [-lumped_cap_only]     (Only annotate lumped net capacitances)
+   [-pin_cap_included]    (RC network includes pin capacitances)
+   [-path prefix]         (Path prefix to add to instance names)
+   [-coupling_reduction_factor factor]
+                          (Reduction factor for coupling capacitances: 
+                           Value >= 0)
+   [-triplet_type ttype]  (For SPEF and PARA, which value to select from a triplet: 
+                           Values: min, typ, max)
+   [-verbose]             (Report annotated parasitics)
+   [-syntax_only]         (Parse file for syntax errors; no annotation)
+   [-ilm_context]         (Perform annotation in the presence of ILMs)
+   [-eco file_name]       (Read ECO parasitics)
+   [-original_file_name file_name]
+                          (Original file name for reading ECO parasitics)
+   [-x_offset offset]     (Offset of the origin in X-direction to transform locations)
+   [-y_offset offset]     (Offset of the origin in Y-direction to transform locations)
+   [-rotation angle]      (Rotation angle to transform locations: 
+                           Values: rotate_none, rotate_90, rotate_180, 
+                           rotate_270)
+   [-axis_flip flip]      (Is the instance flipped in X or Y direction?: 
+                           Values: flip_x, flip_y, flip_both, flip_none)
+   [-keep_capacitive_coupling]
+                          (Keep cross capacitances in SPEF)
+   [file_names]           (List of parasitic file names)
+
+EDA_HELP_END read_parasitics
+EDA_HELP_BEGIN read_saif
+ read_saif            # Read in switching activity from SAIF file
+   -strip_path prefix     (Path prefix to the top of the design)
+   [-path prefix]         (Path of the instance from the top of the design)
+   [-ignore ignore_name]  (Name of an instance for which switching activity is to be ignored)
+   [-exclude exclude_file_name]
+                          (Specifies a file that contains a list of names to be ignored)
+   [-derate_glitch value] (Specifies a default derating factor value to be used for inertial glitches.)
+   [-quiet]               (Do not print warning messages for annotation mismatches)
+   file_name              (Name of SAIF file)
+
+EDA_HELP_END read_saif
+EDA_HELP_BEGIN report_power
+ report_power         # Display power report
+   [-net_power]           (Report power for nets)
+   [-cell_power]          (Report power for cells)
+   [-threshold_voltage_group]
+                          (Report threshold voltage group for cells)
+   [-lvth_groups <low_vth_group_list>]
+                          (List of low vth groups)
+   [-leaf]                (Report leaf-level cells or nets)
+   [-include_boundary_nets]
+                          (Include primary input port nets)
+   [-verbose]             (Verbose power reporting)
+   [-nworst <number>]     (Max number of nets or cells to report: 
+                           Value >= 0)
+   [-sort_by <sort_method>]
+                          (Sort cells/nets by sort_method: 
+                           Values: name, cell_leakage_power, 
+                           cell_internal_power, net_switching_power, 
+                           dynamic_power, net_toggle_rate, 
+                           total_net_load, total_power, 
+                           net_static_probability)
+   [-nosplit]             (Do not split lines when fields overflow)
+   [-hierarchy]           (Report power consumption hierarchically)
+   [-levels <number>]     (Number of levels of hierarchy to be reported: 
+                           Value >= 1)
+   [-power_greater_than <threshold>]
+                          (Report power only for values no less than <threshold>)
+   [-clocks <clock_list>] (Report power only for objects related to these clocks)
+   [-groups <group_list>] (Report power only for objects in these power groups)
+   [-include_estimated_clock_network]
+                          (Include power from estimated clock network)
+   [-derate]              (Report power derate)
+   [-rails <rails/power supply nets name list>]
+                          (Report power only for the specified rails/power supply nets)
+   [-pattern_priority <pattern_priority_list>]
+                          (list of library cell name pattern)
+   [-attribute string]    (attribute name to retrieve user defined pattern name for a library cell)
+   [object_list]          (Report power only for these cells or nets)
+
+EDA_HELP_END report_power
+EDA_HELP_BEGIN report_switching_activity
+ report_switching_activity # reports the switching annotation info
+   [-cells cell_list]     (instance objects)
+   [-list_not_annotated]  (missing nets)
+   [-list_annotated]      (annotated nets)
+   [-list_low_activity]   (nets with low activity)
+   [-list_by_source source string]
+                          (nets with activity information from given source)
+   [-base_clock clock name]
+                          (Clock to compare toggle rates to)
+   [-average_activity]    (Computes average toggle rates over blocks)
+   [-coverage]            (Computes coverage rates over blocks)
+   [-hierarchy]           (Displays reports hierarchically)
+   [-show_pin]            (Shows pins in certain net lists)
+   [-sort_by [hier | toggle]]
+                          (Sorts result or list)
+   [-toggle_limit integer]
+                          (Nets with fewer toggles than limit are defined to be low activity)
+   [-exclude string]      (exclude some nets by type)
+   [-include_only string] (include only some types of nets)
+   [-only_related_clock clock]
+                          (Report only for nets with given related clock)
+
+EDA_HELP_END report_switching_activity
+EDA_HELP_BEGIN report_timing
+ report_timing        # Report timing paths
+   [-to to_list]          (To pins, ports, nets, or clocks)
+   [-rise_to rise_to_list]
+                          (Rising to pins, ports, nets, or clocks)
+   [-fall_to fall_to_list]
+                          (Falling to pins, ports, nets, or clocks)
+   [-from from_list]      (From pins, ports, nets, or clocks)
+   [-rise_from rise_from_list]
+                          (Rising from pins, ports, nets, or clocks)
+   [-fall_from fall_from_list]
+                          (Falling from pins, ports, nets, or clocks)
+   [-through through_list]
+                          (Through pins, ports, or nets)
+   [-rise_through rise_through_list]
+                          (Rising through pins, ports, or nets)
+   [-fall_through fall_through_list]
+                          (Falling through pins, ports, or nets)
+   [-exclude exclude_list]
+                          (Exclude pins, ports, nets or cells)
+   [-rise_exclude rise_exclude_list]
+                          (Exclude rising of pins, ports, nets or cells)
+   [-fall_exclude fall_exclude_list]
+                          (Exclude falling of pins, ports, nets or cells)
+   [-delay_type delay_type]
+                          (Type of path delay: 
+                           Values: max, min, min_max, max_rise, 
+                           max_fall, min_rise, min_fall)
+   [-nworst paths_per_endpoint]
+                          (List N worst paths to endpoint: 
+                           Value >= 1)
+   [-max_paths count]     (Maximum number of paths per path group to output: 
+                           Value >= 1)
+   [-group group_name]    (Limit report to paths in these groups)
+   [-unique_pins]         (Find paths through unique pins)
+   [-slack_greater_than slack_limit]
+                          (Display paths with slack greater than this)
+   [-slack_lesser_than slack_limit]
+                          (Display paths with slack less than this)
+   [-ignore_register_feedback feedback_slack_cutoff]
+                          (Ignore feedback loops to registers)
+   [-include_hierarchical_pins]
+                          (Create timing point for each hierarchical pin in path)
+   [-trace_latch_borrow]  (Trace timing paths through borrowing latches)
+   [-trace_latch_forward] (Trace timing paths beyond latch loop breakers)
+   [-pba_mode effort]     (Path-based analysis mode (default is none):
+                           Values: none, path, exhaustive)
+   [-normalized_slack]    (Sort by normalized slack)
+   [-start_end_pair]      (List worst path per start-endpoint pair)
+   [-cover_design]        (List worst path through every violating pin)
+   [-dont_merge_duplicates]
+                          (Do not merge paths that appear in more than one scenario)
+   [-pre_commands pre_command string]
+                          (pre merged reporting commands to be executed at slave(s))
+   [-post_commands post command string]
+                          (post merged reporting commands to be executed at slave(s))
+   [-path_type format]    (Format for path report: 
+                           Values: full, full_clock, short, end, 
+                           summary, full_clock_expanded)
+   [-input_pins]          (Show input pins in path)
+   [-nets]                (List net names)
+   [-nosplit]             (Do not split lines when columns overflow)
+   [-transition_time]     (Display transition time for each pin)
+   [-capacitance]         (Display total capacitance for each net)
+   [-report_ignored_register_feedback]
+                          (Report ignored feedback loops to registers)
+   [-significant_digits digits]
+                          (Number of digits to display: 
+                           Range: 0 to 13)
+   [-crosstalk_delta]     (Show crosstalk effects)
+   [-derate]              (Show derate factors)
+   [-variation]           (Report variation-aware info)
+   [-exceptions exception_type]
+                          (Scope of timing exceptions reporting: 
+                           Values: dominant, overridden, all)
+   [-voltage]             (Report pin voltages)
+   [-sort_by <slack|group>]
+                          (sort_by)
+   [path_collection]      (a collection of timing paths)
+
+EDA_HELP_END report_timing
+EDA_HELP_BEGIN report_constraint
+ report_constraint    # Report constraint evaluations
+   [-pba_mode values_list]
+                          (Path-Based analysis mode: 
+                           Values: none, path, exhaustive)
+   [-all_violators]       (Show all constraint violators)
+   [-verbose]             (Show verbose information)
+   [-path_type format]    (Format for all-violators report: 
+                           Values: slack_only, end)
+   [-ignore_register_feedback feedback_slack_cutoff]
+                          (Ignore feedback loops to registers)
+   [-max_delay]           (Only max_delay & setup)
+   [-min_delay]           (Only min_delay & hold)
+   [-max_capacitance]     (Only max_capacitance)
+   [-min_capacitance]     (Only min_capacitance)
+   [-max_transition]      (Only max_transition)
+   [-pulse_clock_max_transition]
+                          (Only pulse_clock_max_transition)
+   [-min_transition]      (Only min_transition)
+   [-pulse_clock_min_transition]
+                          (Only pulse_clock_min_transition)
+   [-max_fanout]          (Only max_fanout)
+   [-min_fanout]          (Only min_fanout)
+   [-min_pulse_width]     (Only min_pulse_width)
+   [-pulse_clock_min_width]
+                          (Only pulse_clock_min_width)
+   [-pulse_clock_max_width]
+                          (Only pulse_clock_max_width)
+   [-min_period]          (Only min_period)
+   [-recovery]            (Only async recovery)
+   [-removal]             (Only async removal)
+   [-max_skew]            (Only max_skew)
+   [-clock_separation]    (Only clock_separation)
+   [-clock_gating_setup]  (Only clock gating setup)
+   [-clock_gating_hold]   (Only clock gating hold)
+   [-significant_digits digits]
+                          (Number of digits to display: 
+                           Range: 0 to 13)
+   [-nosplit]             (Do not split lines when columns overflow)
+   [-connection_class]    (show only connection_class information)
+   [-boundary_check]      (Show only HyperScale boundary constraint violations)
+   [-boundary_check_include boundary_checks]
+                          (Show selected HyperScale boundary constraint violations: 
+                           Values: all, non_auto_fixable, env_variables, 
+                           global_timing_derate, operating_conditions, 
+                           library_mapping, aocvm_table_group_setting, 
+                           mis_coeff, clock_mapping, clock_attributes, 
+                           clock_relations, clock_uncertainty, 
+                           clock_skew_with_uncertainty, 
+                           boundary_logic_value, aocv_metrics, 
+                           data_arrival, clock_latency, input_slews, 
+                           boundary_ideal_network, global_drc, 
+                           si_delay_analysis_setting, 
+                           si_aggressor_exclusion_setting, auto_fixable)
+   [-pre_commands pre_command string]
+                          (pre merged reporting commands to be executed at slave(s))
+   [-post_commands post command string]
+                          (post merged reporting commands to be executed at slave(s))
+   [-format string]       (Generate report in CSV format)
+   [-output string]       (Write report in CSV format into the file)
+   [-default_scenario_name string]
+                          (Custom scenario name in CSV report)
+   [-waveform_integrity type]
+                          (analyze waveform integrity: 
+                           Values: static, dynamic)
+   [port_pin_cell_list]   (Pins for max transition and capacitance checks, cells for boundary checks)
+
+EDA_HELP_END report_constraint
+EDA_HELP_BEGIN report_units
+ report_units         # Report unit information
+   [-nosplit]             (Don't split lines if column overflows)
+
+EDA_HELP_END report_units
+EDA_HELP_BEGIN report_annotated_parasitics
+ report_annotated_parasitics # Report on annotated RC parasitics
+   [-check]               (Check the integrity of RC networks)
+   [-no_check]            (Do not check the integrity of RC networks)
+   [-internal_nets]       (Report on internal nets)
+   [-boundary_nets]       (Report on port nets)
+   [-driverless_nets]     (Show annotation information for only driverless nets)
+   [-loadless_nets]       (Show annotation information for only loadless nets)
+   [-pin_to_pin_nets]     (Show annotation information for only pin-to-pin nets)
+   [-max_nets num]        (Max number of nets reported for the list options)
+   [-list_annotated]      (List net drivers which are backannotated)
+   [-list_not_annotated]  (List net drivers which are not backannotated)
+   [-constant_arcs]       (Keep a separate count for constant nets)
+   [net_list]             (Specific nets to report)
+
+EDA_HELP_END report_annotated_parasitics
+EDA_HELP_BEGIN read_sdc
+ read_sdc             # Read a Synopsys Design Constraints format script
+   [-echo]                (Echo all commands)
+   [-syntax_only]         (Only do syntax/semantic checks)
+   [-version sdc_version] (SDC Version (default is latest))
+   file_name              (SDC file to read)
+
+EDA_HELP_END read_sdc
+EDA_HELP_BEGIN set_power_analysis_options
+ set_power_analysis_options # Set options for the power analysis mode
+   [-static_leakage_only] (Only compute leakage, skip dynamic power computations)
+   [-variation_quantile <float>]
+                          (Choose Quantile to report for leakage variation report (0.0 to 1.0, default is 0.99): 
+                           Range: 0 to 1)
+   [-waveform_interval <float>]
+                          (Specify the sampling interval)
+   [-cycle_accurate_cycle_count <integer>]
+                          (The number of clock cycles used as the sampling interval in CAPP: 
+                           Value >= 0)
+   [-cycle_accurate_clock clock]
+                          (Base Clock used for CAPP analysis)
+   [-waveform_format fsdb|out|none]
+                          (Output file format, default: fsdb: 
+                           Values: fsdb, out, none)
+   [-waveform_output file]
+                          (File prefix of power waveform file)
+   [-include top|all_without_leaf|all_with_leaf]
+                          (Select the part of design to be analyzed: 
+                           Values: top, all_without_leaf, all_with_leaf)
+   [-include_groups list] (The power groups to be analyzed)
+   [-cells list]          (Only cells specified to be analyzed)
+   [-sdpd_tracking enabled|disabled]
+                          (Enable or disable SDPD tracking in time_based and averaged power analysis)
+   [-sdpd_tracking_cells list]
+                          (The list of cells to be tracked for SDPD analysis)
+
+EDA_HELP_END set_power_analysis_options
+EDA_HELP_BEGIN set_switching_activity
+ set_switching_activity # set switching activity on specified objects
+   [-state_condition state_condition]
+                          (when condition of the state)
+   [-path_sources path_sources]
+                          (name of the path source pins)
+   [-toggle_rate toggle_rate]
+                          (toggle rate value: 
+                           Value >= 0)
+   [-clock_derate derate_value]
+                          (scale factor of clock tr: 
+                           Range: 0 to 1)
+   [-glitch_rate glitch_rate]
+                          (glitch rate value: 
+                           Value >= 0)
+   [-static_probability static_probability]
+                          (static probability value: 
+                           Range: 0 to 1)
+   [-rise_ratio rise_ratio]
+                          (rise ratio value: 
+                           Range: 0 to 1)
+   [-period period_value] (period value for toggle/glitch rate: 
+                           Value >= 0)
+   [-base_clock clock]    (clock name)
+   [-type object_type_list]
+                          (list of select types: 
+                           Values: registers, three_states, inputs, 
+                           outputs, inouts, ports, nets, 
+                           clock_gating_cells, black_boxes, memory, 
+                           non_clock_network)
+   [-hierarchy]           (flag to go hierarchically down)
+   [-verbose]             (flag to print more messages)
+   [-clock_domains clock_list]
+                          (clock domain list)
+   [object_list]          (object names)
+
+EDA_HELP_END set_switching_activity
+puts "EDA_HELP_COMPLETE PT"
+EDA_HELP_COMPLETE PT
+exit
+Information: Defining new variable 'command'. (CMD-041)
+Information: Defining new variable 'message'. (CMD-041)
+
+Timing updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+Maximum memory usage for this session: 384.65 MB
+CPU usage for this session: 1 seconds 
+Elapsed time for this session: 5 seconds
+Diagnostics summary: 2 informationals
+
+Thank you for using pt_shell!

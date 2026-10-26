@@ -1,0 +1,225 @@
+{
+  "status": "repaired_within_current_ICC_rule_scope",
+  "baseline_run": "upload_20261025_143839_f96edb1f",
+  "repair_run": "upload_20261026_130102_35ef2344",
+  "repaired_milkyway": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261026_130102_35ef2344/build/drc_ai/counter_mw",
+  "actual_model": "deepseek-flash",
+  "langgraph_rounds": 2,
+  "repair_verification": {
+    "tool_exit_code": 0,
+    "routing": {
+      "routing_drc_errors": 0,
+      "open_nets": 0,
+      "nets_checked": 36,
+      "excluded_ports": 0,
+      "unplaced_cells": 0,
+      "check_scope": "ICC routing verification; not foundry signoff DRC",
+      "routing_clean": true
+    },
+    "pg": {
+      "nets_checked": 2,
+      "nets_with_errors": 0,
+      "clean": true
+    },
+    "lvs": {
+      "floating_ports": 0,
+      "floating_nets": 0,
+      "short_nets": 0,
+      "open_nets": 0,
+      "electrical_equivalence_errors": 0,
+      "must_join_errors": 0,
+      "clean": true
+    },
+    "netlist_unchanged": true,
+    "cell_inventory_unchanged": true,
+    "placement_legal": true,
+    "placement_error_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "baseline_reproduced": true,
+    "execution_completed": true,
+    "exported_artifacts_present": true,
+    "details": "",
+    "accepted": true
+  },
+  "saved_database_recheck": {
+    "run": "upload_20261026_131119_06234e60",
+    "result": "result_184",
+    "exit_code": 0,
+    "routing": {
+      "routing_drc_errors": 0,
+      "open_nets": 0,
+      "nets_checked": 36,
+      "excluded_ports": 0,
+      "unplaced_cells": 0,
+      "check_scope": "ICC routing verification; not foundry signoff DRC",
+      "routing_clean": true
+    },
+    "pg": {
+      "nets_checked": 2,
+      "nets_with_errors": 0,
+      "clean": true
+    },
+    "lvs": {
+      "floating_ports": 0,
+      "floating_nets": 0,
+      "short_nets": 0,
+      "open_nets": 0,
+      "electrical_equivalence_errors": 0,
+      "must_join_errors": 0,
+      "clean": true
+    },
+    "placement_error_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "netlist_matches_original_baseline": true
+  },
+  "rounds": [
+    {
+      "iteration": 1,
+      "run": "upload_20261026_130022_aadb30fa",
+      "plan": {
+        "strategy": "ripup_n7",
+        "pin_taper_mode": "default_width",
+        "extra_pin_tracks": true,
+        "diagnosis": "DRC 为 M1 上 count[5] 与 N7 的 Diff net spacing，标记区域约 x=8.270–8.405、y=16.625–17.040。几何显示 N7 在 U14/B0 附近有一条 M1 垂直走线 x=8.165–8.285、y=15.965–16.920，而 count[5] 的 U14/A0 为相邻 M1 引脚 x=8.390–8.530、y=16.745–17.170；N7 走线右边缘与 A0 引脚左边缘非常接近。actual_spacing/required_spacing 未导出，不能猜测具体规则值。该冲突的关键是 N7 的 M1 引脚逃逸/短垂线过于靠近固定的 count[5] A0 引脚，因此优先完整拆除 N7 信号布线后重布，避免继续在原有 M1 逃逸上做局部增量。ripup_count5 不会移动 A0 这个单元引脚，针对性不足；ripup_pair 影响面更大且无必要；move_u14 会同时移动相邻 A0/B0 引脚并引入额外合法化/重布风险。pin_taper_mode 使用 default_width，避免按引脚宽度加宽 N7 M1 走线而加剧与 A0 的间距压力；extra_pin_tracks 允许重布时使用额外引脚轨道以寻找更合法的 B0 逃逸路径。原 TF/FRAM 6/9 层不一致警告保持现有检查规则与基线，不改规则、不降间距。",
+        "expected_effect": "仅对 N7 执行完整 remove_net_routing 后 ECO 重布，预期可让 N7 从 U14/B0 使用不同 M1 逃逸轨道或换层，从而拉开与 count[5] A0 M1 引脚的距离，降低该处 Diff net spacing DRC 风险。该操作不改变 count[5] 的固定 A0 引脚形状，也不修改 RTL/工艺库/DRC 规则；是否真正消除以及是否引入新 DRC，必须由后续工具报告确认。"
+      },
+      "verification": {
+        "tool_exit_code": 0,
+        "routing": {
+          "routing_drc_errors": 2,
+          "open_nets": 0,
+          "nets_checked": 36,
+          "excluded_ports": 0,
+          "unplaced_cells": 0,
+          "check_scope": "ICC routing verification; not foundry signoff DRC",
+          "routing_clean": false
+        },
+        "pg": {
+          "nets_checked": 2,
+          "nets_with_errors": 0,
+          "clean": true
+        },
+        "lvs": {
+          "floating_ports": 0,
+          "floating_nets": 0,
+          "short_nets": 1,
+          "open_nets": 0,
+          "electrical_equivalence_errors": 0,
+          "must_join_errors": 0,
+          "clean": false
+        },
+        "netlist_unchanged": true,
+        "cell_inventory_unchanged": true,
+        "placement_legal": true,
+        "placement_error_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "baseline_reproduced": true,
+        "execution_completed": true,
+        "details": "type: Diff net spacing\nbbox: {{7.430 16.905} {7.990 17.040}}\nlayer_names: {M1  M1}\nnet1_name: N7\nnet2_name: en\ntype: Short\nbbox: {{7.630 16.735} {7.990 17.040}}\nlayer_names: M1\nnet1_name: N7\nnet2_name: en\n",
+        "accepted": false
+      }
+    },
+    {
+      "iteration": 2,
+      "run": "upload_20261026_130102_35ef2344",
+      "plan": {
+        "strategy": "ripup_pair",
+        "pin_taper_mode": "off",
+        "extra_pin_tracks": false,
+        "diagnosis": "DRC 为 M1 上 count[5] 与 N7 的 Diff net spacing，标记 bbox 约 x=8.270–8.405、y=16.625–17.040。几何显示 N7 在 U14/B0 附近的 M1 垂直走线为 x=8.165–8.285、y=15.965–16.920，而 count[5] 的 U14/A0 M1 引脚为 x=8.390–8.530、y=16.745–17.170；两者在 y=16.745–16.920 重叠，水平边缘间距约 0.105 um。actual_spacing/required_spacing 未导出，不能猜测具体规则值。此前已尝试单独 ripup_n7 + default_width + extra_pin_tracks=true，结果 routing DRC 变为 2，并出现 N7 与 en 的 spacing 及 Short，说明单独重布 N7 时 B0 逃逸被挤到更差轨道并侵入 en，且未解决与 A0 引脚附近的间距压力。因此不再重复该方案。ripup_count5 只拆 count[5] 外部走线，不能移动固定的 A0 引脚形状，针对性不足；move_u14 会移动整个 U14 并重布其多个连接网络，影响面超出目标两网络且引入额外合法化风险。选择 ripup_pair 同时完整拆除 count[5] 与 N7 的信号布线再 ECO，使 A0 与 B0 两侧的 M1 逃逸资源一起释放并重新分配。pin_taper_mode 用 off，避免引脚 taper 加宽 N7 M1 走线而加剧与 A0/en 的间距压力；extra_pin_tracks 设为 false，避免额外引脚轨道诱导 N7 再次靠近 en。原 TF/FRAM 6/9 层不一致警告保持现有检查规则与基线，不降间距、不改规则、不删标记。",
+        "expected_effect": "对 count[5] 与 N7 两个目标信号网络执行完整 remove_net_routing 后 ECO 重布，预期可重新选择 U14/A0 与 U14/B0 的 M1 引脚逃逸轨道，增大 N7 走线与 count[5] A0 引脚的水平间距，并避免 N7 重布后靠近 en。该操作只拆目标两网络信号布线，不修改 RTL、工艺库、间距规则或 DRC 标记；是否真正消除原 Diff net spacing 以及是否引入新 DRC/短路，必须由后续工具报告确认。"
+      },
+      "verification": {
+        "tool_exit_code": 0,
+        "routing": {
+          "routing_drc_errors": 0,
+          "open_nets": 0,
+          "nets_checked": 36,
+          "excluded_ports": 0,
+          "unplaced_cells": 0,
+          "check_scope": "ICC routing verification; not foundry signoff DRC",
+          "routing_clean": true
+        },
+        "pg": {
+          "nets_checked": 2,
+          "nets_with_errors": 0,
+          "clean": true
+        },
+        "lvs": {
+          "floating_ports": 0,
+          "floating_nets": 0,
+          "short_nets": 0,
+          "open_nets": 0,
+          "electrical_equivalence_errors": 0,
+          "must_join_errors": 0,
+          "clean": true
+        },
+        "netlist_unchanged": true,
+        "cell_inventory_unchanged": true,
+        "placement_legal": true,
+        "placement_error_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "baseline_reproduced": true,
+        "execution_completed": true,
+        "details": "",
+        "accepted": true
+      }
+    }
+  ],
+  "accepted_candidate_sha256": "24c433828b94cc8473163be88d5238357c504c5f72f4d4c7173800ecae3f4f8a",
+  "baseline_preserved": true,
+  "gui_capture_note": "result_180 screenshots and reports are valid outputs; GUI process waited on exit and was terminated at 90s (result_181). Independent CLI recheck result_184 completed with exit 0.",
+  "limits": [
+    "ICC built-in routing DRC only, not foundry signoff",
+    "Technology/reference library consistency warnings remain",
+    "No antenna rules; detailed TLU+/SPEF and repaired-route PT not run"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "script": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_133615_02c6d055/src/generated/scripts/icc_place_route.tcl", 
+  "started_epoch": 1792906631.218514, 
+  "state": "running", 
+  "timeout_seconds": 600, 
+  "tool": "icc", 
+  "tool_exit_code": null, 
+  "tool_pid": 4572, 
+  "worker_pid": 4571
+}

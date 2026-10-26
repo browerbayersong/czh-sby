@@ -1,0 +1,32 @@
+{
+  "answer": "已规划 1 份文件，实际生成 1 份草稿。\n\n静态检查结果：pass（不代表编译通过）。\n\n任务说明：为现有计数器工程生成单个 VCS 仿真脚本，编译 tb_counter_8bit，运行仿真并生成覆盖率文本报告；假设源文件相对路径为 generated/rtl/counter_8bit.v 与 generated/tb/tb_counter_8bit.v，脚本从 src/ 启动且 build/ 位于其相邻目录。\n\n待审阅草稿：`scripts/run_vcs.sh`\n\n尚未执行任何生成的脚本、VCS 仿真或 DC 综合，也尚未写入这些草稿。",
+  "drafts": [
+    {
+      "name": "scripts/run_vcs.sh",
+      "code": "#!/bin/bash\nset -euo pipefail\n\n# Compile the existing counter RTL and testbench with VCS 2014.03.\ntimeout 300s /opt/Synopsys/VCS2014/bin/vcs \\\n    -full64 \\\n    -sverilog \\\n    -timescale=1ns/1ps \\\n    -cm line+cond+fsm+tgl+branch \\\n    -cm_dir ../build/cov.vdb \\\n    -top tb_counter_8bit \\\n    -o ../build/simv \\\n    generated/rtl/counter_8bit.v \\\n    generated/tb/tb_counter_8bit.v \\\n    > ../build/vcs_compile.log 2>&1\n\n# Run the simulation and collect coverage into the same coverage database.\ntimeout 120s ../build/simv \\\n    -cm line+cond+fsm+tgl+branch \\\n    -cm_dir ../build/cov.vdb \\\n    > ../build/vcs_sim.log 2>&1\n\n# Generate the text coverage report.\ntimeout 120s /opt/Synopsys/VCS2014/bin/urg \\\n    -dir ../build/cov.vdb \\\n    -format text \\\n    -report ../build/covReport \\\n    > ../build/urg.log 2>&1\n",
+      "source": "",
+      "original": "",
+      "references": [
+        "generated/rtl/counter_8bit.v",
+        "generated/tb/tb_counter_8bit.v"
+      ],
+      "purpose": "Linux bash 下 VCS I-2014.03 三命令流程：编译计数器 TB 到 ../build/simv，运行仿真，生成 ../build/covReport 覆盖率报告；包含 shebang、set -euo pipefail、timeout、指定编译/仿真/覆盖率参数与日志重定向，不包含 cd/mkdir/变量/函数/清理或通过标记输出。",
+      "kind": ".sh"
+    }
+  ],
+  "plan": [
+    {
+      "path": "scripts/run_vcs.sh",
+      "purpose": "Linux bash 下 VCS I-2014.03 三命令流程：编译计数器 TB 到 ../build/simv，运行仿真，生成 ../build/covReport 覆盖率报告；包含 shebang、set -euo pipefail、timeout、指定编译/仿真/覆盖率参数与日志重定向，不包含 cd/mkdir/变量/函数/清理或通过标记输出。",
+      "references": [
+        "generated/rtl/counter_8bit.v",
+        "generated/tb/tb_counter_8bit.v"
+      ],
+      "depends_on": []
+    }
+  ],
+  "review_status": "pass",
+  "issues": [],
+  "error": "",
+  "reference_warnings": []
+}

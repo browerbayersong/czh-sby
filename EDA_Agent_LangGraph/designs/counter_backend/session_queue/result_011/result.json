@@ -1,0 +1,91 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90/aci/sc-x",
+  "entries": [
+    {
+      "name": "libspm",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "verilog",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "celtic",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "lef",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "magma",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "libsi",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "symbols",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "primetime",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "1.cell_list",
+      "size": 5314,
+      "mode": "0o100664"
+    },
+    {
+      "name": ".lock",
+      "size": 0,
+      "mode": "0o100666"
+    },
+    {
+      "name": "doc",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "cell_list",
+      "size": 5342,
+      "mode": "0o100664"
+    },
+    {
+      "name": "astro",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "synopsys",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "tlf",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "signalstorm",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "vhdl",
+      "size": 4096,
+      "mode": "0o40775"
+    }
+  ],
+  "status": "completed"
+}

@@ -1,0 +1,22 @@
+Read-only original report excerpt
+ICC DRC report - one residual violation
+
+    Layer VIA4       =  0.00% (0      / 8       vias)
+        Un-optimized = 100.00% (8       vias)
+ 
+
+
+Verify Summary:
+
+Total number of nets = 36, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 1
+Total number of antenna violations = no antenna rules defined
+Total number of voltage-area violations = no voltage-areas defined
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+1

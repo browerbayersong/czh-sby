@@ -1,0 +1,11 @@
+IC
+Linux 2.6.32-573.el6.x86_64 x86_64 GNU/Linux
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/vg_eda-lv_root
+                      492G   83G  384G  18% /
+/dev/mapper/vg_eda-lv_root
+                      492G   83G  384G  18% /
+             total       used       free     shared    buffers     cached
+Mem:          1991        995        995          2         56        532
+-/+ buffers/cache:        406       1584 
+Swap:            0          0          0 

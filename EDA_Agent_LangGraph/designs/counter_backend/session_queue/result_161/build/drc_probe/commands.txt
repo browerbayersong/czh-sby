@@ -1,0 +1,236 @@
+EDA_HELP get_net_shapes
+ get_net_shapes       # Creates a collection of net shapes.
+   [-of_objects net_list] (get net shapes of these nets)
+   [-shield_of net_list]  (get net shapes shielding these nets)
+   [-within region]       (match net shapes within specified region (rectangle or polygon) )
+   [-touching region]     (match net shapes touching specified region (rectangle or polygon) )
+   [-intersect region]    (match net shapes intersect specified region (rectangle or polygon) )
+   [-at point]            (match net shapes overlap the specified point)
+   [-filter expression]   (filter collection with 'expression' )
+   [-type { vw | hw | path | poly }]
+                          (type of net shape)
+   [-include_shield]      (shielding net shapes also will be returned)
+   [-hierarchical]        (Search net shapes across hierarchies)
+   [-quiet]               (suppress all messages)
+   [patterns]             (match path, wire net shapes)
+
+EDA_HELP get_net_rectangles
+Information: No commands matched 'get_net_rectangles'. (CMD-040)
+EDA_HELP get_shapes
+Information: No commands matched 'get_shapes'. (CMD-040)
+EDA_HELP get_pin_shapes
+ get_pin_shapes       # Creates a collection of pin shapes
+   [-of_objects objects]  (Gets pin shape of the specified cells or pins)
+   [-within region]       (Matches pin shapes within specified region (rectangle or polygon) )
+   [-touching region]     (Matches pin shapes touching specified region (rectangle or polygon) )
+   [-intersect region]    (Matches pin_shapes intersect specified region (rectangle or polygon) )
+   [-at point]            (Matches pin_shapes overlapping specified point)
+   [-hierarchical]        (Search pin shapes across hierarchies)
+   [-filter expression]   (Filter collection with 'expression')
+   [-quiet]               (Suppress all messages)
+   [-regexp]              (Patterns are full regular expressions)
+   [-nocase]              (Matches are case-insensitive)
+   [-exact]               (Wildcards are considered as plain characters)
+   [patterns]             (Matches pin shape names against patterns, default is *)
+
+EDA_HELP get_net_segments
+Information: No commands matched 'get_net_segments'. (CMD-040)
+EDA_HELP get_net_vias
+Information: No commands matched 'get_net_vias'. (CMD-040)
+EDA_HELP remove_net_routing
+ remove_net_routing   # Remove net routing
+   nets                   (collection of nets)
+
+EDA_HELP remove_net_shapes
+Information: No commands matched 'remove_net_shapes'. (CMD-040)
+EDA_HELP move_objects
+ move_objects         # Moves one of more objects
+   [-delta vector]        (displacement to move objects by)
+   [-from point]          (reference point to move from)
+   [-to point]            (location to move to)
+   [-x real]              (new x coordinate)
+   [-y real]              (new y coordinate)
+   [-keep_placement]      (keep child placement)
+   [-keep_pad_to_core_distance]
+                          (keep pad to core distance)
+   [-ignore_fixed]        (ignore fixed status)
+   collection             (list of objects to move)
+
+EDA_HELP set_cell_location
+ set_cell_location    # sets the location on cells/physical_only_cells
+   -coordinates list      (lower-left co-ordinates: {X Y})
+   [-ignore_fixed]        (Ignore fixed or soft_fixed)
+   [-orientation string]  (cell orientation)
+   [-fixed]               (cell location is fixed)
+   objects                (objects patterns OR collection)
+
+EDA_HELP legalize_placement
+ legalize_placement   # Legalize placement
+   [-effort string]       (low | medium | high (default is medium))
+   [-check_only]          (only check the input design. default is off)
+   [-incremental]         (incremental legalize the illegal cells)
+   [-timing]              (timing driven eco legalizer, used in -incremental option)
+   [-coordinates list]    (legalize the cells within the area, e.g. never move the cells outside the area)
+   [-cells list]          (find the nearest legal location for the cells)
+   [-priority string]     (low | medium | high (default is low), only used with -cells option)
+
+EDA_HELP route_zrt_eco
+ route_zrt_eco        # run zrt eco route
+   [-nets <nets>]         (eco route the nets provided (with this option open net driven option is ignored))
+   [-max_detail_route_iterations <int>]
+                          (max number of detailed routing iterations: 
+                           Range: 1 to 1000)
+   [-utilize_dangling_wires (false|true)]
+                          (utilize dangling wires (default true))
+   [-reroute (any_nets|modified_nets_only|modified_nets_first_then_others)]
+                          (reroute strategy to fix drc (default any_nets))
+   [-max_reported_nets <int>]
+                          (max number of changed nets to be reported (default 100). -1 means all nets changed by the command will be reported.: 
+                           Range: -1 to 2147483647)
+   [-open_net_driven (false|true)]
+                          (check and fix drcs on open nets (default false). this options is ignored if -nets is specified.)
+   [-reuse_existing_global_route (false|true)]
+                          (do incremental routing in gr (default false))
+
+EDA_HELP set_route_zrt_common_options
+ set_route_zrt_common_options # set zrt router common options
+   [-allow_pg_as_shield  (false|true)]
+                          (allow power/ground structure to be treated as shields (default: true) (default: true))
+   [-child_process_net_threshold <int>]
+                          (threshold of number of nets to trigger router separate process (default: -1): 
+                           Range: -1 to 2147483647)
+   [-connect_floating_shapes  (false|true)]
+                          (connect pins and all floating shapes (default: false))
+   [-concurrent_redundant_via_effort_level  (low|medium|high)]
+                          (how hard to try to insert redundant vias concurrently during routing (default: low))
+   [-concurrent_redundant_via_mode  (off|reserve_space|insert_at_high_cost)]
+                          (whether and how to insert redundant vias concurrently during routing (default: off))
+   [-connect_within_pins_by_layer_name list of {layerName off/via_standard_cell_pins/via_wire_standard_cell_pins/via_all_pins/via_wire_all_pins} pairs(off|via_standard_cell_pins|via_wire_standard_cell_pins|via_all_pins|via_wire_all_pins)]
+                          (connect to pins using vias and/or wires contained within pin shapes())
+   [-default  (false|true)]
+                          (To set the default value to all options (default: false))
+   [-eco_route_concurrent_redundant_via_effort_level  (low|medium|high)]
+                          (how hard to try to insert redundant vias concurrently during eco routing (default: low))
+   [-eco_route_concurrent_redundant_via_mode  (off|reserve_space)]
+                          (whether and how to insert redundant vias concurrently during eco routing (default: off))
+   [-enforce_voltage_areas  (off|strict|relaxed)]
+                          (specify the level of enforcement of voltage areas (default: relaxed))
+   [-voltage_area_weight list of {voltage_area_name weight} pairs}(low|medium|high)]
+                          (specify voltage areas weight in terms of low, medium, and high(  default: medium))
+   [-extra_nonpreferred_direction_wire_cost_multiplier_by_layer_name list of {layerName value} pairs]
+                          (extra multiplier for non-preferred direction distance cost())
+   [-extra_preferred_direction_wire_cost_multiplier_by_layer_name list of {layerName value} pairs]
+                          (extra multiplier for preferred direction distance cost())
+   [-extra_via_cost_multiplier_by_layer_name list of {layerName value} pairs]
+                          (extra multiplier for via cost())
+   [-extra_via_off_grid_cost_multiplier_by_layer_name list of {layerName value} pairs]
+                          (extra multiplier for vias off of metal routing grid())
+   [-rc_driven_setup_effort_level  (off|low|medium|high)]
+                          (effort level to do setup layer preference based on RC (default: medium))
+   [-forbid_new_metal_by_layer_name list of {layer true/false} pairs(false|true)]
+                          (layers on which to disallow detailed routing outside of fixed shapes during ECO())
+   [-freeze_layer_by_layer_name list of {layerName true/false} pairs(false|true)]
+                          (freeze routing layers to leave them unchanged during routing())
+   [-freeze_via_to_frozen_layer_by_layer_name list of {layerName true/false} pairs(false|true)]
+                          (freeze vias connecting to specified frozen routing layers to leave them unchanged during routing())
+   [-ignore_var_spacing_to_blockage  (false|true)]
+                          (ignore var spacing to blockages (default: false))
+   [-ignore_var_spacing_to_pg  (false|true)]
+                          (ignore var spacing to PG nets (default: false))
+   [-ignore_var_spacing_to_shield  (false|true)]
+                          (ignore var spacing to shield shapes (default: true))
+   [-mark_clock_nets_minor_change  (false|true)]
+                          (mark clock tree nets as minor-change only (default: true))
+   [-net_max_layer_mode  (soft|allow_pin_connection|hard)]
+                          (control strength of net-based max layer constraint (default: hard))
+   [-net_max_layer_mode_soft_cost  (low|medium|high)]
+                          (control cost penalty of net-based soft max layer constraint (default: medium))
+   [-net_min_layer_mode  (soft|allow_pin_connection|hard)]
+                          (control strength of net-based min layer constraint (default: soft))
+   [-net_min_layer_mode_soft_cost  (low|medium|high)]
+                          (control cost penalty of net-based soft min layer constraint (default: medium))
+   [-global_max_layer_mode  (soft|allow_pin_connection|hard)]
+                          (control strength of global max layer constraint (default: soft))
+   [-global_min_layer_mode  (soft|allow_pin_connection|hard)]
+                          (control strength of global min layer constraint (default: soft))
+   [-number_of_vias_over_net_max_layer <int>]
+                          (control access to layers above net-based max layer (default: 1): 
+                           Range: 0 to 15)
+   [-number_of_vias_under_net_min_layer <int>]
+                          (control access to layers below net-based min layer (default: 1): 
+                           Range: 0 to 15)
+   [-number_of_vias_over_global_max_layer <int>]
+                          (control access to layers above global max layer (default: 1): 
+                           Range: 0 to 15)
+   [-number_of_vias_under_global_min_layer <int>]
+                          (control access to layers below global min layer (default: 1): 
+                           Range: 0 to 15)
+   [-min_edge_offset_for_macro_pin_connection_by_layer_name list of {layerName value} pairs]
+                          (set the min edge offset for macro pin connection for metal layers(  default: 1000000015047466219876688855040.00))
+   [-min_shield_length_by_layer_name list of {layerName value} pairs]
+                          (control length of shielding wires(  default: -1.00))
+   [-pg_shield_distance_threshold <real>]
+                          (control of distance threshold to consider P/G as shield (default: 0.000000): 
+                           Range: 0 to 1e+30)
+   [-plan_group_aware  (off|all_routing|top_level_routing_only)]
+                          (read plan groups to enable hierarchical port constraints (default: off))
+   [-post_detail_route_redundant_via_insertion  (off|low|medium|high)]
+                          (perform redundant via insertion automatically after detail route (default: off))
+   [-post_detail_route_fix_soft_violations  (false|true)]
+                          (perform fix soft vio automatically after detail route (default: false))
+   [-post_eco_route_fix_soft_violations  (false|true)]
+                          (perform fix soft vio automatically after eco route (default: false))
+   [-post_group_route_fix_soft_violations  (false|true)]
+                          (perform fix soft vio automatically after group route (default: false))
+   [-post_incremental_detail_route_fix_soft_violations  (false|true)]
+                          (perform fix soft vio automatically after incremental detail route (default: false))
+   [-read_user_metal_blockage_layer  (false|true)]
+                          (control reading in shapes on metal blockage layer (default: false))
+   [-report_local_double_pattern_odd_cycles  (false|true)]
+                          (report local double pattern odd cycles (default: false))
+   [-reroute_clock_shapes  (false|true)]
+                          (reroute clock net shapes (default: false))
+   [-reroute_user_shapes  (false|true)]
+                          (reroute user created shapes (default: false))
+   [-reshield_modified_nets  (off|unshield|reshield)]
+                          (automatically unshield or reshield modified shielded nets (default: off))
+   [-shielding_nets list of net names in curly braces]
+                          (shielding net names)
+   [-via_array_mode  (off|swap|rotate|all)]
+                          (control the types of via arrays that will be used during routing and redundant via insertion (default: all))
+   [-rotate_default_vias  (false|true)]
+                          (control whether or not to rotate the default vias (default: true))
+   [-routing_rule_effort_level fine-grained specification of effort levels]
+                          ({ { rule_name { M1 HIGH MED} {M2 MED LOW} ...} ... })
+   [-route_soft_rule_effort_level  (off|min|low|medium|high)]
+                          (Ripup/reroute effort level to resolve soft spacing rule DRCs (default: medium))
+   [-route_top_boundary_mode  (stay_half_min_space_inside|stay_inside|ignore)]
+                          (control route boundary constraint (default: stay_inside))
+   [-single_connection_to_pins  (off|standard_cell_pins|macro_cell_pins|top_cell_pins|standard_and_macro_cell_pins|standard_and_top_cell_pins|macro_and_top_cell_pins|standard_and_macro_and_pad_cell_pins|all_pins|standard_cell_must_join_pins)]
+                          (specify if router can connect to a pin only once (default: off))
+   [-standard_cell_blockage_as_thin  (false|true)]
+                          (control whether wide blockage in standard cell should be treated as thin wire (default: false))
+   [-tie_off_mode  (all|rail_only)]
+                          (specify if tie-off can be connected to any PG structure or rail only (default: all))
+   [-number_of_secondary_pg_pin_connections <int>]
+                          (Specifies the maximum numbers of secondary pg pins can be connected (default: 0): 
+                           Range: 0 to 50)
+   [-separate_tie_off_from_secondary_pg  (false|true)]
+                          (specify to connect secondary pg tie-off pins as signal types (default: false))
+   [-clock_topology  (normal|comb)]
+                          (specify clock connection topology (default: normal))
+   [-comb_distance <int>] (pins within comb distance must connect to clock strap directly. Unit is row height (default: 2): 
+                           Range: 0 to 50)
+   [-track_auto_fill  (false|true)]
+                          (control filling empty space with routing tracks (default: true))
+   [-verbose_level <int>] (General verbose level for routing log file (default: 0): 
+                           Range: 0 to 2)
+   [-wide_macro_pin_as_fat_wire  (false|true)]
+                          (control if the wide macro/pad pin should have implicit depth same as its width (default: false))
+   [-soft_rule_weight_to_effort_level_map list of {weight_token effort_token} pairs}(off|low|medium|high)]
+                          (specify mapping from weight to effort(low|medium|high))
+   [-wire_on_grid_by_layer_name list of {layerName true/false} pairs(false|true)]
+                          (set the onGrid rule on the metal layer())
+   [-via_on_grid_by_layer_name list of {layerName true/false} pairs(false|true)]
+                          (set the onGrid rule on the cut layer())
+

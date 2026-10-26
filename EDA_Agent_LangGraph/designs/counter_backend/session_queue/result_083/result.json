@@ -1,0 +1,71 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/lef",
+  "entries": [
+    {
+      "name": "tsmc090lk_8lm_2thick_tech.lef",
+      "size": 45475,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_4lm_2thick_tech.lef",
+      "size": 21355,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_7lm_2thick_tech.lef",
+      "size": 39413,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvt_macros.lef",
+      "size": 2321576,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_7lm_1thick_tech.lef",
+      "size": 39741,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_5lm_2thick_tech.lef",
+      "size": 27377,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_8lm_1thick_tech.lef",
+      "size": 45777,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_4lm_1thick_tech.lef",
+      "size": 21657,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_6lm_1thick_tech.lef",
+      "size": 33693,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_5lm_1thick_tech.lef",
+      "size": 27647,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_6lm_2thick_tech.lef",
+      "size": 33394,
+      "mode": "0o100664"
+    },
+    {
+      "name": "README",
+      "size": 696,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090lk_9lm_2thick_tech.lef",
+      "size": 51463,
+      "mode": "0o100664"
+    }
+  ],
+  "status": "completed"
+}

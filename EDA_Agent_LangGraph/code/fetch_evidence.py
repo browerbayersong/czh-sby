@@ -67,7 +67,7 @@ def main() -> int:
     p.add_argument('--remote-base', default='/home/IC/Desktop/EDA_Projects')
     p.add_argument('--project', default='counter_v82')
     p.add_argument('--labels', required=True, help='逗号分隔，如 vcs_004,vcs_006')
-    p.add_argument('--out', default=r'E:\EDA_Agent_handover_2026-10-22\evidence')
+    p.add_argument('--out', default=str(Path(__file__).resolve().parent.parent / 'evidence'))
     args = p.parse_args()
 
     password = getpass.getpass(f'{args.user}@{args.host} 的 SSH 密码（不回显）: ')

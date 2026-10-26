@@ -1,0 +1,71 @@
+{
+  "run": "upload_20261025_145113_d18614ba",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 448,
+      "sha256": "35a7712eda348e1422deef7b8c6eaa56da8c4e0567e5419261f87ef284ecc29e"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 412315,
+      "sha256": "76f87bad4e36acd7f3f88e9d2611d3664cc5d39608c56e4bedeabb5e32f3b8a9"
+    },
+    {
+      "path": "build/icc/routing_drc.rpt",
+      "bytes": 4155,
+      "sha256": "c3d15f9ac1656714302b1dac2fb34661c96ae8c84ad36e0e71e839d3a19bcf99"
+    },
+    {
+      "path": "build/icc/pg_connectivity.rpt",
+      "bytes": 693,
+      "sha256": "ca94f2341c80c73c214485503c4197c3c47887e353644fe858912e5bd41144b3"
+    },
+    {
+      "path": "build/icc/lvs.rpt",
+      "bytes": 1770,
+      "sha256": "64e14e96255b07f658d97aea65a31e172e9b2796241d276b233e566db89fadbe"
+    },
+    {
+      "path": "build/icc/placement_legality.rpt",
+      "bytes": 4506,
+      "sha256": "ab3d5d0d25cf44e193a524c3d7a80cc77f7e5a43173f8d927d6e371e493d5ea8"
+    },
+    {
+      "path": "build/icc/area.rpt",
+      "bytes": 1252,
+      "sha256": "8f74352ed803ec7a3df35edc059cf7702d76bdb09bfe59372ec2dc6ff7f1f6bf"
+    },
+    {
+      "path": "build/icc/physical.rpt",
+      "bytes": 21183,
+      "sha256": "9ca6d7acf302bf297c36bb4be03bf996952291bee28745cdb90401cb6efd7e8a"
+    },
+    {
+      "path": "build/icc/units.rpt",
+      "bytes": 429,
+      "sha256": "5c67f82d5920207c3bd571d0866a949781fbb10a942a63184b2b3bcaa1e297c1"
+    },
+    {
+      "path": "build/icc/rc_model.json",
+      "bytes": 1967,
+      "sha256": "af028ecc10d336db16de840b0ff0e7300af3e3e66c948a90dbcb63169e77c861"
+    },
+    {
+      "path": "build/icc/counter_8bit.gds",
+      "bytes": 28672,
+      "sha256": "1f5a948db0dcca6846736f6ba2d88096621c8e835f1f6996e755d841d2854f80"
+    },
+    {
+      "path": "build/icc/counter_8bit.routed.v",
+      "bytes": 2696,
+      "sha256": "135e6121c34e4ba277ee950146046351e5d1ce7c0fced0ce946c8b30f44b0e59"
+    },
+    {
+      "path": "build/icc/counter_8bit.sdc",
+      "bytes": 3749,
+      "sha256": "98edb522189c657ad3fbdd3dada1e859fc6b9aac916eb46882294ad955430269"
+    }
+  ],
+  "status": "completed"
+}

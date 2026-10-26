@@ -1,0 +1,17 @@
+{
+  "run_id": "ad59f1712f2045be8395730c8a7062f4",
+  "mode": "upload",
+  "file_count": 3,
+  "when": "2026-10-24T14:16:05",
+  "project_directory": "/home/IC/Desktop/EDA_Projects/counter_script_demo",
+  "remote_directory": "/home/IC/Desktop/EDA_Projects/counter_script_demo/runs/upload_001",
+  "source_snapshot": "/home/IC/Desktop/EDA_Projects/counter_script_demo/runs/upload_001/src",
+  "run_label": "upload_001",
+  "upload_ok": true,
+  "status": "uploaded",
+  "sync": {
+    "created": 3,
+    "updated_with_backup": 0,
+    "unchanged": 0
+  }
+}

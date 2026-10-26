@@ -1,0 +1,13 @@
+DRC 14336
+type: Diff net spacing
+bbox: {{8.270 16.625} {8.405 17.040}}
+layer_names: {M1  M1}
+net1_name: count[5]
+net2_name: N7
+actual_spacing: 
+required_spacing: 
+route_types: 
+details: { 2  {{net count[5]} 1 {rectangles {layer M1} {{8.270 16.625} {8.405 17.040}}}} {{net N7} 1 {rectangles {layer M1} {{8.270 16.625} {8.405 17.040}}}} }
+report: Type: Diff net spacing, Type info: DRC Violations (Layer 31 31) (Net1: count[5] Net2: N7)
+, Object info: DRC Violations (Layer 31 31) (Net1: count[5] Net2: N7)
+, Bbox: {{8.270 16.625} {8.405 17.040}}, Layer: {M1  M1}, Net1: count[5] Net2: N7, Status: Error

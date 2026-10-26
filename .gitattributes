@@ -1,0 +1,11 @@
+# Evidence manifests describe original bytes, including line endings.
+EDA_Agent_LangGraph/designs/** -text
+EDA_Agent_LangGraph/evidence/** -text
+drc_ai/** -text
+reports/** -text
+artifacts/** -text
+*.docx binary
+*.png binary
+*.gds binary
+*.zip binary
+*.gz binary

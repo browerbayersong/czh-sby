@@ -1,0 +1,21 @@
+{
+  "run": "upload_20261025_144210_cec315f0",
+  "files": [
+    {
+      "path": "build/icc.log",
+      "bytes": 8304,
+      "sha256": "c4a91b87f27d8e506c9ffa56ff6e52f44cbb3542db27e71732a7ac0c8dbe5420"
+    },
+    {
+      "path": "build/display/layout.png",
+      "bytes": 574153,
+      "sha256": "0aeba7b1c51840a98da6b8b0ca7ff863427bed56ebc160b9c322d26fe2ec79e6"
+    },
+    {
+      "path": "build/display/layout.png.json",
+      "bytes": 254,
+      "sha256": "cceb394171c72892115eff06ef63461c78ec3da7066dcede4c2f4de6f3968259"
+    }
+  ],
+  "status": "completed"
+}

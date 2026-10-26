@@ -1,0 +1,46 @@
+{
+  "path": "/home/IC/Desktop/EDA_Projects",
+  "entries": [
+    {
+      "name": "counter_script_demo",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "counter_backend",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "counter_first_run",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "fifo_first_run",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "counter_opt_round1",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "counter_opt_round2",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "counter_opt_round3",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "counter_autofix_demo",
+      "size": 4096,
+      "mode": "0o40700"
+    }
+  ],
+  "status": "completed"
+}

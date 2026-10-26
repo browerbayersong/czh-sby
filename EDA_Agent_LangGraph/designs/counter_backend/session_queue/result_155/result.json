@@ -1,0 +1,36 @@
+{
+  "run": "upload_20261025_143839_f96edb1f",
+  "files": [
+    {
+      "path": "snapshot_manifest.json",
+      "bytes": 2623,
+      "sha256": "ef5c690d6d3cd443cd5da6d5ef2f0a05c3a58ed5441ad855af39930d7157cbfd"
+    },
+    {
+      "path": "src/generated/scripts/config.tcl",
+      "bytes": 747,
+      "sha256": "82e4311ffb545d4380c139db0eae4160ea7d6a37cb6fa650a407204df2147156"
+    },
+    {
+      "path": "src/generated/scripts/constraints.tcl",
+      "bytes": 709,
+      "sha256": "92efb3ac4dedfb6d7c124e687a40dfed7661d3d7267e1b3792c41570a3a2e4aa"
+    },
+    {
+      "path": "src/generated/scripts/icc_layout_only.tcl",
+      "bytes": 147,
+      "sha256": "e26a82bfccc94dc4cb946e8a2ee073882baff1dc2a5a8df19a4ae05a4db3f47f"
+    },
+    {
+      "path": "src/generated/scripts/icc_place_route.tcl",
+      "bytes": 7264,
+      "sha256": "a369858282d7e1ebe3d38269f1cf0880f66171f89a55af29782a35db7d861b17"
+    },
+    {
+      "path": "src/generated/scripts/prepare_rc_model.py",
+      "bytes": 4757,
+      "sha256": "0c2a14ba1a1a3ee14d879a680dc06a9cfeedb2736cbf15731890d1870100ae46"
+    }
+  ],
+  "status": "completed"
+}

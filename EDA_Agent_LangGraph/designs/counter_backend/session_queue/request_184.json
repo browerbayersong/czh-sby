@@ -1,0 +1,1 @@
+{"action":"fetch","run":"upload_20261026_131119_06234e60","paths":["build/icc.status.json","build/icc.log","build/drc_verify/routing_drc.rpt","build/drc_verify/pg_connectivity.rpt","build/drc_verify/lvs.rpt","build/drc_verify/placement_legality.rpt","build/drc_verify/saved_netlist.v"]}

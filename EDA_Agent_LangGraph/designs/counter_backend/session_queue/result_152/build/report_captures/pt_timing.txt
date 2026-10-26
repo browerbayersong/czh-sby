@@ -1,0 +1,20 @@
+Read-only original report excerpt
+PT statistical wire-load timing estimate
+
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-slack_lesser_than 1000.000000
+	-max_paths 10
+	-sort_by slack
+Design : counter_8bit
+  Startpoint: en (input port clocked by clk)
+  Endpoint: count_reg_7_
+  Path Group: clk
+  Path Type: max
+  data arrival time                                      1.157023
+  data required time                                     9.822767
+  data required time                                     9.822767
+  data arrival time                                      -1.157023
+  slack (MET)                                            8.665744

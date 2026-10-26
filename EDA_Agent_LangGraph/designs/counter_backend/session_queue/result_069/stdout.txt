@@ -1,0 +1,60 @@
+udev: starting version 147
+shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+piix4_smbus 0000:00:07.3: Host SMBus controller not enabled!
+vmci: applying 16k kernel stack fix up
+[785]: VMCI: shared components initialized.
+Probing for vmci/PCI.
+  alloc irq_desc for 16 on node -1
+  alloc kstat_irqs on node -1
+vmci 0000:00:07.7: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+Found vmci/PCI at 0x1080, irq 16.
+VMCI: using capabilities 0xc.
+[785]: VMCI: Host capability check passed.
+  alloc irq_desc for 60 on node -1
+  alloc kstat_irqs on node -1
+vmci 0000:00:07.7: irq 60 for MSI/MSI-X
+  alloc irq_desc for 61 on node -1
+  alloc kstat_irqs on node -1
+vmci 0000:00:07.7: irq 61 for MSI/MSI-X
+Registered vmci device.
+[785]: VMCI: Using guest personality
+[785]: VMCI: host components initialized.
+[785]: VMCI: Module registered (name=vmci, major=10, minor=57).
+[785]: VMCI: Using host personality
+[785]: VMCI: Module (name=vmci) is initialized
+vmware_balloon: failed to send start command to the host
+e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+e1000: Copyright (c) 1999-2006 Intel Corporation.
+e1000 0000:02:01.0: PCI INT A -> GSI 19 (level, low) -> IRQ 19
+e1000 0000:02:01.0: setting latency timer to 64
+e1000 0000:02:01.0: eth0: (PCI:66MHz:32-bit) a4:db:30:35:75:57
+e1000 0000:02:01.0: eth0: Intel(R) PRO/1000 Network Connection
+ENS1371 0000:02:02.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+microcode: CPU0 sig=0x806ea, pf=0x1, revision=0xffffffff
+platform microcode: firmware: requesting intel-ucode/06-8e-0a
+microcode: CPU1 sig=0x806ea, pf=0x1, revision=0xffffffff
+platform microcode: firmware: requesting intel-ucode/06-8e-0a
+Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+sd 0:0:0:0: Attached scsi generic sg0 type 0
+sr 4:0:0:0: Attached scsi generic sg1 type 5
+EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: 
+SELinux: initialized (dev sda1, type ext4), uses xattr
+SELinux: initialized (dev binfmt_misc, type binfmt_misc), uses genfs_contexts
+vmhgfs: applying 16k kernel stack fix up
+fuse init (API version 7.14)
+SELinux: initialized (dev fuse, type fuse), uses genfs_contexts
+NET: Registered protocol family 36
+NET: Registered protocol family 10
+lo: Disabled Privacy Extensions
+ip6_tables: (C) 2000-2006 Netfilter Core Team
+nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+type=1305 audit(1792907577.911:4): audit_pid=2136 old=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditd_t:s0 res=1
+802.1Q VLAN Support v1.8 Ben Greear <greearb@candelatech.com>
+All bugs added by David S. Miller <davem@redhat.com>
+ADDRCONF(NETDEV_UP): eth0: link is not ready
+8021q: adding VLAN 0 to HW filter on device eth0
+e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+SELinux: initialized (dev autofs, type autofs), uses genfs_contexts
+SELinux: initialized (dev autofs, type autofs), uses genfs_contexts
+SELinux: initialized (dev autofs, type autofs), uses genfs_contexts

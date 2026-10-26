@@ -1,0 +1,7 @@
+{
+  "strategy": "ripup_pair",
+  "pin_taper_mode": "off",
+  "extra_pin_tracks": false,
+  "diagnosis": "DRC 为 M1 上 count[5] 与 N7 的 Diff net spacing，标记 bbox 约 x=8.270–8.405、y=16.625–17.040。几何显示 N7 在 U14/B0 附近的 M1 垂直走线为 x=8.165–8.285、y=15.965–16.920，而 count[5] 的 U14/A0 M1 引脚为 x=8.390–8.530、y=16.745–17.170；两者在 y=16.745–16.920 重叠，水平边缘间距约 0.105 um。actual_spacing/required_spacing 未导出，不能猜测具体规则值。此前已尝试单独 ripup_n7 + default_width + extra_pin_tracks=true，结果 routing DRC 变为 2，并出现 N7 与 en 的 spacing 及 Short，说明单独重布 N7 时 B0 逃逸被挤到更差轨道并侵入 en，且未解决与 A0 引脚附近的间距压力。因此不再重复该方案。ripup_count5 只拆 count[5] 外部走线，不能移动固定的 A0 引脚形状，针对性不足；move_u14 会移动整个 U14 并重布其多个连接网络，影响面超出目标两网络且引入额外合法化风险。选择 ripup_pair 同时完整拆除 count[5] 与 N7 的信号布线再 ECO，使 A0 与 B0 两侧的 M1 逃逸资源一起释放并重新分配。pin_taper_mode 用 off，避免引脚 taper 加宽 N7 M1 走线而加剧与 A0/en 的间距压力；extra_pin_tracks 设为 false，避免额外引脚轨道诱导 N7 再次靠近 en。原 TF/FRAM 6/9 层不一致警告保持现有检查规则与基线，不降间距、不改规则、不删标记。",
+  "expected_effect": "对 count[5] 与 N7 两个目标信号网络执行完整 remove_net_routing 后 ECO 重布，预期可重新选择 U14/A0 与 U14/B0 的 M1 引脚逃逸轨道，增大 N7 走线与 count[5] A0 引脚的水平间距，并避免 N7 重布后靠近 en。该操作只拆目标两网络信号布线，不修改 RTL、工艺库、间距规则或 DRC 标记；是否真正消除原 Diff net spacing 以及是否引入新 DRC/短路，必须由后续工具报告确认。"
+}

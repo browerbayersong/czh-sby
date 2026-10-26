@@ -1,0 +1,174 @@
+CELL add_20
+  bbox {0.000 0.000} {0.000 0.000}
+  origin 0.000 0.000
+  orientation NO_ORIENTATION
+  ref_name counter_8bit_DW01_inc_0
+Warning: Attribute 'is_fixed' does not exist on cell 'add_20' (ATTR-3)
+  is_fixed 
+CELL add_20/U1_1_5
+  bbox {3.840 3.000} {8.040 5.520}
+  origin 3.840 3.000
+  orientation N
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U1_1_2
+  bbox {6.640 20.640} {10.840 23.160}
+  origin 6.640 23.160
+  orientation FS
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U1_1_4
+  bbox {9.160 5.520} {13.360 8.040}
+  origin 13.360 8.040
+  orientation S
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U1
+  bbox {20.360 23.160} {22.600 25.680}
+  origin 20.360 23.160
+  orientation N
+  ref_name XOR2X1
+  is_fixed false
+CELL add_20/U1_1_1
+  bbox {3.000 13.080} {7.200 15.600}
+  origin 3.000 13.080
+  orientation N
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U2
+  bbox {11.960 10.560} {12.800 13.080}
+  origin 12.800 13.080
+  orientation S
+  ref_name CLKINVX1
+  is_fixed false
+CELL add_20/U1_1_6
+  bbox {7.200 13.080} {11.400 15.600}
+  origin 7.200 13.080
+  orientation N
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U1_1_3
+  bbox {20.920 3.000} {25.120 5.520}
+  origin 25.120 3.000
+  orientation FN
+  ref_name ADDHX1
+  is_fixed false
+CELL U15
+  bbox {12.240 8.040} {14.480 10.560}
+  origin 14.480 8.040
+  orientation FN
+  ref_name AO22X2
+  is_fixed false
+CELL count_reg_0_
+  bbox {19.520 13.080} {25.680 15.600}
+  origin 19.520 13.080
+  orientation N
+  ref_name DFFRQX2
+  is_fixed false
+CELL U19
+  bbox {12.800 10.560} {15.040 13.080}
+  origin 12.800 13.080
+  orientation FS
+  ref_name AO22X2
+  is_fixed false
+CELL count_reg_6_
+  bbox {11.680 18.120} {17.840 20.640}
+  origin 17.840 18.120
+  orientation FN
+  ref_name DFFRQX2
+  is_fixed false
+CELL count_reg_7_
+  bbox {13.360 13.080} {19.520 15.600}
+  origin 13.360 13.080
+  orientation N
+  ref_name DFFRQX2
+  is_fixed false
+CELL U13
+  bbox {4.400 20.640} {6.640 23.160}
+  origin 4.400 23.160
+  orientation FS
+  ref_name AO22X2
+  is_fixed false
+CELL count_reg_1_
+  bbox {19.520 20.640} {25.680 23.160}
+  origin 19.520 23.160
+  orientation FS
+  ref_name DFFRQX2
+  is_fixed false
+CELL count_reg_2_
+  bbox {11.400 23.160} {17.560 25.680}
+  origin 17.560 23.160
+  orientation FN
+  ref_name DFFRQX2
+  is_fixed false
+CELL U1
+  bbox {10.840 15.600} {11.680 18.120}
+  origin 11.680 18.120
+  orientation S
+  ref_name INVXL
+  is_fixed false
+CELL count_reg_3_
+  bbox {19.240 8.040} {25.400 10.560}
+  origin 19.240 8.040
+  orientation N
+  ref_name DFFRQX2
+  is_fixed false
+CELL U20
+  bbox {4.960 23.160} {7.200 25.680}
+  origin 4.960 23.160
+  orientation N
+  ref_name AO22X2
+  is_fixed false
+CELL U18
+  bbox {4.680 18.120} {6.920 20.640}
+  origin 4.680 18.120
+  orientation N
+  ref_name AO22X2
+  is_fixed false
+CELL U16
+  bbox {21.760 15.600} {24.000 18.120}
+  origin 24.000 18.120
+  orientation S
+  ref_name AO22X2
+  is_fixed false
+CELL U17
+  bbox {19.800 18.120} {22.040 20.640}
+  origin 22.040 18.120
+  orientation FN
+  ref_name AO22X2
+  is_fixed false
+CELL count_reg_4_
+  bbox {3.280 8.040} {9.440 10.560}
+  origin 3.280 8.040
+  orientation N
+  ref_name DFFRQX2
+  is_fixed false
+CELL count_reg_5_
+  bbox {13.640 5.520} {19.800 8.040}
+  origin 13.640 8.040
+  orientation FS
+  ref_name DFFRQX2
+  is_fixed false
+CELL U14
+  bbox {7.480 15.600} {9.720 18.120}
+  origin 7.480 18.120
+  orientation FS
+  ref_name AO22X2
+  is_fixed false
+NET count[5]
+  PIN add_20/A[5]
+    bbox no_bbox
+    direction in
+  PIN U14/A0
+    bbox {8.390 16.745} {8.530 17.170}
+    direction in
+  PIN count_reg_5_/Q
+    bbox {19.570 6.020} {19.730 7.670}
+    direction out
+NET N7
+  PIN add_20/SUM[5]
+    bbox no_bbox
+    direction out
+  PIN U14/B0
+    bbox {8.050 16.745} {8.250 17.175}
+    direction in

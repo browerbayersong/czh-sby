@@ -1,0 +1,13 @@
+{
+  "boot_id": "86efabd5-5f2a-4c6a-9905-ed18ab887475", 
+  "finished_epoch": 1792990567.077611, 
+  "process_start_ticks": "990505", 
+  "script": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261026_125513_7126c614/src/generated/scripts/drc_shapes.tcl", 
+  "started_epoch": 1792990561.051213, 
+  "state": "exited", 
+  "timeout_seconds": 90, 
+  "tool": "icc", 
+  "tool_exit_code": 0, 
+  "tool_pid": 18733, 
+  "worker_pid": 18732
+}

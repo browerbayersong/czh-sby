@@ -1,0 +1,41 @@
+{
+  "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw",
+  "entries": [
+    {
+      "name": ".lock",
+      "size": 0,
+      "mode": "0o100666"
+    },
+    {
+      "name": "lib_bck",
+      "size": 226572,
+      "mode": "0o100664"
+    },
+    {
+      "name": "err",
+      "size": 4096,
+      "mode": "0o40755"
+    },
+    {
+      "name": "lib",
+      "size": 226572,
+      "mode": "0o100664"
+    },
+    {
+      "name": "lib_1",
+      "size": 1987,
+      "mode": "0o100664"
+    },
+    {
+      "name": "ROUTE",
+      "size": 4096,
+      "mode": "0o40755"
+    },
+    {
+      "name": "CEL",
+      "size": 4096,
+      "mode": "0o40755"
+    }
+  ],
+  "status": "completed"
+}

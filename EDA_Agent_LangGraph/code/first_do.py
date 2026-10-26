@@ -27,7 +27,7 @@ def build_llm():
     api_key = os.getenv('DEEPSEEK_API_KEY') or os.getenv('OPENAI_API_KEY') or ''
     if not api_key or api_key == 'sk-xxx':
         raise RuntimeError(
-            '未配置 DeepSeek 密钥：请在 E:\\LangGraph\\.env 中填写 DEEPSEEK_API_KEY'
+            f'未配置 DeepSeek 密钥：请在 {Path(__file__).with_name(".env")} 中填写 DEEPSEEK_API_KEY'
         )
 
     return ChatOpenAI(

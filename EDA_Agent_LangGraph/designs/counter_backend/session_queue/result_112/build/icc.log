@@ -1,0 +1,190 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+source generated/scripts/config.tcl
+VSS
+set env(DISPLAY) :0
+:0
+set_app_var target_library [list $EDA_DB]
+/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+set_app_var synthetic_library [list standard.sldb]
+standard.sldb
+set_app_var link_library [concat [list *] [list $EDA_DB]]
+* /opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+file mkdir ../build/display
+if {[catch {
+    open_mw_lib /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw
+    open_mw_cel -readonly counter_8bit
+    gui_start
+    verify_zrt_route -drc true -open_net true
+    set drc_handle [open ../build/display/drc_details.txt w]
+    foreach_in_collection item [get_drc_errors -quiet] {
+        puts $drc_handle "DRC [get_object_name $item]"
+        foreach attribute {type bbox layer_names net1_name net2_name actual_spacing required_spacing route_types details report} {
+            puts $drc_handle "$attribute: [get_attribute $item $attribute]"
+        }
+    }
+    close $drc_handle
+    set layout_window [gui_get_current_window -types Layout -mru]
+    gui_zoom -window $layout_window -full
+    gui_write_window_image -file ../build/display/layout_canvas.png -window $layout_window
+    update
+    after 1500
+    update
+    puts [exec timeout 15s /usr/bin/python generated/scripts/capture_display.py ../build/display/layout.png]
+    puts "EDA_REAL_GUI_CAPTURED"
+} message]} {
+    puts "EDA_GUI_CAPTURE_FAILED $message"
+    exit 2
+}
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+	6 (Main Library) <==> 9 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 6
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 66
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Information: Opened "counter_8bit.CEL;1" from "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw" library. (MWUI-068)
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+Preparing data for query................... 
+Turn off antenna since no rule is specified
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M6
+Warning: Ignore 1 top cell ports with no pins. (ZRT-027)
+Via on layer (VIA5) needs more than one tracks
+Warning: Layer M5 pitch 0.280 may be too small: wire/via-down 0.280, wire/via-up 0.420. (ZRT-026)
+Transition layer name: M5(4)
+
+
+Start checking for open nets ... 
+
+Total number of nets = 36, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+
+Check 36 nets, 0 have Errors
+
+[CHECK OPEN NETS] Elapsed real time: 0:00:00 
+[CHECK OPEN NETS] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[CHECK OPEN NETS] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[CHECK OPEN NETS] Total (MB): Used   12  Alloctr   12  Proc 1254 
+Printing options for 'set_route_zrt_common_options'
+
+Printing options for 'set_route_zrt_detail_options'
+
+
+Begin full DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+Checked	1/1 Partitions, Violations =	2
+[DRC CHECK] Elapsed real time: 0:00:00 
+[DRC CHECK] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[DRC CHECK] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[DRC CHECK] Total (MB): Used   15  Alloctr   16  Proc 1257 
+Warning: No antenna rules defined, Skip antenna analysis. (ZRT-309)
+Information: Merged away 1 aligned/redundant DRCs. (ZRT-305)
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	1
+	Diff net spacing : 1
+
+
+Total Wire Length =                    771 micron
+Total Number of Contacts =             234
+Total Number of Wires =                204
+Total Number of PtConns =              42
+Total Number of Routed Wires =       204
+Total Routed Wire Length =           758 micron
+Total Number of Routed Contacts =       234
+	Layer        M1 :         15 micron
+	Layer        M2 :        331 micron
+	Layer        M3 :        355 micron
+	Layer        M4 :         36 micron
+	Layer        M5 :         35 micron
+	Layer        M6 :          0 micron
+	Via        via4 :          8
+	Via        via3 :         11
+	Via        via2 :        107
+	Via        via1 :         47
+	Via   via1(rot) :          2
+	Via       via1v :         58
+	Via       via1h :          1
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 234 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 108     vias)
+        Un-optimized = 100.00% (108     vias)
+    Layer VIA2       =  0.00% (0      / 107     vias)
+        Un-optimized = 100.00% (107     vias)
+    Layer VIA3       =  0.00% (0      / 11      vias)
+        Un-optimized = 100.00% (11      vias)
+    Layer VIA4       =  0.00% (0      / 8       vias)
+        Un-optimized = 100.00% (8       vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 234 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 108     vias)
+    Layer VIA2       =  0.00% (0      / 107     vias)
+    Layer VIA3       =  0.00% (0      / 11      vias)
+    Layer VIA4       =  0.00% (0      / 8       vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 234 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 108     vias)
+        Un-optimized = 100.00% (108     vias)
+    Layer VIA2       =  0.00% (0      / 107     vias)
+        Un-optimized = 100.00% (107     vias)
+    Layer VIA3       =  0.00% (0      / 11      vias)
+        Un-optimized = 100.00% (11      vias)
+    Layer VIA4       =  0.00% (0      / 8       vias)
+        Un-optimized = 100.00% (8       vias)
+ 
+
+
+Verify Summary:
+
+Total number of nets = 36, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 1
+Total number of antenna violations = no antenna rules defined
+Total number of voltage-area violations = no voltage-areas defined
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+Warning: Attribute 'actual_spacing' does not exist on drc_error '14336' (ATTR-3)
+Warning: Attribute 'required_spacing' does not exist on drc_error '14336' (ATTR-3)
+Warning: Attribute 'route_types' does not exist on drc_error '14336' (ATTR-3)
+{"captured_epoch": 1792910728.3684959, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "7fe1a195799481f3343b3474d76ae85ce9cf22a5714b16440466916c36200b48", "width": 1718}
+EDA_REAL_GUI_CAPTURED
+exit
+
+Received Signal 15 from: PID=9969 (UID=501)
+
+
+Process terminated by kill.
+

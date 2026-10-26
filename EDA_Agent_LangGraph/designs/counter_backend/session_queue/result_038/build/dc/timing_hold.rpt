@@ -1,0 +1,309 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 10
+Design : counter_8bit
+Version: K-2015.06
+Date   : Sat Oct 24 23:36:18 2026
+****************************************
+
+Operating Conditions: typical   Library: typical
+Wire Load Model Mode: top
+
+  Startpoint: count_reg_7_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count_reg_7_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_7_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_7_/Q (DFFRQX2)             0.200726   0.200726 f
+  U20/Y (AO22X2)                       0.080864   0.281590 f
+  count_reg_7_/D (DFFRQX2)             0.000000   0.281590 f
+  data arrival time                               0.281590
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  count_reg_7_/CK (DFFRQX2)            0.000000   0.100000 r
+  library hold time                    0.023022   0.123022
+  data required time                              0.123022
+  -----------------------------------------------------------
+  data required time                              0.123022
+  data arrival time                               -0.281590
+  -----------------------------------------------------------
+  slack (MET)                                     0.158568
+
+
+  Startpoint: count_reg_1_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count_reg_1_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_1_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_1_/Q (DFFRQX2)             0.202783   0.202783 f
+  U18/Y (AO22X2)                       0.081515   0.284298 f
+  count_reg_1_/D (DFFRQX2)             0.000000   0.284298 f
+  data arrival time                               0.284298
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  count_reg_1_/CK (DFFRQX2)            0.000000   0.100000 r
+  library hold time                    0.023023   0.123023
+  data required time                              0.123023
+  -----------------------------------------------------------
+  data required time                              0.123023
+  data arrival time                               -0.284298
+  -----------------------------------------------------------
+  slack (MET)                                     0.161275
+
+
+  Startpoint: count_reg_2_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count_reg_2_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_2_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_2_/Q (DFFRQX2)             0.202783   0.202783 f
+  U17/Y (AO22X2)                       0.081515   0.284298 f
+  count_reg_2_/D (DFFRQX2)             0.000000   0.284298 f
+  data arrival time                               0.284298
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  count_reg_2_/CK (DFFRQX2)            0.000000   0.100000 r
+  library hold time                    0.023023   0.123023
+  data required time                              0.123023
+  -----------------------------------------------------------
+  data required time                              0.123023
+  data arrival time                               -0.284298
+  -----------------------------------------------------------
+  slack (MET)                                     0.161275
+
+
+  Startpoint: count_reg_3_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count_reg_3_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_3_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_3_/Q (DFFRQX2)             0.202783   0.202783 f
+  U16/Y (AO22X2)                       0.081515   0.284298 f
+  count_reg_3_/D (DFFRQX2)             0.000000   0.284298 f
+  data arrival time                               0.284298
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  count_reg_3_/CK (DFFRQX2)            0.000000   0.100000 r
+  library hold time                    0.023023   0.123023
+  data required time                              0.123023
+  -----------------------------------------------------------
+  data required time                              0.123023
+  data arrival time                               -0.284298
+  -----------------------------------------------------------
+  slack (MET)                                     0.161275
+
+
+  Startpoint: count_reg_4_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count_reg_4_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_4_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_4_/Q (DFFRQX2)             0.202783   0.202783 f
+  U15/Y (AO22X2)                       0.081515   0.284298 f
+  count_reg_4_/D (DFFRQX2)             0.000000   0.284298 f
+  data arrival time                               0.284298
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  count_reg_4_/CK (DFFRQX2)            0.000000   0.100000 r
+  library hold time                    0.023023   0.123023
+  data required time                              0.123023
+  -----------------------------------------------------------
+  data required time                              0.123023
+  data arrival time                               -0.284298
+  -----------------------------------------------------------
+  slack (MET)                                     0.161275
+
+
+  Startpoint: count_reg_5_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count_reg_5_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_5_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_5_/Q (DFFRQX2)             0.202783   0.202783 f
+  U14/Y (AO22X2)                       0.081515   0.284298 f
+  count_reg_5_/D (DFFRQX2)             0.000000   0.284298 f
+  data arrival time                               0.284298
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  count_reg_5_/CK (DFFRQX2)            0.000000   0.100000 r
+  library hold time                    0.023023   0.123023
+  data required time                              0.123023
+  -----------------------------------------------------------
+  data required time                              0.123023
+  data arrival time                               -0.284298
+  -----------------------------------------------------------
+  slack (MET)                                     0.161275
+
+
+  Startpoint: count_reg_6_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count_reg_6_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_6_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_6_/Q (DFFRQX2)             0.202783   0.202783 f
+  U13/Y (AO22X2)                       0.081515   0.284298 f
+  count_reg_6_/D (DFFRQX2)             0.000000   0.284298 f
+  data arrival time                               0.284298
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  count_reg_6_/CK (DFFRQX2)            0.000000   0.100000 r
+  library hold time                    0.023023   0.123023
+  data required time                              0.123023
+  -----------------------------------------------------------
+  data required time                              0.123023
+  data arrival time                               -0.284298
+  -----------------------------------------------------------
+  slack (MET)                                     0.161275
+
+
+  Startpoint: count_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count_reg_0_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_0_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_0_/Q (DFFRQX2)             0.204806   0.204806 f
+  U19/Y (AO22X2)                       0.082156   0.286961 f
+  count_reg_0_/D (DFFRQX2)             0.000000   0.286961 f
+  data arrival time                               0.286961
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  count_reg_0_/CK (DFFRQX2)            0.000000   0.100000 r
+  library hold time                    0.023024   0.123024
+  data required time                              0.123024
+  -----------------------------------------------------------
+  data required time                              0.123024
+  data arrival time                               -0.286961
+  -----------------------------------------------------------
+  slack (MET)                                     0.163937
+
+
+  Startpoint: count_reg_7_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count[7] (output port clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_7_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_7_/Q (DFFRQX2)             0.179487   0.179487 r
+  count[7] (out)                       0.000000   0.179487 r
+  data arrival time                               0.179487
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  output external delay                -1.000000  -0.900000
+  data required time                              -0.900000
+  -----------------------------------------------------------
+  data required time                              -0.900000
+  data arrival time                               -0.179487
+  -----------------------------------------------------------
+  slack (MET)                                     1.079487
+
+
+  Startpoint: count_reg_1_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count[1] (output port clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  count_reg_1_/CK (DFFRQX2)            0.000000   0.000000 r
+  count_reg_1_/Q (DFFRQX2)             0.182507   0.182507 r
+  count[1] (out)                       0.000000   0.182507 r
+  data arrival time                               0.182507
+
+  clock clk (rise edge)                0.000000   0.000000
+  clock network delay (ideal)          0.000000   0.000000
+  clock uncertainty                    0.100000   0.100000
+  output external delay                -1.000000  -0.900000
+  data required time                              -0.900000
+  -----------------------------------------------------------
+  data required time                              -0.900000
+  data arrival time                               -0.182507
+  -----------------------------------------------------------
+  slack (MET)                                     1.082507
+
+
+1

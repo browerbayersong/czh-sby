@@ -1,0 +1,74 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+source generated/scripts/config.tcl
+VSS
+set_app_var target_library [list $EDA_DB]
+/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+set_app_var synthetic_library [list standard.sldb]
+standard.sldb
+set_app_var link_library [concat [list *] [list $EDA_DB]]
+* /opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+file mkdir ../build/drc_shapes
+if {[catch {
+    open_mw_lib /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw
+    open_mw_cel -readonly counter_8bit
+    redirect -file ../build/drc_shapes/shapes.txt {
+        foreach_in_collection net [get_nets -hierarchical *] {
+            set name [get_object_name $net]
+            set canonical [string map [list "\\" ""] $name]
+            if {$canonical eq {count[5]} || $canonical eq {N7}} {
+                puts "NET $name"
+                foreach_in_collection shape [get_net_shapes -of_objects $net -intersect {{7.7 16.1} {8.9 17.7}}] {
+                    puts "SHAPE [get_object_name $shape]"
+                    foreach attr {bbox layer_name width shape_type} {
+                        if {![catch {get_attribute $shape $attr} value]} {puts "$attr: $value"}
+                    }
+                }
+            }
+        }
+        foreach_in_collection shape [get_pin_shapes -of_objects [get_cells U14]] {
+            puts "PIN_SHAPE [get_object_name $shape]"
+            foreach attr {bbox layer_name pin_name} {
+                if {![catch {get_attribute $shape $attr} value]} {puts "$attr: $value"}
+            }
+        }
+    }
+    puts "EDA_DRC_SHAPES_SAVED"
+} message]} {puts "EDA_PROBE_FATAL $message"; exit 2}
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+	6 (Main Library) <==> 9 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 6
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 66
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Information: Opened "counter_8bit.CEL;1" from "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw" library. (MWUI-068)
+EDA_DRC_SHAPES_SAVED
+exit 0
+
+Memory usage for main task 193 Mbytes.
+Memory usage for this session 193 Mbytes.
+CPU usage for this session 2 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

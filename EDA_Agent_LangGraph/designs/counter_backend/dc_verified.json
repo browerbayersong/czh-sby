@@ -1,0 +1,65 @@
+{
+  "stage": "dc",
+  "status": "completed",
+  "area": {
+    "cell_area": 242.7264,
+    "area_unit": "library_area_unit",
+    "number_of_cells": 26.0,
+    "combinational_area": 118.5408,
+    "sequential_area": 124.1856
+  },
+  "setup_timing": {
+    "worst_slack": 8.695194,
+    "reported_paths": 10,
+    "all_reported_paths_meet": true,
+    "first_data_arrival_time": 0.204806,
+    "time_unit": "1.0e-09 Second(ns)"
+  },
+  "hold_timing": {
+    "worst_slack": 0.158568,
+    "reported_paths": 10,
+    "all_reported_paths_meet": true,
+    "first_data_arrival_time": 0.28159,
+    "time_unit": "1.0e-09 Second(ns)"
+  },
+  "power": {
+    "internal": {
+      "value": 12.5549,
+      "unit": "uW",
+      "watts": 1.2554899999999999e-05
+    },
+    "switching": {
+      "value": 1.5502,
+      "unit": "uW",
+      "watts": 1.5502e-06
+    },
+    "leakage": {
+      "value": 362.3608,
+      "unit": "nW",
+      "watts": 3.623608e-07
+    },
+    "dynamic": {
+      "value": 14.1051,
+      "unit": "uW",
+      "watts": 1.41051e-05
+    },
+    "total": {
+      "value": 1.44674608e-05,
+      "unit": "W",
+      "watts": 1.44674608e-05,
+      "derived_from": [
+        "dynamic",
+        "leakage"
+      ]
+    }
+  },
+  "units": {
+    "time": "1.0e-09 Second(ns)",
+    "capacitive_load": "1.0e-12 Farad(pF)",
+    "power": "N/A",
+    "voltage": "1 Volt",
+    "resistance": "1000 Ohm(kOhm)"
+  },
+  "routing_drc": null,
+  "power_method": "read accompanying switching-activity/annotation report; not inferred from file existence"
+}

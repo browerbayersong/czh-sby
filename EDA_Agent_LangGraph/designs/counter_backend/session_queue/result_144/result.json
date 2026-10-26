@@ -1,0 +1,66 @@
+{
+  "run": "upload_20261025_152609_317c14dc",
+  "files": [
+    {
+      "path": "build/pt.status.json",
+      "bytes": 451,
+      "sha256": "7b0b8d649999ea7a6133dfc4fe4bb2f49c65d84618f482f8c565dd98def1f352"
+    },
+    {
+      "path": "build/pt.log",
+      "bytes": 6724,
+      "sha256": "e1337f3a7865444475d415accf1521f8778a7a2de18ef9048f5bb0b4433dd950"
+    },
+    {
+      "path": "build/pt_estimate/analysis_scope.txt",
+      "bytes": 517,
+      "sha256": "619dbe9cebdbd1ef0820937519af30e605806afdd18c42c7af56442e7cfcb05e"
+    },
+    {
+      "path": "build/pt_estimate/timing_setup.rpt",
+      "bytes": 16718,
+      "sha256": "ee2dab2f68c5c3383361e37bffc194d9ffa690de9253132164e7c2504c9217e9"
+    },
+    {
+      "path": "build/pt_estimate/timing_hold.rpt",
+      "bytes": 16702,
+      "sha256": "ea597a1d901c4944c993c112cdd139f15d1f3a84d2c6573e82a044f4b98c4b31"
+    },
+    {
+      "path": "build/pt_estimate/units.rpt",
+      "bytes": 510,
+      "sha256": "2c05546aad4f0274f318e0abf0d7d2b19dd5e1507d31bc6963c7316a7841b37b"
+    },
+    {
+      "path": "build/pt_estimate/check_timing.rpt",
+      "bytes": 526,
+      "sha256": "edda3400d7f1d7378932f9d3593e29f87698c838ac6c98e08d044ca5339d2639"
+    },
+    {
+      "path": "build/pt_estimate/constraints.rpt",
+      "bytes": 217,
+      "sha256": "401ebf87a90f87b3a2c204ce22ae7b69fa19e73ed60980138b6733a3dfb0051d"
+    },
+    {
+      "path": "build/pt_estimate/power.rpt",
+      "bytes": 1965,
+      "sha256": "3ecbb6a10da7d58f0574c6552f080c58dd20331c5414f4936eea6b448dd048e1"
+    },
+    {
+      "path": "build/pt_estimate/activity_annotation.rpt",
+      "bytes": 299,
+      "sha256": "0ab134e621290d14223a6ab925f52d863a7a78f4c289d1c2ef4ffb3615ef38ae"
+    },
+    {
+      "path": "build/pt_estimate/activity_coverage.rpt",
+      "bytes": 943,
+      "sha256": "373848a37d7f397fcc4a7a4060c2e78f3dbfcca26c4fca01a3edb97449eaaab9"
+    },
+    {
+      "path": "build/pt_estimate/counter.saif",
+      "bytes": 1300,
+      "sha256": "9a9ca990ea3c2476ed4daeec718d803fb5a5d860204bdf132e6d982a5dac21d1"
+    }
+  ],
+  "status": "completed"
+}

@@ -1,0 +1,2 @@
+RC source: /opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_6lm_1thick.tf
+TF-based conservative place-and-route RC; not foundry signoff extraction.

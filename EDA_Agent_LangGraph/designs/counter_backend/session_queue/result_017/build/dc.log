@@ -1,0 +1,300 @@
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+                 Version K-2015.06 for linux64 - May 28, 2015 
+                                        
+                    Copyright (c) 1988 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/IC/.synopsys_dv_prefs.tcl
+foreach command {compile read_saif report_power report_switching_activity report_timing report_area report_units write_sdc write_file saif_map set_switching_activity} {
+    puts "EDA_HELP_BEGIN $command"
+    if {[catch {help -verbose $command} message]} {puts $message}
+    puts "EDA_HELP_END $command"
+}
+EDA_HELP_BEGIN compile
+ compile              # compile design
+   [-map_effort effort]   (map effort: low, medium, high)
+   [-area_effort effort]  (area effort: none, low, medium, high)
+   [-power_effort effort] (power effort: none, low, medium, high)
+   [-incremental_mapping] (perform only incremental mapping changes)
+   [-exact_map]           (sequential cells to be mapped exactly as indicated in HDL)
+   [-ungroup_all]         (ungroup all hierarchy)
+   [-boundary_optimization]
+                          (optimize across hierarchical boundaries)
+   [-auto_ungroup automatically ungroup small hierarchies]
+                          (auto ungroup: area, delay)
+   [-no_design_rule]      (don't fix design rules)
+   [-no_map]              (don't map design; leave as generic logic)
+   [-only_design_rule]    (only fix design rules)
+   [-only_hold_time]      (only fix hold time violations)
+   [-top]                 (optimize the interface logic of the hierarchical sub-designs)
+   [-scan]                (replace all sequential elements by scan equivalent)
+   [-gate_clock]          (optimize clock gating)
+
+EDA_HELP_END compile
+EDA_HELP_BEGIN read_saif
+ read_saif            # read backward SAIF file
+   -input <file_name>     (the input SAIF file name)
+   [-instance_name <string>]
+                          (the instance in the SAIF file containing the switching activity)
+   [-target_instance <instance>]
+                          (the target instance that will be annotated with the SAIF information)
+   [-names_file <file_name>]
+                          (the accumulated name changes file name)
+   [-ignore <string>]     (the relative instance name whose switching activity will be ignored)
+   [-ignore_absolute <string>]
+                          (the absolute instance name whose switching activity will be ignored)
+   [-exclude <file_name>] (the file name that contains one or more -ignore options)
+   [-exclude_absolute <file_name>]
+                          (the file name that contains one or more -ignore_absolute options)
+   [-scale <scale_value>] (the scale factor to the base time unit: 1, 10, 100)
+   [-unit_base <time_unit>]
+                          (base synthesis time unit: s, ms, us, ns, ps, fs)
+   [-khrate <float>]      (the default value for the derating factor: 
+                           Value >= 0)
+   [-map_names]           (apply name mapping when reading SAIF)
+   [-auto_map_names]      (automatically create name mapping for SAIF file and apply it when reading the SAIF)
+   [-verbose]             (verbose report mode)
+
+EDA_HELP_END read_saif
+EDA_HELP_BEGIN report_power
+ report_power         # display power report
+   [-net]                 (report power consumption of nets)
+   [-cell]                (report power consumption of cells)
+   [-groups <cell_type1 cell_type2 ...>]
+                          (report power of cells on specified set of cell types: io_pad, memory, black box, clock_network, register, sequential, combinational)
+   [-only <cell_or_net_list>]
+                          (report power only for these nets or cells)
+   [-cumulative]          (report cumulative fanin/fanout power for cells/nets)
+   [-flat]                (report all leaf-level cells or nets)
+   [-exclude_boundary_nets]
+                          (exclude boundary nets; Note this flag is obsolete)
+   [-include_input_nets]  (include primary input port nets)
+   [-analysis_effort <effort_level>]
+                          (power analysis effort: low | medium | high)
+   [-verbose]             (verbose power reporting)
+   [-nworst <number>]     (max number of nets or cells to report: 
+                           Value >= 0)
+   [-sort_mode <mode>]    (sort cells/nets by: name, cell_leakage_power, cell_internal_power, net_switching_power, dynamic_power, net_toggle_rate, total_net_load, net_static_probability, cumulative_fanout, cumulative_fanin)
+   [-histogram]           (display a histogram of net/cell info)
+   [-exclude_leq <le_val>]
+                          (omit data-values less than or equal to <le_val> from histogram: 
+                           Value >= 0)
+   [-exclude_geq <ge_val>]
+                          (omit data-values greater than or equal to <ge_val> from histogram: 
+                           Value >= 0)
+   [-nosplit]             (do not split lines when fields overflow)
+   [-hierarchy]           (report power consumption hierarchically)
+   [-levels <number>]     (number of levels of hierarchy to be reported: 
+                           Value >= 0)
+   [-scenarios { scenario_name1 scenario_name2 ... }]
+                          (report power on specifed set of scenarios, skip on inactive scenario(s))
+
+EDA_HELP_END report_power
+EDA_HELP_BEGIN report_switching_activity
+Information: No commands matched 'report_switching_activity'. (CMD-040)
+EDA_HELP_END report_switching_activity
+EDA_HELP_BEGIN report_timing
+ report_timing        # report timing
+   [-to <to_list>]        (to pins, ports, nets or clocks)
+   [-rise_to <rise_to_list>]
+                          (to pins, ports, nets or clocks)
+   [-fall_to <fall_to_list>]
+                          (to pins, ports, nets or clocks)
+   [-from <from_list>]    (from pins, ports, nets or clocks)
+   [-rise_from <rise_from_list>]
+                          (from pins, ports, nets or clocks with rise sense)
+   [-fall_from <fall_from_list>]
+                          (from pins, ports, nets or clocks with fall sense)
+   [-exclude <exclude_list>]
+                          (exclude pins, ports, nets or cells)
+   [-rise_exclude <rise_exclude_list>]
+                          (exclude pins, ports, nets or cells with rise sense)
+   [-fall_exclude <fall_exclude_list>]
+                          (exclude pins, ports, nets or cells with fall sense)
+   [-through <through_list>]
+                          (through pins, ports, nets or clocks)
+   [-rise_through <rise_through_list>]
+                          (to pins, ports, nets or clocks)
+   [-fall_through <fall_through_list>]
+                          (to pins, ports, nets or clocks)
+   [-path_type <path_type>]
+                          (path type: 
+                           Values: full, end, only, short, start, 
+                           full_clock, full_clock_expanded)
+   [-delay_type <delay_type>]
+                          (delay type: 
+                           Values: max, max_rise, max_fall, min, 
+                           min_rise, min_fall)
+   [-nworst <paths_per_endpoint>]
+                          (number of paths per endpoint, default is 1)
+   [-max_paths <max_path_count>]
+                          (maximum number of paths per path group)
+   [-input_pins]          (include input pins in combinational path)
+   [-nets]                (include nets in combinational path)
+   [-transition_time]     (display net transition time for each driving pin)
+   [-crosstalk_delta]     (display delta delay for each input pin)
+   [-capacitance]         (display net capacitance for each ne or driving pin)
+   [-effective_capacitance]
+                          (display net capacitance for each net or driving pin that is calculated with Ceff)
+   [-variation]           (show the mean and variation value of cell and net delays)
+   [-lesser_path <max_path_delay>]
+                          (display paths with length less than this value: 
+                           Value >= 0)
+   [-greater_path <min_path_delay>]
+                          (display paths with length greater than this value: 
+                           Value >= 0)
+   [-slack_lesser_than <max_slack>]
+                          (display paths with slack less than this value)
+   [-slack_greater_than <min_slack>]
+                          (display paths with slack greater than this value)
+   [-loops]               (report timing loops)
+   [-enable_preset_clear_arcs]
+                          (enable async arcs for this report)
+   [-significant_digits <digits>]
+                          (from 0 to 13; default is 2: 
+                           Range: 0 to 13)
+   [-unique_pins]         (omit subsequent paths through the same pins)
+   [-start_end_pair]      (report only one path per pin pair.)
+   [-physical]            (report pin locations and net caps)
+   [-nosplit]             (do not split lines when column fields overflow)
+   [-attributes]          (report dont_touch, size_only for cells and nets)
+   [-sort_by <slack|group>]
+                          (sort_by)
+   [-normalized_slack]    (use normalized slack for sorting when normalized analysis is on)
+   [-group <group_name>]  (name of group)
+   [-derate]              (report timing derate for path elements)
+   [-voltage]             (report pin voltages in multi-voltage design)
+   [-temperature]         (report temperature in op. cond in multi-voltage design)
+   [-trace_latch_borrow]  (trace timing paths through borrowing latches)
+   [-scenarios { scenario_name1 scenario_name2 ... }]
+                          (report timing on specifed set of scenarios, skip on inactive scenario(s))
+   [-ignore_infeasible_paths]
+                          (report timing ignoring infeasible paths)
+
+EDA_HELP_END report_timing
+EDA_HELP_BEGIN report_area
+ report_area          # report area
+   [-nosplit]             (do not split lines when column fields overflow)
+   [-physical]            (show physical information only)
+   [-hierarchy]           (show area distribution over hierarchy)
+   [-designware]          (show area attributable to DesignWare components)
+
+EDA_HELP_END report_area
+EDA_HELP_BEGIN report_units
+ report_units         # report_units
+
+EDA_HELP_END report_units
+EDA_HELP_BEGIN write_sdc
+ write_sdc            # write constraint script for current design
+   [-nosplit]             (do not split lines when column fields overflow)
+   [-version sdc_version] (Default is latest: 
+                           Values: latest, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 
+                           1.8, 1.9, 2.0)
+   file_name              (Output file name)
+
+EDA_HELP_END write_sdc
+EDA_HELP_BEGIN write_file
+ write_file           # write designs to file
+   [-format format_name]  (default is ddc)
+   [-hierarchy]           (write all designs in the hierarchy)
+   [-no_implicit]         (don't write implicitly created hierarchy)
+   [-output file_name]    (write designs to the specified file)
+   [-library library_name]
+                          (write the db object to the specified library)
+   [-scenarios scenarios] (list of scenarios to save (DDC format only))
+   [-include_anchor_cells]
+                          (include anchor cells from dirty linking)
+   [-pg]                  (write PG network obtained from input RTL (verilog format only))
+   [design_list]          (list of designs or design files)
+
+EDA_HELP_END write_file
+EDA_HELP_BEGIN saif_map
+ saif_map             # SAIF name mapping handling
+   [-start]               (activate SAIF name mapping)
+   [-end]                 (deactivate SAIF name mapping)
+   [-reset]               (reset SAIF name mapping)
+   [-report]              (report SAIF name mapping)
+   [-get_name]            (get SAIF name of object)
+   [-set_name <name(s)>]  (set SAIF name(s) of object)
+   [-add_name <name(s)>]  (add SAIF name(s) of object)
+   [-remove_name <name(s)>]
+                          (remove SAIF name(s) of object)
+   [-clear_name]          (clear SAIF name of object(s))
+   [-get_object_names <name>]
+                          (get names of objects matching name)
+   [-create_map]          (create a name mapping for a SAIF file)
+   [-write_map <filename>]
+                          (write name mapping information to file)
+   [-read_map <filename>] (read name mapping information from file)
+   [-type <name type: saif_names, orig_name, extended_orig_name, all_names; or map file type: name_map, ptpx>]
+                          (name type to set, get, etc; map file format to dump)
+   [-inverted]            (specifies whether the name maps to a logically inverted object)
+   [-instances <object_list>]
+                          (select objects in given instances only)
+   [-no_hierarchical]     (apply selection criteria to all top-level instances)
+   [-columns <columns>]   (columns in report)
+   [-sort <columns>]      (report sorting criteria)
+   [-rtl_summary]         (report SAIF name mapping summary on synthesis invariants)
+   [-missing_rtl]         (list synthesis invariant objects with no SAIF names)
+   [-input <SAIF file>]   (input SAIF file)
+   [-source_instance <SAIF_instance_name>]
+                          (SAIF instance name)
+   [-target_instance <instance>]
+                          (the target instance where the SAIF information will be annotated)
+   [-review]              (review the created SAIF match information)
+   [-preview]             (preview, without creating, the SAIF match information)
+   [-hsep <character>]    (hierarchical separator)
+   [-nosplit]             (do not split lines when report fields overflow)
+   [<object_list>]        (design object(s))
+
+EDA_HELP_END saif_map
+EDA_HELP_BEGIN set_switching_activity
+ set_switching_activity # set switching activity annotation
+   [-static_probability <static_probability>]
+                          (fraction of time that the design object is in the ON state: 
+                           Range: 0 to 1)
+   [-toggle_rate <toggle_rate>]
+                          (number of transitions that this design object makes: 
+                           Value >= 0)
+   [-state_condition <boolean_eq_of_pins>]
+                          (state-dependent boolean equation for pin/cell)
+   [-path_sources <source(s)_of_path>]
+                          (pin(s) that is the source of this path or default)
+   [-rise_ratio <rise_ratio>]
+                          (rise/total toggles ratio: 
+                           Range: 0 to 1)
+   [-period <period_value>]
+                          (associated period in case a clock is not specified: 
+                           Value >= 0)
+   [-base_clock <clock>]  (clock to be associated with the design object)
+   [-type <object_type_list>]
+                          (list of types: registers, three_states, inputs, outputs, inouts, ports, nets, black_boxes, clock_gating_cells, memory)
+   [-hierarchy]           (select objects hierarchically)
+   [-verbose]             (verbose reporting mode)
+   [<object_list>]        (list of design objects to be annotated)
+
+EDA_HELP_END set_switching_activity
+puts "EDA_HELP_COMPLETE DC"
+EDA_HELP_COMPLETE DC
+exit
+
+Memory usage for main task 46 Mbytes.
+Memory usage for this session 46 Mbytes.
+CPU usage for this session 1 seconds ( 0.00 hours ).
+
+Thank you...

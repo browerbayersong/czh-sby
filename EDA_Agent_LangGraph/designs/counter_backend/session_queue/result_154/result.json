@@ -1,0 +1,95 @@
+{
+  "entries": [
+    {
+      "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw",
+      "exists": true,
+      "kind": "directory",
+      "bytes": 4096,
+      "mtime_epoch": 1792910723,
+      "mode": "0o40755"
+    },
+    {
+      "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw/CEL",
+      "exists": true,
+      "kind": "directory",
+      "bytes": 4096,
+      "mtime_epoch": 1792910351,
+      "mode": "0o40755"
+    },
+    {
+      "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/derived_tech.tf",
+      "exists": true,
+      "kind": "file",
+      "bytes": 365497,
+      "mtime_epoch": 1792910338,
+      "mode": "0o100600"
+    },
+    {
+      "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/src/generated/scripts/icc_layout_only.tcl",
+      "exists": true,
+      "kind": "file",
+      "bytes": 147,
+      "mtime_epoch": 1792910319,
+      "mode": "0o100664"
+    },
+    {
+      "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/src/generated/scripts/icc_place_route.tcl",
+      "exists": true,
+      "kind": "file",
+      "bytes": 7264,
+      "mtime_epoch": 1792910319,
+      "mode": "0o100664"
+    },
+    {
+      "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/snapshot_manifest.json",
+      "exists": true,
+      "kind": "file",
+      "bytes": 2623,
+      "mtime_epoch": 1792910319,
+      "mode": "0o100664"
+    },
+    {
+      "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram",
+      "exists": true,
+      "kind": "directory",
+      "bytes": 4096,
+      "mtime_epoch": 1146212869,
+      "mode": "0o40775"
+    },
+    {
+      "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_6lm_1thick.tf",
+      "exists": true,
+      "kind": "file",
+      "bytes": 363808,
+      "mtime_epoch": 1126312856,
+      "mode": "0o100664"
+    },
+    {
+      "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/lef/tsmc090lk_6lm_1thick_tech.lef",
+      "exists": true,
+      "kind": "file",
+      "bytes": 33693,
+      "mtime_epoch": 1126312923,
+      "mode": "0o100664"
+    },
+    {
+      "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db",
+      "exists": true,
+      "kind": "file",
+      "bytes": 7621052,
+      "mtime_epoch": 1126312902,
+      "mode": "0o100664"
+    },
+    {
+      "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/gds2OutLayer.map",
+      "exists": true,
+      "kind": "file",
+      "bytes": 2640,
+      "mtime_epoch": 1126312856,
+      "mode": "0o100664"
+    }
+  ],
+  "read_only": true,
+  "file_contents_read": false,
+  "status": "completed"
+}

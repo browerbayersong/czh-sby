@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "tool": "icc",
+  "command": "cd /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_001/src && timeout 180s /opt/Synopsys/ICC2016/bin/icc_shell -f generated/scripts/help_icc.tcl > ../build/icc.log 2>&1",
+  "stdout": "",
+  "stderr": "",
+  "run": "upload_001",
+  "status": "completed"
+}

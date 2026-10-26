@@ -1,0 +1,101 @@
+
+  Loading design 'counter_8bit'
+Warning: Layer 'M1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'M2' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'M3' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'M4' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'M5' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'M6' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+
+
+[begin initializing data for legality checker]
+
+Initializing Data Structure ...
+INFO: legalizer_via_spacing_check_mode 0
+  Reading technology information ...
+    Technology table contains 6 routable metal layers
+    This is considered as a 6-metal-layer design
+    Reading library information from DB ...
+  Reading misc information ...
+    array <unit> has 0 vertical and 9 horizontal rows
+  Checking information read in ...
+    design style = Horizontal masters, Horizontal rows
+
+  Preprocessing design ...
+    splitting rows by natural obstacles ...
+... design style 0
+... number of base array 1 0
+INFO:... use original rows...
+[end initializing data for legality checker]
+ 
+****************************************
+  Report : Chip Summary
+  Design : counter_8bit
+  Version: L-2016.03-SP1
+  Date   : Sun Oct 25 14:27:26 2026
+****************************************
+Std cell utilization: 46.61%  (344/(738-0))
+(Non-fixed + Fixed)
+Chip area:            738      sites, bbox (3.00 3.00 25.96 25.68) um
+Std cell area:        344      sites, (non-fixed:344    fixed:0)
+                      25       cells, (non-fixed:25     fixed:0)
+Macro cell area:      0        sites
+                      0        cells
+Placement blockages:  0        sites, (excluding fixed std cells)
+                      0        sites, (include fixed std cells & chimney area)
+                      0        sites, (complete p/g net blockages)
+Routing blockages:    0        sites, (partial p/g net blockages)
+                      0        sites, (routing blockages and signal pre-route)
+Lib cell count:       6 
+Avg. std cell width:  2.75 um 
+Site array:           unit     (width: 0.28 um, height: 2.52 um, rows: 9)
+Physical DB scale:    1000 db_unit = 1 um 
+
+ 
+****************************************
+  Report : pnet options
+  Design : counter_8bit
+  Version: L-2016.03-SP1
+  Date   : Sun Oct 25 14:27:26 2026
+****************************************
+
+
+--------------------------------------------------------------------
+Layer      Blockage   Min_width   Min_height   Via_additive     Density
+--------------------------------------------------------------------
+M1         none          ---         ---       via additive      ---
+M2         none          ---         ---       via additive      ---
+M3         none          ---         ---       via additive      ---
+M4         none          ---         ---       via additive      ---
+M5         none          ---         ---       via additive      ---
+M6         none          ---         ---       via additive      ---
+Warning: Die area is not integer multiples of min site height (2520), object's width and height(28960,28680). (PSYN-523)
+Warning: Die area is not integer multiples of min site width (280), object's width and height(28960,28680). (PSYN-523)
+
+**************************************************** 
+Check_legality: Report for Fixed Placement Cells
+**************************************************** 
+(fixed placement) Cells Not on Row            : 0
+(fixed placement) Cell Overlaps               : 0
+(fixed placement) Cells overlapping blockages : 0
+(fixed placement) Orientation Violations      : 0
+(fixed placement) Site Violations             : 0
+(fixed placement) Power Strap Violations      : 0
+****************************************************** 
+
+****************************************************** 
+Check_legality: Report for Non-fixed Placement Cells
+****************************************************** 
+Number of Cells Not on Row            : 0
+Number of Cell Overlaps               : 0
+Number of Cells overlapping blockages : 0
+Number of Orientation Violations      : 0
+Number of Site Violations             : 0
+Number of Power Strap Violations      : 0
+******************************************** 
+
+  Total moveable cell area: 242.7
+  Total fixed cell area: 0.0
+  Total physical cell area: 242.7
+  Core area: (3000 3000 25960 25680)
+1

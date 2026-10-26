@@ -1,0 +1,24 @@
+ 23:30:43 up  3:37,  2 users,  load average: 0.11, 0.03, 0.01
+             total       used       free     shared    buffers     cached
+Mem:          1991        652       1339          3         44        200
+-/+ buffers/cache:        407       1584 
+Swap:            0          0          0 
+eth0      Link encap:Ethernet  HWaddr A4:DB:30:35:75:57  
+          inet addr:192.168.142.128  Bcast:192.168.142.255  Mask:255.255.255.0
+          inet6 addr: fe80::a6db:30ff:fe35:7557/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2091 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:142918 (139.5 KiB)  TX bytes:26097 (25.4 KiB)
+
+   PID     ELAPSED COMMAND
+  3758    03:34:12 /sbin/dhclient -d -4 -sf /usr/libexec/nm-dhcp-client.action -pf /var/run/dhclient-eth0.pid -lf /var/lib/dhclient/dhclient-0ea0c529-496f-420c-9581-3350e856460b-eth0.lease -cf /var/run/nm-dhclient-eth0.conf eth0
+  4258    03:30:26 /sbin/dhclient -v eth0
+DEVICE=eth0
+HWADDR=A4:DB:30:35:75:57
+TYPE=Ethernet
+UUID=0ea0c529-496f-420c-9581-3350e856460b
+ONBOOT=no
+NM_CONTROLLED=yes
+BOOTPROTO=dhcp

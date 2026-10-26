@@ -1,0 +1,19 @@
+# Local credentials and generated development state
+.env
+*.env
+!.env.example
+**/venv/
+**/.venv/
+**/__pycache__/
+*.pyc
+.DS_Store
+
+# Transient Milkyway lock files are not portable database content.
+drc_ai/counter_mw/.lock
+
+# Full PDK/readback payloads and vendor manual copies are local diagnostics.
+# The public repository retains their request/result metadata and notes.
+EDA_Agent_LangGraph/designs/counter_backend/session_queue/result_076/content.txt
+EDA_Agent_LangGraph/designs/counter_backend/session_queue/result_086/build/icc.log
+EDA_Agent_LangGraph/designs/counter_backend/session_queue/result_140/build/pt_estimate/report_power_manual.txt
+EDA_Agent_LangGraph/designs/counter_backend/rescue_records/20261025_unexecuted_control/stop_owned_icc.tcl

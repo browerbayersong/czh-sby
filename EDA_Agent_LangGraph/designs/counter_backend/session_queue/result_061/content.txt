@@ -1,0 +1,27 @@
+# Set Designer
+set company {Learning}
+set designer {Zhang Zhiji}
+
+######################## TSMC90 ########################
+set synthetic_library {fast.db fast_leakage.db fastz.db slow.db typical.db typical_leakage.db}
+set target_library {fast.db fast_leakage.db fastz.db slow.db typical.db typical_leakage.db}
+set link_library {* fast.db fast_leakage.db fastz.db slow.db typical.db typical_leakage.db}
+set symbol_library {generic.sdb}
+
+#Files Direction
+set my_lib_path "/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys"
+set search_path "$search_path $my_lib_path"
+
+######################## SMIC180 ########################
+#set synthetic_library {fast.db fasta.db slow.db typical.db}
+#set target_library {fast.db fasta.db slow.db typical.db}
+#set link_library {* fast.db fasta.db slow.db typical.db}
+#set symbol_library {generic.sdb}
+
+#Files Direction
+#set my_lib_path "/opt/Foundary_Library/SMIC180/std/synopsys"
+#set search_path "$search_path $my_lib_path"
+
+# Set up DesignWare cache read and write directories to speed up compile
+set cache_write ~
+set cache_read $cache_write

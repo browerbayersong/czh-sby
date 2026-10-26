@@ -1,0 +1,130 @@
+##### SETTING DESIGN ENVIRONMENT ##########
+set l /tsmc90
+set rule_lib $l
+
+set r ../../../aci/sc-x
+
+##### IMPORTING WORST-CASE LIBS ##########
+import lib -lib $l -case worst $r/synopsys/slow.lib
+
+##### IMPORTING BEST-CASE LIBS ##########
+import lib -add -lib $l -case best $r/synopsys/fast.lib
+
+config timing slew threshold .3 .7 .3 .7
+
+##### IMPORT ROUTING LAYER RULES ###########
+# uncomment the next line if you want to make the rules file from the lef
+#import lef all -lib $l -rule -output_rule_file magma.rules $r/lef/tsmc090lk_9lm_2thick_tech.lef
+
+#Includes Cap and Resistance rules imported from LEF
+# uncomment the next line to use the rules file you generated from the lef
+#source magma.rules
+# If instead you have a hand made rules file which you either created
+# yourself or got from Magma, then uncomment the next line
+source tsmc90g_9lm.rules
+
+##### REGROUP CELLS ##########
+data copy $l/INV -name CLKINV
+foreach x [data find $l/CLKINV INV*] {data delete object $x}
+foreach y [data find $l/INV CLKINV*] {data delete object $y}
+
+data copy $l/BUF -name DELAY
+foreach x [data find $l/DELAY BUF*] {data delete object $x}
+foreach z [data find $l/DELAY CLKBUF*] {data delete object $z}
+foreach y [data find $l/BUF DLY*] {data delete object $y}
+
+data copy $l/BUF -name CLKBUF
+foreach x [data find $l/CLKBUF BUF*] {data delete object $x}
+foreach y [data find $l/BUF CLKBUF*] {data delete object $y}
+
+#data copy $l/CLKMX2 -name MX2
+#foreach x [data find $l/MX2 CLKMX2*] {data delete object $x}
+#foreach y [data find $l/CLKMX2 MX2*] {data delete object $y}
+
+data copy $l/MX2XX -name CLKMX2
+foreach x [data find $l/MX2XX CLKMX2*] {data delete object $x}
+foreach y [data find $l/CLKMX2 MX2*] {data delete object $y}
+
+data copy $l/XOR2 -name CLKXOR2
+foreach x [data find $l/CLKXOR2 XOR2*] {data delete object $x}
+foreach y [data find $l/XOR2 CLKXOR2*] {data delete object $y}
+
+data copy $l/AND2 -name CLKAND2
+foreach x [data find $l/CLKAND2 AND2*] {data delete object $x}
+foreach x [data find $l/AND2 CLKAND2*] {data delete object $x}
+
+data copy $l/NAND2 -name CLKNAND2
+foreach x [data find $l/CLKNAND2 NAND2*] {data delete object $x}
+foreach x [data find $l/NAND2 CLKNAND2*] {data delete object $x}
+
+data copy $l/ADDFHX -name ADDFX
+foreach x [data find $l/ADDFX ADDFHX*] {data delete object $x}
+foreach x [data find $l/ADDFHX ADDFX*] {data delete object $x}
+
+#data copy $l/ADDHX2 -name CMPR22X
+#foreach x [data find $l/CMPR22X ADDHX*] {data delete object $x}
+#foreach x [data find $l/ADDHX2 CMPR22X*] {data delete object $x}
+
+data copy $l/DFFHQX -name DFFQX
+data copy $l/DFFHQX -name DFFYQX
+foreach x [data find $l/DFFQX DFFHQX*] {data delete object $x}
+foreach x [data find $l/DFFQX DFFYQX*] {data delete object $x}
+foreach x [data find $l/DFFHQX DFFQX*] {data delete object $x}
+foreach x [data find $l/DFFHQX DFFYQX*] {data delete object $x}
+foreach x [data find $l/DFFYQX DFFHQX*] {data delete object $x}
+foreach x [data find $l/DFFYQX DFFHX*] {data delete object $x}
+
+data copy $l/SDFFHQX -name SDFFQX
+data copy $l/SDFFHQX -name SDFFYQX
+foreach x [data find $l/SDFFQX SDFFHQX*] {data delete object $x}
+foreach x [data find $l/SDFFQX SDFFYQX*] {data delete object $x}
+foreach x [data find $l/SDFFHQX SDFFQX*] {data delete object $x}
+foreach x [data find $l/SDFFHQX SDFFYQX*] {data delete object $x}
+foreach x [data find $l/SDFFYQX SDFFHQX*] {data delete object $x}
+foreach x [data find $l/SDFFYQX SDFFQX*] {data delete object $x}
+
+data copy $l/DFFRHQX -name DFFRQX
+foreach x [data find $l/DFFRQX DFFRHQX*] {data delete object $x}
+foreach x [data find $l/DFFRHQX DFFRQX*] {data delete object $x}
+
+data copy $l/SDFFRHQX -name SDFFRQX
+foreach x [data find $l/SDFFRQX SDFFRHQX*] {data delete object $x}
+foreach x [data find $l/SDFFRHQX SDFFRQX*] {data delete object $x}
+
+data copy $l/DFFSHQX -name DFFSQX
+foreach x [data find $l/DFFSQX DFFSHQX*] {data delete object $x}
+foreach x [data find $l/DFFSHQX DFFSQX*] {data delete object $x}
+
+data copy $l/SDFFSHQX -name SDFFSQX
+foreach x [data find $l/SDFFSQX SDFFSHQX*] {data delete object $x}
+foreach x [data find $l/SDFFSHQX SDFFSQX*] {data delete object $x}
+
+data copy $l/DFFHX -name DFFX
+foreach x [data find $l/DFFX DFFHX*] {data delete object $x}
+foreach x [data find $l/DFFHX DFFX*] {data delete object $x}
+
+data copy $l/SDFFHX -name SDFFX
+foreach x [data find $l/SDFFX SDFFHX*] {data delete object $x}
+foreach x [data find $l/SDFFHX SDFFX*] {data delete object $x}
+
+##### IMPORTING PHYSICAL LIBRARIES ##########
+import lef all -lib $l -cell $r/lef/tsmc090nvt_macros.lef
+
+#####################################
+#Check for inconsistencies in the library. 
+check lib $l
+
+run prepare lib $l 
+# uncomment to get drc info on pins
+#run prepare routability $l $l
+# not released yet
+# run prepare quality
+
+#test! run prepare quality $l
+report arc $l -file reports/tsmc090nvt.rpt
+
+##### Gate and diffusion area ##########
+data put  $l/ANTENNA/A direction in
+import lef all -lib $l -cell -add $r/lef/antenna_nvt.lef
+
+export volcano tsmc90.volcano 

@@ -1,0 +1,61 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf",
+  "entries": [
+    {
+      "name": "tsmc090_5lm_2thick.tf",
+      "size": 244104,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_5lm_1thick.tf",
+      "size": 243994,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_7lm_2thick.tf",
+      "size": 518502,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_6lm_1thick.tf",
+      "size": 363808,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_9lm_2thick.tf",
+      "size": 950123,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_4lm_2thick.tf",
+      "size": 154323,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_7lm_1thick.tf",
+      "size": 518323,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_8lm_1thick.tf",
+      "size": 712167,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_4lm_1thick.tf",
+      "size": 155078,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_6lm_2thick.tf",
+      "size": 363754,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090_8lm_2thick.tf",
+      "size": 712402,
+      "mode": "0o100664"
+    }
+  ],
+  "status": "completed"
+}

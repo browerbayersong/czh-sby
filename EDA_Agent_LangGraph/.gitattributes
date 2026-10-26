@@ -1,0 +1,2 @@
+# 实验快照的 SHA-256 对应原始字节，禁止 Git 在 Windows 上转换换行。
+evidence/**/src/** -text

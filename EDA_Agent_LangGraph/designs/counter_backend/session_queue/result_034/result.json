@@ -1,0 +1,61 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram",
+  "entries": [
+    {
+      "name": "command.log",
+      "size": 201084,
+      "mode": "0o100644"
+    },
+    {
+      "name": "TIM",
+      "size": 20480,
+      "mode": "0o40775"
+    },
+    {
+      "name": ".lock",
+      "size": 0,
+      "mode": "0o100666"
+    },
+    {
+      "name": "lib_bck",
+      "size": 424222,
+      "mode": "0o100664"
+    },
+    {
+      "name": "PWR",
+      "size": 20480,
+      "mode": "0o40775"
+    },
+    {
+      "name": ".tf_replaced",
+      "size": 949701,
+      "mode": "0o100644"
+    },
+    {
+      "name": "lib",
+      "size": 424295,
+      "mode": "0o100664"
+    },
+    {
+      "name": "lib_1",
+      "size": 1987,
+      "mode": "0o100664"
+    },
+    {
+      "name": "lib_2",
+      "size": 34121,
+      "mode": "0o100664"
+    },
+    {
+      "name": "CEL",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "FRAM",
+      "size": 20480,
+      "mode": "0o40775"
+    }
+  ],
+  "status": "completed"
+}

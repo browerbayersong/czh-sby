@@ -1,0 +1,380 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+source generated/scripts/config.tcl
+VSS
+proc eda_route_count {} {
+    redirect -file ../build/icc/routing_drc.rpt {verify_zrt_route -drc true -open_net true}
+    set handle [open ../build/icc/routing_drc.rpt r]
+    set text [read $handle]
+    close $handle
+    if {![regexp {Total number of DRCs = ([0-9]+)} $text unused count]} {
+        error "Routing report has no DRC count"
+    }
+    return $count
+}
+proc eda_eco_main {} {
+    global EDA_TOP EDA_DB EDA_GDS_MAP EDA_POWER_NET EDA_GROUND_NET
+    file mkdir ../build/icc
+    set_app_var target_library [list $EDA_DB]
+    set_app_var synthetic_library [list standard.sldb]
+    set_app_var link_library [concat [list *] [list $EDA_DB]]
+    set_host_options -max_cores 1
+    copy_mw_lib -from /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw -to ../build/icc/counter_mw
+    open_mw_lib ../build/icc/counter_mw
+    open_mw_cel counter_8bit
+    set_route_zrt_detail_options -drc_convergence_effort_level high -generate_extra_off_grid_pin_tracks true
+    route_zrt_detail -incremental true -initial_drc_from_input true -max_number_iterations 80
+    set count [eda_route_count]
+    puts "EDA_ECO_INCREMENTAL_DRC $count"
+    if {$count > 0} {
+        set selected [get_nets -regexp {^(count\[5\]|N7)$}]
+        if {[sizeof_collection $selected] != 2} {error "Recorded ECO nets do not match the design"}
+        route_zrt_eco -nets $selected -reroute modified_nets_first_then_others -utilize_dangling_wires false -max_detail_route_iterations 100
+        set count [eda_route_count]
+        puts "EDA_ECO_SELECTED_NETS_DRC $count"
+    }
+    if {$count > 0} {
+        create_route_guide -name pin_access_spacing -coordinate {{8.0 16.3} {8.7 17.4}} -no_signal_layers M1
+        route_zrt_eco -nets $selected -reroute modified_nets_first_then_others -utilize_dangling_wires false -max_detail_route_iterations 100
+        set count [eda_route_count]
+        puts "EDA_ECO_GUIDED_DRC $count"
+    }
+    redirect -file ../build/icc/pg_connectivity.rpt {verify_pg_nets}
+    redirect -file ../build/icc/lvs.rpt {verify_lvs}
+    redirect -file ../build/icc/placement_legality.rpt {check_legality -verbose}
+    redirect -file ../build/icc/area.rpt {report_area -nosplit}
+    redirect -file ../build/icc/physical.rpt {report_design_physical -all}
+    redirect -file ../build/icc/units.rpt {report_units}
+    if {$count != 0} {error "ECO still has $count DRC violations"}
+    foreach report {routing_drc.rpt pg_connectivity.rpt lvs.rpt} {
+        set handle [open ../build/icc/$report r]
+        set text [read $handle]
+        close $handle
+        if {[regexp -nocase -line {^\s*ERROR\s*:} $text]} {error "Physical verification failed: $report"}
+    }
+    save_mw_cel
+    write_verilog -no_physical_only_cells ../build/icc/counter_8bit.routed.v
+    write_sdc -nosplit ../build/icc/counter_8bit.sdc
+    set_write_stream_options -map_layer $EDA_GDS_MAP
+    write_stream -format gds -cells $EDA_TOP ../build/icc/counter_8bit.gds
+    puts "EDA_STAGE_COMPLETE ICC_LAYOUT"
+    puts "EDA_SCOPE Physical layout verified; detailed parasitic extraction is not claimed."
+}
+if {[catch {eda_eco_main} message]} {
+    puts "EDA_FATAL $message"
+    exit 2
+}
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+	6 (Main Library) <==> 9 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 6
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 66
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Information: Opened "counter_8bit.CEL;1" from "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_150042_56302979/build/icc/counter_mw" library. (MWUI-068)
+Turn off antenna since no rule is specified
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M6
+Warning: Ignore 1 top cell ports with no pins. (ZRT-027)
+Via on layer (VIA5) needs more than one tracks
+Warning: Layer M5 pitch 0.280 may be too small: wire/via-down 0.280, wire/via-up 0.420. (ZRT-026)
+Transition layer name: M5(4)
+Printing options for 'set_route_zrt_common_options'
+
+Printing options for 'set_route_zrt_detail_options'
+-drc_convergence_effort_level                           :	 high                
+-generate_extra_off_grid_pin_tracks                     :	 true                
+
+[Dr init] Elapsed real time: 0:00:00 
+[Dr init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Dr init] Stage (MB): Used   12  Alloctr   12  Proc    1 
+[Dr init] Total (MB): Used   14  Alloctr   14  Proc 1246 
+Total number of nets = 36, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Information: Using 1 threads for routing. (ZRT-444)
+Routing in incremental mode, starting from iteration 11
+
+Start DR iteration 11: non-uniform partition
+Routed	1/1 Partitions, Violations =	2
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	2
+	Diff net spacing : 1
+	Short : 1
+
+[Iter 11] Elapsed real time: 0:00:00 
+[Iter 11] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Iter 11] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 11] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 11 with 1 parts
+
+Start DR iteration 12: non-uniform partition
+Routed	1/1 Partitions, Violations =	4
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	4
+	Less than minimum width : 1
+	Same net spacing : 1
+	Short : 2
+
+[Iter 12] Elapsed real time: 0:00:00 
+[Iter 12] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Iter 12] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 12] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 12 with 1 parts
+
+Start DR iteration 13: non-uniform partition
+Routed	1/1 Partitions, Violations =	2
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	2
+	Diff net spacing : 1
+	Short : 1
+
+[Iter 13] Elapsed real time: 0:00:00 
+[Iter 13] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Iter 13] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 13] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 13 with 1 parts
+
+Start DR iteration 14: non-uniform partition
+Routed	1/1 Partitions, Violations =	2
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	2
+	Diff net spacing : 1
+	Short : 1
+
+[Iter 14] Elapsed real time: 0:00:00 
+[Iter 14] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Iter 14] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 14] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 14 with 1 parts
+
+Start DR iteration 15: non-uniform partition
+Routed	1/1 Partitions, Violations =	4
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	4
+	Less than minimum width : 1
+	Same net spacing : 1
+	Short : 2
+
+[Iter 15] Elapsed real time: 0:00:00 
+[Iter 15] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Iter 15] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 15] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 15 with 1 parts
+
+Start DR iteration 16: non-uniform partition
+Routed	1/1 Partitions, Violations =	2
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	2
+	Diff net spacing : 1
+	Short : 1
+
+[Iter 16] Elapsed real time: 0:00:01 
+[Iter 16] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[Iter 16] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 16] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 16 with 1 parts
+
+Start DR iteration 17: non-uniform partition
+Routed	1/1 Partitions, Violations =	4
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	4
+	Less than minimum width : 1
+	Same net spacing : 1
+	Short : 2
+
+[Iter 17] Elapsed real time: 0:00:01 
+[Iter 17] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[Iter 17] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 17] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 17 with 1 parts
+
+Start DR iteration 18: non-uniform partition
+Routed	1/1 Partitions, Violations =	2
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	2
+	Diff net spacing : 1
+	Short : 1
+
+[Iter 18] Elapsed real time: 0:00:01 
+[Iter 18] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[Iter 18] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 18] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 18 with 1 parts
+
+Start DR iteration 19: non-uniform partition
+Routed	1/1 Partitions, Violations =	2
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	2
+	Diff net spacing : 1
+	Short : 1
+
+[Iter 19] Elapsed real time: 0:00:01 
+[Iter 19] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[Iter 19] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 19] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 19 with 1 parts
+
+Start DR iteration 20: non-uniform partition
+Routed	1/1 Partitions, Violations =	2
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	2
+	Diff net spacing : 1
+	Short : 1
+
+[Iter 20] Elapsed real time: 0:00:02 
+[Iter 20] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
+[Iter 20] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 20] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 20 with 1 parts
+
+Start DR iteration 21: non-uniform partition
+Routed	1/1 Partitions, Violations =	3
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	3
+	Short : 3
+
+[Iter 21] Elapsed real time: 0:00:02 
+[Iter 21] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
+[Iter 21] Stage (MB): Used   13  Alloctr   13  Proc    1 
+[Iter 21] Total (MB): Used   15  Alloctr   16  Proc 1247 
+
+End DR iteration 21 with 1 parts
+
+Stop DR since not converging
+
+Information: Detail Routing terminated early because DRCs were not converging: true (ZRT-312)
+[DR] Elapsed real time: 0:00:02 
+[DR] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
+[DR] Stage (MB): Used    9  Alloctr   10  Proc    1 
+[DR] Total (MB): Used   12  Alloctr   12  Proc 1247 
+[DR: Done] Elapsed real time: 0:00:02 
+[DR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
+[DR: Done] Stage (MB): Used    9  Alloctr   10  Proc    1 
+[DR: Done] Total (MB): Used   12  Alloctr   12  Proc 1247 
+
+DR finished with 0 open nets, of which 0 are frozen
+Information: Merged away 2 aligned/redundant DRCs. (ZRT-305)
+
+DR finished with 1 violations
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	1
+	Short : 1
+
+
+
+Total Wire Length =                    768 micron
+Total Number of Contacts =             231
+Total Number of Wires =                203
+Total Number of PtConns =              41
+Total Number of Routed Wires =       203
+Total Routed Wire Length =           756 micron
+Total Number of Routed Contacts =       231
+	Layer        M1 :         21 micron
+	Layer        M2 :        322 micron
+	Layer        M3 :        344 micron
+	Layer        M4 :         46 micron
+	Layer        M5 :         35 micron
+	Layer        M6 :          0 micron
+	Via        via4 :          8
+	Via        via3 :         13
+	Via        via2 :        102
+	Via        via1 :         47
+	Via   via1(rot) :          3
+	Via       via1v :         58
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 231 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 108     vias)
+        Un-optimized = 100.00% (108     vias)
+    Layer VIA2       =  0.00% (0      / 102     vias)
+        Un-optimized = 100.00% (102     vias)
+    Layer VIA3       =  0.00% (0      / 13      vias)
+        Un-optimized = 100.00% (13      vias)
+    Layer VIA4       =  0.00% (0      / 8       vias)
+        Un-optimized = 100.00% (8       vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 231 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 108     vias)
+    Layer VIA2       =  0.00% (0      / 102     vias)
+    Layer VIA3       =  0.00% (0      / 13      vias)
+    Layer VIA4       =  0.00% (0      / 8       vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 231 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 108     vias)
+        Un-optimized = 100.00% (108     vias)
+    Layer VIA2       =  0.00% (0      / 102     vias)
+        Un-optimized = 100.00% (102     vias)
+    Layer VIA3       =  0.00% (0      / 13      vias)
+        Un-optimized = 100.00% (13      vias)
+    Layer VIA4       =  0.00% (0      / 8       vias)
+        Un-optimized = 100.00% (8       vias)
+ 
+
+Total number of nets = 36
+0 open nets, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 1
+Total number of antenna violations = antenna checking not active
+Total number of voltage-area violations = no voltage-areas defined
+Topology ECO iteration 1 ended with 0 qualifying violations.
+Updating the database ...
+Information: RC extraction has been freed. (PSYN-503)
+EDA_ECO_INCREMENTAL_DRC 1
+EDA_FATAL Recorded ECO nets do not match the design
+
+Memory usage for main task 193 Mbytes.
+Memory usage for this session 193 Mbytes.
+CPU usage for this session 5 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

@@ -1,0 +1,17 @@
+{
+  "run_id": "dbe724c9bf294355af7b8afda872f68e",
+  "mode": "upload",
+  "file_count": 10,
+  "when": "2026-10-24T23:42:10",
+  "project_directory": "/home/IC/Desktop/EDA_Projects/counter_backend",
+  "remote_directory": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_003",
+  "source_snapshot": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_003/src",
+  "run_label": "upload_003",
+  "upload_ok": true,
+  "status": "uploaded",
+  "sync": {
+    "created": 1,
+    "updated_with_backup": 0,
+    "unchanged": 9
+  }
+}

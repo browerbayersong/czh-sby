@@ -1,0 +1,23 @@
+Create error cell counter_8bit.err ...
+Using [4 x 4] Fat Wire Table for M1
+Using [4 x 4] Fat Wire Table for M2
+Using [4 x 4] Fat Wire Table for M3
+Using [4 x 4] Fat Wire Table for M4
+Using [4 x 4] Fat Wire Table for M5
+Using [3 x 3] Fat Wire Table for M6
+Using [6 x 6] Fat Wire Table for VIA1
+Using [6 x 6] Fat Wire Table for VIA2
+Using [6 x 6] Fat Wire Table for VIA3
+Using [6 x 6] Fat Wire Table for VIA4
+Using [3 x 3] Fat Wire Table for VIA5
+Checking [VSS]:
+	There are no floating shapes
+	All the pins are connected.
+	No errors are found.
+Checking [VDD]:
+	There are no floating shapes
+	All the pins are connected.
+	No errors are found.
+Checked 2 nets, 0 have Errors
+Update error cell ...
+1

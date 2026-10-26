@@ -1,0 +1,16 @@
+{
+  "paths": [
+    "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw",
+    "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw/CEL",
+    "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/derived_tech.tf",
+    "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/src/generated/scripts/icc_layout_only.tcl",
+    "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/src/generated/scripts/icc_place_route.tcl",
+    "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/snapshot_manifest.json",
+    "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram",
+    "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_6lm_1thick.tf",
+    "/opt/Foundary_Library/TSMC90/aci/sc-x/lef/tsmc090lk_6lm_1thick_tech.lef",
+    "/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db",
+    "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/gds2OutLayer.map"
+  ],
+  "action": "stat_paths"
+}

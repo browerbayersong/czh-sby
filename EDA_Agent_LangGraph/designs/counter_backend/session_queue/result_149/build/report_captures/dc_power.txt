@@ -1,0 +1,25 @@
+Read-only original report excerpt
+DC original power report
+
+Information: Propagating switching activity (medium effort zero delay simulation). (PWR-6)
+ 
+****************************************
+Report : power
+        -analysis_effort medium
+Design : counter_8bit
+Version: K-2015.06
+Date   : Sat Oct 24 23:36:18 2026
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       1.0820e-02        9.3888e-04        1.5624e+05        1.1915e-02  (  82.36%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  1.7349e-03        6.1134e-04        2.0612e+05        2.5523e-03  (  17.64%)
+--------------------------------------------------------------------------------------------------
+Total          1.2555e-02 mW     1.5502e-03 mW     3.6236e+05 pW     1.4467e-02 mW
+1

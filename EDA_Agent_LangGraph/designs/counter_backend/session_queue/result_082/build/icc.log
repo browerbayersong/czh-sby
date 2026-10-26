@@ -1,0 +1,160 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+foreach command {set_layer_rc set_attribute get_layers list_attributes set_extraction_options set_tlu_plus_files check_error extract_rc read_mw_lib read_mw_lib_tech} {
+    puts "EDA_RC_HELP_BEGIN $command"
+    if {[catch {help -verbose $command} message]} {puts $message}
+    puts "EDA_RC_HELP_END $command"
+}
+EDA_RC_HELP_BEGIN set_layer_rc
+Information: No commands matched 'set_layer_rc'. (CMD-040)
+EDA_RC_HELP_END set_layer_rc
+EDA_RC_HELP_BEGIN set_attribute
+ set_attribute        # Set attribute data on the specified object
+   [-class one-of-string] (Class name for the patterns)
+   [-quiet]               (Do not report any messages)
+   object_list            (Objects on which to set the attribute)
+   attribute_name         (Name of the attribute)
+   attribute_value        (Value of the attribute)
+
+EDA_RC_HELP_END set_attribute
+EDA_RC_HELP_BEGIN get_layers
+ get_layers           # Creates a collection of layers.
+   [-include_system]      (Include system layers)
+   [-filter expression]   (Filter collection with 'expression')
+   [-quiet]               (Suppress all messages)
+   [-regexp]              (Patterns are full regular expressions)
+   [-nocase]              (Matches are case-insensitive)
+   [-exact]               (Wildcards are considered as plain characters)
+   [patterns]             (Match layer names against patterns)
+
+EDA_RC_HELP_END get_layers
+EDA_RC_HELP_BEGIN list_attributes
+ list_attributes      # List currently defined attributes
+   [-application]         (List application attributes as well)
+   [-class class_name]    (List attributes of this class only: 
+                           Values: gui_object, library, lib_cell, 
+                           lib_pin, clock, design, timing_point, 
+                           timing_path, region, group, rp_group, 
+                           rp_group_keepout, rp_group_instance, via, 
+                           via_master, bound, plan_group, cell_site, 
+                           text, voltage_area, voltage_area_shape, 
+                           fill_cell, core_area, die_area, power_domain, 
+                           supply_net, supply_port, power_switch, layer, 
+                           terminal, placement_blockage, shape, 
+                           pin_guide, track, route_guide, drc_error, 
+                           physical_lib, physical_lib_cell, 
+                           physical_lib_pin, mw_cel, cell, port, pin, 
+                           net, physical_bus, site_row, pin_shape, 
+                           via_region, polygon, plan_group_pin_shape, 
+                           routing_corridor, routing_corridor_shape, 
+                           power_plan_region)
+   [-nosplit]             (Do not split lines when columns overflow)
+
+EDA_RC_HELP_END list_attributes
+EDA_RC_HELP_BEGIN set_extraction_options
+ set_extraction_options # set extraction options
+   [-max_cap_scale float] (max capacitance scaling factor)
+   [-min_cap_scale float] (min capacitance scaling factor)
+   [-max_res_scale float] (max resistance scaling factor)
+   [-min_res_scale float] (min resistance scaling factor)
+   [-max_ccap_scale float]
+                          (max coupling capacitance scaling factor)
+   [-min_ccap_scale float]
+                          (min coupling capacitance scaling factor)
+   [-max_net_ccap_threshold float]
+                          (max net to net coupling capacitance threshold)
+   [-min_net_ccap_threshold float]
+                          (min net to net coupling capacitance threshold)
+   [-max_net_ccap_ratio float]
+                          (max net to net coupling capacitance ratio)
+   [-min_net_ccap_ratio float]
+                          (min net to net coupling capacitance ratio)
+   [-max_net_ccap_avg_ratio float]
+                          (max net to net average coupling capacitance ratio)
+   [-min_net_ccap_avg_ratio float]
+                          (min net to net average coupling capacitance ratio)
+   [-max_process_scale float]
+                          (max process scaling factor)
+   [-min_process_scale float]
+                          (min process scaling factor)
+   [-density_outside_block float]
+                          (density outside block)
+   [-enable_ccap_or_filtering]
+                          (use OR style to do coupling cap filtering)
+   [-include_pin_resistance FALSE | TRUE]
+                          (include pin resistance in rc-network, default is FALSE)
+   [-no_break_segments]   (break wire segments)
+   [-max_segment_length float]
+                          (maximum wire segment legnth, default 50um)
+   [-default]             (restore all extraction options to default)
+   [-real_metalfill_extraction NONE | FLOATING | GROUNDED | AUTO]
+                          (decide metal fill extraction mode, default is NONE)
+   [-reference_direction USE_FROM_TLUPLUS | VERTICAL | ORIZONTAL]
+                          (decide reference_direction for oriented etch, default is USE_FROM_TLUPLUS)
+   [-virtual_shield_extraction FALSE | TRUE]
+                          (decide do virtual_shield extraction or not, default is TRUE)
+   [-honor_mask_constraints FALSE | TRUE]
+                          (do double pattern mask extraction or not, default is FALSE)
+   [-fan_out_threshold integer]
+                          (fan out net threshold, default 1000 pins)
+
+EDA_RC_HELP_END set_extraction_options
+EDA_RC_HELP_BEGIN set_tlu_plus_files
+ set_tlu_plus_files   # Setup TLU+ files
+   -max_tluplus string    (max TLU+ file name)
+   [-min_tluplus string]  (min TLU+ file name)
+   [-tech2itf_map string] (TECH2ITF mapping file name)
+   [-max_emulation_tluplus string]
+                          (max emulation tlu+ file anme)
+   [-min_emulation_tluplus string]
+                          (min emulation tlu+ file anme)
+
+EDA_RC_HELP_END set_tlu_plus_files
+EDA_RC_HELP_BEGIN check_error
+ check_error          # check_error
+   [-verbose]             (Display error ids found in previous commands)
+   [-reset]               (Reset errors found in previous commands)
+
+EDA_RC_HELP_END check_error
+EDA_RC_HELP_BEGIN extract_rc
+ extract_rc           # run extractor
+   [-coupling_cap]        (coupling cap)
+   [-estimate]            (estimate net parasitics using virtual route)
+   [-routed_nets_only]    (only routed nets extraction)
+   [-incremental]         (to do incremental extraction)
+
+EDA_RC_HELP_END extract_rc
+EDA_RC_HELP_BEGIN read_mw_lib
+Information: No commands matched 'read_mw_lib'. (CMD-040)
+EDA_RC_HELP_END read_mw_lib
+EDA_RC_HELP_BEGIN read_mw_lib_tech
+Information: No commands matched 'read_mw_lib_tech'. (CMD-040)
+EDA_RC_HELP_END read_mw_lib_tech
+puts "EDA_EXTRACTION_VARIABLES_BEGIN"
+EDA_EXTRACTION_VARIABLES_BEGIN
+printvar *extract*
+complete_mixed_mode_extraction = "true"
+extract_max_parallel_computations = "0"
+puts "EDA_EXTRACTION_VARIABLES_END"
+EDA_EXTRACTION_VARIABLES_END
+exit
+
+Memory usage for main task 92 Mbytes.
+Memory usage for this session 92 Mbytes.
+CPU usage for this session 2 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

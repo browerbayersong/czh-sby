@@ -1,0 +1,46 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/astro",
+  "entries": [
+    {
+      "name": "gds2OutLayer.map",
+      "size": 2640,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090g_fram",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "tf",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "defineTracks.cmd",
+      "size": 932,
+      "mode": "0o100664"
+    },
+    {
+      "name": "clf",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "gds2Arcs.map",
+      "size": 5347,
+      "mode": "0o100664"
+    },
+    {
+      "name": "gds2InLayer.map",
+      "size": 2569,
+      "mode": "0o100664"
+    },
+    {
+      "name": "README",
+      "size": 1476,
+      "mode": "0o100664"
+    }
+  ],
+  "status": "completed"
+}

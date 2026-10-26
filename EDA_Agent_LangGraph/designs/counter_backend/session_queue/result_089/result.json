@@ -1,0 +1,21 @@
+{
+  "run": "upload_20261025_141706_bb2a8ca2",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 445,
+      "sha256": "614b6a83d54fd9de400e1a198030b80e5875527ea0a23590e95ccbd59075c9a7"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 463108,
+      "sha256": "41568957b1c2dabd76d2592fef3da1a474daaeea49be1984775342a210f60df3"
+    },
+    {
+      "path": "build/icc/rc_model.json",
+      "bytes": 1967,
+      "sha256": "af028ecc10d336db16de840b0ff0e7300af3e3e66c948a90dbcb63169e77c861"
+    }
+  ],
+  "status": "completed"
+}

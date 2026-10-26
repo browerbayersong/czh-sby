@@ -1,0 +1,3 @@
+Error: The SAIF name mapping mechanism is not active. (PWR-604)
+Error: Unable to create name mapping for SAIF file. The switching activity information in the SAIF file will not be annotated. (PWR-634)
+0

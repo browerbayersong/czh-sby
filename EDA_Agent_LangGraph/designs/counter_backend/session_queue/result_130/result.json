@@ -1,0 +1,71 @@
+{
+  "run": "upload_20261025_150801_001c3ea2",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 450,
+      "sha256": "fe0de3c977ee8dfd8b59db7496737c902334391b7f1408357f633fdd2c186a90"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 413543,
+      "sha256": "05f7205e20340b6ba71a83d774d648138ebabcf3dd79825b69d3dfa3a4f395e0"
+    },
+    {
+      "path": "build/icc/routing_drc.rpt",
+      "bytes": 4426,
+      "sha256": "cd5ad0ed8faa59cbb090f025595f29f016917c3c4e2be71977959d54abdd1d02"
+    },
+    {
+      "path": "build/icc/pg_connectivity.rpt",
+      "bytes": 693,
+      "sha256": "ca94f2341c80c73c214485503c4197c3c47887e353644fe858912e5bd41144b3"
+    },
+    {
+      "path": "build/icc/lvs.rpt",
+      "bytes": 1813,
+      "sha256": "81afd99746e0ca0d2933ad322d69310bfb620c52f4c3c07206e7101163ec36aa"
+    },
+    {
+      "path": "build/icc/area.rpt",
+      "bytes": 1252,
+      "sha256": "60f6de06a48b54bf8975d8ea9784c07c86d3e4286d5e44e5f121c5283aed4ef5"
+    },
+    {
+      "path": "build/icc/physical.rpt",
+      "bytes": 21464,
+      "sha256": "2febe0fc9299214a37cd923f51041d8eaa04d42d290b96ca9966bcfa7855ab3e"
+    },
+    {
+      "path": "build/icc/units.rpt",
+      "bytes": 429,
+      "sha256": "95de390c5126415345fd39796b9cfd378af6cee2653c45603cecc06f01b6b639"
+    },
+    {
+      "path": "build/icc/placement_legality.rpt",
+      "bytes": 4458,
+      "sha256": "7270f229bc6df0a39ad329ab94320cf7aafc6e249ab8074085c0927bb2cb66b3"
+    },
+    {
+      "path": "build/icc/counter_8bit.routed.v",
+      "bytes": 2699,
+      "sha256": "38ab3c940ef38c5e441b560d28950f605c147a33bfe1eed6b770c294b693ac5e"
+    },
+    {
+      "path": "build/icc/counter_8bit.sdc",
+      "bytes": 3748,
+      "sha256": "523da32a52bc2ee45773a0a428c83a7030d145e32ab8bdb3ff6c048a2ba2fbc1"
+    },
+    {
+      "path": "build/icc/counter_8bit.gds",
+      "bytes": 30720,
+      "sha256": "384b85366a7f0d5a479a785fa7eef00077930a61272ac0b915067f1d7d0a05df"
+    },
+    {
+      "path": "build/icc/rc_model.json",
+      "bytes": 1967,
+      "sha256": "af028ecc10d336db16de840b0ff0e7300af3e3e66c948a90dbcb63169e77c861"
+    }
+  ],
+  "status": "completed"
+}

@@ -1,0 +1,76 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# Independent read-only verification of the saved, model-selected repair copy.
+source generated/scripts/config.tcl
+VSS
+set_app_var target_library [list $EDA_DB]
+/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+set_app_var synthetic_library [list standard.sldb]
+standard.sldb
+set_app_var link_library [concat [list *] [list $EDA_DB]]
+* /opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+set_host_options -max_cores 1
+1
+set env(DISPLAY) :0
+:0
+file mkdir ../build/drc_recheck
+if {[catch {
+    open_mw_lib /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261026_130102_35ef2344/build/drc_ai/counter_mw
+    open_mw_cel -readonly counter_8bit
+    redirect -file ../build/drc_recheck/routing_drc.rpt {verify_zrt_route -drc true -open_net true}
+    redirect -file ../build/drc_recheck/pg_connectivity.rpt {verify_pg_nets}
+    redirect -file ../build/drc_recheck/lvs.rpt {verify_lvs}
+    redirect -file ../build/drc_recheck/placement_legality.rpt {check_legality -verbose}
+    write_verilog -no_physical_only_cells ../build/drc_recheck/saved_netlist.v
+    gui_start
+    set layout_window [gui_get_current_window -types Layout -mru]
+    gui_zoom -window $layout_window -full
+    gui_write_window_image -file ../build/drc_recheck/layout_canvas.png -window $layout_window
+    update
+    after 1000
+    update
+    puts [exec timeout 15s /usr/bin/python generated/scripts/capture_display.py ../build/drc_recheck/layout.png]
+    puts [exec timeout 35s /usr/bin/python generated/scripts/capture_drc_repair.py 2>@1]
+    puts "EDA_SAVED_DRC_RECHECK_COMPLETE"
+} message]} {puts "EDA_RECHECK_FATAL $message"; exit 2}
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+	6 (Main Library) <==> 9 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 6
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 66
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Information: Opened "counter_8bit.CEL;1" from "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261026_130102_35ef2344/build/drc_ai/counter_mw" library. (MWUI-068)
+Generating description for top level cell.
+Processing module counter_8bit_DW01_inc_0
+Processing module counter_8bit
+Elapsed =    0:00:00, CPU =    0:00:00
+Write verilog completed successfully.
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+Preparing data for query................... 
+{"capture_bounds": [0, 0, 1718, 840], "captured_epoch": 1792991196.744704, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "1d649b25ba168ae00b3f89bd45725e3e5c9cda8f3a5b8bec524e48c707c817d3", "width": 1718, "window_title": null}
+{"capture_bounds": [0, 0, 1718, 840], "captured_epoch": 1792991198.259315, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "91c6873c93cfb4de661a475b44cd1593fac973a2290bd7601050c6add7fb162e", "width": 1718, "window_title": null}
+{"capture_bounds": [0, 0, 1718, 840], "captured_epoch": 1792991199.757051, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "7e0f6a6031142b17bd68737a7ff18366c0ccdafe592384b4d3170a66a7f82894", "width": 1718, "window_title": null}
+EDA_DRC_REPORT_SCREENSHOTS_SAVED
+EDA_SAVED_DRC_RECHECK_COMPLETE
+exit 0

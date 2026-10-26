@@ -1,0 +1,158 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+source generated/scripts/config.tcl
+VSS
+set env(DISPLAY) :0
+:0
+set_app_var target_library [list $EDA_DB]
+/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+set_app_var synthetic_library [list standard.sldb]
+standard.sldb
+set_app_var link_library [concat [list *] [list $EDA_DB]]
+* /opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+file mkdir ../build/display
+if {[catch {
+    open_mw_lib /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw
+    open_mw_cel -readonly counter_8bit
+    gui_start
+    foreach command {get_drc_errors report_drc_errors} {
+        help -verbose $command
+    }
+    list_attributes -application -class drc_error
+    help -verbose gui_zoom
+    help -verbose gui_write_window_image
+    help -verbose gui_get_current_window
+    update
+    after 1500
+    update
+    puts [exec timeout 15s /usr/bin/python generated/scripts/capture_display.py ../build/display/layout.png]
+    puts "EDA_REAL_GUI_CAPTURED"
+} message]} {
+    puts "EDA_GUI_CAPTURE_FAILED $message"
+    exit 2
+}
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+	6 (Main Library) <==> 9 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 6
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 66
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Information: Opened "counter_8bit.CEL;1" from "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw" library. (MWUI-068)
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+Preparing data for query................... 
+ get_drc_errors       # Create a collection of DRC errors
+   [-error_view error_view]
+                          (Error view from which to get the errors)
+   [-error_id ids]        (IDs of the errors to get)
+   [-bbox bounding_box]   (Specify a bounding box to get errors in an area of the design)
+   [-type error_types]    (Specify this to get errors of one or more error types)
+   [-filter expression]   (Filter collection with 'expression')
+   [-quiet]               (Suppress all messages)
+   [-regexp]              (Patterns are full regular expressions)
+   [-nocase]              (Matches are case-insensitive)
+   [-exact]               (Wildcards are considered as plain characters)
+
+Information: No commands matched 'report_drc_errors'. (CMD-040)
+****************************************
+Report : List of Attribute Definitions
+Version: L-2016.03-SP1
+Date   : Sun Oct 25 14:42:27 2026
+****************************************
+
+Properties:
+    A - Application-defined
+    U - User-defined
+    I - Importable from design/library (for user-defined)
+    S - Settable
+    B - Subscripted
+
+Attribute Name            Object     Type       Properties  Constraints
+--------------------------------------------------------------------------------
+actual_spacing            drc_error  float      A           
+bbox                      drc_error  string     A           
+cell_id                   drc_error  int        A           
+details                   drc_error  string     A           
+direction                 drc_error  string     A           
+flyline                   drc_error  string     A           
+info                      drc_error  string     A           
+layer_names               drc_error  string     A           
+layer_numbers             drc_error  string     A           
+layers                    drc_error  collection A           
+name                      drc_error  string     A           
+net1_id                   drc_error  int        A           
+net1_name                 drc_error  string     A           
+net2_id                   drc_error  int        A           
+net2_name                 drc_error  string     A           
+nets                      drc_error  collection A           
+object_class              drc_error  string     A           
+object_id                 drc_error  int        A           
+report                    drc_error  string     A           
+required_spacing          drc_error  float      A           
+route_types               drc_error  string     A,S         User Enter, Signal Route, Signal Route (Global), P/G Ring, Clk Ring, P/G Strap, Clk Strap, P/G Macro/IO Pin Conn, P/G Std. Cell Pin Conn, Zero-Skew Route, Bus, Shield (fix), Shield (dynamic), Fill Track, Unknown, user_enter, signal_route, signal_route_global, pg_ring, clk_ring, pg_strap, clk_strap, pg_macro_io_pin_conn, pg_std_cell_pin_conn, clk_zero_skew_route, bus, shield, shield_dynamic, clk_fill_track, unknown
+shapes                    drc_error  string     A           
+status                    drc_error  string     A,S         
+type                      drc_error  string     A           
+type_id                   drc_error  int        A           
+type_info                 drc_error  string     A           
+type_level                drc_error  string     A           
+ gui_zoom             # Zoom window
+   -window string         (Window handle)
+   [-full]                (Zoom full)
+   [-full_top]            (Zoom full top)
+   [-rect {{lx ly} {ux uy}}]
+                          (Zoom to rectangle)
+   [-factor float]        (Zoom factor: 
+                           Value >= 0)
+   [-at_point {x y}]      (Point to zoom at by factor)
+   [-clct string]         (Collection to zoom to)
+   [-selection]           (Zoom to currently selected objects)
+   [-fit]                 (Zoom fit to the objects in -clct, -selection or rect in -rect)
+   [-exact]               (Zoom exactly to the objects in -clct, -selection or rect in -rect)
+   [-zoom_in_mode]        (Zoom in mode)
+   [-zoom_out_mode]       (Zoom out mode)
+   [-select_mode]         (Select mode)
+
+ gui_write_window_image # Write a window image to a file
+   -file string           (File name)
+   [-format string]       (Image format: .png .xpm .bmp .jpg)
+   [-window string]       (Window to take image of)
+
+ gui_get_current_window # Retrieve the active topLevel window
+   [-toplevel]            (Retrieve the active topLevel window)
+   [-view]                (Retrieve the active view window)
+   [-parent string]       (get the last activated view within the specified parent window)
+   [-hier_name]           (Retrieve the active toplevel/view in Qtcl hierarchical format)
+   [-types string_list]   (Retrieve a window having window type that is specified in the option)
+   [-mru]                 (get the most recently used window (often used together with -types option))
+
+EDA_GUI_CAPTURE_FAILED {"captured_epoch": 1792910549.6404381, "display": ":0", "height": 840, "input_events_sent": false, "method": "GTK GDK root-window capture", "sha256": "0aeba7b1c51840a98da6b8b0ca7ff863427bed56ebc160b9c322d26fe2ec79e6", "width": 1718}
+
+** (gnome-screenshot:9655): CRITICAL **: Unable to parse arguments: Unknown option -f
+
+Memory usage for main task 193 Mbytes.
+Memory usage for this session 193 Mbytes.
+CPU usage for this session 4 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

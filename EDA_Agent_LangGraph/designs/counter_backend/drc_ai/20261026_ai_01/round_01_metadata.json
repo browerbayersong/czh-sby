@@ -1,0 +1,43 @@
+{
+  "id": "lc_run--01a17694-3a1e-77c9-aaa9-896a30b0f7c9-0",
+  "usage": {
+    "input_tokens": 3115,
+    "output_tokens": 5381,
+    "total_tokens": 8496,
+    "input_token_details": {
+      "cache_read": 0
+    },
+    "output_token_details": {
+      "reasoning": 4864
+    }
+  },
+  "response_metadata": {
+    "token_usage": {
+      "completion_tokens": 5381,
+      "prompt_tokens": 3115,
+      "total_tokens": 8496,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 4864,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 3115
+    },
+    "model_provider": "openai",
+    "model_name": "deepseek-flash",
+    "system_fingerprint": "e72d3c7f663d3e1383b00b3884cb4501",
+    "id": "fdf8593e-0b2f-4492-8754-556a856bd58f",
+    "finish_reason": "stop",
+    "logprobs": null
+  }
+}

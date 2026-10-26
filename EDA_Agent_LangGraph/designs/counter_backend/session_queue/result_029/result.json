@@ -1,0 +1,136 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/clf",
+  "entries": [
+    {
+      "name": "fast_leakage.clf.logic",
+      "size": 138870,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical.clf.logic",
+      "size": 356783,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical.clf.power",
+      "size": 4986985,
+      "mode": "0o100664"
+    },
+    {
+      "name": "slow.clf.time",
+      "size": 10535326,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fastz.clf.power",
+      "size": 4986753,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical_leakage.clf.power",
+      "size": 922187,
+      "mode": "0o100664"
+    },
+    {
+      "name": "slow.clf.logic",
+      "size": 348776,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical_leakage.clf.time",
+      "size": 1064908,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fastz.clf.logic",
+      "size": 356778,
+      "mode": "0o100664"
+    },
+    {
+      "name": "antenna_7lm.clf",
+      "size": 2000,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fast.clf.power",
+      "size": 4992685,
+      "mode": "0o100664"
+    },
+    {
+      "name": "antenna_macros.clf",
+      "size": 109523,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fast.clf.time",
+      "size": 10585472,
+      "mode": "0o100664"
+    },
+    {
+      "name": "antenna_9lm.clf",
+      "size": 2544,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical.clf.time",
+      "size": 10570299,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fast_leakage.clf.time",
+      "size": 1064815,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fast_leakage.clf.power",
+      "size": 958715,
+      "mode": "0o100664"
+    },
+    {
+      "name": "antenna_6lm.clf",
+      "size": 1728,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fast.clf.logic",
+      "size": 356777,
+      "mode": "0o100664"
+    },
+    {
+      "name": "slow.clf.power",
+      "size": 4964616,
+      "mode": "0o100664"
+    },
+    {
+      "name": "leq.clf",
+      "size": 23213,
+      "mode": "0o100664"
+    },
+    {
+      "name": "antenna_5lm.clf",
+      "size": 1456,
+      "mode": "0o100664"
+    },
+    {
+      "name": "antenna_8lm.clf",
+      "size": 2272,
+      "mode": "0o100664"
+    },
+    {
+      "name": "antenna_4lm.clf",
+      "size": 1184,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical_leakage.clf.logic",
+      "size": 138876,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fastz.clf.time",
+      "size": 10585405,
+      "mode": "0o100664"
+    }
+  ],
+  "status": "completed"
+}

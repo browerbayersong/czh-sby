@@ -1,0 +1,46 @@
+{
+  "run": "upload_20261025_141706_bb2a8ca2",
+  "files": [
+    {
+      "path": "build/icc/placement_legality.rpt",
+      "bytes": 4456,
+      "sha256": "3a74df60d0b140bc2ae01133e79d47a752bb9bf534148c9d3d015141904e24c8"
+    },
+    {
+      "path": "build/icc/routing_drc.rpt",
+      "bytes": 3965,
+      "sha256": "9b33fe85e35a07e935299c072a225098221a2bfe56ea1f925d2e393f439e0c93"
+    },
+    {
+      "path": "build/icc/pg_connectivity.rpt",
+      "bytes": 673,
+      "sha256": "270d4f5bec68e231a704f9f392037fbb4897b37e7d36fbbf3f0e9b6a9756dd31"
+    },
+    {
+      "path": "build/icc/lvs.rpt",
+      "bytes": 2321,
+      "sha256": "1412a106c5568499f804615c4e20de8ce45f4e90be204022552246a158096c1c"
+    },
+    {
+      "path": "build/icc/physical.rpt",
+      "bytes": 19755,
+      "sha256": "86eb4c700b4c5b6b29119a1ecc092b9bf3122c95c747b323b6b3347db5cdd952"
+    },
+    {
+      "path": "build/icc/area.rpt",
+      "bytes": 979,
+      "sha256": "b1d22a3c6b7a246d8e17a76cdf9f2ff40908bba77ad1ed630808f4d96c49ed20"
+    },
+    {
+      "path": "build/icc/timing_setup.rpt",
+      "bytes": 15982,
+      "sha256": "727a90d7d9203ef76abd959afbcc00d17ce3fa8152a104593b5261bdedee71f4"
+    },
+    {
+      "path": "build/icc/power.rpt",
+      "bytes": 2156,
+      "sha256": "0c993328fa09d5620082da9667df2056980e9418e75999260f2bcc3473f1dd6d"
+    }
+  ],
+  "status": "completed"
+}

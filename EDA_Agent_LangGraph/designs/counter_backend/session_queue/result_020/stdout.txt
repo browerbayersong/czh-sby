@@ -1,0 +1,16 @@
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/gds2OutLayer.map
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram/CEL
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram/FRAM
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_5lm_2thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_5lm_1thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_7lm_2thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_6lm_1thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_9lm_2thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_4lm_2thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_7lm_1thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_8lm_1thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_4lm_1thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_6lm_2thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_8lm_2thick.tf
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/gds2Arcs.map
+/opt/Foundary_Library/TSMC90/aci/sc-x/astro/gds2InLayer.map

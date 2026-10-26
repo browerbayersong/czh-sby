@@ -1,0 +1,905 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+foreach command {create_power_straps create_terminal create_pin create_net_shape create_via get_net_shapes open_mw_cel} {
+    puts "EDA_POWER_HELP_BEGIN $command"
+    if {[catch {help -verbose $command} message]} {puts $message}
+    puts "EDA_POWER_HELP_END $command"
+}
+EDA_POWER_HELP_BEGIN create_power_straps
+ create_power_straps  # create power straps
+   [-direction horizontal | vertical]
+                          (Strap direction. Default: horizontal)
+   [-start_at distance]   (Starting strap coordinate; Y for horizontal or X for vertical. Default: 0.0)
+   [-start_at_offset distance]
+                          (Starting strap coordinate; Y for horizontal or X for vertical. Coordinate should be treated as offset from left/bottom corner of bounding box of each voltage area, specified in the option -within_voltage_areas or -exclude_voltage_areas Default: N/A)
+   -undo                  (Undo the previous create_power_straps. Supersedes all options)
+   -nets {collection_of_nets}
+                          (Collection of nets to create the straps; required!)
+   [-layer number_or_name]
+                          (Layer number or layer name, ex: 31 or M1. Default: first horizontal or vertical layer for specified direction)
+   [-width distance]      (Creates straps of specified width. Default: defaultWidth of layer)
+   [-configure groups_and_step | groups_and_stop | step_and_stop | rows | macros]
+                          (Place strap based on specified option. Default: groups_and_step)
+   [-num_groups integer]  (Number of strap groups to be created. Default: 1)
+   [-step distance]       (Distance from reference strap of one group to reference strap of adjacent group; not used with -groups_and_stop. Default: 0.0)
+   [-stop distance]       (Location to stop the strap placement; not used with -groups_and_step. Default: 0.0)
+   [-pitch_within_group distance]
+                          (Distance between center lines of two adjacent straps within the same group. Default: pitch of layer)
+   [-start_low_ends boundary | first_targets | coordinate | last_targets | offset]
+                          (Place low strap ends based on specified option. Default: boundary)
+   [-start_low_ends_coordinate distance]
+                          (Place low strap ends at specified coordinate. Default: 0.0)
+   [-start_high_ends boundary | first_targets | coordinate | last_targets | offset]
+                          (Place high strap ends based on specified option. Default: boundary)
+   [-start_high_ends_coordinate distance]
+                          (Place high strap ends at specified coordinate. Default: 0.0)
+   [-extend_low_ends to_first_target | to_boundary_and_generate_pins | force_to_boundary_and_generate_pins | off]
+                          (Extend low strap ends based on specified option. Default: to_first_target)
+   [-extend_high_ends to_first_target | to_boundary_and_generate_pins | force_to_boundary_and_generate_pins | off]
+                          (Extend high strap ends based on specified option. Default: to_first_target)
+   [-num_placement_strap integer]
+                          (Number of times strap groups to be placed, value>=1. Default: 1)
+   [-increment_x_or_y distance]
+                          (Horizontal/vertical  distance between the first and the subsequent straps, when num_placement_strap is more than 1. Default: 0.0)
+   [-special_via_rule]    (Use special vias instead of a large one at intersections. Will need to specify offsets, sizes and steps. Default: false)
+   [-offset_both_sides_for_special_via]
+                          (Special via offsets applied both to lower left and upper right side. Default: lower left only)
+   [-special_via_x_offset distance]
+                          (X offset from lower-left corner; distance > 0. Default: 0.0)
+   [-special_via_y_offset distance]
+                          (Y offset from lower-left corner; distance > 0. Default: 0.0)
+   [-special_via_x_size distance]
+                          (Width of special via; distance > 0. Default: 0.0)
+   [-special_via_y_size distance]
+                          (Height of special via; distance > 0. Default: 0.0)
+   [-special_via_x_step distance]
+                          (X distance between special vias; distance > 0. Default: 0.0)
+   [-special_via_y_step distance]
+                          (Y distance between special vias; distance > 0. Default: 0.0)
+   [-advanced_via_rules]  (Use advanced via rules, set previously. Default: false)
+   [-look_inside_std_cells]
+                          (Creates vias to connect straps to pins in standard cells. Default: false)
+   [-std_cells Collection of cells]
+                          (Creates vias to connect straps to pins in these standard cells only. Default: all cells)
+   [-keep_floating_wire_pieces]
+                          (Keep floating (unconnected) segments. Default: false)
+   [-ignore_cell_boundary]
+                          (Keeps out-of-bound straps. Default: false)
+   [-clip_at_top_cell_boundaries]
+                          (Cuts the straps at the top cell boundaries, useful in rectilinear design. Default: false)
+   [-do_not_merge_targets]
+                          (Target objects are not merged before the connections are created. Default: false)
+   [-optimize_wire_locations]
+                          (Adjusts straps by small distances to save tracks for detail route. Default: false)
+   [-ignore_parallel_targets]
+                          (Ignores parallel to straps targets for connection. Default: false)
+   [-define_parallel_targets_by_wire_directions]
+                          (Parallel targets are defined by their wire directions. Default: false)
+   [-do_not_route_over_macros]
+                          (Prevents generating wires over the macro cells. Default: false)
+   [-extend_for_multiple_connections]
+                          (Extends the low and high ends of the strap to connect more targets on the same net. Default: false)
+   [-extension_gap distance]
+                          (Connect targets within gap space if extend_for_multiple_connections is set; distance >= 0. Default: 0.0)
+   [-mark_as_std_cell_pin_connections]
+                          (Marks the created PG straps as "std conn" instead of "strap" type. Default: false)
+   [-mark_as_ring]        (Marks the created PG straps as "ring" instead of "strap" type. Default: false)
+   [-special_rules string]
+                          (Refers to a set of special rules specified by the command set_preroute_special_rules)
+   [-detour_required]     (Turn on detour feature, additional options required. Default: no detour)
+   [-detour_nets {collection_of_nets}]
+                          (Collection of nets that straps detour will be applied. When specified, no detours will be created for other nets. Default: all nets)
+   [-detour_jog_length_limit {max_length_north max_length_south}]
+                          (Restrictions of jog length for auto-detour. Both values should be non-negative. Zero vlaue means auto-detour is not allowed in that direction.Default: both values are zeroes, no auto-detour)
+   [-detour_jog_offset distance]
+                          (Distance between jog of auto-detour and obstruction. Default: 0)
+   [-detour_enforce {jog_length jog_offset}]
+                          (Specify jog behavior for enforced-detour. Jog length is represented by signed value where positive value for north-bound jog and negative vlaue for south-bound. Default: both values are zeroes, no enforced-detour)
+   [-detour_accept_all]   (Accept enforced detour even it is not DRC clean. Default: only accept DRC-clean detours)
+   [-detour_region {{llx lly} {urx ury}}]
+                          (Specify the only area where detours are allowed. Default: top cell bounding box)
+   [-detour_snap_on_track]
+                          (Place the central line of detour's main shape on routing track of the strap's layer.Default: no snapping)
+   [-detour_leading_obstructions]
+                          (Detour over leading obstruction if it can find target on the detour route. Default: no detour over leading obstruction)
+   -within_voltage_areas {Collection of voltage areas}
+                          (The only voltage area(s), where straps should be created. Default: all voltage areas in design)
+   -exclude_voltage_areas {Collection of voltage areas}
+                          (Voltage area(s), where straps should not be created. Default: empty voltage area)
+
+EDA_POWER_HELP_END create_power_straps
+EDA_POWER_HELP_BEGIN create_terminal
+ create_terminal      # Create terminal
+   -bbox rect             (bounding box of the pin)
+   -boundary boundary     (boundary of rectilinear pin)
+   -layer layer           (layer name)
+   -port string           (port name)
+   [-direction pin_direction]
+                          (list of directions: 
+                           Values: left, right, up, down)
+   [-name string]         (terminal name)
+   [-mask_constraint mask_constraint]
+                          (patterning mask constraint: 
+                           Values: any_mask, mask1_soft, mask1_hard, 
+                           mask2_soft, mask2_hard, same_mask, 
+                           mask3_soft, mask3_hard)
+
+EDA_POWER_HELP_END create_terminal
+EDA_POWER_HELP_BEGIN create_pin
+ create_pin_guide     # Create pin guide
+   -bbox rect             (pin guide bounding box)
+   -boundary boundary     (pin guide rectilinear boundary)
+   [-parents collection]  (plan groups or soft macros to add the pin guide to)
+   [-name string]         (pin guide name)
+   [-exclusive]           (set pin guide exclusive)
+   collection             (collection of nets or pins (must be homogeneous))
+
+EDA_POWER_HELP_END create_pin
+EDA_POWER_HELP_BEGIN create_net_shape
+ create_net_shape     # Create net shape
+   [-type net_shape_type] (net shape type: 
+                           Values: wire, path, rect, poly)
+   -origin point          (origin of the net shape for wires)
+   -bbox rect             (bounding box of the net shape for rects)
+   -points recti_path     (points of the net shape for paths)
+   -boundary boundary     (boundary of net shape for polygon)
+   [-length float]        (length of the net shape for wires)
+   [-width float]         (width of the net shape for wires)
+   [-path_type path_type] (alignment type of a wire or path end: 
+                           Values: square, round, extend_half_width, 
+                           octagon, 0, 1, 2, 3)
+   -layer layer           (layer of the net shape)
+   -net string            (net of the net shape)
+   [-vertical]            (indicates that the wire is vertical (default horizontal))
+   [-route_type route_type]
+                          (route type of the net shape: 
+                           Values: user_enter, signal_route, 
+                           signal_route_global, signal_route_detail, 
+                           pg_ring, pg_strap, pg_macro_io_pin_conn, 
+                           pg_std_cell_pin_conn, clk_ring, clk_strap, 
+                           clk_zero_skew_route, bus, shield, 
+                           shield_fixed, shield_dynamic, fill_track, 
+                           clk_fill_track)
+   [-datatype int_range]  (datatype number: 
+                           Range: 0 to 4095)
+   [-mask_constraint mask_constraint]
+                          (patterning mask constraint: 
+                           Values: any_mask, mask1_soft, mask1_hard, 
+                           mask2_soft, mask2_hard, same_mask, 
+                           mask3_soft, mask3_hard)
+   [-avoid_short_segment] (avoid segment shorter than half_width for paths)
+
+EDA_POWER_HELP_END create_net_shape
+EDA_POWER_HELP_BEGIN create_via
+ create_via           # Create via
+   -at point              (specifies the center of the via)
+   [-name string]         (name of via)
+   [-master string]       (via master name)
+   [-auto]                (automatically select via master)
+   [-net string]          (net name)
+   [-no_net]              (no net required)
+   [-route_type route_type]
+                          (route type: 
+                           Values: user_enter, signal_route, 
+                           signal_route_global, signal_route_detail, 
+                           pg_ring, pg_strap, pg_macro_io_pin_conn, 
+                           pg_std_cell_pin_conn, clk_ring, clk_strap, 
+                           clk_zero_skew_route, bus, shield, 
+                           shield_fixed, shield_dynamic, fill_track, 
+                           clk_fill_track)
+   [-orient orient]       (orientation: 
+                           Values: N, W, S, E, FN, FS, FE, FW, NW, NE, 
+                           EN, ES, SE, SW, WN, WS, 0, 90, 180, 270, 
+                           0-mirror, 90-mirror, 180-mirror, 270-mirror)
+   [-type via_type]       (via type:
+				Values: via, via_array)
+   [-row int]             (number of via array rows)
+   [-col int]             (number of via array columns)
+   [-x_pitch real]        (via array x pitch)
+   [-y_pitch real]        (via array y pitch)
+   [-lower_mask_constraint mask_constraint]
+                          (patterning mask constraint for lower layer: 
+                           Values: any_mask, mask1_soft, mask1_hard, 
+                           mask2_soft, mask2_hard, same_mask, 
+                           mask3_soft, mask3_hard)
+   [-upper_mask_constraint mask_constraint]
+                          (patterning mask constraint for upper layer: 
+                           Values: any_mask, mask1_soft, mask1_hard, 
+                           mask2_soft, mask2_hard, same_mask, 
+                           mask3_soft, mask3_hard)
+   [-via_mask_constraint mask_constraint]
+                          (patterning mask constraint for via layer: 
+                           Values: any_mask, mask1_soft, mask1_hard, 
+                           mask2_soft, mask2_hard, same_mask, 
+                           mask3_soft, mask3_hard)
+   [-allow_multiple]      (allow multiple vias to be created for auto option)
+
+EDA_POWER_HELP_END create_via
+EDA_POWER_HELP_BEGIN get_net_shapes
+ get_net_shapes       # Creates a collection of net shapes.
+   [-of_objects net_list] (get net shapes of these nets)
+   [-shield_of net_list]  (get net shapes shielding these nets)
+   [-within region]       (match net shapes within specified region (rectangle or polygon) )
+   [-touching region]     (match net shapes touching specified region (rectangle or polygon) )
+   [-intersect region]    (match net shapes intersect specified region (rectangle or polygon) )
+   [-at point]            (match net shapes overlap the specified point)
+   [-filter expression]   (filter collection with 'expression' )
+   [-type { vw | hw | path | poly }]
+                          (type of net shape)
+   [-include_shield]      (shielding net shapes also will be returned)
+   [-hierarchical]        (Search net shapes across hierarchies)
+   [-quiet]               (suppress all messages)
+   [patterns]             (match path, wire net shapes)
+
+EDA_POWER_HELP_END get_net_shapes
+EDA_POWER_HELP_BEGIN open_mw_cel
+ open_mw_cel          # Opens the design
+   [-library library]     (library from which the design to be opened)
+   [-version version]     (version of the design to be opened)
+   [-readonly]            (open design for read only)
+   [-not_as_current]      (open design but do not make it current)
+   [-sync_port_names]     (sync port names from child macro cell to top cell)
+   design_name            (design to be opened)
+
+EDA_POWER_HELP_END open_mw_cel
+puts "EDA_POWER_MANUAL_BEGIN"
+EDA_POWER_MANUAL_BEGIN
+man create_power_straps
+2.  Synopsys Commands                                        Command Reference
+                              create_power_straps
+
+NAME
+       create_power_straps
+              Creates power straps in a design.
+
+SYNTAX
+       status create_power_straps
+               -nets collection_of_nets | -undo
+               [-direction horizontal | vertical]
+               [-start_at location]
+               [-layer number_or_name]
+               [-width distance]
+               [-configure groups_and_step | groups_and_stop | step_and_stop | rows | macros | groups_and_stop | step_and_stop | rows | macros]
+               [-num_groups count]
+               [-step distance]
+               [-stop distance]
+               [-pitch_within_group distance]
+               [-start_low_ends boundary | first_targets | coordinate | last_targets | offset | first_targets | coordinate | last_targets]
+               [-start_low_ends_coordinate distance]
+               [-start_high_ends boundary | first_targets | coordinate | last_targets | offset | first_targets | coordinate | last_targets]
+               [-start_high_ends_coordinate distance]
+               [-extend_low_ends to_first_target | to_boundary_and_generate_pins | force_to_boundary_and_generate_pins | off | to_boundary_and_generate_pins | force_to_boundary_and_generate_pins | off]
+               [-extend_high_ends to_first_target | to_boundary_and_generate_pins | force_to_boundary_and_generate_pins | off | to_boundary_and_generate_pins | force_to_boundary_and_generate_pins | off]
+               [-num_placement_strap count]
+               [-increment_x_or_y distance]
+               [-special_via_rule
+                  [-special_via_x_offset distance]
+                  [-special_via_y_offset distance]
+                  [-offset_both_sides_for_special_via]
+                  [-special_via_x_size distance]
+                  [-special_via_y_size distance]
+                  [-special_via_x_step distance]
+                  [-special_via_y_step distance]]
+               [-advanced_via_rules]
+               [-special_rules rule_name]
+               [-look_inside_std_cells
+                  [-std_cells collection_of_cells]]
+               [-keep_floating_wire_pieces]
+               [-ignore_cell_boundary]
+               [-clip_at_top_cell_boundaries]
+               [-do_not_merge_targets]
+               [-optimize_wire_locations]
+               [-ignore_parallel_targets
+                  [-define_parallel_targets_by_wire_directions]]
+               [-do_not_route_over_macros]
+               [-extend_for_multiple_connections
+                  [-extension_gap distance]]
+               [-mark_as_std_cell_pin_connections | -mark_as_ring]
+               [-within_voltage_areas collection_of_voltage_areas]
+               [-exclude_voltage_areas collection_of_voltage_areas]
+               [-start_at_offset distance]
+               [-detour_required
+                  [-detour_nets collection_of_nets]
+                  [-detour_jog_length_limit {distance distance}]
+                  [-detour_jog_offset distance]
+                  [-detour_enforce {jog_length jog_offset}]
+                  [-detour_accept_all]
+                  [-detour_region {{llx lly} {urx ury}}]
+               [-detour_snap_on_track]
+               [-detour_leading_obstructions]]
+
+   Data Types
+       collection_of_nets              collection
+       location                        float
+       number_or_name                  layer
+       distance                        jog_offset
+       count                           integer
+       rule_name                       string
+       collection_of_cells             collection
+       collection_of_voltage_areas     collection
+       jog_length                      distance in technology file units
+       jog_offset                      distance in technology file units
+       llx                             float
+       lly                             float
+       urx                             float
+       ury                             float
+
+ARGUMENTS
+       -nets collection_of_nets
+              Specifies  nets  on  which to create straps. You must specify at
+              least one power or ground net. If  you  specify  more  than  one
+              value,  separate  the  values  with  a space. This is a required
+              option, unless you specify the -undo option.
+
+       -undo  Removes straps created by the previous create_power_straps  run.
+              This option supersedes all other options.
+
+       -direction horizontal | vertical
+              Specifies  the  strap direction. Valid values are horizontal and
+              vertical. The default is horizontal.
+
+       -start_at location
+              Specifies the x- or y-location for the first strap. locataion is
+              the  y-location  for a horizontal strap and the x-location for a
+              vertical strap. The units are specified in the technology  file.
+              The default location is 0.0.
+
+       -layer number_or_name
+              Specifies  the  metal  layer  on which to create straps. You can
+              specify either a layerNumber or layer name from  the  technology
+              file. The default is to select the first layer for the specified
+              direction.
+
+       -width distance
+              Specifies the strap width. The units are specified in the  tech-
+              nology file. The default width is the width of the layer.
+
+       -configure  groups_and_step  | groups_and_stop | step_and_stop | rows |
+       macros | groups_and_stop | step_and_stop | rows | macros
+              Specifies  the strap configuration. Valid values are the follow-
+              ing:
+
+               o groups_and_step (default) - Places straps based on the number
+                of  groups specified by the -num_groups option and the spacing
+                specified by the -step option.
+
+               o groups_and_stop - Places straps based on the number of groups
+                specified  by the -num_groups option and the stop point speci-
+                fied by the -stop option.  The tool uses this  information  to
+                determine the strap spacing.
+
+               step_and_stop - Places straps based on the spacing specified by
+                the -step option and the stop point  specified  by  the  -stop
+                option. The tool uses this information to determine the number
+                of groups.
+
+               o rows - Creates straps over the standard cell areas. The  tool
+                automatically determines the strap locations.
+
+               o  macros  -  Creates straps over the macro cell pins. The tool
+                automatically determines the strap locations.
+
+              You can specify only one of these configurations.
+
+       -num_groups count
+              Specifies the number of strap groups to create. Do not use  this
+              option  if  you  are  using the step_and_stop configuration. The
+              default is 1.
+
+       -step distance
+              Specifies the distance from the reference strap of one group  to
+              the  reference  strap of an adjacent group. The units are speci-
+              fied in the technology file.
+
+              For vertical straps, a positive distance value places  the  next
+              strap in the group to the right of the current strap; specifying
+              a negative value places the next strap to the left of  the  cur-
+              rent  strap.  For horizontal straps, specifying a positive value
+              places the next strap above the current strap; specifying a neg-
+              ative  value  places the next strap below the current strap. The
+              default is 0.0. Do not use this option  if  you  are  using  the
+              -configure groups_and_stop option.
+
+       -stop distance
+              Specifies  the  location  where strap placement stops. The units
+              are specified in the technology file. The default is 0.0. Do not
+              use  this option if you are using the -configure groups_and_step
+              option.
+
+       -pitch_within_group distance
+              Specifies the distance to place between the center lines of  two
+              adjacent  straps  in  the same group. The units are specified in
+              the technology file.
+
+              For vertical straps, a positive distance value places  the  next
+              strap  to  the  right  of the first; a negative value places the
+              next strap to the left of the first. For  horizontal  straps,  a
+              positive distance value places the next strap above the first; a
+              negative value places  the  next  strap  below  the  first.  The
+              default  is  the  pitch  of  the layer defined in the technology
+              file.
+
+       -start_low_ends boundary | first_targets | coordinate | last_targets  |
+       offset | first_targets | coordinate | last_targets
+              Specifies the location for the low strap ends.  Valid  arguments
+              are
+
+               o  boundary  (default) - Places the low end of the strap at the
+                core boundary.
+
+               o first_targets - Places the low end of the strap at the  first
+                target  on  the  same net.  For horizontal straps, this is the
+                first target found by moving left from the initial strap.  For
+                vertical straps, this is the first target found by moving down
+                from the initial strap.
+
+               o coordinate - Places the low end of the strap at  the  coordi-
+                nate specified by the -start_low_ends_coordinate option.
+
+               o  last_targets  -  Places the low end of the strap at the last
+                target on the same net.  For horizontal straps,  this  is  the
+                leftmost  target. For vertical straps, this is the lowest tar-
+                get.
+
+              You can specify only one of these values.
+
+       -start_low_ends_coordinate distance
+              Specifies the coordinate for the low end of the strap when using
+              -start_low_ends coordinate. The units are specified in the tech-
+              nology file. For horizontal straps, distance  is  the  x-coordi-
+              nate.  For  vertical  straps,  distance is the y-coordinate. The
+              default is 0.0.
+
+       -start_high_ends boundary | first_targets | coordinate | last_targets |
+       offset | first_targets | coordinate | last_targets
+              Specifies the location for the high strap ends.  Valid arguments
+              are
+
+               o  boundary (default) - Places the high end of the strap at the
+                core boundary.
+
+               o first_targets - Places the high end of the strap at the first
+                target  on  the  same  net. For horizontal straps, this is the
+                first target found by moving right from the initial strap. For
+                vertical  straps,  this is the first target found by moving up
+                from the initial strap.
+
+               o coordinate - Places the high end of the strap at the  coordi-
+                nate specified by the -start_high_ends_coordinate option.
+
+               o  last_targets  - Places the high end of the strap at the last
+                target on the same net.  For horizontal straps,  this  is  the
+                rightmost  target.  For  vertical  straps, this is the highest
+                target.
+
+              You can specify only one of these values.
+
+       -start_high_ends_coordinate distance
+              Specifies the coordinate for the high  end  of  the  strap  when
+              using  the  -start_high_ends coordinate option. The unit for the
+              distance value is the unit specified in the technology file. For
+              horizontal  straps,  distance  is the x-coordinate. For vertical
+              straps, distance is the y-coordinate. The default is 0.0.
+
+       -extend_low_ends  to_first_target  |  to_boundary_and_generate_pins   |
+       force_to_boundary_and_generate_pins   |  off  |  to_boundary_and_gener-
+       ate_pins | force_to_boundary_and_generate_pins | off
+              Specifies how to extend straps from the low end.   Valid  values
+              are
+
+               o  to_first_target  (default) - Extends the straps from the low
+                end until the strap reaches the first target on the same  net.
+
+               o  to_boundary_and_generate_pins  - Extends the straps from the
+                low end until the strap reaches the core boundary, then gener-
+                ates  a  pin. The strap stops when it reaches the first target
+                on the same net.
+
+               o force_to_boundary_and_generate_pins - Extends the straps from
+                the  low  end  until the strap reaches the core boundary, then
+                generates a pin. The strap does not stop when it  reaches  the
+                first target on the same net.
+
+               o off - Does not extend the straps from the low end.
+
+              You can specify only one of these values.
+
+       -extend_high_ends  to_first_target  |  to_boundary_and_generate_pins  |
+       force_to_boundary_and_generate_pins  |  off  |   to_boundary_and_gener-
+       ate_pins | force_to_boundary_and_generate_pins | off
+              Specifies  how to extend straps from the high end.  Valid values
+              are
+
+               o to_first_target (default) Extends the straps  from  the  high
+                end  until the strap reaches the first target on the same net.
+
+               o to_boundary_and_generate_pins - Extends the straps  from  the
+                high  end  until  the strap reaches the core boundary and then
+                generates a pin. The strap stops when  it  reaches  the  first
+                target on the same net.
+
+               o force_to_boundary_and_generate_pins - Extends the straps from
+                the high end until the strap reaches  the  core  boundary  and
+                then  generates a pin. The strap does not stop when it reaches
+                the first target on the same net.
+
+               o off - Does not extend the straps from the high end.
+
+              You can specify only one of these values.
+
+       -num_placement_strap count
+              Specifies the number of times to place strap  groups.  You  must
+              specify a value of 1 or greater. The default is 1.
+
+       -increment_x_or_y distance
+              Specifies  the  distance  between the first strap and subsequent
+              straps when the -num_placement_strap option is greater  than  1.
+              The  units  are specified in the technology file. For horizontal
+              straps, distance is the y-distance. For  vertical  straps,  dis-
+              tance is the x-distance. The default is 0.0.
+
+       -special_via_rule
+              Creates  a  matrix  of small via arrays instead of one large via
+              array at wire intersections. Using smaller via arrays might free
+              some  routing area. Specify the x- and y-offsets, x- and y-size,
+              and x- and y- step values by using the special via  options.  If
+              the specified values violate design rules, vias are not created.
+
+       -special_via_x_offset distance
+              Specifies the x-offset from the lower-left corner  of  the  wire
+              intersection  area  where  you  want to create the first special
+              via. The units are specified in the technology file. The default
+              is 0.0.
+
+       -special_via_y_offset distance
+              Specifies  the  y-offset  from the lower-left corner of the wire
+              intersection area where you want to  create  the  first  special
+              via. The units are specified in the technology file. The default
+              is 0.0.
+
+       -offset_both_sides_for_special_via
+              Applies the x- and y-offsets to both lower-left and  upper-right
+              corner  of  the  wire intersection area. By default, the offsets
+              are applied only to the lower-left corner of the wire  intersec-
+              tion area.
+
+       -special_via_x_size distance
+              Specifies  the  horizontal  size  of the special via arrays. The
+              units are specified in the technology file. The default is  0.0.
+
+       -special_via_y_size distance
+              Specifies the vertical size of the special via arrays. The units
+              are specified in the technology file. The default is 0.0.
+
+       -special_via_x_step distance
+              Specifies the horizontal distance  between  the  left  sides  of
+              adjacent  via  arrays. The units are specified in the technology
+              file. The default is 0.0. A via is not created if  it  causes  a
+              DRC violations.
+
+       -special_via_y_step distance
+              Specifies  the  vertical  distance  between  the bottom sides of
+              adjacent via arrays. The units are specified in  the  technology
+              file.  The default is 0.0. A via is not created if it would vio-
+              late DRC violations.
+
+       -advanced_via_rules
+              Uses    advanced    via    rules    set    by    the    set_pre-
+              route_advanced_via_rule command.
+
+       -special_rules rule_name
+              Uses  special  rules  set by the set_preroute_special_rules com-
+              mand. You must enter the rule name  string  exactly  as  it  was
+              specified in the -name option of set_preroute_special_rules com-
+              mand.
+
+       -look_inside_std_cells
+              Creates vias to connect straps to pins inside standard cells. By
+              default, straps are not connected to pins inside standard cells.
+
+       -std_cells collection_of_cells
+              Specifies the collection of standard cells to consider when con-
+              necting  the  straps.  If  collection_of_cells is not empty, the
+              -look_inside_std_cells option is turned  on  automatically,  and
+              only  pins  of the specified cells are considered as targets for
+              the straps.
+
+              If this option is omitted and -look_inside_std_cells  is  speci-
+              fied, all standard cells are considered. If this option is omit-
+              ted and -look_inside_std_cells is  not  specified,  no  standard
+              cells are considered.
+
+              If  the collection is empty and -look_inside_std_cells is speci-
+              fied, all standard cells are considered. If  the  collection  is
+              empty  omitted  and  -look_inside_std_cells is not specified, no
+              standard cells are considered.
+
+       -keep_floating_wire_pieces
+              Keeps extra wire pieces that are not connected to other wires.
+
+       -ignore_cell_boundary
+              Keeps out-of-bound straps.
+
+       -clip_at_top_cell_boundaries
+              Cuts straps at the top cell boundaries. This is useful to create
+              straps within the boundaries of a rectilinear design.
+
+       -do_not_merge_targets
+              Disables  merging of target objects before creating connections.
+
+       -optimize_wire_locations
+              Saves more tracks for detail routing by  adjusting  the  created
+              straps by small distances horizontally or vertically.
+
+       -ignore_parallel_targets
+              Does  not connect parallel targets. By default, parallel targets
+              are defined by their x- and y-dimensions. A target  is  parallel
+              to  a  horizontal  strap  if  its x-dimension is greater than or
+              equal to its y-dimension. A target is  parallel  to  a  vertical
+              strap  if  its  y-dimension  is  greater than or equal to its x-
+              dimension.
+
+       -define_parallel_targets_by_wire_directions
+              Defines parallel targets by their wire directions. A  target  is
+              parallel  to  a  horizontal strap if its wires are horizontal. A
+              target is parallel to a vertical strap if its wires  are  verti-
+              cal. By default, parallel targets are defined by their x- and y-
+              dimensions.
+
+       -do_not_route_over_macros
+              Prevents the prerouter from generating wires over  macro  cells.
+              If  you  specify this option, the tool removes the segments of a
+              strap that route over a macro.
+
+       -extend_for_multiple_connections
+              Extends the low and high ends of a strap to connect more targets
+              on  the same net. The extension continues until either there are
+              no more targets in the respective direction or the  next  target
+              exceeds  the  spacing  threshold specified by the -extension_gap
+              option.
+
+       -extension_gap distance
+              Connects adjacent targets that  are  closer  than  the  distance
+              value.  The unit for the distance value is the unit specified in
+              the technology file. This value is the space threshold for  mul-
+              tiple connections.
+
+       -mark_as_std_cell_pin_connections
+              Marks    the    created    power    or    ground    straps    as
+              "pg_std_cell_pin_conn" type. By default, straps are created  and
+              marked  as  "pg_strap"  type.  This option is mutually exclusive
+              with the -mark_as_ring option.
+
+       -mark_as_ring
+              Marks the created power or ground straps as "pg_ring"  type.  By
+              default,  straps are created and marked as "pg_strap" type. This
+              option is mutually exclusive with the -mark_as_std_cell_pin_con-
+              nections option.
+
+       -within_voltage_areas collection_of_voltage_areas
+              Specifies  the  voltage  areas  where  the command should create
+              straps.  The -nets option is required in conjunction  with  this
+              option. By default, the command uses the entire design area.
+
+              When  you  specify this option, the -start_at option is disabled
+              and  the  -start_at_offset  option  is  used  instead.  See  the
+              -start_at_offset option description for more details. The refer-
+              encing origin is the lower left corner of the bounding  box  for
+              each  voltage  area.  Note for multiple disjoint areas with same
+              voltage domain, the referencing origin  is  different  for  each
+              disjoint area.
+
+              When  straps  are  created  within  voltage area boundaries, the
+              boundaries are treated as zero-space route guides.  Any  aligned
+              straps  are  disjoint  around  the boundaries except straps that
+              connect to the same net such as ground net.
+
+       -exclude_voltage_areas collection_of_voltage_areas
+              Specifies the voltage areas where the command should NOT  create
+              straps.  By default, the exclude voltage area is empty.
+
+       -start_at_offset distance
+              Specifies  the x- or y-offset of the first strap with respect to
+              the origin of specified objects.  Currently,  this  option  only
+              supports voltage area objects. Offset is the y-offset for a hor-
+              izontal strap and the x-offset for a vertical strap.  The  units
+              are  specified  in  the technology file. This option can only be
+              used  in   conjunction   with   the   -within_voltage_areas   or
+              -exclude_voltage_areas options. The default location is 0.0.
+
+       -detour_required
+              Enable  the detour feature for creating straps. Depending on the
+              behavior  you  require,  you  must  specify  additional   detour
+              options.  If  you  omit  the  -detour_required  option, the tool
+              silently ignores all other detour-related options.
+
+       -detour_nets collection_of_nets
+              Specifies the nets on which to create detours. When you  specify
+              nets  by  using the -detour_nets option, detours are not created
+              on  other  nets.  If  you  specify  -detour_required  and   omit
+              -detour_nets,  all  nets  specified  with  the  -nets option can
+              receive detours.
+
+       -detour_jog_length_limit {distance distance}
+              Specifies restrictions on  the  length  of  jogs  for  automatic
+              detour  creation.  The  first  value  is for a north or east jog
+              while the second value is for a south or west jog.  Both  values
+              should  be  positive. A zero value prohibits a jog in the corre-
+              sponding direction. The length might be reduced to avoid  a  DRC
+              violation.  The defaults are 0 and detours are not automatically
+              added.
+
+       -detour_jog_offset distance
+              Specifies the distance between an automatically inserted jog and
+              its  obstruction. The value should be positive. The offset value
+              might be increased to accommodate minimal spacing  requirements.
+              The default is 0 and minimal spacing is used.
+
+       -detour_enforce {jog_length jog_offset}
+              Specifies  the  location  for  a  forced detour. The first value
+              specifies the jog length, the second  value  specifies  the  jog
+              offset.  If  you  specify this option, the values are applied if
+              the jog cannot be inserted automatically by the  tool.  The  jog
+              length  can  be positive or negative. Use a positive value for a
+              north or east jog, use a negative value for a south or west jog.
+              The  jog  length should be greater than the width of the straps.
+              By default, no detours are forced.
+
+       -detour_accept_all
+              Allow any forced detour, even if it  creates  a  DRC  error.  By
+              default, only DRC-clean detours are created.
+
+       -detour_region {{llx lly} {urx ury}}
+              Specifies  the  area  where  detours  are  allowed.  The area is
+              defined as a single rectangle bounded by the lower  left  corner
+              coordinate  and  upper  right corner coordinate. All coordinates
+              are in technology file units. If  specified,  only  obstructions
+              inside  the  area  can  cause  detours.  The detour is a partial
+              detour and the remaining strap is removed.  The  south  or  west
+              edge  of  a jog aligns with the boundary of the area and any jog
+              offset is ignored. The strap shape stops at the  north  or  east
+              boundary.  By default, straps detours can be either full detours
+              or partial detours, depending on the environment.
+
+       -detour_snap_on_track
+              Specifies that the centerline of the  strap  is  placed  on  the
+              routing  track.  This  request  is  ignored  if  you specify the
+              -detour_enforce option, if snapping to the track prevents a DRC-
+              clean  detour,  or  if  the preferred direction differs from the
+              direction of the strap. By default, the tool does not  snap  the
+              centerline of the strap to the routing track.
+
+       -detour_leading_obstructions
+              Specifies  whether to detour over leading obstructions (south or
+              west edge) if either the auto-detour or enforced-detour criteria
+              is  met.  By  default, no detour is placed over leading obstruc-
+              tions.
+
+DESCRIPTION
+       This command creates power straps in a design. This command can connect
+       power straps to the closest power or ground ring at or beyond both ends
+       of the straps. All pins generated by prerouting commands are marked  as
+       fixed  to prevent the create_power_straps command from moving them dur-
+       ing other operations. You can use the set_preroute_drc_strategy command
+       to  change the internal application of DRC rules. Use a few wide straps
+       rather than many thin straps to improve placement quality and  decrease
+       the placement runtime.
+
+       Note: You must use the derive_pg_connection command to create the port-
+       to-net connections for power and  ground  nets  that  are  not  in  the
+       netlist.
+
+   Multicorner-Multimode Support
+       This command has no dependency on scenario-specific information.
+
+EXAMPLES
+       The  following example creates 7 vertical power straps for the VDDC and
+       VSSC nets. Straps are created on  the  M3  layer  with  a  width  of  5
+       microns.  The  first strap starts at x-coordinate 530 with a spacing of
+       100 uu between straps. The low ends start at the y-coordinate 280.  The
+       high  ends end at y-coordinate 980. The straps extend for multiple con-
+       nections in the radius of 1000 uu.
+
+         prompt> create_power_straps \
+         -nets {VDDC VSSC} \
+         -direction vertical \
+         -layer M3 \
+         -width 5 \
+         -start_at 530 \
+         -num_placement_strap 7 \
+         -increment_x_or_y 100 \
+         -start_low_ends coordinate \
+         -start_low_ends_coordinate 280.0 \
+         -start_high_ends coordinate \
+         -start_high_ends_coordinate 980.0 \
+         -extend_for_multiple_connections \
+         -extension_gap 1000
+
+       The following example creates power straps configured by placement rows
+       following the set of special rules named "specGS".
+
+         prompt> create_power_straps \
+         -nets {VSS VDD} \
+         -configure rows \
+         -direction horizontal \
+         -layer PM \
+         -width 8.0 \
+         -pitch_within_group 10.08 \
+         -step 20.16 \
+         -extend_low_ends to_first_target \
+         -extend_high_ends to_first_target \
+         -keep_floating_wire_pieces \
+         -ignore_parallel_targets \
+         -special_rules specGS
+
+       For  more  information  about  special rules, see the set_preroute_spe-
+       cial_rules man page.
+
+       The following example creates power straps  configured  by  macro  cell
+       pins following the set of special rules named "specLMVmem".
+
+         prompt> create_power_straps \
+         -nets {VDD VSS} \
+         -configure macros \
+         -direction vertical \
+         -layer M4 \
+         -advanced_via_rules \
+         -extend_low_ends off \
+         -extend_high_ends off \
+         -special_rules specLMVmem
+
+       For  more  information  about  special rules, see the set_preroute_spe-
+       cial_rules man page.
+
+       The following example shows creates power straps for different  voltage
+       areas.
+
+         prompt> create_power_straps \
+         -nets VDDC \
+         -direction vertical \
+         -configure step_and_stop \
+         -layer M7 \
+         -width 0.53 \
+         -start_at_offset 0.960 \
+         -stop 165.480 \
+         -step 18.18 \
+         -within_voltage_areas {VA1 VA3 VA4}
+
+SEE ALSO
+       create_pad_rings(2)
+       create_preroute_vias(2)
+       create_rectangular_rings(2)
+       preroute_instances(2)
+       preroute_standard_cells(2)
+       report_preroute_drc_strategy(2)
+       set_distributed_route(2)
+       set_preroute_advanced_via_rule(2)
+       set_preroute_drc_strategy(2)
+       set_preroute_special_rules(2)
+       verify_pg_nets(2)
+
+                          Version L-2016.03-SP1
+            Copyright (c) 2016 Synopsys, Inc. All rights reserved.
+puts "EDA_POWER_MANUAL_END"
+EDA_POWER_MANUAL_END
+exit
+
+Memory usage for main task 92 Mbytes.
+Memory usage for this session 92 Mbytes.
+CPU usage for this session 2 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

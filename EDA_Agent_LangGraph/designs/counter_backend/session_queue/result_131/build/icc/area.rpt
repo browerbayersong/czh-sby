@@ -1,0 +1,46 @@
+Information: linking reference library : /opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram. (PSYN-878)
+Information: Loading local_link_library attribute {/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db}. (MWDC-290)
+
+  Linking design 'counter_8bit'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               counter_8bit.CEL, etc
+  typical (library)           /opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+# GUI Debug: Building dc for netlist invalid. -- Time: 93ms
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : area
+Design : counter_8bit
+Version: L-2016.03-SP1
+Date   : Sun Oct 25 14:39:11 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Library(s) Used:
+
+    typical (File: /opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db)
+
+Number of ports:                           13
+Number of nets:                            30
+Number of cells:                           18
+Number of combinational cells:              9
+Number of sequential cells:                 8
+Number of macros/black boxes:               0
+Number of buf/inv:                          1
+Number of references:                       4
+
+Combinational area:                118.540800
+Buf/Inv area:                        4.233600
+Noncombinational area:             124.185600
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   242.726400
+Total area:                 undefined
+1

@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "tool": "dc",
+  "command": "cd /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_002/src && timeout 600s /opt/Synopsys/Synplify2015/bin/dc_shell -f generated/scripts/dc_synthesis.tcl > ../build/dc.log 2>&1",
+  "stdout": "",
+  "stderr": "",
+  "run": "upload_002",
+  "status": "completed"
+}

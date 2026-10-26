@@ -1,0 +1,22 @@
+{
+  "run": "upload_001",
+  "stages": [
+    {
+      "stage": "compile",
+      "exit_code": 0,
+      "command": "cd /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_001/src && timeout 300s /opt/Synopsys/VCS2014/bin/vcs -full64 -sverilog -timescale=1ns/1ps -top tb_counter_8bit -o ../build/activity/simv generated/rtl/counter_8bit.v generated/tb/tb_counter_8bit.v > ../build/activity/compile.log 2>&1"
+    },
+    {
+      "stage": "simulation",
+      "exit_code": 0,
+      "command": "cd /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_001/src && timeout 120s ../build/activity/simv > ../build/activity/simulation.log 2>&1"
+    },
+    {
+      "stage": "conversion",
+      "exit_code": 0,
+      "command": "cd /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_001/src && timeout 90s /opt/Synopsys/Synplify2015/bin/vcd2saif -input ../build/activity/counter.vcd -output ../build/activity/counter.saif > ../build/activity/conversion.log 2>&1"
+    }
+  ],
+  "note": "Inspect simulation checks and SAIF contents before using activity for power analysis",
+  "status": "completed"
+}

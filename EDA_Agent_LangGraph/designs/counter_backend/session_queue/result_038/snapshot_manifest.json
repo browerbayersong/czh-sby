@@ -1,0 +1,18 @@
+{
+  "format": "eda-agent-snapshot-v1",
+  "chat_id": "ffffffffffffffffffffffffffffffff",
+  "project_name": "counter_backend",
+  "label": "upload_002",
+  "created_at": "2026-10-24T23:34:54",
+  "files_sha256": {
+    "inputs/activity/counter.saif.txt": "9a9ca990ea3c2476ed4daeec718d803fb5a5d860204bdf132e6d982a5dac21d1",
+    "generated/rtl/counter_8bit.v": "b97a619a62852d8da1aad9c6e6499aa4cfafb094b5ecb32f2479a6f7a0f42406",
+    "generated/scripts/config.tcl": "49f28a1325da7cb8ba93c563b160861d84feec1073751d121bc44a1e60f34a45",
+    "generated/scripts/constraints.tcl": "92efb3ac4dedfb6d7c124e687a40dfed7661d3d7267e1b3792c41570a3a2e4aa",
+    "generated/scripts/dc_synthesis.tcl": "51b5af8654ef631fca1b8b458777a58d77a1e55d4339bf379506e2b613ef7949",
+    "generated/scripts/help_dc.tcl": "7612f082ed9b43762b5201731558e6fc681c5eb7885685cfca7a6bc66250842e",
+    "generated/scripts/help_icc.tcl": "d175a242bbd8306e55ab6a393dcb119d722e7566b8eff4fbf1382cbe201749e0",
+    "generated/scripts/help_pt.tcl": "615adaa2d77636288a6e22b922bbdd0d562c4a4c28c24158dbdcb6fbfc486871",
+    "generated/tb/tb_counter_8bit.v": "f77e99ed5ffaa06d230b69818070fd7af135c80016f1622f30e190d77ccbbd26"
+  }
+}

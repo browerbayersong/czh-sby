@@ -1,0 +1,18 @@
+{
+  "model": "deepseek-flash",
+  "workflow": "eda_agent_v8_core.run_task",
+  "api_connection": "success",
+  "review_status": "issues",
+  "drafts_saved_without_manual_code_changes": true,
+  "vcs_status": "passed_by_marker",
+  "vcs_run_summary": "remote_runs/29eb449d00aa4602a7584fdca2a380e7/run_summary.json",
+  "checks_total": 824,
+  "checks_failed": 0,
+  "issues": [
+    {
+      "path": "tb/tb_counter_8bit.v",
+      "severity": "warning",
+      "message": "初始异步复位场景在第一个 posedge 后 #1 才检查清零，未严格满足异步复位在非时钟上升沿施加并在时钟边沿前检查清零的覆盖要求；应先在 rst_n=0 后、首个上升沿前检查 count===0。运行中异步复位场景的边沿前检查是正确的。"
+    }
+  ]
+}

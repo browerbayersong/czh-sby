@@ -1,0 +1,13 @@
+{
+  "boot_id": "db31cb71-ca58-4eb5-b601-7cfefae05c41", 
+  "finished_epoch": 1792913743.599236, 
+  "process_start_ticks": "618175", 
+  "script": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_153507_cb2b9962/src/generated/scripts/capture_reports.tcl", 
+  "started_epoch": 1792913730.7788391, 
+  "state": "exited", 
+  "timeout_seconds": 120, 
+  "tool": "icc", 
+  "tool_exit_code": 2, 
+  "tool_pid": 15483, 
+  "worker_pid": 15482
+}

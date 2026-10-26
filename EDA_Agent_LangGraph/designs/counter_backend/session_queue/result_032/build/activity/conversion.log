@@ -1,0 +1,5 @@
+VCD to SAIF translator version K-2015.06 Synopsys, Inc.
+direct mapping all VCD instances
+processing header of VCD file: ../build/activity/counter.vcd
+processing value changes of VCD file: ../build/activity/counter.vcd
+generating backward SAIF file: ../build/activity/counter.saif

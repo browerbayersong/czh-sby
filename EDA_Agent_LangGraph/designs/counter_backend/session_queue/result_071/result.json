@@ -1,0 +1,16 @@
+{
+  "run": "upload_20261025_140252_6c3cbddf",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 447,
+      "sha256": "5011c0f160fe69b962ad62e3b8f03fb23e0a1680d23e8ffa25ee81c1c606a862"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 363139,
+      "sha256": "fbc683436e881754eb721f0fc46da531b125cd9b467ee53a44f28cb5085ef366"
+    }
+  ],
+  "status": "completed"
+}

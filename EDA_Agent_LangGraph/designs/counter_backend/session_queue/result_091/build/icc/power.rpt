@@ -1,0 +1,52 @@
+Information: Propagating switching activity (medium effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort medium
+Design : counter_8bit
+Version: L-2016.03-SP1
+Date   : Sun Oct 25 14:17:53 2026
+****************************************
+
+
+Library(s) Used:
+
+    typical (File: /opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db)
+
+
+Operating Conditions: typical   Library: typical
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =  10.4174 uW   (95%)
+  Net Switching Power  = 552.7469 nW    (5%)
+                         ---------
+Total Dynamic Power    =  10.9701 uW  (100%)
+
+Cell Leakage Power     = 339.5289 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       1.0051e-02        3.9015e-04        1.2464e+05        1.0566e-02  (  93.42%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  3.6633e-04        1.6260e-04        2.1489e+05        7.4381e-04  (   6.58%)
+--------------------------------------------------------------------------------------------------
+Total          1.0417e-02 mW     5.5275e-04 mW     3.3953e+05 pW     1.1310e-02 mW
+1

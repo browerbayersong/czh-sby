@@ -1,0 +1,16 @@
+{
+  "capture_bounds": [
+    0, 
+    0, 
+    1718, 
+    840
+  ], 
+  "captured_epoch": 1792914179.9576881, 
+  "display": ":0", 
+  "height": 840, 
+  "input_events_sent": false, 
+  "method": "GTK GDK root-window capture", 
+  "sha256": "8fafa85f6fad990e1219df63bfd13d149910a3d571c8163699e5006c020b254a", 
+  "width": 1718, 
+  "window_title": null
+}

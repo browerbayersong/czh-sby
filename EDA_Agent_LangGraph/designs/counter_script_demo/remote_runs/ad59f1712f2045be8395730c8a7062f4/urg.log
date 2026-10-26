@@ -1,0 +1,8 @@
+
+INFO : The directory  '../build/cov.vdb' passed to the URG command line is generated from a 64-bit simulation kernel. Hence, '-full64' is automatically added to the URG command line and URG would generate the reports with Full64 VCS installation.
+
+URG Version I-2014.03 Copyright (c) 1991-2014 by Synopsys Inc.
+
+Note-[URG-RDG] Report directory generated
+  Report written to directory ../build/covReport
+

@@ -1,0 +1,31 @@
+{
+  "run": "upload_20261025_144447_f044ba05",
+  "files": [
+    {
+      "path": "build/icc.log",
+      "bytes": 8025,
+      "sha256": "5de0e853a549ca857d4baa06f174e73db4551d97aac680931dcebe0e6afd0224"
+    },
+    {
+      "path": "build/display/drc_details.txt",
+      "bytes": 602,
+      "sha256": "4f9b33f57898c6e7cc168b85c46edfeff981b901fce5d4b65145c09c90c0e032"
+    },
+    {
+      "path": "build/display/layout.png",
+      "bytes": 816528,
+      "sha256": "7fe1a195799481f3343b3474d76ae85ce9cf22a5714b16440466916c36200b48"
+    },
+    {
+      "path": "build/display/layout_canvas.png",
+      "bytes": 11035,
+      "sha256": "da9a493d1bc9564f9fd3052e79d27053bf249d5e033f560d78813690569b2eb4"
+    },
+    {
+      "path": "build/display/layout.png.json",
+      "bytes": 254,
+      "sha256": "6e0265b26a888af4424e077e8ce7dda979c40ab1fbb19e76ffa2162d3e2a6f68"
+    }
+  ],
+  "status": "completed"
+}

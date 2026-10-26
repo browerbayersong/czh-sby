@@ -1,0 +1,25 @@
+{
+  "round": 2,
+  "baseline": "../counter_first_run",
+  "previous_round": "../counter_opt_round1",
+  "previous_checks": 825,
+  "previous_coverage_score": 92.01,
+  "motivation": "补强回绕边界的连续保持行为，以及复位对 en=0/en=1 的优先级验证。",
+  "implementation": "当前助手编写定向测试；本轮准备阶段没有重新调用 DeepSeek 生成代码。",
+  "changes": [
+    "保留第1轮全部检查；320次加一后再推进190次，到达254。",
+    "在254、255、0分别保持3个周期，检查254到255、255到0、0到1。",
+    "en=0和en=1各自覆盖非零预填、时钟沿前异步清零、复位保持跨时钟及复位释放。",
+    "DUT、参考模型、比较条件、失败判定和原有随机测试均保持原样。"
+  ],
+  "expected_additional_checks": 210,
+  "expected_checks_if_completed": 1035,
+  "vcs_status": "passed_by_marker",
+  "actual_checks": 1035,
+  "actual_passed": 1035,
+  "actual_failed": 0,
+  "actual_coverage": {"score": 93.08, "line": 91.73, "branch": 87.5, "toggle": 100.0},
+  "local_run_summary": "remote_runs/72f1ade39b8b4f85a62ddb2243358d97/run_summary.json",
+  "coverage_score_delta_from_previous_percentage_points": 1.07,
+  "note": "已核验本地 VCS 日志，包括254/255/0保持及en低/高复位场景；覆盖率为工具报告的测试层次总分。"
+}

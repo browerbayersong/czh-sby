@@ -1,0 +1,49 @@
+{
+  "area_capacitance_unit": "pF/um^2", 
+  "corner_scope": "Same LEF nominal values assigned to min/nom/max; one interconnect corner", 
+  "derived_tf_sha256": "8dd6b9878398a95a6276f58a07c7b5aba11e299220938eaf3bb3d0bc624a8ecc", 
+  "edge_capacitance_unit": "pF/um per edge", 
+  "icc_sidewall_mapping": "two times LEF edge capacitance; both long sides", 
+  "layers": {
+    "M1": {
+      "area_cap_pf_um2": 0.00020782, 
+      "edge_cap_pf_um": 8.9806e-05, 
+      "resistance_ohm_sq": 0.13
+    }, 
+    "M2": {
+      "area_cap_pf_um2": 0.00013939000000000001, 
+      "edge_cap_pf_um": 9.3758999999999995e-05, 
+      "resistance_ohm_sq": 0.080600000000000005
+    }, 
+    "M3": {
+      "area_cap_pf_um2": 0.00013813000000000001, 
+      "edge_cap_pf_um": 9.3981999999999996e-05, 
+      "resistance_ohm_sq": 0.080600000000000005
+    }, 
+    "M4": {
+      "area_cap_pf_um2": 0.00013813000000000001, 
+      "edge_cap_pf_um": 9.4163e-05, 
+      "resistance_ohm_sq": 0.080600000000000005
+    }, 
+    "M5": {
+      "area_cap_pf_um2": 0.00012370999999999999, 
+      "edge_cap_pf_um": 9.4562999999999996e-05, 
+      "resistance_ohm_sq": 0.080600000000000005
+    }, 
+    "M6": {
+      "area_cap_pf_um2": 4.1088999999999999e-05, 
+      "edge_cap_pf_um": 0.00013129, 
+      "resistance_ohm_sq": 0.0275
+    }
+  }, 
+  "limitations": "1D LEF RC estimate; no TLUPlus, coupling/variation/signoff model", 
+  "references": [
+    "https://coriolis.lip6.fr/doc/lefdef/lefdefref/LEFSyntax.html", 
+    "https://users.ece.utexas.edu/~mcdermot/vlsi1/VLSI2_SP_2017/synopsys/doc/ICC/icctf.pdf"
+  ], 
+  "source_lef": "/opt/Foundary_Library/TSMC90/aci/sc-x/lef/tsmc090lk_6lm_1thick_tech.lef", 
+  "source_lef_sha256": "30a78207a4e8ad0028ca772572240e50305002004bf3f61ec53bc710a5762a5f", 
+  "source_resistance_unchanged": true, 
+  "source_tf": "/opt/Foundary_Library/TSMC90/aci/sc-x/astro/tf/tsmc090_6lm_1thick.tf", 
+  "source_tf_sha256": "438174f5d0a84a79afbc45d0e3f50ea348388b900aa66e897fd45dc3d0fc500e"
+}

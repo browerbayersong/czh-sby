@@ -1,5 +1,7 @@
 # EDA Agent v8.3 交接包
 
+> **2026-10-26 更新**：本分支已补充实际 VCS/DC/ICC/PT 实验材料、报告，以及 LangGraph + DeepSeek 辅助 DRC 诊断与修复。请先阅读[完整资料目录与使用说明](../docs/sby_资料目录与使用说明.md)；报告见 [reports](../reports/)，修复后的数据库见 [drc_ai](../drc_ai/)。下文 2026-10-22 的进度表保留为原项目历史记录，不代表本分支当前进度。
+
 基于 v8.2 的「国产大模型 + LangGraph 自动化 EDA」项目，新增：
 
 - **自动纠错闭环**：StateGraph 子图（stage → simulate → analyze → patch），失败后自动打补丁并重跑
@@ -58,6 +60,23 @@ copy ..\.env.example .env      # 然后填入 DEEPSEEK_API_KEY 与 EDA_SSH_HOST
 ```
 
 浏览器打开 `http://localhost:8501`，见《使用说明》第 2 节。
+
+新机器默认把会话保存在项目的 `data/`；如已有 `C:\LangGraph_talk` 则继续使用原目录。
+可通过 `code/.env` 的 `EDA_DATA_DIR` 指定其他目录。网页与 SSH 所需的 Streamlit、
+Paramiko 已列入主依赖；Studio/Jupyter 等开发工具另用 `requirements-dev.txt` 安装。
+
+没有 API Key 时可以先运行离线回归和实验归档校验，不能据此宣称已重新完成真实模型与 VCS 闭环：
+
+```powershell
+python code/test_v8_2_offline.py
+python code/test_analysis_offline.py
+python code/verify_evidence.py
+# 安装主依赖后，还可运行模拟模型与模拟 VCS 的 StateGraph 闭环测试：
+python patches/test_autofix_offline.py
+```
+
+`verify_evidence.py` 按原始字节检查六轮源码 SHA-256，并从本地日志提取指标。
+`.gitattributes` 禁止 Git 对归档源码转换换行，避免 Windows 检出导致哈希失配。
 
 ## 文档索引
 

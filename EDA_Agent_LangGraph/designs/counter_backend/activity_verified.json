@@ -1,0 +1,40 @@
+{
+  "source_run": "upload_001",
+  "source": "session_queue/result_032/build/activity/counter.saif",
+  "input": "inputs/activity/counter.saif.txt",
+  "sha256": "9a9ca990ea3c2476ed4daeec718d803fb5a5d860204bdf132e6d982a5dac21d1",
+  "simulation_metrics": {
+    "checks": 2035,
+    "passed": 2035,
+    "failed": 0,
+    "scenario_list": [
+      "initial_reset_before_clk",
+      "initial_async_reset",
+      "hold",
+      "consecutive_increment_wrap",
+      "boundary_holds_254_255_0",
+      "wrap_255_to_0",
+      "reset_en_low",
+      "reset_en_high",
+      "async_reset_during_run",
+      "random x3"
+    ],
+    "scenario_count": 10,
+    "seeds": [
+      305419896,
+      305420153,
+      305420410
+    ],
+    "functional_bins_hit": 14,
+    "functional_bins_total": 14,
+    "ended": "TEST PASSED",
+    "finish_ps": 20316000,
+    "top_fail": []
+  },
+  "pvt": {
+    "process": "TT",
+    "voltage_V": 1.0,
+    "temperature_C": 25
+  },
+  "clock_ns": 10.0
+}

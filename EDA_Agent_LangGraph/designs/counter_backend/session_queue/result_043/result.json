@@ -1,0 +1,21 @@
+{
+  "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs",
+  "entries": [
+    {
+      "name": "upload_002",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "upload_003",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "upload_001",
+      "size": 4096,
+      "mode": "0o40700"
+    }
+  ],
+  "status": "completed"
+}

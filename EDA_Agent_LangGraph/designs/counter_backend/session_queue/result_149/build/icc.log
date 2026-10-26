@@ -1,0 +1,43 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+set env(DISPLAY) :0
+:0
+if {[catch {
+    puts [exec timeout 80s /usr/bin/python generated/scripts/capture_reports.py 2>@1]
+} message]} {
+    puts "EDA_REPORT_CAPTURE_FAILED $message"
+    exit 2
+}
+EDA_REPORT_CAPTURE_FAILED Traceback (most recent call last):
+  File "generated/scripts/capture_display.py", line 43, in <module>
+    raise ValueError('Requested report window was not found')
+ValueError: Requested report window was not found
+Traceback (most recent call last):
+  File "generated/scripts/capture_reports.py", line 92, in <module>
+    main()
+  File "generated/scripts/capture_reports.py", line 80, in main
+    subprocess.check_call(['/usr/bin/python', 'generated/scripts/capture_display.py', image, unique_title])
+  File "/usr/lib64/python2.6/subprocess.py", line 505, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['/usr/bin/python', 'generated/scripts/capture_display.py', '/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_153507_cb2b9962/build/report_captures/dc_power.png', 'EDA evidence dc_power']' returned non-zero exit status 1
+child process exited abnormally
+
+Memory usage for main task 92 Mbytes.
+Memory usage for this session 92 Mbytes.
+CPU usage for this session 2 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

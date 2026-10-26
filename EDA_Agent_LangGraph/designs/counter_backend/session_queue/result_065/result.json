@@ -1,0 +1,186 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys",
+  "entries": [
+    {
+      "name": "tsmc090nvtlk_8lm_2thick.pdb",
+      "size": 975496,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_6lm_1thick.plib",
+      "size": 3072592,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_5lm_2thick.plib",
+      "size": 3066884,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_4lm_1thick.pdb",
+      "size": 969836,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical_leakage.db",
+      "size": 1220033,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fastz.lib",
+      "size": 16204583,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_5lm_2thick.pdb",
+      "size": 971254,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fast.lib",
+      "size": 16197346,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_4lm_2thick.plib",
+      "size": 3061174,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_7lm_2thick.plib",
+      "size": 3078302,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fast_leakage.lib",
+      "size": 1783766,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_9lm_2thick.pdb",
+      "size": 976910,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_5lm_1thick.pdb",
+      "size": 971250,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_6lm_2thick.pdb",
+      "size": 972668,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fast_leakage.db",
+      "size": 1220027,
+      "mode": "0o100664"
+    },
+    {
+      "name": ".lock",
+      "size": 0,
+      "mode": "0o100666"
+    },
+    {
+      "name": "fastz.db",
+      "size": 7621048,
+      "mode": "0o100664"
+    },
+    {
+      "name": "fast.db",
+      "size": 7621046,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_8lm_2thick.plib",
+      "size": 3084010,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_5lm_1thick.plib",
+      "size": 3066884,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_8lm_1thick.plib",
+      "size": 3084010,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_4lm_1thick.plib",
+      "size": 3061174,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical_leakage.lib",
+      "size": 1762950,
+      "mode": "0o100664"
+    },
+    {
+      "name": "slow.db",
+      "size": 7621046,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_9lm_2thick.plib",
+      "size": 3089720,
+      "mode": "0o100664"
+    },
+    {
+      "name": "slow.lib",
+      "size": 16122870,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical.lib",
+      "size": 16172268,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_8lm_1thick.pdb",
+      "size": 975492,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_6lm_2thick.plib",
+      "size": 3072592,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_7lm_1thick.pdb",
+      "size": 974078,
+      "mode": "0o100664"
+    },
+    {
+      "name": "typical.db",
+      "size": 7621052,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_4lm_2thick.pdb",
+      "size": 969840,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_6lm_1thick.pdb",
+      "size": 972664,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_7lm_1thick.plib",
+      "size": 3078302,
+      "mode": "0o100664"
+    },
+    {
+      "name": "tsmc090nvtlk_7lm_2thick.pdb",
+      "size": 974082,
+      "mode": "0o100664"
+    },
+    {
+      "name": "README",
+      "size": 3291,
+      "mode": "0o100664"
+    }
+  ],
+  "status": "completed"
+}

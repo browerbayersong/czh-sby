@@ -1,0 +1,1 @@
+{"action":"fetch","run":"upload_20261025_141706_bb2a8ca2","paths":["build/icc/placement_legality.rpt","build/icc/routing_drc.rpt","build/icc/pg_connectivity.rpt","build/icc/lvs.rpt","build/icc/physical.rpt","build/icc/area.rpt","build/icc/timing_setup.rpt","build/icc/power.rpt"]}

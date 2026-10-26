@@ -1,0 +1,33 @@
+****************************************
+Report : Averaged Power
+	-nosplit
+Design : counter_8bit
+Version: K-2015.06
+Date   : Sun Oct 25 15:13:44 2026
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network           9.553e-06    0.0000    0.0000 9.553e-06 (85.09%)  i
+register                4.435e-07 3.575e-07 1.265e-07 9.275e-07 ( 8.26%)  
+combinational           3.635e-07 1.688e-07 2.143e-07 7.466e-07 ( 6.65%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 5.263e-07   ( 4.69%)
+  Cell Internal Power  = 1.036e-05   (92.28%)
+  Cell Leakage Power   = 3.408e-07   ( 3.04%)
+                         ---------
+Total Power            = 1.123e-05  (100.00%)
+
+1

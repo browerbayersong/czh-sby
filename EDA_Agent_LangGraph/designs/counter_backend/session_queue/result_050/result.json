@@ -1,0 +1,4 @@
+{
+  "status": "error",
+  "error": "RemoteError: 非法源文件路径：inputs/dc/counter_8bit.namemap：不支持的生成文件类型：inputs/dc/counter_8bit.namemap"
+}

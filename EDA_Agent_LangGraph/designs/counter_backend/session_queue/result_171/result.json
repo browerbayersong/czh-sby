@@ -1,0 +1,81 @@
+{
+  "run": "upload_20261026_130022_aadb30fa",
+  "files": [
+    {
+      "path": "build/icc.log",
+      "bytes": 34553,
+      "sha256": "dc390cb5316a9e479067fb8a7bbb4f7ad9144d38c261c36aabc972655cdd8452"
+    },
+    {
+      "path": "build/icc.status.json",
+      "bytes": 470,
+      "sha256": "b4d9e432bc6d607883307690fe4e48a210f4ee6b97b75a60c42b73146dddef8a"
+    },
+    {
+      "path": "build/drc_ai/before_drc.rpt",
+      "bytes": 4119,
+      "sha256": "0753be2b6f81ede88bd81860194096443288d534a271d3d4b436962f11163442"
+    },
+    {
+      "path": "build/drc_ai/routing_drc.rpt",
+      "bytes": 4279,
+      "sha256": "a6ddeeab93ff8a971192415a61eb02e0c9e529a296aeabf98d8514c630d8d07c"
+    },
+    {
+      "path": "build/drc_ai/pg_connectivity.rpt",
+      "bytes": 707,
+      "sha256": "3f2bd264db5a359b97c4fb7e4d0c1cf9a658a9e4da4bfd65e8e7907789f9c439"
+    },
+    {
+      "path": "build/drc_ai/lvs.rpt",
+      "bytes": 1546,
+      "sha256": "5fe42aa5fe24dc09b3de07510ca23de9796671a21754b83f7e7b8f781bdfc3b4"
+    },
+    {
+      "path": "build/drc_ai/placement_legality.rpt",
+      "bytes": 149017,
+      "sha256": "274f0d637e0342d2a88f68b760040e4f4af81234f8dac6004a2ebfde96cb4db2"
+    },
+    {
+      "path": "build/drc_ai/netlist_before.v",
+      "bytes": 2694,
+      "sha256": "ee78a036f01fb072e4609396de3a214a9c8cc37fbfa2ddfc986759a82a3f534d"
+    },
+    {
+      "path": "build/drc_ai/netlist_after.v",
+      "bytes": 2693,
+      "sha256": "01de850a5ae694c4f0d2f7315665c6259bd125c30805a55c72fe309826db5edb"
+    },
+    {
+      "path": "build/drc_ai/cell_inventory_before.txt",
+      "bytes": 458,
+      "sha256": "246e835709e6229b66293d6d12beef7394e7ccbe86c10d030b93bf91e0ebca35"
+    },
+    {
+      "path": "build/drc_ai/cell_inventory_after.txt",
+      "bytes": 458,
+      "sha256": "246e835709e6229b66293d6d12beef7394e7ccbe86c10d030b93bf91e0ebca35"
+    },
+    {
+      "path": "build/drc_ai/counter_8bit.routed.v",
+      "bytes": 2699,
+      "sha256": "be60cdce2784afd3b08a8b829e377290f3d4fd0fc102eeb3c4f5457be938a28e"
+    },
+    {
+      "path": "build/drc_ai/counter_8bit.sdc",
+      "bytes": 3750,
+      "sha256": "fb55e80861fda01da681d1bfcd7326988cf5d1c7966770c9a734a4e93cb93779"
+    },
+    {
+      "path": "build/drc_ai/counter_8bit.gds",
+      "bytes": 28672,
+      "sha256": "e3936ef0103a576e34ebeb692ceea5006ef0b44e027f4d38f591dacba462ece3"
+    },
+    {
+      "path": "build/drc_ai/drc_details.txt",
+      "bytes": 205,
+      "sha256": "e522578f22bf0b8e5069716e2e8b3d6c867aba3228e01a6ce81aab9c7ad46ed0"
+    }
+  ],
+  "status": "completed"
+}

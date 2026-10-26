@@ -1,0 +1,66 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# Persistence check without starting the GUI (which can wait on exit dialogs).
+source generated/scripts/config.tcl
+VSS
+set_app_var target_library [list $EDA_DB]
+/opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+set_app_var synthetic_library [list standard.sldb]
+standard.sldb
+set_app_var link_library [concat [list *] [list $EDA_DB]]
+* /opt/Foundary_Library/TSMC90/aci/sc-x/synopsys/typical.db
+set_host_options -max_cores 1
+1
+file mkdir ../build/drc_verify
+if {[catch {
+    open_mw_lib /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261026_130102_35ef2344/build/drc_ai/counter_mw
+    open_mw_cel -readonly counter_8bit
+    redirect -file ../build/drc_verify/routing_drc.rpt {verify_zrt_route -drc true -open_net true}
+    redirect -file ../build/drc_verify/pg_connectivity.rpt {verify_pg_nets}
+    redirect -file ../build/drc_verify/lvs.rpt {verify_lvs}
+    redirect -file ../build/drc_verify/placement_legality.rpt {check_legality -verbose}
+    write_verilog -no_physical_only_cells ../build/drc_verify/saved_netlist.v
+    puts "EDA_SAVED_DRC_VERIFY_COMPLETE"
+} message]} {puts "EDA_VERIFY_FATAL $message"; exit 2}
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /opt/Foundary_Library/TSMC90/aci/sc-x/astro/tsmc090g_fram (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+	6 (Main Library) <==> 9 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 6
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 66
+	Main Library (counter_mw)         |	Reference Library (tsmc090g_fram)
+	Cut Layer       VIA5 (360, 360)   |	VIA5 (130, 130)
+	Lower Layer     M5 (80, 30)       |	M5 (50, 5)
+	Upper Layer     M6 (30, 80)       |	M6 (5, 50)	 (MWLIBP-324)
+Information: Opened "counter_8bit.CEL;1" from "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261026_130102_35ef2344/build/drc_ai/counter_mw" library. (MWUI-068)
+Generating description for top level cell.
+Processing module counter_8bit_DW01_inc_0
+Processing module counter_8bit
+Elapsed =    0:00:00, CPU =    0:00:00
+Write verilog completed successfully.
+EDA_SAVED_DRC_VERIFY_COMPLETE
+exit 0
+
+Memory usage for main task 198 Mbytes.
+Memory usage for this session 198 Mbytes.
+CPU usage for this session 4 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

@@ -1,0 +1,181 @@
+{
+  "format": "windows-copy-to-linux-milkyway-v1",
+  "source_directory": "drc_ai",
+  "source_modified": false,
+  "restoration": "Recognized CEL/err ^% version separators restored to colon",
+  "scope": "Prepared backup only; not reopened in ICC after extraction",
+  "excluded_transient_locks": [
+    "counter_mw/.lock"
+  ],
+  "files": [
+    {
+      "copied_path": "before_drc.rpt",
+      "linux_archive_path": "drc_ai/before_drc.rpt",
+      "bytes": 4119,
+      "sha256": "0753be2b6f81ede88bd81860194096443288d534a271d3d4b436962f11163442"
+    },
+    {
+      "copied_path": "cell_inventory_after.txt",
+      "linux_archive_path": "drc_ai/cell_inventory_after.txt",
+      "bytes": 458,
+      "sha256": "246e835709e6229b66293d6d12beef7394e7ccbe86c10d030b93bf91e0ebca35"
+    },
+    {
+      "copied_path": "cell_inventory_before.txt",
+      "linux_archive_path": "drc_ai/cell_inventory_before.txt",
+      "bytes": 458,
+      "sha256": "246e835709e6229b66293d6d12beef7394e7ccbe86c10d030b93bf91e0ebca35"
+    },
+    {
+      "copied_path": "counter_8bit.gds",
+      "linux_archive_path": "drc_ai/counter_8bit.gds",
+      "bytes": 28672,
+      "sha256": "4b86f4d409c2e7e8bea3e7530e0b2f680cb7c5ffba0635477e6c1bb8c792039c"
+    },
+    {
+      "copied_path": "counter_8bit.routed.v",
+      "linux_archive_path": "drc_ai/counter_8bit.routed.v",
+      "bytes": 2699,
+      "sha256": "9a59e8a35761fdc4673983beff3ecc98d56585298f7529d9954aa3c9d2f82621"
+    },
+    {
+      "copied_path": "counter_8bit.sdc",
+      "linux_archive_path": "drc_ai/counter_8bit.sdc",
+      "bytes": 3750,
+      "sha256": "f8cc78659901e4ab4738c7ca545eef47bdf6dd21c2fb6c7efae2cac1f84fef15"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1",
+      "bytes": 94949,
+      "sha256": "74ca01b4938e9053e91c5fc2aef1cb8aec9aee22c6e633bc70abb64753a3d538"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1_14",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1_14",
+      "bytes": 483,
+      "sha256": "efb3a940950f26d49378f7c662184c18d594001d830541a9b7d03292f8e24ab1"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1_15",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1_15",
+      "bytes": 325,
+      "sha256": "f6ad37b0633840d0c479cd9e8590b88536819e171fa43acb5eebde67304a1e90"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1_16",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1_16",
+      "bytes": 329,
+      "sha256": "cb9f9cf8731fc50b194951aa97d2a2ca2c375110bfc38b4ccdd10e4da597a17a"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1_17",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1_17",
+      "bytes": 314,
+      "sha256": "3a99bb6ac7971db96c01017dda6b5bb18caa001c17e441cb763bb69d8242f61d"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1_18",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1_18",
+      "bytes": 280,
+      "sha256": "5cb54de9425906cdcb33c2190dc3e8dff3aecab533b5707ffbc5ba2e47be88ba"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1_19",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1_19",
+      "bytes": 272,
+      "sha256": "f8b3fb217c60881fa9c2d9767273b91a75ad32628dd52494dab148a9e7e4901c"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1_20",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1_20",
+      "bytes": 251,
+      "sha256": "40c315ec64320f6cf9a7aaefd441e8416a3915c5a253ebdf9357ee84adac5857"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1_21",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1_21",
+      "bytes": 54,
+      "sha256": "8276f5ef38fd0058c61b7da0f1677558fa3448a13365eaa1c04a0287b09c39b6"
+    },
+    {
+      "copied_path": "counter_mw/CEL/counter_8bit^%1_23",
+      "linux_archive_path": "drc_ai/counter_mw/CEL/counter_8bit:1_23",
+      "bytes": 20224,
+      "sha256": "11dadff74f9d88b4576cefb0fbb41d60ce96ef3376126863500ae798d25eddc2"
+    },
+    {
+      "copied_path": "counter_mw/err/counter_8bit^%1",
+      "linux_archive_path": "drc_ai/counter_mw/err/counter_8bit:1",
+      "bytes": 1397,
+      "sha256": "5b6ae4a35f75d1a58a5a1ac6594f684048a8be9848904b69b9c8d551a186684c"
+    },
+    {
+      "copied_path": "counter_mw/err/counter_8bit_lvs^%1",
+      "linux_archive_path": "drc_ai/counter_mw/err/counter_8bit_lvs:1",
+      "bytes": 1908,
+      "sha256": "c05164de8851f6ac9f62e669129f8becc97f2db541cdd6cf4112c3237e3501ed"
+    },
+    {
+      "copied_path": "counter_mw/lib",
+      "linux_archive_path": "drc_ai/counter_mw/lib",
+      "bytes": 226582,
+      "sha256": "1be8957a260e6933a5d29e63b5eb70ceff085f66ba01e1bb85b3cb1f2f09d14e"
+    },
+    {
+      "copied_path": "counter_mw/lib_1",
+      "linux_archive_path": "drc_ai/counter_mw/lib_1",
+      "bytes": 1987,
+      "sha256": "8d12b35ce745c1a03f3e2461e5147171c0a1c485e9e30fdafca56ace28e3246b"
+    },
+    {
+      "copied_path": "counter_mw/lib_bck",
+      "linux_archive_path": "drc_ai/counter_mw/lib_bck",
+      "bytes": 226543,
+      "sha256": "bbb173ea626476fd48f9005c3bf5e46da6042baa692dcfc51bb8a062ddbc4646"
+    },
+    {
+      "copied_path": "drc_details.txt",
+      "linux_archive_path": "drc_ai/drc_details.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "copied_path": "lvs.rpt",
+      "linux_archive_path": "drc_ai/lvs.rpt",
+      "bytes": 1480,
+      "sha256": "00924a8349a87c4117922245f399e371c082ac498620028f12eac4bee0061f21"
+    },
+    {
+      "copied_path": "netlist_after.v",
+      "linux_archive_path": "drc_ai/netlist_after.v",
+      "bytes": 2693,
+      "sha256": "cb5c07301ed4464bfa7839fc506b22136ee9f18549a123fc9ed8c027e40adb72"
+    },
+    {
+      "copied_path": "netlist_before.v",
+      "linux_archive_path": "drc_ai/netlist_before.v",
+      "bytes": 2694,
+      "sha256": "3e5cb97bc15c4a0f832f01a087ca066c22e105a2e9e323eeb310cb9fba98a4be"
+    },
+    {
+      "copied_path": "pg_connectivity.rpt",
+      "linux_archive_path": "drc_ai/pg_connectivity.rpt",
+      "bytes": 707,
+      "sha256": "3f2bd264db5a359b97c4fb7e4d0c1cf9a658a9e4da4bfd65e8e7907789f9c439"
+    },
+    {
+      "copied_path": "placement_legality.rpt",
+      "linux_archive_path": "drc_ai/placement_legality.rpt",
+      "bytes": 149016,
+      "sha256": "f703703866bb06c4098eb3ebeb09080bc1be3b125a2421fd7364cd2298dbad76"
+    },
+    {
+      "copied_path": "routing_drc.rpt",
+      "linux_archive_path": "drc_ai/routing_drc.rpt",
+      "bytes": 4246,
+      "sha256": "4e24ba57692d3e60d2e3989d8aa511a43b0c611e9338939dac5b457b71b3f777"
+    }
+  ],
+  "archive_sha256": "7d7ee9bd3e79c0dbfd5ece440daf8df68b584b0927131126422a91c2bd8aaa63"
+}

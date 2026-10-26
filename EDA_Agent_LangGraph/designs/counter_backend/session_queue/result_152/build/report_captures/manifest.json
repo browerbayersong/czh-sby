@@ -1,0 +1,50 @@
+[
+  {
+    "content": "Exact original report lines displayed by gnome-terminal", 
+    "image": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_154213_3a20548a/build/report_captures/dc_power.png", 
+    "input_events_sent": false, 
+    "name": "dc_power", 
+    "source": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_002/build/dc/power.rpt", 
+    "source_sha256": "0bdb297adbefebde25c4d002694edc35173efe0a506af3afc27c1e47fe78b9ab"
+  }, 
+  {
+    "content": "Exact original report lines displayed by gnome-terminal", 
+    "image": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_154213_3a20548a/build/report_captures/dc_timing.png", 
+    "input_events_sent": false, 
+    "name": "dc_timing", 
+    "source": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_002/build/dc/timing_setup.rpt", 
+    "source_sha256": "32f4709bba87b1fa9e028e69842b9915cc0164847335fda128310b06e0cf6115"
+  }, 
+  {
+    "content": "Exact original report lines displayed by gnome-terminal", 
+    "image": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_154213_3a20548a/build/report_captures/icc_drc.png", 
+    "input_events_sent": false, 
+    "name": "icc_drc", 
+    "source": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/routing_drc.rpt", 
+    "source_sha256": "bd3e786178a77090d5e26c2a6b756d440ed8665ab05186322c492df8fda78931"
+  }, 
+  {
+    "content": "Exact original report lines displayed by gnome-terminal", 
+    "image": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_154213_3a20548a/build/report_captures/icc_lvs.png", 
+    "input_events_sent": false, 
+    "name": "icc_lvs", 
+    "source": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/lvs.rpt", 
+    "source_sha256": "f23f81b7d92bcb3974ce28f3c63e71aa2c20ce1899cb950084be0a273a2db162"
+  }, 
+  {
+    "content": "Exact original report lines displayed by gnome-terminal", 
+    "image": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_154213_3a20548a/build/report_captures/pt_power.png", 
+    "input_events_sent": false, 
+    "name": "pt_power", 
+    "source": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_152609_317c14dc/build/pt_estimate/power.rpt", 
+    "source_sha256": "3ecbb6a10da7d58f0574c6552f080c58dd20331c5414f4936eea6b448dd048e1"
+  }, 
+  {
+    "content": "Exact original report lines displayed by gnome-terminal", 
+    "image": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_154213_3a20548a/build/report_captures/pt_timing.png", 
+    "input_events_sent": false, 
+    "name": "pt_timing", 
+    "source": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_152609_317c14dc/build/pt_estimate/timing_setup.rpt", 
+    "source_sha256": "ee2dab2f68c5c3383361e37bffc194d9ffa690de9253132164e7c2504c9217e9"
+  }
+]

@@ -1,0 +1,2 @@
+DISPLAY=
+drwxrwxrwt. 2 root root 4096 Oct 24 14:09 /tmp/.X11-unix

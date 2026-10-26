@@ -1,0 +1,207 @@
+{
+  "overall_status": "partial_backend_results",
+  "dc": {
+    "stage": "dc",
+    "status": "completed",
+    "area": {
+      "cell_area": 242.7264,
+      "area_unit": "library_area_unit",
+      "number_of_cells": 26.0,
+      "combinational_area": 118.5408,
+      "sequential_area": 124.1856
+    },
+    "setup_timing": {
+      "worst_slack": 8.695194,
+      "reported_paths": 10,
+      "all_reported_paths_meet": true,
+      "first_data_arrival_time": 0.204806,
+      "time_unit": "1.0e-09 Second(ns)"
+    },
+    "hold_timing": {
+      "worst_slack": 0.158568,
+      "reported_paths": 10,
+      "all_reported_paths_meet": true,
+      "first_data_arrival_time": 0.28159,
+      "time_unit": "1.0e-09 Second(ns)"
+    },
+    "power": {
+      "internal": {
+        "value": 12.5549,
+        "unit": "uW",
+        "watts": 1.2554899999999999e-05
+      },
+      "switching": {
+        "value": 1.5502,
+        "unit": "uW",
+        "watts": 1.5502e-06
+      },
+      "leakage": {
+        "value": 362.3608,
+        "unit": "nW",
+        "watts": 3.623608e-07
+      },
+      "dynamic": {
+        "value": 14.1051,
+        "unit": "uW",
+        "watts": 1.41051e-05
+      },
+      "total": {
+        "value": 1.44674608e-05,
+        "unit": "W",
+        "watts": 1.44674608e-05,
+        "derived_from": [
+          "dynamic",
+          "leakage"
+        ]
+      }
+    },
+    "units": {
+      "time": "1.0e-09 Second(ns)",
+      "capacitive_load": "1.0e-12 Farad(pF)",
+      "power": "N/A",
+      "voltage": "1 Volt",
+      "resistance": "1000 Ohm(kOhm)"
+    },
+    "routing_drc": null,
+    "power_method": "read accompanying switching-activity/annotation report; not inferred from file existence"
+  },
+  "icc": {
+    "run": "upload_20261025_143839_f96edb1f",
+    "overall_status": "residual_drc",
+    "process_status": {
+      "boot_id": "db31cb71-ca58-4eb5-b601-7cfefae05c41",
+      "finished_epoch": 1792910351.416367,
+      "process_start_ticks": "278258",
+      "script": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/src/generated/scripts/icc_layout_only.tcl",
+      "started_epoch": 1792910331.601528,
+      "state": "exited",
+      "timeout_seconds": 180,
+      "tool": "icc",
+      "tool_exit_code": 2,
+      "tool_pid": 9229,
+      "worker_pid": 9228
+    },
+    "area": {
+      "cell_area": 242.7264,
+      "area_unit": "library_area_unit",
+      "number_of_cells": 18.0,
+      "combinational_area": 118.5408,
+      "sequential_area": 124.1856
+    },
+    "routing": {
+      "routing_drc_errors": 1,
+      "open_nets": 0,
+      "nets_checked": 36,
+      "excluded_ports": 0,
+      "unplaced_cells": 0,
+      "check_scope": "ICC routing verification; not foundry signoff DRC",
+      "routing_clean": false
+    },
+    "pg": {
+      "nets_checked": 2,
+      "nets_with_errors": 0,
+      "clean": true
+    },
+    "lvs": {
+      "floating_ports": 0,
+      "floating_nets": 0,
+      "short_nets": 0,
+      "open_nets": 0,
+      "electrical_equivalence_errors": 0,
+      "must_join_errors": 0,
+      "clean": true
+    },
+    "remaining_drc": {
+      "type": "Diff net spacing",
+      "layer": "M1",
+      "nets": [
+        "count[5]",
+        "N7"
+      ],
+      "bbox_um": [
+        [
+          8.27,
+          16.625
+        ],
+        [
+          8.405,
+          17.04
+        ]
+      ]
+    },
+    "rc_method": "Run-local technology file derived from matching LEF; nominal 1D library RC; no TLU+",
+    "scope": "ICC built-in routing and connectivity checks, not foundry signoff"
+  },
+  "pt_estimate": {
+    "run": "upload_20261025_152609_317c14dc",
+    "status": "completed",
+    "method": "Statistical wire-load model tsmc090_wl10; no SPEF, not extracted post-route signoff",
+    "source_physical_run": "upload_20261025_143839_f96edb1f",
+    "source_drc_count": 1,
+    "units": {
+      "time": "1e-09 Second",
+      "capacitive_load": "1e-12 Farad",
+      "power": null,
+      "voltage": "1 Volt",
+      "resistance": "1000 Ohm"
+    },
+    "setup_timing": {
+      "worst_slack": 8.665744,
+      "reported_paths": 10,
+      "all_reported_paths_meet": true,
+      "first_data_arrival_time": 1.157023,
+      "time_unit": "1e-09 Second"
+    },
+    "hold_timing": {
+      "worst_slack": 0.155435,
+      "reported_paths": 10,
+      "all_reported_paths_meet": true,
+      "first_data_arrival_time": 0.214962,
+      "time_unit": "1e-09 Second"
+    },
+    "power": {
+      "internal": {
+        "value": 1.301e-05,
+        "unit": "W",
+        "watts": 1.301e-05
+      },
+      "switching": {
+        "value": 1.723e-06,
+        "unit": "W",
+        "watts": 1.723e-06
+      },
+      "leakage": {
+        "value": 3.597e-07,
+        "unit": "W",
+        "watts": 3.597e-07
+      },
+      "total": {
+        "value": 1.51e-05,
+        "unit": "W",
+        "watts": 1.51e-05
+      }
+    },
+    "activity": {
+      "direct_saif_nets": 11,
+      "total_nets": 34,
+      "direct_percent": 32.35,
+      "fully_annotated_leaf_cells": 0,
+      "leaf_cells": 25,
+      "reported_after_propagation_nets_with_toggle": 34,
+      "scope": "100% after propagation is not 100% direct SAIF annotation"
+    },
+    "warnings": [
+      "UITE-502: each timing report is limited to max_paths=10, six further endpoints not printed"
+    ],
+    "total_power_source": "Native report_power -verbose, explicit Dynamic Power Units = 1 W and Leakage Power Units = 1 W"
+  },
+  "remaining": [
+    "One ICC M1 spacing DRC",
+    "Matching TLU+ / detailed RC extraction and SPEF-based PT analysis"
+  ],
+  "not_claimed": [
+    "Foundry signoff",
+    "Autonomous LLM PPA optimization",
+    "Full backend acceptance"
+  ]
+}

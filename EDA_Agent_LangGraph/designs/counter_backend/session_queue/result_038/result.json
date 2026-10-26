@@ -1,0 +1,86 @@
+{
+  "run": "upload_002",
+  "files": [
+    {
+      "path": "build/dc.log",
+      "bytes": 11242,
+      "sha256": "7ba4752f0ec8c7dfa129cd2c35c3bf1a1cf193d147d44333d984b0ddf532cea6"
+    },
+    {
+      "path": "build/dc/check_design.rpt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "build/dc/units.rpt",
+      "bytes": 427,
+      "sha256": "f3f72dc6dfd47a4b4cc141c5de8800431509afa6dea9511cae7e0c1695a900c9"
+    },
+    {
+      "path": "build/dc/area.rpt",
+      "bytes": 1923,
+      "sha256": "4b9b29a9c7acc396bf23697ddc99f4c4c3b55608008880b2a38e2fc13886cb2e"
+    },
+    {
+      "path": "build/dc/timing_setup.rpt",
+      "bytes": 13252,
+      "sha256": "32f4709bba87b1fa9e028e69842b9915cc0164847335fda128310b06e0cf6115"
+    },
+    {
+      "path": "build/dc/timing_hold.rpt",
+      "bytes": 14154,
+      "sha256": "540a2fe9eb9a05d729fba5ee24851151fcc2ef8376c46dc2fefb5b6d18a32ba4"
+    },
+    {
+      "path": "build/dc/power.rpt",
+      "bytes": 2027,
+      "sha256": "0bdb297adbefebde25c4d002694edc35173efe0a506af3afc27c1e47fe78b9ab"
+    },
+    {
+      "path": "build/dc/qor.rpt",
+      "bytes": 2392,
+      "sha256": "27bec11b72d39176bcb4e6d7b03269261e3e1f48f00cd7db0386b7de51feb6da"
+    },
+    {
+      "path": "build/dc/constraints.rpt",
+      "bytes": 247,
+      "sha256": "d721868121c4fd2ee27aaaa55e334025e51586b16528974cf047615865dce122"
+    },
+    {
+      "path": "build/dc/activity_annotation.rpt",
+      "bytes": 78,
+      "sha256": "4c94973381a446c2f1d12366b1c9aa66fa00b3fd41ddf7b37a0a2508ec2e9e7c"
+    },
+    {
+      "path": "build/dc/activity_coverage.rpt",
+      "bytes": 778,
+      "sha256": "6cd21586ef6f4460d3b3d6ea0776924a46cb1b2e5c1fab096331e746da9e4b94"
+    },
+    {
+      "path": "build/dc/counter_8bit.mapped.v",
+      "bytes": 2302,
+      "sha256": "aa30c041dbc2b1f48a52d6566b84aa7e1ad650906ef9a0a93d73f8815313f4ad"
+    },
+    {
+      "path": "build/dc/counter_8bit.sdc",
+      "bytes": 1742,
+      "sha256": "4329531d90e0840350a67c23e5bc809c403a85317d628eba359cfb130b147983"
+    },
+    {
+      "path": "build/dc/counter_8bit.namemap",
+      "bytes": 655,
+      "sha256": "23eb563933dbc6f105da99e396399bf7956bf14cf5ee0a78654406d7e37ea8ef"
+    },
+    {
+      "path": "build/dc/counter_8bit.sdf",
+      "bytes": 18413,
+      "sha256": "bdda5c3e6236271700d501cacfb07d9172978341ad4e853e68d6a34090dc33d3"
+    },
+    {
+      "path": "snapshot_manifest.json",
+      "bytes": 1170,
+      "sha256": "c4b9ab63d21bce0b20afa1769bad9344bd65278231e338e4f945d86efb569f59"
+    }
+  ],
+  "status": "completed"
+}

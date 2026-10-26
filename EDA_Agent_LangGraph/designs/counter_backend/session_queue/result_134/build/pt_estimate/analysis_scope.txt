@@ -1,0 +1,5 @@
+Input: routed netlist /home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_8bit.routed.v
+Connectivity/LVS clean; source routing DRC count: 1. Manufacturing clearance is not claimed.
+Interconnect: tsmc090_wl10 statistical wire-load model supplied by the same logical library.
+PVT: TT, 1.0 V, 25 C. Activity: verified RTL SAIF, with tool annotation coverage recorded.
+No SPEF is read. This is an estimated netlist analysis, not detailed post-route extraction or signoff.

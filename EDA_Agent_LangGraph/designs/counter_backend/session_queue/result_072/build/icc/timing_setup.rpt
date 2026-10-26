@@ -1,0 +1,40 @@
+
+  Loading design 'counter_8bit'
+Error: Layer 'M1' is missing the 'capacitance' attribute. (PSYN-100)
+Warning: Layer 'M1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Error: Layer 'M2' is missing the 'capacitance' attribute. (PSYN-100)
+Warning: Layer 'M2' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Error: Layer 'M3' is missing the 'capacitance' attribute. (PSYN-100)
+Warning: Layer 'M3' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Error: Layer 'M4' is missing the 'capacitance' attribute. (PSYN-100)
+Warning: Layer 'M4' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Error: Layer 'M5' is missing the 'capacitance' attribute. (PSYN-100)
+Warning: Layer 'M5' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Error: Layer 'M6' is missing the 'capacitance' attribute. (PSYN-100)
+Warning: Layer 'M6' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+
+
+
+
+Error: Command 'extract_rc' had an error while executing. Discontinuing. (PSYN-003)
+Error: extract_rc has abnormally terminated.  (OPT-100)
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+Warning: Clock network timing may not be up-to-date since only 0.000000 percentage of clock nets are routed. (TIM-233)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : counter_8bit
+Version: L-2016.03-SP1
+Date   : Sun Oct 25 14:04:43 2026
+****************************************
+
+Operating Conditions: typical   Library: typical
+
+Information: Percent of Arnoldi-based delays =  0.00%
+No paths.
+
+1

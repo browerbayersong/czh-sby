@@ -1,0 +1,19 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	diagnose_and_propose(diagnose_and_propose)
+	execute_copy(execute_copy)
+	verify_actual_reports(verify_actual_reports)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> diagnose_and_propose;
+	diagnose_and_propose --> execute_copy;
+	execute_copy --> verify_actual_reports;
+	verify_actual_reports -. &nbsp;done&nbsp; .-> __end__;
+	verify_actual_reports -. &nbsp;retry&nbsp; .-> diagnose_and_propose;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

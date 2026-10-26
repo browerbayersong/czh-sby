@@ -1,0 +1,4 @@
+{
+  "status": "error",
+  "error": "SSHException: SSH session not active"
+}

@@ -1,0 +1,27 @@
+{
+  "target": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_003",
+  "stop_attempted": false,
+  "icc_stop_status": "unconfirmed",
+  "files": [
+    {
+      "path": "build/icc.log",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/icc/library_check.rpt",
+      "error": ""
+    },
+    {
+      "path": "build/icc/units.rpt",
+      "error": ""
+    },
+    {
+      "path": "build/icc/rc_model.txt",
+      "error": ""
+    },
+    {
+      "path": "build/icc/routing_drc.rpt",
+      "error": ""
+    }
+  ]
+}

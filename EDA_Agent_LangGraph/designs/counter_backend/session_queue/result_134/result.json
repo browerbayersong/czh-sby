@@ -1,0 +1,61 @@
+{
+  "run": "upload_20261025_151318_9699f6f2",
+  "files": [
+    {
+      "path": "build/pt.status.json",
+      "bytes": 452,
+      "sha256": "543e18d0d33407e1239ba04aba500b7942410e8c04e409cdec5b523e981c678c"
+    },
+    {
+      "path": "build/pt.log",
+      "bytes": 6399,
+      "sha256": "80b15b1c2e73f5544ce574d20f2afb929baa4921fd8c804a69721d379fbc793e"
+    },
+    {
+      "path": "build/pt_estimate/analysis_scope.txt",
+      "bytes": 517,
+      "sha256": "619dbe9cebdbd1ef0820937519af30e605806afdd18c42c7af56442e7cfcb05e"
+    },
+    {
+      "path": "build/pt_estimate/timing_setup.rpt",
+      "bytes": 311,
+      "sha256": "9401139a4202b8120465c36b5a7d80c4818f699bc6fb10ce4e3fbe7c8669b9e7"
+    },
+    {
+      "path": "build/pt_estimate/timing_hold.rpt",
+      "bytes": 311,
+      "sha256": "884d33a50bb4a2b60c18f7648064b83f9d82915c3e73dfcf4a989852f6bc9710"
+    },
+    {
+      "path": "build/pt_estimate/units.rpt",
+      "bytes": 510,
+      "sha256": "e71504c7a894d49f096a68b94aa9d826815a2dd0eb2398c06c15aaee66510efd"
+    },
+    {
+      "path": "build/pt_estimate/check_timing.rpt",
+      "bytes": 526,
+      "sha256": "edda3400d7f1d7378932f9d3593e29f87698c838ac6c98e08d044ca5339d2639"
+    },
+    {
+      "path": "build/pt_estimate/constraints.rpt",
+      "bytes": 217,
+      "sha256": "96787a081b550e8c0fd829d5e47b1d31d10dd52e2d336598e201c9a7d26830e1"
+    },
+    {
+      "path": "build/pt_estimate/power.rpt",
+      "bytes": 1286,
+      "sha256": "309e88e9c4670635c18f803552448f7ced3a0549bc454175f6b714e1d795ba44"
+    },
+    {
+      "path": "build/pt_estimate/activity_annotation.rpt",
+      "bytes": 68,
+      "sha256": "2242a3d60472eb307efcd600a062c8e9fa30e4058cf56b5cdeab27c0a4756b37"
+    },
+    {
+      "path": "build/pt_estimate/activity_coverage.rpt",
+      "bytes": 943,
+      "sha256": "36d81508d53d300eca5b70bde1e15278409ffa7de8dfb8f616b698046a598493"
+    }
+  ],
+  "status": "completed"
+}

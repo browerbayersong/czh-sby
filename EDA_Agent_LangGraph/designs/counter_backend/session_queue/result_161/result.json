@@ -1,0 +1,26 @@
+{
+  "run": "upload_20261026_125221_02e7d9cd",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 443,
+      "sha256": "ca6a5c8a9a5c90ab3a8ec54ae5c539eb47afdc0692307d1a725794df6974cb98"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 3945,
+      "sha256": "f78178e52f2f7528335095efb4eae3ead10f34247c852a461a248fffb93dbe0b"
+    },
+    {
+      "path": "build/drc_probe/commands.txt",
+      "bytes": 16224,
+      "sha256": "5ca8d888147f0093f28362124c60004eae190fc7bcb2c2783576fe116d417b94"
+    },
+    {
+      "path": "build/drc_probe/geometry.txt",
+      "bytes": 3727,
+      "sha256": "8e49afcab3083c2c8014082351d374d2df6c7501395cc253ded4f89a519865c3"
+    }
+  ],
+  "status": "completed"
+}

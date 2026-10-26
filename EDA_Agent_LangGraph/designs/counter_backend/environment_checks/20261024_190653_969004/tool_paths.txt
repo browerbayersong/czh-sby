@@ -1,0 +1,7 @@
+/opt/Synopsys/Synplify2015/bin/dc_shell
+/opt/Synopsys/Synplify2015/bin/design_vision
+/opt/Synopsys/ICC2016/bin/icc_shell
+/opt/Synopsys/PrimeTime2015/bin/pt_shell
+/opt/Synopsys/VCS2014/bin/vcs
+/opt/Synopsys/VCS2014/bin/urg
+/opt/Synopsys/PrimeTime2015/bin/pt_shell

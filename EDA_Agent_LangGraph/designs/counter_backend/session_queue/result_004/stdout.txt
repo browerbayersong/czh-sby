@@ -1,0 +1,2 @@
+/opt/Synopsys/Synplify2015/bin/vcd2saif
+/opt/Synopsys/PrimeTime2015/bin/vcd2saif

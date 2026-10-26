@@ -1,0 +1,13 @@
+{
+  "run_id": "346bac0e6023442590536d9e2add0d21",
+  "run_label": "upload_20261025_134402_346bac0e",
+  "mode": "upload",
+  "when": "2026-10-25T13:44:02",
+  "file_count": 18,
+  "upload_ok": false,
+  "status": "upload_failed",
+  "project_directory": "/home/IC/Desktop/EDA_Projects/counter_backend",
+  "remote_directory": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_134402_346bac0e",
+  "source_snapshot": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_134402_346bac0e/src",
+  "error": "TimeoutError: "
+}

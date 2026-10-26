@@ -1,0 +1,16 @@
+{
+  "run": "upload_002",
+  "files": [
+    {
+      "path": "build/dc.log",
+      "bytes": 11242,
+      "sha256": "7ba4752f0ec8c7dfa129cd2c35c3bf1a1cf193d147d44333d984b0ddf532cea6"
+    },
+    {
+      "path": "build/dc/area.rpt",
+      "bytes": 1923,
+      "sha256": "4b9b29a9c7acc396bf23697ddc99f4c4c3b55608008880b2a38e2fc13886cb2e"
+    }
+  ],
+  "status": "completed"
+}

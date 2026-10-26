@@ -1,0 +1,46 @@
+Create error cell counter_8bit_lvs.err ...
+
+-- LVS START : --
+Total area error in layer 0 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 1 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 2 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 3 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 4 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 5 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 6 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 7 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 8 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 9 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 10 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 11 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 12 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 13 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 14 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+Total area error in layer 15 is 0.  Elapsed =    0:00:00, CPU =    0:00:00
+** Total Floating ports are 0.
+** Total Floating Nets are 2.
+** Total SHORT Nets are 0.
+ERROR : Logical Net VSS is open.
+	Node 42 is in the region ((1,17),(27,19)).
+	Node 45 is in the region ((1,12),(27,13)).
+	Node 46 is in the region ((1,22),(27,24)).
+	Node 38 is in the region ((1,7),(27,8)).
+	Node 40 is in the region ((1,2),(27,3)).
+	Total seperated nodes are 5.
+	Potential connection region ((0, 2), (28, 23)).
+ERROR : Logical Net VDD is open.
+	Node 44 is in the region ((2,14),(26,16)).
+	Node 43 is in the region ((2,19),(26,21)).
+	Node 47 is in the region ((2,24),(26,25)).
+	Node 39 is in the region ((2,9),(26,11)).
+	Node 41 is in the region ((2,4),(26,6)).
+	Total seperated nodes are 5.
+	Potential connection region ((1, 5), (27, 25)).
+** Total OPEN Nets are 2.
+** Total Electrical Equivalent Error are 0.
+** Total Must Joint Error are 0.
+
+-- LVS END : --
+Elapsed =    0:00:00, CPU =    0:00:00
+Update error cell ...
+1

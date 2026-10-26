@@ -1,0 +1,16 @@
+{
+  "path": "/opt/Foundary_Library",
+  "entries": [
+    {
+      "name": "SMIC180",
+      "size": 4096,
+      "mode": "0o40700"
+    },
+    {
+      "name": "TSMC90",
+      "size": 4096,
+      "mode": "0o40755"
+    }
+  ],
+  "status": "completed"
+}

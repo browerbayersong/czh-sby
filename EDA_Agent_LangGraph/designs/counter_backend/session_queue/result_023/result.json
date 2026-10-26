@@ -1,0 +1,4 @@
+{
+  "status": "error",
+  "error": "RemoteError: SSH 连接失败（IC@192.168.142.129:22）：TimeoutError: timed out"
+}

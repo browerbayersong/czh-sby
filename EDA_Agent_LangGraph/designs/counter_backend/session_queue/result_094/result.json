@@ -1,0 +1,19 @@
+{
+  "run": "upload_20261025_142230_0476a24e",
+  "files": [
+    {
+      "path": "build/icc.log",
+      "bytes": 153863,
+      "sha256": "18b3d583ba88bbf906b7483426a912903829a964a33cc7f96303ae1e23a1a567"
+    },
+    {
+      "path": "build/rc_probe/estimate.spef",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/rc_probe/estimate.spef.max",
+      "error": "[Errno 2] No such file"
+    }
+  ],
+  "status": "completed"
+}

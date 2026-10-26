@@ -1,0 +1,22 @@
+为现有的、已通过真实 VCS 验证的计数器工程生成仿真脚本。
+只输出一个文件 scripts/run_vcs.sh，不修改或复制 RTL 和 Testbench。
+参考已有 generated/rtl/counter_8bit.v 和 generated/tb/tb_counter_8bit.v。
+目标顶层 tb_counter_8bit；目标环境为 Linux bash、VCS I-2014.03。
+运行器会先创建独立快照 src/ 和相邻的 build/，并从 src/ 启动本脚本。
+脚本本身不要 cd、mkdir、导出环境变量、清理文件或打印仿真通过标记。
+首行 #!/bin/bash，随后 set -euo pipefail。允许注释、空行、反斜杠续行。
+之后必须只有三个工具命令，依次编译、仿真、覆盖率报告；不可使用变量或函数。
+1. 编译命令以 timeout 300s /opt/Synopsys/VCS2014/bin/vcs 开头。
+参数必须含 -full64 -sverilog -timescale=1ns/1ps，
+-cm line+cond+fsm+tgl+branch -cm_dir ../build/cov.vdb，
+-top tb_counter_8bit -o ../build/simv，以及两个已有 Verilog 源文件的完整相对路径。
+可选 +incdir+generated/rtl 或 +incdir+generated/tb，不得加入其他参数。
+编译日志重定向 > ../build/vcs_compile.log 2>&1。
+2. 仿真命令以 timeout 120s ../build/simv 开头，参数只有
+-cm line+cond+fsm+tgl+branch -cm_dir ../build/cov.vdb，
+日志重定向 > ../build/vcs_sim.log 2>&1。
+3. 报告命令以 timeout 120s /opt/Synopsys/VCS2014/bin/urg 开头，参数只有
+-dir ../build/cov.vdb -format text -report ../build/covReport，
+日志重定向 > ../build/urg.log 2>&1。
+参数顺序可以按工具惯例组织。不要增加 echo、cat、rm、联网命令或 shell 分支。
+本轮只生成文本；运行是否通过必须以后续真实 EDA 日志为准。

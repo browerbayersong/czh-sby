@@ -1,0 +1,51 @@
+{
+  "path": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_143839_f96edb1f/build/icc/counter_mw/CEL",
+  "entries": [
+    {
+      "name": "counter_8bit:1",
+      "size": 91876,
+      "mode": "0o100664"
+    },
+    {
+      "name": "counter_8bit:1_4",
+      "size": 306,
+      "mode": "0o100664"
+    },
+    {
+      "name": "counter_8bit:1_13",
+      "size": 20224,
+      "mode": "0o100664"
+    },
+    {
+      "name": "counter_8bit:1_5",
+      "size": 335,
+      "mode": "0o100664"
+    },
+    {
+      "name": "counter_8bit:1_3",
+      "size": 481,
+      "mode": "0o100664"
+    },
+    {
+      "name": "counter_8bit:1_6",
+      "size": 338,
+      "mode": "0o100664"
+    },
+    {
+      "name": "counter_8bit:1_9",
+      "size": 251,
+      "mode": "0o100664"
+    },
+    {
+      "name": "counter_8bit:1_7",
+      "size": 294,
+      "mode": "0o100664"
+    },
+    {
+      "name": "counter_8bit:1_8",
+      "size": 276,
+      "mode": "0o100664"
+    }
+  ],
+  "status": "completed"
+}

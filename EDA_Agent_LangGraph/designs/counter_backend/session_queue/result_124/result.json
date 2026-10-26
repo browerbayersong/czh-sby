@@ -1,0 +1,53 @@
+{
+  "run": "upload_20261025_150042_56302979",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 449,
+      "sha256": "79473b08294e924ca70628d3248feed7c146c34572c0da23a281948c23c064c4"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 14243,
+      "sha256": "6dd417515c5e379d15961fbe62cbd99ed83bd8de523306120e93c0f5358bdae5"
+    },
+    {
+      "path": "build/icc/routing_drc.rpt",
+      "bytes": 4238,
+      "sha256": "98d7db9877239c5625f35cfc83e56fa13f5666771c63aa5a9d338bdd99854f20"
+    },
+    {
+      "path": "build/icc/pg_connectivity.rpt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/icc/lvs.rpt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/icc/area.rpt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/icc/physical.rpt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/icc/units.rpt",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/icc/counter_8bit.routed.v",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/icc/counter_8bit.sdc",
+      "error": "[Errno 2] No such file"
+    },
+    {
+      "path": "build/icc/counter_8bit.gds",
+      "error": "[Errno 2] No such file"
+    }
+  ],
+  "status": "completed"
+}

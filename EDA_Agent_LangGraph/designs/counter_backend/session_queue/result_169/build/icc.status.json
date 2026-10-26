@@ -1,0 +1,12 @@
+{
+  "boot_id": "86efabd5-5f2a-4c6a-9905-ed18ab887475", 
+  "process_start_ticks": "1016730", 
+  "script": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261026_130022_aadb30fa/src/generated/scripts/drc_ai_candidate_20261026_ai_01_01.tcl", 
+  "started_epoch": 1792990823.3040359, 
+  "state": "running", 
+  "timeout_seconds": 180, 
+  "tool": "icc", 
+  "tool_exit_code": null, 
+  "tool_pid": 19148, 
+  "worker_pid": 19147
+}

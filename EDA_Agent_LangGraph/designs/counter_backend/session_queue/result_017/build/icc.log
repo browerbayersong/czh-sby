@@ -1,0 +1,602 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+               Version L-2016.03-SP1 for linux64 - Apr 11, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+foreach command {create_mw_lib import_designs create_floorplan create_fp_placement place_opt clock_opt route_zrt_auto route_opt verify_zrt_route verify_pg_nets verify_lvs write_parasitics write_stream save_mw_cel report_design_physical report_power report_timing set_tlu_plus_files create_rectangular_rings preroute_standard_cells gui_start gui_zoom gui_write_window_image gui_get_current_window} {
+    puts "EDA_HELP_BEGIN $command"
+    if {[catch {help -verbose $command} message]} {puts $message}
+    puts "EDA_HELP_END $command"
+}
+EDA_HELP_BEGIN create_mw_lib
+ create_mw_lib        #  Create a milkyway library 
+   [-technology file_name]
+                          (Technology file name)
+   [-bus_naming_style bus_naming_style]
+                          (Bus naming style)
+   [-mw_reference_library lib_list]
+                          (List of reference libraries)
+   [-reference_control_file file_name]
+                          (Reference control file)
+   [-open]                (Open the library after creation)
+   libName                (Library name to create)
+
+EDA_HELP_END create_mw_lib
+EDA_HELP_BEGIN import_designs
+ import_designs       # import_designs
+   -format <files>        (Format of import design)
+   [-top design name]     (Top design name)
+   [-cell cell name]      (The cell name.)
+   [-rp_constraint rp_constraint script file name]
+                          (rp_constraint script file name.)
+   file_list              (list of files to import)
+
+EDA_HELP_END import_designs
+EDA_HELP_BEGIN create_floorplan
+ create_floorplan     # create floorplan
+   [-control_type control type]
+                          (default is aspect_ratio: 
+                           Values: aspect_ratio, width_and_height, 
+                           boundary)
+   [-core_aspect_ratio float]
+                          (core aspect ratio, default is 1)
+   [-core_utilization float]
+                          (core utilization, default is 0.7)
+   [-core_width float]    (width, default is 1)
+   [-core_height float]   (height, default is 1)
+   [-use_vertical_row]    (use vertical rows, default is horizontal)
+   [-no_double_back]      (no double back)
+   [-start_first_row]     (start first row)
+   [-flip_first_row]      (flip first row)
+   [-left_io2core float]  (left space between io to cell, default is 0)
+   [-right_io2core float] (right space between io to cell, default is 0)
+   [-bottom_io2core float]
+                          (bottom space between io to cell, default is 0)
+   [-top_io2core float]   (top space between io to cell, default is 0)
+   [-keep_macro_place]    (keep preplaced macro cells)
+   [-keep_std_cell_place] (keep preplaced standard cells)
+   [-min_pad_height]      (set the core area based on the minimum pad height)
+   [-pad_limit]           (place pads with no spaces in between)
+   [-keep_io_place]       (keep placement of terminals or pads)
+
+EDA_HELP_END create_floorplan
+EDA_HELP_BEGIN create_fp_placement
+ create_fp_placement  # Virtual flat placement
+   [-effort string]       (effort, default is Low: 
+                           Values: Low, High)
+   [-max_fanout integer]  (maximum fanout, default is 512)
+   [-no_hierarchy_gravity]
+                          (turn off hierarchy gravity)
+   [-no_legalize]         (Resulting placement will not be legalized)
+   [-incremental string]  (start from current placement (default is full placement): 
+                           Values: all, top_level_cells, plan_groups, 
+                           voltage_areas)
+   [-congestion_driven]   (Congestion driven placement)
+   [-timing_driven]       (Timing driven placement)
+   [-num_cpus integer]    (Number of CPUs used in parallel during coarse placement, default is 1)
+   [-plan_groups collection of plan groups]
+                          (collection of plan groups for incremental refine placement)
+   [-voltage_areas collection of voltage areas]
+                          (collection of voltage areas for incremental refine placement)
+   [-optimize_pins]       (Simultaneous pin assignment and placement)
+   [-consider_scan]       (Consider scan chain connectivity during placement)
+   [-write_placement_blockages]
+                          (Dump placement blockages into a file)
+   [-exploration]         (Exploration mode placement)
+
+EDA_HELP_END create_fp_placement
+EDA_HELP_BEGIN place_opt
+ place_opt            # Run place_opt
+   [-effort string]       (low | medium | high (default is medium))
+   [-area_recovery]       (enable area recovery)
+   [-optimize_dft]        (Reorder scan during placement)
+   [-consider_scan]       (consider scan chain connections during placement)
+   [-continue_on_missing_scandef]
+                          (Continue with missing scandef)
+   [-congestion]          (do congestion minimization)
+   [-cts]                 (Perform clock compilation, optimization and routing during place_opt)
+   [-optimize_icgs]       (Optimize ICGs during place_opt)
+   [-power]               (enable power optimization)
+   [-spg]                 (Use Synopsys Physical Guide)
+   [-skip_initial_placement]
+                          (Skip intial placement step and keep the current initial placement of the design)
+
+EDA_HELP_END place_opt
+EDA_HELP_BEGIN clock_opt
+ clock_opt            # Run clock_opt
+   [-operating_condition string]
+                          (min | max (default) | min_max)
+   [-no_clock_route]      (don't perform routing of clock nets.)
+   [-inter_clock_balance] (perform inter clock delay balancing.)
+   [-insert_self_gating]  (insert self gating.)
+   [-concurrent_clock_and_data]
+                          (concurrent clock and data optimization)
+   [-incremental_concurrent_clock_and_data]
+                          (concurrent clock and data optimization in incremental mode)
+   [-update_clock_latency]
+                          (update real and virtual clock object latencies.)
+   [-only_psyn]           (perform incremental optimzation only.)
+   [-only_cts]            (perform CTS, CTO and clock routing only.)
+   [-clock_trees <collection_or_string_list>]
+                          (list of clock names or collection of clock objects)
+   [-fix_hold_all_clocks] (perform hold-time violation fixing for all clocks.)
+   [-optimize_dft]        (perform scan reordering.)
+   [-power]               (perform post cts power optimization.)
+   [-area_recovery]       (perform area recovery.)
+   [-size_only]           (perform sizing only in post CTS optimization.)
+   [-congestion]          (perform congestion minimization.)
+   [-only_hold_time]      (run hold timing optimization only in post CTS optimization.)
+   [-in_place_size_only]  (perform in place sizing only in post CTS optimization.)
+   [-continue_on_missing_scandef]
+                          (continue with missing scandef)
+
+EDA_HELP_END clock_opt
+EDA_HELP_BEGIN route_zrt_auto
+ route_zrt_auto       # run zrt gr, ta and dr
+   [-max_detail_route_iterations <int>]
+                          (max number of detailed routing iterations: 
+                           Range: 1 to 1000)
+   [-stop_after_track_assignment (false|true)]
+                          (stop after track assignment (default false))
+   [-save_after_global_route (false|true)]
+                          (save cell after global route (default false))
+   [-save_after_track_assignment (false|true)]
+                          (save cell after track assignment (default false))
+   [-save_after_detail_route (false|true)]
+                          (save cell after detail route (default false))
+   [-save_cell_prefix <string>]
+                          (prefix to use for saving cells (default auto))
+   [-reuse_existing_global_route (false|true)]
+                          (do incremental routing in gr (default false))
+
+EDA_HELP_END route_zrt_auto
+EDA_HELP_BEGIN route_opt
+ route_opt            # Run route_opt
+   [-effort string]       (low | medium | high (default is medium))
+   [-xtalk_reduction]     (Enable rc_reduction during routing)
+   [-only_xtalk_reduction]
+                          (Running only xtalk reduction)
+   [-skip_initial_route]  (Skip the initial routing step)
+   [-initial_route_only]  (Only run initial route)
+   [-stage string]        (global | track | detail )
+   [-power]               (Enable Power Optimization)
+   [-incremental]         (Run incremental route_opt flow. Skip initial routing)
+   [-size_only]           (Running size_only optimization only)
+   [-num_cpus number]     (The number of CPUs to distribute detail route and search_repair route: 
+                           Range: -1 to 63)
+   [-optimize_wire_via]   (Enable optimization route pattern routing)
+   [-area_recovery]       (run area recovery)
+   [-wire_size]           (Enable wire_size during optimization)
+   [-only_wire_size]      (run timing optimization only with wire_size)
+   [-only_hold_time]      (run hold timing optimization only)
+   [-only_area_recovery]  (run area recovery only)
+   [-only_design_rule]    (only fix design rules)
+   [-only_power_recovery] (run power recovery only)
+   [-register_to_register]
+                          (Register to Register Optimization Only)
+   [-concurrent_clock_and_data]
+                          (Concurrent Clock and Data Optimizaiton)
+   [-only_concurrent_clock_and_data]
+                          (Only Concurrent Clock and Data Optimizaiton)
+
+EDA_HELP_END route_opt
+EDA_HELP_BEGIN verify_zrt_route
+ verify_zrt_route     # run verify route to check open nets and drcs
+   [-open_net (false|true)]
+                          (check open nets (default true))
+   [-nets <nets>]         (collection of nets to check for opens, antenna rules, voltage area violations)
+   [-report_all_open_nets (false|true)]
+                          (report all open nets (default false))
+   [-drc (false|true)]    (check design rule violations (default true))
+   [-antenna (false|true)]
+                          (check antenna rule violations (default true))
+   [-voltage_area (false|true)]
+                          (check voltage area violations (default true))
+   [-check_from_user_shapes (false|true)]
+                          (check DRC violations on user shapes (default false))
+   [-check_from_frozen_shapes (false|true)]
+                          (check DRC violations from frozen shapes (default false))
+   [-coordinates <{{llx1 lly1} {urx1 ury1} ....}>]
+                          (area based DRC check bounding box(es))
+
+EDA_HELP_END verify_zrt_route
+EDA_HELP_BEGIN verify_pg_nets
+ verify_pg_nets       # verify PG connectivity to the cells
+   [-error_cell cell_name]
+                          (Cell_name to save the error cell. Default: <top_cell_name>.err)
+   [-std_cell_pin_connection check | ignore]
+                          (check (default), or ignore std cell pin connections to PG)
+   [-macro_pin_connection at_least_one | all | ignore]
+                          (Check connection of at least one macro pin to PG (default), or all pins, or ignore checking)
+   [-pad_pin_connection at_least_one | all | ignore]
+                          (Check connection of at least one pad pin to PG (default), or all pins, or ignore checking)
+   [-nets {collection_of_nets}]
+                          (Collection of PG nets to check. Default: all PG nets)
+
+EDA_HELP_END verify_pg_nets
+EDA_HELP_BEGIN verify_lvs
+ verify_lvs           # Detects LVS violations
+   [-error_cell cell_name]
+                          (Cell_name to save the error cell. Default: <current_cell_name>_lvs.err)
+   [-ignore_floating_port]
+                          (Do not check floating port. Default: check)
+   [-ignore_floating_net] (Do not check floating net. Default: check)
+   [-ignore_short]        (Do not check short. Default: check)
+   [-ignore_open]         (Do not check open. Default: check)
+   [-ignore_eeq_pin]      (Do not check EEQ Pin. Default: check)
+   [-ignore_min_area]     (Do not check minimun area. Default: check)
+   [-use_notch_gap_fill_cell]
+                          (Use fill gap notch cell. Default: not use)
+   [-ignore_blockage_overlap]
+                          (Do not check blockage overlap. Default: check)
+   [-check_single_pin_net_for_floating_port]
+                          (Do check single pin net for floating port. Default: not check)
+   [-check_single_pin_net_for_floating_net]
+                          (Do check single pin net for floating net. Default: not check)
+   [-check_floating_port_on_null_net]
+                          (Do check floating port on null net. Default: not check)
+   [-ignore_floating_metal_fill_net]
+                          (Do not check floating metal fill. Default: check)
+   [-check_short_locator] (Execute short locator. Default: do not execute)
+   [-check_open_locator]  (Execute open locator. Default: do not execute)
+   [-max_error ]          (Max number of error before exit. Default: 20)
+   [-nets ]               (net collection to do verify_lvs. Default: None)
+   [-exclude_nets ]       (net collection not to do verify_lvs. Default: None)
+   [-ignore_metal_without_net_name]
+                          (ignore checking vioation with metal without net name. Default: off)
+   [-check_child_blockages]
+                          (check short between child cell blockages and nets. Default: off)
+
+EDA_HELP_END verify_lvs
+EDA_HELP_BEGIN write_parasitics
+ write_parasitics     # write parasitics from a design in a file
+   [-output <file_name>]  (write parasitics to the specified file)
+   [-format SPEF | SBPF ] (format of the nets in the parasitics file)
+   [-compress]            (compress the output using gzip)
+   [-no_name_mapping]     (no name mapping for spef file)
+   [-routed_nets_only]    (write out routed nets only)
+
+EDA_HELP_END write_parasitics
+EDA_HELP_BEGIN write_stream
+ write_stream         # Write an GDSII or OASIS file
+   [-lib_name lib_name]   (Name of library which stalls the data)
+   [-format gds_or_oasis] (Output file format. gds(default) or oasis)
+   [-cells cell_name]     (Name of the cells to output)
+   [-cell_file cell_name_file]
+                          (Output cells specified in file)
+   stream_file_name       (Name of stream file to write)
+
+EDA_HELP_END write_stream
+EDA_HELP_BEGIN save_mw_cel
+ save_mw_cel          # Saves the design
+   [-as name]             (Design name to be saved as, which format is A[.B])
+   [-overwrite]           (Overwrite existing cell, if any -- default, this option is not needed)
+   [-increase_version]    (Increase version of the design being saved)
+   [-scenarios string]    (list of scenarios to save)
+   [-hierarchy]           (Save top cell and opened child level cells)
+   [-check_only]          (Not save, but list hierarchy designs to be saved)
+   [design_name]          (The Milkyway design to be saved)
+
+EDA_HELP_END save_mw_cel
+EDA_HELP_BEGIN report_design_physical
+ report_design_physical # Displays design related information of the current design
+   [-design_setup]        (design setup and units related information)
+   [-netlist]             (cells, nets, pins and ports related information)
+   [-floorplan]           (floorplan and blockage related information)
+   [-route]               (route related information)
+   [-utilization]         (utilization ratios)
+   [-all]                 (Give all the above information)
+   [-verbose]             (Give verbose information)
+
+EDA_HELP_END report_design_physical
+EDA_HELP_BEGIN report_power
+ report_power         # display power report
+   [-net]                 (report power consumption of nets)
+   [-cell]                (report power consumption of cells)
+   [-groups <cell_type1 cell_type2 ...>]
+                          (report power of cells on specified set of cell types: io_pad, memory, black box, clock_network, register, sequential, combinational)
+   [-only <cell_or_net_list>]
+                          (report power only for these nets or cells)
+   [-flat]                (report all leaf-level cells or nets)
+   [-exclude_boundary_nets]
+                          (exclude boundary nets; Note this flag is obsolete)
+   [-include_input_nets]  (include primary input port nets)
+   [-analysis_effort <effort_level>]
+                          (power analysis effort: low | medium | high)
+   [-verbose]             (verbose power reporting)
+   [-nworst <number>]     (max number of nets or cells to report: 
+                           Value >= 0)
+   [-sort_mode <mode>]    (sort cells/nets by: name, cell_leakage_power, cell_internal_power, net_switching_power, dynamic_power, net_toggle_rate, total_net_load, net_static_probability)
+   [-histogram]           (display a histogram of net/cell info)
+   [-exclude_leq <le_val>]
+                          (omit data-values less than or equal to <le_val> from histogram: 
+                           Value >= 0)
+   [-exclude_geq <ge_val>]
+                          (omit data-values greater than or equal to <ge_val> from histogram: 
+                           Value >= 0)
+   [-nosplit]             (do not split lines when fields overflow)
+   [-hierarchy]           (report power consumption hierarchically)
+   [-levels <number>]     (number of levels of hierarchy to be reported: 
+                           Value >= 0)
+   [-scenarios { scenario_name1 scenario_name2 ... }]
+                          (report power on specifed set of scenarios, skip on inactive scenario(s))
+
+EDA_HELP_END report_power
+EDA_HELP_BEGIN report_timing
+ report_timing        # report timing
+   [-to <to_list>]        (to pins, ports, nets or clocks)
+   [-rise_to <rise_to_list>]
+                          (to pins, ports, nets or clocks)
+   [-fall_to <fall_to_list>]
+                          (to pins, ports, nets or clocks)
+   [-from <from_list>]    (from pins, ports, nets or clocks)
+   [-rise_from <rise_from_list>]
+                          (from pins, ports, nets or clocks with rise sense)
+   [-fall_from <fall_from_list>]
+                          (from pins, ports, nets or clocks with fall sense)
+   [-exclude <exclude_list>]
+                          (exclude pins, ports, nets or cells)
+   [-rise_exclude <rise_exclude_list>]
+                          (exclude pins, ports, nets or cells with rise sense)
+   [-fall_exclude <fall_exclude_list>]
+                          (exclude pins, ports, nets or cells with fall sense)
+   [-through <through_list>]
+                          (through pins, ports, nets or clocks)
+   [-rise_through <rise_through_list>]
+                          (to pins, ports, nets or clocks)
+   [-fall_through <fall_through_list>]
+                          (to pins, ports, nets or clocks)
+   [-path_type <path_type>]
+                          (path type: 
+                           Values: full, end, only, short, start, 
+                           full_clock, full_clock_expanded)
+   [-delay_type <delay_type>]
+                          (delay type: 
+                           Values: max, max_rise, max_fall, min, 
+                           min_rise, min_fall)
+   [-nworst <paths_per_endpoint>]
+                          (number of paths per endpoint, default is 1)
+   [-max_paths <max_path_count>]
+                          (maximum number of paths per path group)
+   [-input_pins]          (include input pins in combinational path)
+   [-nets]                (include nets in combinational path)
+   [-transition_time]     (display net transition time for each driving pin)
+   [-crosstalk_delta]     (display delta delay for each input pin)
+   [-capacitance]         (display net capacitance for each ne or driving pin)
+   [-effective_capacitance]
+                          (display net capacitance for each net or driving pin that is calculated with Ceff)
+   [-variation]           (show the mean and variation value of cell and net delays)
+   [-lesser_path <max_path_delay>]
+                          (display paths with length less than this value: 
+                           Value >= 0)
+   [-greater_path <min_path_delay>]
+                          (display paths with length greater than this value: 
+                           Value >= 0)
+   [-slack_lesser_than <max_slack>]
+                          (display paths with slack less than this value)
+   [-slack_greater_than <min_slack>]
+                          (display paths with slack greater than this value)
+   [-loops]               (report timing loops)
+   [-enable_preset_clear_arcs]
+                          (enable async arcs for this report)
+   [-significant_digits <digits>]
+                          (from 0 to 13; default is 2: 
+                           Range: 0 to 13)
+   [-unique_pins]         (omit subsequent paths through the same pins)
+   [-start_end_pair]      (report only one path per pin pair.)
+   [-physical]            (report pin locations and net caps)
+   [-nosplit]             (do not split lines when column fields overflow)
+   [-attributes]          (report dont_touch, size_only for cells and nets)
+   [-sort_by <slack|group>]
+                          (sort_by)
+   [-normalized_slack]    (use normalized slack for sorting when normalized analysis is on)
+   [-group <group_name>]  (name of group)
+   [-derate]              (report timing derate for path elements)
+   [-voltage]             (report pin voltages in multi-voltage design)
+   [-temperature]         (report temperature in op. cond in multi-voltage design)
+   [-trace_latch_borrow]  (trace timing paths through borrowing latches)
+   [-scenarios { scenario_name1 scenario_name2 ... }]
+                          (report timing on specifed set of scenarios, skip on inactive scenario(s))
+
+EDA_HELP_END report_timing
+EDA_HELP_BEGIN set_tlu_plus_files
+ set_tlu_plus_files   # Setup TLU+ files
+   -max_tluplus string    (max TLU+ file name)
+   [-min_tluplus string]  (min TLU+ file name)
+   [-tech2itf_map string] (TECH2ITF mapping file name)
+   [-max_emulation_tluplus string]
+                          (max emulation tlu+ file anme)
+   [-min_emulation_tluplus string]
+                          (min emulation tlu+ file anme)
+
+EDA_HELP_END set_tlu_plus_files
+EDA_HELP_BEGIN create_rectangular_rings
+ create_rectangular_rings # create rectangular rings
+   [-around core | specified | specified_as_group | all_macros_except_specified | rectangle]
+                          (Creates rings around core, or specified in -cells, or within the rectangle. Default: core)
+   [-cells {collection_of_cells}]
+                          (collection of instances for -around specified | specified_as_group | all_macros_except_specified)
+   [-within {{llx lly} {urx ury}}]
+                          (Creates rings within the rectangle; for -around rectangle)
+   -nets {collection_of_nets}
+                          (Nets to create rectangular rings)
+   [-skip_left_side]      (Does NOT create the left side of the ring)
+   [-skip_right_side]     (Does NOT create the right side of the ring)
+   [-skip_bottom_side]    (Does NOT create the bottom side of the ring)
+   [-skip_top_side]       (Does NOT create the top side of the ring)
+   [-left_segment_layer number_or_name]
+                          (Layer to create left side of the ring. Default: first vertical layer)
+   [-right_segment_layer number_or_name]
+                          (Layer to create right side of the ring. Default: first vertical layer)
+   [-bottom_segment_layer number_or_name]
+                          (Layer to create bottom side of the ring. Default: first horizontal layer)
+   [-top_segment_layer number_or_name]
+                          (Layer to create top side of the ring. Default: first horizontal layer)
+   [-left_segment_width distance]
+                          (Creates ring of specified width on the left side. Default: minWidth for layer)
+   [-right_segment_width distance]
+                          (Creates ring of specified width on the right side. Default: minWidth for layer)
+   [-bottom_segment_width distance]
+                          (Creates ring of specified width on the bottom side. Default: minWidth for layer)
+   [-top_segment_width distance]
+                          (Creates ring of specified width on the top side. Default: minWidth for layer)
+   [-offsets adjusted | absolute]
+                          (Rings offsets adjusted for DRC or absolute (user specified). Default: adjusted)
+   [-left_offset distance]
+                          (Offset on the left side for -offsets absolute; Default: 0.0)
+   [-right_offset distance]
+                          (Offset on the right side for -offsets absolute; Default: 0.0)
+   [-bottom_offset distance]
+                          (Offset on the bottom side for -offsets absolute; Default: 0.0)
+   [-top_offset distance] (Offset on the top side for -offsets absolute; Default: 0.0)
+   [-extend_ll]           (Extends the left segment of the ring low)
+   [-extend_lh]           (Extends the left segment of the ring high)
+   [-extend_rl]           (Extends the right segment of the ring low)
+   [-extend_rh]           (Extends the right segment of the ring high)
+   [-extend_bl]           (Extends the bottom segment of the ring low (left))
+   [-extend_bh]           (Extends the bottom segment of the ring high (right))
+   [-extend_tl]           (Extends the top segment of the ring low (left))
+   [-extend_th]           (Extends the top segment of the ring high (right))
+   [-create_innermost_core_ring_conservatively]
+                          (To assist cell placement. Works only with -around core)
+   [-ignore_parallel_targets]
+                          (Ignores parallel to rings targets for connection)
+   [-extend_for_multiple_connections]
+                          (Extends ring segments to reach more targets)
+   [-extension_gap distance]
+                          (Connect targets within gap space if extend_for_multiple_connections is set; distance>=0. Default: 0.0)
+   [-advanced_via_rules]  (Use advanced via rules, set previously. Default: false)
+   -undo                  (Undo the previous create_rectangular_rings. Supersedes all options)
+
+EDA_HELP_END create_rectangular_rings
+EDA_HELP_BEGIN preroute_standard_cells
+ preroute_standard_cells # preroute_standard_cells
+   [-mode rail | tie | net]
+                          (Connect cells by rail (default) or by tieing PG pins to targets (without restrictions) or by connecting pins of a net to straps/rings with restrictions.)
+   [-connect horizontal | vertical | both]
+                          (Connect horizontally (default), vertically or in both directions)
+   [-nets {collection_of_nets}]
+                          (Nets to route; If not specified, uses PG nets by default)
+   [-route_pins_on_layer number_or_name]
+                          (Connects only pins on specified layer. Default: on all layers)
+   [-start_share_via_stack name of metal layer]
+                          (Shared vias are allowed above this layer. Default: no shared vias allowed)
+   [-within {{llx lly} {urx ury}}]
+                          (Working area; if not specified uses top cell bbox)
+   [-ignore_cell_boundary]
+                          (Keeps out-of-bound std rails. Default: false)
+   [-no_routing_outside_working_area]
+                          (Prevent connections outside working area. Default: false)
+   [-special_via_rule]    (Use special vias instead of a large one at intersections. Will need to specify offsets, sizes and steps. Default: false)
+   [-offset_both_sides_for_special_via]
+                          (Special via offsets applied both to lower left and upper right side. Default: lower left only)
+   [-special_via_x_offset distance]
+                          (X offset from lower-left corner; distance>0.  Default: 0.0)
+   [-special_via_y_offset distance]
+                          (Y offset from lower-left corner; distance>0.  Default: 0.0)
+   [-special_via_x_size distance]
+                          (Width of special via; distance>0. Default: 0.0)
+   [-special_via_y_size distance]
+                          (Height of special via; distance>0. Default: 0.0)
+   [-special_via_x_step distance]
+                          (X distance between special vias; distance>0. Default: 0.0)
+   [-special_via_y_step distance]
+                          (Y distance between special vias; distance>0. Default: 0.0)
+   [-advanced_via_rules]  (Use advanced via rules, set previously. Default: false)
+   [-skip_macro_pins]     (Do not connect to macro pins)
+   [-skip_pad_pins]       (Do not connect to pad pins)
+   [-remove_floating_pieces]
+                          (Remove floating (unconnected) rail segments. Default: keep)
+   [-pin_width_by_extreme_edges]
+                          (Determine pin width by extreme edges)
+   [-pin_width_by_most_extended_pin]
+                          (Determine pin width by most extended pin)
+   [-tie_mode_max_route_width distance]
+                          (Max routing width for tie mode (default is 0.0 => no limit))
+   [-extend_to_boundaries_and_generate_pins]
+                          (Create PG wire extension to boundary and generate pins)
+   [-force_extend_to_boundaries_and_generate_pins]
+                          (works with -extend_to_boundaries_and_generate_pins)
+   [-no_via_to_boundary_pin]
+                          (Do not drop via from rail to boundary pin. Default: false)
+   [-avoid_merging_vias]  (Avoid merging exisiting vias)
+   [-optimize_via_locations]
+                          (Optimize via locations to save tracks)
+   [-snap_shapes_to_tracks]
+                          (Request to route on grid)
+   [-do_not_route_over_macros]
+                          (Prevents generating wires over the macro cells.)
+   [-fill_empty_rows]     (Fill all rows (even rows without cells) with PG rails)
+   [-fill_empty_sites]    (Fill only rows that have placed cells with PG rails)
+   [-cut_out_empty_spans] (Cut out rails between targets if there are no pins)
+   [-extend_for_multiple_connections]
+                          (Extend std cell end connections to reach more targets)
+   [-extension_gap distance]
+                          (Connect targets within gap space if extend_for_multiple_connections is set; distance>=0. Default: 0.0)
+   [-undo]                (Undo the previous preroute_standard_cells. Supersedes all options)
+   [-max_fanout int]      ((For "-mode net" ONLY) Max number of pins in a tree connected to strap or ring. Default: 10)
+   [-h_layer name_of_metal_layer]
+                          ((For "-mode net" ONLY) Layer for horizontal segments. Default: next to pins horizontal layer)
+   [-v_layer name_of_metal_layer]
+                          ((For "-mode net" ONLY) Layer for vertical segments. Default: next to pins vertical layer)
+   [-h_width distance]    ((For "-mode net" ONLY) Width of horizontal segments. Default: width of most thin pin)
+   [-v_width distance]    ((For "-mode net" ONLY) Width of vertical segments. Default: width of most thin pin)
+   [-port_filter pattern] (Select ports with name matching to the pattern. Default: .*)
+   [-port_filter_mode off | select | skip | select_PG_type]
+                          (What to do  with ports matching to the pattern: turn the filter off or connect the ports or skip the ports or connect only PG type ports. Default: off)
+   [-cell_master_filter pattern]
+                          (Select ports of cells with name of their master matching to the pattern. Default: .*)
+   [-cell_master_filter_mode off | select | skip]
+                          (What to do  with ports matching to the pattern: turn the filter off or connect the ports or skip the ports)
+   [-cell_instance_filter pattern]
+                          (Select ports of cells with name of their instance matching to the pattern. Default: .*)
+   [-cell_instance_filter_mode off | select | skip]
+                          (What to do  with ports matching to the pattern: turn the filter off or connect the ports or skip the ports)
+   [-voltage_area_filter pattern]
+                          (Select ports of cells located in voltage areas matching to the pattern. Default: .*)
+   [-voltage_area_filter_mode off | select | skip]
+                          (What to do  with ports matching to the pattern: turn the filter off or connect the ports or skip the ports)
+   [-route_type "P/G Std. Cell Pin Conn"| "Signal Route" | "User Enter" ]
+                          (Assign specified route_type attribute to all created shapes and vias.  Default: pg_std_cell_pin_conn)
+   -within_voltage_areas {collection_of_voltage_areas}
+                          (The only voltage area(s), where rails should be created. Default: all voltage areas in design)
+   -exclude_voltage_areas {collection_of_voltage_areas}
+                          (Voltage area(s), where rails should not be created. Default: create in all voltage areas in design)
+
+EDA_HELP_END preroute_standard_cells
+EDA_HELP_BEGIN gui_start
+ gui_start            # Start GUI
+   [-no_windows]          (set flag not to load windows for this cmd)
+   [-file script]         (file to source on gui_start)
+   [ -- x_args ...]       (arguments to pass to the X connection)
+
+EDA_HELP_END gui_start
+EDA_HELP_BEGIN gui_zoom
+Information: No commands matched 'gui_zoom'. (CMD-040)
+EDA_HELP_END gui_zoom
+EDA_HELP_BEGIN gui_write_window_image
+Information: No commands matched 'gui_write_window_image'. (CMD-040)
+EDA_HELP_END gui_write_window_image
+EDA_HELP_BEGIN gui_get_current_window
+Information: No commands matched 'gui_get_current_window'. (CMD-040)
+EDA_HELP_END gui_get_current_window
+puts "EDA_HELP_COMPLETE ICC"
+EDA_HELP_COMPLETE ICC
+exit
+
+Memory usage for main task 92 Mbytes.
+Memory usage for this session 92 Mbytes.
+CPU usage for this session 5 seconds ( 0.00 hours ).
+
+Thank you...
+Exit IC Compiler!

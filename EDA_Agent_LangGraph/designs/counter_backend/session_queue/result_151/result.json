@@ -1,0 +1,10 @@
+{
+  "exit_code": 0,
+  "tool": "icc",
+  "run": "upload_20261025_154213_3a20548a",
+  "stdout": "{\"launch_accepted\": true, \"status_file\": \"build/icc.status.json\", \"worker_pid\": 16180, \"stage_passed\": false}\n",
+  "stderr": "",
+  "stage_passed": false,
+  "note": "启动请求已返回；须回收 status、日志和报告后判定实际结果",
+  "status": "completed"
+}

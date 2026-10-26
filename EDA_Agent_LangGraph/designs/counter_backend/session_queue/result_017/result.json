@@ -1,0 +1,26 @@
+{
+  "run": "upload_001",
+  "files": [
+    {
+      "path": "build/dc.log",
+      "bytes": 16070,
+      "sha256": "2b91006c67f9a2f850216ed4697046b6885653b278cc0122d43bad9db955ae44"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 34198,
+      "sha256": "264a9a0f9efe82e1a445bc6f0d0fe463a2cccd85b508fbb3c6e537447a34a275"
+    },
+    {
+      "path": "build/pt.log",
+      "bytes": 19999,
+      "sha256": "fb659ef2a6a11ce46d8c77b277c72d0bce63002c96fe7d6dfd122e65d5e6720c"
+    },
+    {
+      "path": "snapshot_manifest.json",
+      "bytes": 739,
+      "sha256": "cbc122596f3483005f46dc9bb15d5a867ddda209f55a0f2d484fd17375702e8b"
+    }
+  ],
+  "status": "completed"
+}

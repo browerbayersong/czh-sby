@@ -1,0 +1,8 @@
+{
+  "source": "D:\\课程设计\\czh\\EDA_Agent_LangGraph\\designs\\counter_opt_round3\\generated\\tb\\tb_counter_8bit.v",
+  "source_sha256": "02fca6641c7cfd250316a71db6627e1c8aab4f29eb3205b1fbb51d9634c1fa6f",
+  "output_sha256": "f77e99ed5ffaa06d230b69818070fd7af135c80016f1622f30e190d77ccbbd26",
+  "change": "Only added DUT VCD dumping; original stimulus, reference model, checks and seeds retained",
+  "dut_instance": "tb_counter_8bit/u_dut",
+  "status": "not_yet_simulated"
+}

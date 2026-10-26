@@ -1,0 +1,26 @@
+{
+  "path": "/opt/Foundary_Library/TSMC90/aci",
+  "entries": [
+    {
+      "name": "fuse",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "rf_2p_adv",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "sc-x",
+      "size": 4096,
+      "mode": "0o40775"
+    },
+    {
+      "name": "sram_dp_adv",
+      "size": 4096,
+      "mode": "0o40775"
+    }
+  ],
+  "status": "completed"
+}

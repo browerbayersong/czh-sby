@@ -1,0 +1,117 @@
+{
+  "mode": "reviewed_generated_script",
+  "when": "2026-10-24T14:16:05",
+  "status": "passed",
+  "project_directory": "/home/IC/Desktop/EDA_Projects/counter_script_demo",
+  "remote_directory": "/home/IC/Desktop/EDA_Projects/counter_script_demo/runs/upload_001",
+  "source_snapshot": "/home/IC/Desktop/EDA_Projects/counter_script_demo/runs/upload_001/src",
+  "local_directory": "D:\\课程设计\\czh\\EDA_Agent_LangGraph\\designs\\counter_script_demo\\remote_runs\\ad59f1712f2045be8395730c8a7062f4",
+  "script": "generated/scripts/run_vcs.sh",
+  "script_review": {
+    "status": "validated",
+    "sha256": "d798143b97be6d31019d704391a1ee37dccc108871b740001019c16735e6c8f2",
+    "policy": "counter-script-three-tools-v1",
+    "stages": [
+      {
+        "stage": "compile",
+        "argv": [
+          "timeout",
+          "300s",
+          "/opt/Synopsys/VCS2014/bin/vcs",
+          "-full64",
+          "-sverilog",
+          "-timescale=1ns/1ps",
+          "-cm",
+          "line+cond+fsm+tgl+branch",
+          "-cm_dir",
+          "../build/cov.vdb",
+          "-top",
+          "tb_counter_8bit",
+          "-o",
+          "../build/simv",
+          "generated/rtl/counter_8bit.v",
+          "generated/tb/tb_counter_8bit.v"
+        ],
+        "log": "../build/vcs_compile.log"
+      },
+      {
+        "stage": "simulate",
+        "argv": [
+          "timeout",
+          "120s",
+          "../build/simv",
+          "-cm",
+          "line+cond+fsm+tgl+branch",
+          "-cm_dir",
+          "../build/cov.vdb"
+        ],
+        "log": "../build/vcs_sim.log"
+      },
+      {
+        "stage": "coverage",
+        "argv": [
+          "timeout",
+          "120s",
+          "/opt/Synopsys/VCS2014/bin/urg",
+          "-dir",
+          "../build/cov.vdb",
+          "-format",
+          "text",
+          "-report",
+          "../build/covReport"
+        ],
+        "log": "../build/urg.log"
+      }
+    ]
+  },
+  "files_sha256": {
+    "generated/rtl/counter_8bit.v": "b97a619a62852d8da1aad9c6e6499aa4cfafb094b5ecb32f2479a6f7a0f42406",
+    "generated/scripts/run_vcs.sh": "d798143b97be6d31019d704391a1ee37dccc108871b740001019c16735e6c8f2",
+    "generated/tb/tb_counter_8bit.v": "02fca6641c7cfd250316a71db6627e1c8aab4f29eb3205b1fbb51d9634c1fa6f"
+  },
+  "stage_exit_codes": {
+    "compile": 0,
+    "simulate": 0,
+    "coverage": 0,
+    "basis": "set -euo pipefail; all three sequential commands completed"
+  },
+  "syntax_exit_code": 0,
+  "execution_command": "cd /home/IC/Desktop/EDA_Projects/counter_script_demo/runs/upload_001/src && timeout 570s bash -x generated/scripts/run_vcs.sh > ../build/script_execution.log 2>&1",
+  "script_exit_code": 0,
+  "metrics": {
+    "checks": 2035,
+    "passed": 2035,
+    "failed": 0,
+    "scenario_list": [
+      "initial_reset_before_clk",
+      "initial_async_reset",
+      "hold",
+      "consecutive_increment_wrap",
+      "boundary_holds_254_255_0",
+      "wrap_255_to_0",
+      "reset_en_low",
+      "reset_en_high",
+      "async_reset_during_run",
+      "random x3"
+    ],
+    "scenario_count": 10,
+    "seeds": [
+      305419896,
+      305420153,
+      305420410
+    ],
+    "functional_bins_hit": 14,
+    "functional_bins_total": 14,
+    "ended": "TEST PASSED",
+    "finish_ps": 20316000,
+    "top_fail": []
+  },
+  "coverage": {
+    "score": 84.97,
+    "line": 91.95,
+    "cond": null,
+    "toggle": 82.95,
+    "fsm": null,
+    "branch": 80.0
+  }
+}

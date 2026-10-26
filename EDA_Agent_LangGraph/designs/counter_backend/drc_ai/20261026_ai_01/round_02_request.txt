@@ -1,0 +1,264 @@
+实际ICC2016案例；原始DRC=1，PG/LVS错误均0。原库保留。先前增量重布、加局部M1阻挡失败到7DRC；尚未尝试完整remove_net_routing。仅允许目标信号网络操作，实际几何见下。未知属性警告表示未取到信息，不是假定为0。M1最小间距尚无直接规则导出，不能猜测。原TF与FRAM有6/9层不一致警告，先保持检查规则与基线一致。
+=== result_112/build/display/drc_details.txt ===
+DRC 14336
+type: Diff net spacing
+bbox: {{8.270 16.625} {8.405 17.040}}
+layer_names: {M1  M1}
+net1_name: count[5]
+net2_name: N7
+actual_spacing: 
+required_spacing: 
+route_types: 
+details: { 2  {{net count[5]} 1 {rectangles {layer M1} {{8.270 16.625} {8.405 17.040}}}} {{net N7} 1 {rectangles {layer M1} {{8.270 16.625} {8.405 17.040}}}} }
+report: Type: Diff net spacing, Type info: DRC Violations (Layer 31 31) (Net1: count[5] Net2: N7)
+, Object info: DRC Violations (Layer 31 31) (Net1: count[5] Net2: N7)
+, Bbox: {{8.270 16.625} {8.405 17.040}}, Layer: {M1  M1}, Net1: count[5] Net2: N7, Status: Error
+
+=== result_161/build/drc_probe/geometry.txt ===
+CELL add_20
+  bbox {0.000 0.000} {0.000 0.000}
+  origin 0.000 0.000
+  orientation NO_ORIENTATION
+  ref_name counter_8bit_DW01_inc_0
+Warning: Attribute 'is_fixed' does not exist on cell 'add_20' (ATTR-3)
+  is_fixed 
+CELL add_20/U1_1_5
+  bbox {3.840 3.000} {8.040 5.520}
+  origin 3.840 3.000
+  orientation N
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U1_1_2
+  bbox {6.640 20.640} {10.840 23.160}
+  origin 6.640 23.160
+  orientation FS
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U1_1_4
+  bbox {9.160 5.520} {13.360 8.040}
+  origin 13.360 8.040
+  orientation S
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U1
+  bbox {20.360 23.160} {22.600 25.680}
+  origin 20.360 23.160
+  orientation N
+  ref_name XOR2X1
+  is_fixed false
+CELL add_20/U1_1_1
+  bbox {3.000 13.080} {7.200 15.600}
+  origin 3.000 13.080
+  orientation N
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U2
+  bbox {11.960 10.560} {12.800 13.080}
+  origin 12.800 13.080
+  orientation S
+  ref_name CLKINVX1
+  is_fixed false
+CELL add_20/U1_1_6
+  bbox {7.200 13.080} {11.400 15.600}
+  origin 7.200 13.080
+  orientation N
+  ref_name ADDHX1
+  is_fixed false
+CELL add_20/U1_1_3
+  bbox {20.920 3.000} {25.120 5.520}
+  origin 25.120 3.000
+  orientation FN
+  ref_name ADDHX1
+  is_fixed false
+CELL U15
+  bbox {12.240 8.040} {14.480 10.560}
+  origin 14.480 8.040
+  orientation FN
+  ref_name AO22X2
+  is_fixed false
+CELL count_reg_0_
+  bbox {19.520 13.080} {25.680 15.600}
+  origin 19.520 13.080
+  orientation N
+  ref_name DFFRQX2
+  is_fixed false
+CELL U19
+  bbox {12.800 10.560} {15.040 13.080}
+  origin 12.800 13.080
+  orientation FS
+  ref_name AO22X2
+  is_fixed false
+CELL count_reg_6_
+  bbox {11.680 18.120} {17.840 20.640}
+  origin 17.840 18.120
+  orientation FN
+  ref_name DFFRQX2
+  is_fixed false
+CELL count_reg_7_
+  bbox {13.360 13.080} {19.520 15.600}
+  origin 13.360 13.080
+  orientation N
+  ref_name DFFRQX2
+  is_fixed false
+CELL U13
+  bbox {4.400 20.640} {6.640 23.160}
+  origin 4.400 23.160
+  orientation FS
+  ref_name AO22X2
+  is_fixed false
+CELL count_reg_1_
+  bbox {19.520 20.640} {25.680 23.160}
+  origin 19.520 23.160
+  orientation FS
+  ref_name DFFRQX2
+  is_fixed false
+CELL count_reg_2_
+  bbox {11.400 23.160} {17.560 25.680}
+  origin 17.560 23.160
+  orientation FN
+  ref_name DFFRQX2
+  is_fixed false
+CELL U1
+  bbox {10.840 15.600} {11.680 18.120}
+  origin 11.680 18.120
+  orientation S
+  ref_name INVXL
+  is_fixed false
+CELL count_reg_3_
+  bbox {19.240 8.040} {25.400 10.560}
+  origin 19.240 8.040
+  orientation N
+  ref_name DFFRQX2
+  is_fixed false
+CELL U20
+  bbox {4.960 23.160} {7.200 25.680}
+  origin 4.960 23.160
+  orientation N
+  ref_name AO22X2
+  is_fixed false
+CELL U18
+  bbox {4.680 18.120} {6.920 20.640}
+  origin 4.680 18.120
+  orientation N
+  ref_name AO22X2
+  is_fixed false
+CELL U16
+  bbox {21.760 15.600} {24.000 18.120}
+  origin 24.000 18.120
+  orientation S
+  ref_name AO22X2
+  is_fixed false
+CELL U17
+  bbox {19.800 18.120} {22.040 20.640}
+  origin 22.040 18.120
+  orientation FN
+  ref_name AO22X2
+  is_fixed false
+CELL count_reg_4_
+  bbox {3.280 8.040} {9.440 10.560}
+  origin 3.280 8.040
+  orientation N
+  ref_name DFFRQX2
+  is_fixed false
+CELL count_reg_5_
+  bbox {13.640 5.520} {19.800 8.040}
+  origin 13.640 8.040
+  orientation FS
+  ref_name DFFRQX2
+  is_fixed false
+CELL U14
+  bbox {7.480 15.600} {9.720 18.120}
+  origin 7.480 18.120
+  orientation FS
+  ref_name AO22X2
+  is_fixed false
+NET count[5]
+  PIN add_20/A[5]
+    bbox no_bbox
+    direction in
+  PIN U14/A0
+    bbox {8.390 16.745} {8.530 17.170}
+    direction in
+  PIN count_reg_5_/Q
+    bbox {19.570 6.020} {19.730 7.670}
+    direction out
+NET N7
+  PIN add_20/SUM[5]
+    bbox no_bbox
+    direction out
+  PIN U14/B0
+    bbox {8.050 16.745} {8.250 17.175}
+    direction in
+
+=== result_164/build/drc_shapes/shapes.txt ===
+NET count[5]
+SHAPE HWIRE#11827
+bbox: {6.710 16.230} {8.530 16.370}
+layer_name: M3
+width: 0.140
+Warning: Attribute 'shape_type' has not been defined for shape (ATTR-1)
+shape_type: 
+SHAPE HWIRE#11828
+bbox: {8.390 17.630} {27.290 17.770}
+layer_name: M3
+width: 0.140
+Warning: Attribute 'shape_type' has not been defined for shape (ATTR-1)
+shape_type: 
+SHAPE VWIRE#12347
+bbox: {8.390 16.790} {8.530 17.770}
+layer_name: M3
+width: 0.140
+Warning: Attribute 'shape_type' has not been defined for shape (ATTR-1)
+shape_type: 
+NET N7
+SHAPE VWIRE#12328
+bbox: {8.165 15.965} {8.285 16.920}
+layer_name: M1
+width: 0.120
+Warning: Attribute 'shape_type' has not been defined for shape (ATTR-1)
+shape_type: 
+PIN_SHAPE U14/VSS
+bbox: {7.480 17.465} {9.720 18.330}
+Warning: Attribute 'layer_name' has not been defined for pin_shape (ATTR-1)
+layer_name: 
+Warning: Attribute 'pin_name' has not been defined for pin_shape (ATTR-1)
+pin_name: 
+PIN_SHAPE U14/VDD
+bbox: {7.480 15.390} {9.720 16.610}
+Warning: Attribute 'layer_name' has not been defined for pin_shape (ATTR-1)
+layer_name: 
+Warning: Attribute 'pin_name' has not been defined for pin_shape (ATTR-1)
+pin_name: 
+PIN_SHAPE U14/B1
+bbox: {7.550 16.855} {7.870 17.255}
+Warning: Attribute 'layer_name' has not been defined for pin_shape (ATTR-1)
+layer_name: 
+Warning: Attribute 'pin_name' has not been defined for pin_shape (ATTR-1)
+pin_name: 
+PIN_SHAPE U14/B0
+bbox: {8.050 16.745} {8.250 17.175}
+Warning: Attribute 'layer_name' has not been defined for pin_shape (ATTR-1)
+layer_name: 
+Warning: Attribute 'pin_name' has not been defined for pin_shape (ATTR-1)
+pin_name: 
+PIN_SHAPE U14/Y
+bbox: {9.470 16.090} {9.650 17.765}
+Warning: Attribute 'layer_name' has not been defined for pin_shape (ATTR-1)
+layer_name: 
+Warning: Attribute 'pin_name' has not been defined for pin_shape (ATTR-1)
+pin_name: 
+PIN_SHAPE U14/A1
+bbox: {8.670 16.745} {8.875 17.170}
+Warning: Attribute 'layer_name' has not been defined for pin_shape (ATTR-1)
+layer_name: 
+Warning: Attribute 'pin_name' has not been defined for pin_shape (ATTR-1)
+pin_name: 
+PIN_SHAPE U14/A0
+bbox: {8.390 16.745} {8.530 17.170}
+Warning: Attribute 'layer_name' has not been defined for pin_shape (ATTR-1)
+layer_name: 
+Warning: Attribute 'pin_name' has not been defined for pin_shape (ATTR-1)
+pin_name: 
+
+实际已尝试的候选及验证结果：
+[{"iteration": 1, "plan": {"strategy": "ripup_n7", "pin_taper_mode": "default_width", "extra_pin_tracks": true, "diagnosis": "DRC 为 M1 上 count[5] 与 N7 的 Diff net spacing，标记区域约 x=8.270–8.405、y=16.625–17.040。几何显示 N7 在 U14/B0 附近有一条 M1 垂直走线 x=8.165–8.285、y=15.965–16.920，而 count[5] 的 U14/A0 为相邻 M1 引脚 x=8.390–8.530、y=16.745–17.170；N7 走线右边缘与 A0 引脚左边缘非常接近。actual_spacing/required_spacing 未导出，不能猜测具体规则值。该冲突的关键是 N7 的 M1 引脚逃逸/短垂线过于靠近固定的 count[5] A0 引脚，因此优先完整拆除 N7 信号布线后重布，避免继续在原有 M1 逃逸上做局部增量。ripup_count5 不会移动 A0 这个单元引脚，针对性不足；ripup_pair 影响面更大且无必要；move_u14 会同时移动相邻 A0/B0 引脚并引入额外合法化/重布风险。pin_taper_mode 使用 default_width，避免按引脚宽度加宽 N7 M1 走线而加剧与 A0 的间距压力；extra_pin_tracks 允许重布时使用额外引脚轨道以寻找更合法的 B0 逃逸路径。原 TF/FRAM 6/9 层不一致警告保持现有检查规则与基线，不改规则、不降间距。", "expected_effect": "仅对 N7 执行完整 remove_net_routing 后 ECO 重布，预期可让 N7 从 U14/B0 使用不同 M1 逃逸轨道或换层，从而拉开与 count[5] A0 M1 引脚的距离，降低该处 Diff net spacing DRC 风险。该操作不改变 count[5] 的固定 A0 引脚形状，也不修改 RTL/工艺库/DRC 规则；是否真正消除以及是否引入新 DRC，必须由后续工具报告确认。"}, "run": "upload_20261026_130022_aadb30fa", "local_result_folder": "D:\\课程设计\\czh\\EDA_Agent_LangGraph\\designs\\counter_backend\\session_queue\\result_171", "verification": {"tool_exit_code": 0, "routing": {"routing_drc_errors": 2, "open_nets": 0, "nets_checked": 36, "excluded_ports": 0, "unplaced_cells": 0, "check_scope": "ICC routing verification; not foundry signoff DRC", "routing_clean": false}, "pg": {"nets_checked": 2, "nets_with_errors": 0, "clean": true}, "lvs": {"floating_ports": 0, "floating_nets": 0, "short_nets": 1, "open_nets": 0, "electrical_equivalence_errors": 0, "must_join_errors": 0, "clean": false}, "netlist_unchanged": true, "cell_inventory_unchanged": true, "placement_legal": true, "placement_error_counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "baseline_reproduced": true, "execution_completed": true, "details": "type: Diff net spacing\nbbox: {{7.430 16.905} {7.990 17.040}}\nlayer_names: {M1  M1}\nnet1_name: N7\nnet2_name: en\ntype: Short\nbbox: {{7.630 16.735} {7.990 17.040}}\nlayer_names: M1\nnet1_name: N7\nnet2_name: en\n", "accepted": false}}]

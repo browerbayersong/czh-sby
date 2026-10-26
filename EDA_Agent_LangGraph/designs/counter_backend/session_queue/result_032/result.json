@@ -1,0 +1,31 @@
+{
+  "run": "upload_001",
+  "files": [
+    {
+      "path": "build/activity/compile.log",
+      "bytes": 1856,
+      "sha256": "4d9bb929828466b48977a24aad67dbfa46d1f4a6bdb954bb8c06016e81360684"
+    },
+    {
+      "path": "build/activity/simulation.log",
+      "bytes": 90394,
+      "sha256": "5114541407135fc753c84ff40c30f9d8c181f211ae477afeb3492f0521d4de93"
+    },
+    {
+      "path": "build/activity/conversion.log",
+      "bytes": 280,
+      "sha256": "6c1ca284466ca27f96a1ef9678a5f38d97a7a54bfb0035b7930c0f7722408a3d"
+    },
+    {
+      "path": "build/activity/counter.saif",
+      "bytes": 1300,
+      "sha256": "9a9ca990ea3c2476ed4daeec718d803fb5a5d860204bdf132e6d982a5dac21d1"
+    },
+    {
+      "path": "build/activity/counter.vcd",
+      "bytes": 68912,
+      "sha256": "fbdcaecd3430657b70445f3259f04a29a59a2c986fc6b38a3e81f016f4d5a748"
+    }
+  ],
+  "status": "completed"
+}

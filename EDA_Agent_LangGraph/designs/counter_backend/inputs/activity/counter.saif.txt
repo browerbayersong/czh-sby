@@ -1,0 +1,62 @@
+(SAIFILE
+(SAIFVERSION "2.0")
+(DIRECTION "backward")
+(DESIGN )
+(DATE "Sat Oct 24 23:31:04 2026")
+(VENDOR "Synopsys, Inc")
+(PROGRAM_NAME "vcd2saif")
+(VERSION "K-2015.06")
+(DIVIDER / )
+(TIMESCALE 1 ps)
+(DURATION 20315000)
+(INSTANCE tb_counter_8bit
+  (INSTANCE u_dut
+    (NET
+      (clk
+        (T0 10160000) (T1 10155000) (TX 0)
+        (TC 4063) (IG 0)
+      )
+      (count\[0\]
+        (T0 10190000) (T1 10124000) (TX 1000)
+        (TC 1299) (IG 0)
+      )
+      (count\[1\]
+        (T0 10017000) (T1 10297000) (TX 1000)
+        (TC 648) (IG 0)
+      )
+      (count\[2\]
+        (T0 10394000) (T1 9920000) (TX 1000)
+        (TC 323) (IG 0)
+      )
+      (count\[3\]
+        (T0 10474000) (T1 9840000) (TX 1000)
+        (TC 161) (IG 0)
+      )
+      (count\[4\]
+        (T0 10304000) (T1 10010000) (TX 1000)
+        (TC 80) (IG 0)
+      )
+      (count\[5\]
+        (T0 10344000) (T1 9970000) (TX 1000)
+        (TC 40) (IG 0)
+      )
+      (count\[6\]
+        (T0 10334000) (T1 9980000) (TX 1000)
+        (TC 20) (IG 0)
+      )
+      (count\[7\]
+        (T0 9744000) (T1 10570000) (TX 1000)
+        (TC 10) (IG 0)
+      )
+      (en
+        (T0 7330000) (T1 12985000) (TX 0)
+        (TC 745) (IG 0)
+      )
+      (rst_n
+        (T0 33000) (T1 20282000) (TX 0)
+        (TC 8) (IG 0)
+      )
+    )
+  )
+)
+)

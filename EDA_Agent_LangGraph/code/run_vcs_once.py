@@ -64,7 +64,10 @@ def main() -> int:
         print(f"覆盖率错误  : {run['coverage_error']}")
     sim_log = (run.get('sim_log') or '')
     if sim_log:
-        tail = [ln for ln in sim_log.splitlines() if 'total checks' in ln or 'TEST ' in ln]
+        summary_tokens = ('total checks', 'TEST ', 'functional coverage',
+                          'functional bins hit', 'random phase')
+        tail = [ln for ln in sim_log.splitlines()
+                if any(token in ln for token in summary_tokens)]
         for ln in tail:
             print(f"仿真摘要    : {ln.strip()}")
     print(f"本地日志    : {run.get('local_directory')}")

@@ -1,0 +1,71 @@
+{
+  "run": "upload_20261025_152051_1c35e949",
+  "files": [
+    {
+      "path": "build/pt.status.json",
+      "bytes": 452,
+      "sha256": "196fb049a5f3d76a4b3b6ea16a74786128943c5f67b8aea662abe89cad7e24ed"
+    },
+    {
+      "path": "build/pt.log",
+      "bytes": 6715,
+      "sha256": "a30ae724059166277924f93bbf9388d42021b0efff0bef7e498fed9345ca24aa"
+    },
+    {
+      "path": "build/pt_estimate/analysis_scope.txt",
+      "bytes": 517,
+      "sha256": "619dbe9cebdbd1ef0820937519af30e605806afdd18c42c7af56442e7cfcb05e"
+    },
+    {
+      "path": "build/pt_estimate/timing_setup.rpt",
+      "bytes": 16718,
+      "sha256": "75af3a287d7049ef93799e150417a9bb9dc30321c3e07818df8f7fb9fa3bb15a"
+    },
+    {
+      "path": "build/pt_estimate/timing_hold.rpt",
+      "bytes": 16702,
+      "sha256": "e8ce8682e7e02517b806301e3b72f5e5f4d3b9f18741181b2cd8711fc7ab9f2b"
+    },
+    {
+      "path": "build/pt_estimate/units.rpt",
+      "bytes": 510,
+      "sha256": "138dce17abc832269c84930c71c7d4a5ab4f44be821851e052f3394465256ae5"
+    },
+    {
+      "path": "build/pt_estimate/check_timing.rpt",
+      "bytes": 526,
+      "sha256": "edda3400d7f1d7378932f9d3593e29f87698c838ac6c98e08d044ca5339d2639"
+    },
+    {
+      "path": "build/pt_estimate/constraints.rpt",
+      "bytes": 217,
+      "sha256": "f656181877f71d373bb8a586631a3f64e5f2dba0b423c927f94bc1c1772f6cc4"
+    },
+    {
+      "path": "build/pt_estimate/power.rpt",
+      "bytes": 1286,
+      "sha256": "4509e0c5381662e72c0d6db07f9da6b56fccf68ede9ad4c204cc0a99f731c8e2"
+    },
+    {
+      "path": "build/pt_estimate/activity_annotation.rpt",
+      "bytes": 299,
+      "sha256": "0ab134e621290d14223a6ab925f52d863a7a78f4c289d1c2ef4ffb3615ef38ae"
+    },
+    {
+      "path": "build/pt_estimate/activity_coverage.rpt",
+      "bytes": 943,
+      "sha256": "9dfc11f516518989ec008bb83b935277f41f454a7ffd67968fcaa74e02df64a1"
+    },
+    {
+      "path": "build/pt_estimate/counter.saif",
+      "bytes": 1300,
+      "sha256": "9a9ca990ea3c2476ed4daeec718d803fb5a5d860204bdf132e6d982a5dac21d1"
+    },
+    {
+      "path": "build/pt_estimate/report_power_manual.txt",
+      "bytes": 42234,
+      "sha256": "f6942cb398bcda57711479334ec169283d4b2c6ed6b0e2e35af32c39213575b4"
+    }
+  ],
+  "status": "completed"
+}

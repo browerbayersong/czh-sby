@@ -1,0 +1,41 @@
+{
+  "run": "upload_20261025_143204_d80ae60f",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 447,
+      "sha256": "1930dc05b6126fba5d5903f59404312ff4eca0479cada31f782e685c40a2b13b"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 403504,
+      "sha256": "f1163db5d987878f7e5cb800e59758823db4a45663d78e13be681696cab46cec"
+    },
+    {
+      "path": "build/icc/routing_drc.rpt",
+      "bytes": 4006,
+      "sha256": "f0f81bd07886cff8f723a7f6c69423fe92e9e55cc4fbec1233d7d2abd209bb43"
+    },
+    {
+      "path": "build/icc/pg_connectivity.rpt",
+      "bytes": 673,
+      "sha256": "270d4f5bec68e231a704f9f392037fbb4897b37e7d36fbbf3f0e9b6a9756dd31"
+    },
+    {
+      "path": "build/icc/lvs.rpt",
+      "bytes": 2180,
+      "sha256": "b22cdf2acda17ad86b6eae7e183038aefb015519b99918596b9464e5385c062f"
+    },
+    {
+      "path": "build/icc/physical.rpt",
+      "bytes": 19806,
+      "sha256": "835d91253446dbd0e7fa8677a9cec902c3d20b23debaa9aeeab9497d1a2bddba"
+    },
+    {
+      "path": "build/icc/counter_8bit.gds",
+      "bytes": 26624,
+      "sha256": "f5f1fe369577130fcfb5ecc80bc440b7d9cd9e6c1aefb16e7fe13e94a64b71db"
+    }
+  ],
+  "status": "completed"
+}

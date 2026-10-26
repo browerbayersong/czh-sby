@@ -1,0 +1,20 @@
+Read-only original report excerpt
+DC original setup timing
+
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : counter_8bit
+Version: K-2015.06
+  Startpoint: count_reg_0_
+  Endpoint: count[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+  data arrival time                               0.204806
+  data required time                              8.900000
+  data required time                              8.900000
+  data arrival time                               -0.204806
+  slack (MET)                                     8.695194

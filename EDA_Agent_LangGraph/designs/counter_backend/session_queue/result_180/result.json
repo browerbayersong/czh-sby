@@ -1,0 +1,81 @@
+{
+  "run": "upload_20261026_130439_a99f2b76",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 415,
+      "sha256": "95cc9bcc7540805439486e0d675850d732aa99d469c81ebd94f6c7f5c15972a8"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 4622,
+      "sha256": "5537d8bf3d95fe96fb4d82bb5abea294d64cfd2162be508c25a39a95231507af"
+    },
+    {
+      "path": "build/drc_recheck/routing_drc.rpt",
+      "bytes": 4166,
+      "sha256": "0d6e03dc620d24c1a5c9c4905d83d183397e35af97afaceb1e443268f5d80cbe"
+    },
+    {
+      "path": "build/drc_recheck/pg_connectivity.rpt",
+      "bytes": 707,
+      "sha256": "3f2bd264db5a359b97c4fb7e4d0c1cf9a658a9e4da4bfd65e8e7907789f9c439"
+    },
+    {
+      "path": "build/drc_recheck/lvs.rpt",
+      "bytes": 1480,
+      "sha256": "00924a8349a87c4117922245f399e371c082ac498620028f12eac4bee0061f21"
+    },
+    {
+      "path": "build/drc_recheck/placement_legality.rpt",
+      "bytes": 149016,
+      "sha256": "b3e97fed2d6a1509388c94f2e4bfcca9400ab955a276eb27a93807738aab3548"
+    },
+    {
+      "path": "build/drc_recheck/saved_netlist.v",
+      "bytes": 2698,
+      "sha256": "73d439e55c40042aa4356b15780c269d9f76d18dd5b932ec5116a7e7c5296e32"
+    },
+    {
+      "path": "build/drc_recheck/layout.png",
+      "bytes": 818944,
+      "sha256": "1d649b25ba168ae00b3f89bd45725e3e5c9cda8f3a5b8bec524e48c707c817d3"
+    },
+    {
+      "path": "build/drc_recheck/layout.png.json",
+      "bytes": 341,
+      "sha256": "569b488e5cb1a5c867674645a25c0356be2ea2ff482aadf0ee831fe174b5cf11"
+    },
+    {
+      "path": "build/drc_recheck/layout_canvas.png",
+      "bytes": 10985,
+      "sha256": "49646fc7efced876d59950579e9ba6b4241a025ba4dc3b85c91a6bf4302cbd27"
+    },
+    {
+      "path": "build/drc_recheck/before.png",
+      "bytes": 772694,
+      "sha256": "91c6873c93cfb4de661a475b44cd1593fac973a2290bd7601050c6add7fb162e"
+    },
+    {
+      "path": "build/drc_recheck/before.png.json",
+      "bytes": 341,
+      "sha256": "2a1d4293661e77efdf93361364418183c7bd4598ba5e42f648e534fc47aed795"
+    },
+    {
+      "path": "build/drc_recheck/after.png",
+      "bytes": 772313,
+      "sha256": "7e0f6a6031142b17bd68737a7ff18366c0ccdafe592384b4d3170a66a7f82894"
+    },
+    {
+      "path": "build/drc_recheck/after.png.json",
+      "bytes": 341,
+      "sha256": "3ab0e979e805af0c1c21491c6253280cd8ae14e54bad37d08993348b05d9a6ec"
+    },
+    {
+      "path": "build/drc_recheck/capture_manifest.json",
+      "bytes": 829,
+      "sha256": "781694fce93d458adec8d9c8f0400ce3101e4048622fefeeebd3cf439d738630"
+    }
+  ],
+  "status": "completed"
+}

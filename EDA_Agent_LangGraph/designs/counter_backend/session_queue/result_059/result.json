@@ -1,0 +1,24 @@
+{
+  "run": "upload_20261025_133615_02c6d055",
+  "files": [
+    {
+      "path": "build/icc.status.json",
+      "bytes": 320,
+      "sha256": "803f77720ca77991a2301e03b023f78f162ba7a8d2fd76bc09c599c984cfd575"
+    },
+    {
+      "path": "build/icc.log",
+      "bytes": 296204,
+      "sha256": "2696110dd92e6f1ddde6eb42d766b69d99eb1938247be11c1108a58b24791d6c"
+    },
+    {
+      "path": "build/icc/library_check.rpt",
+      "error": ""
+    },
+    {
+      "path": "build/icc/units.rpt",
+      "error": ""
+    }
+  ],
+  "status": "completed"
+}

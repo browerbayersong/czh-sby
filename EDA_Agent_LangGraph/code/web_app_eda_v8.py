@@ -1,6 +1,6 @@
 r"""EDA 智能助手 · 每段对话一个独立文件夹（从已验证的旧 Streamlit 页面升级）。
 
-存储结构：C:\LangGraph_talk\conversations\<可读对话标题>__<短ID>\chat.json
+存储结构：<EDA_DATA_DIR>\conversations\<可读对话标题>__<短ID>\chat.json
 对话文件夹本身预留为该会话未来的 EDA 工作空间。
 保留旧版 conversations.json 和 conversations/<32位ID>.json，不删除、不覆盖。
 已有数据采用按 ID 合并；独立文件夹中的 chat.json 为最新权威副本。
@@ -26,7 +26,10 @@ from eda_remote_v8 import SSHSettings, RemoteError, connection_probe, file_previ
 
 import re
 
-DATA_DIR = Path(r"C:\LangGraph_talk")
+LEGACY_DATA_DIR = Path(r"C:\LangGraph_talk")
+DEFAULT_DATA_DIR = (LEGACY_DATA_DIR if LEGACY_DATA_DIR.is_dir()
+                    else Path(__file__).resolve().parent.parent / "data")
+DATA_DIR = Path(os.getenv("EDA_DATA_DIR") or DEFAULT_DATA_DIR).expanduser().resolve()
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 DATA_FILE = DATA_DIR / "conversations.json"     # 最初的单文件数据库，仅作为迁移来源
 CHAT_DIR = DATA_DIR / "conversations"         # 存放旧独立 JSON 和新对话文件夹

@@ -1,0 +1,66 @@
+{
+  "run": "upload_20261025_151706_7e7f2120",
+  "files": [
+    {
+      "path": "build/pt.status.json",
+      "bytes": 452,
+      "sha256": "b1c81f422e5c72ab0f90c0bfc1c225ce28881aed8e36a75db1478ef551d7c6f3"
+    },
+    {
+      "path": "build/pt.log",
+      "bytes": 6572,
+      "sha256": "9ec6b02578e9d95f53047d299b3744083be6814d5a486172c2e83a9869e20d53"
+    },
+    {
+      "path": "build/pt_estimate/analysis_scope.txt",
+      "bytes": 517,
+      "sha256": "619dbe9cebdbd1ef0820937519af30e605806afdd18c42c7af56442e7cfcb05e"
+    },
+    {
+      "path": "build/pt_estimate/timing_setup.rpt",
+      "bytes": 311,
+      "sha256": "dc3fec112bdab6deec3d460eb8a16c0bb9ffbc6a59671811d765130cf83c3cb7"
+    },
+    {
+      "path": "build/pt_estimate/timing_hold.rpt",
+      "bytes": 311,
+      "sha256": "0d419198fe959721f6da329c9fcef6dde745b0fc735bb3d6e4a2c5159033ddf4"
+    },
+    {
+      "path": "build/pt_estimate/units.rpt",
+      "bytes": 510,
+      "sha256": "6b06b8b65715c6394b070933dba27ed743eb7fb23304270e53a33cba20b370f9"
+    },
+    {
+      "path": "build/pt_estimate/check_timing.rpt",
+      "bytes": 526,
+      "sha256": "edda3400d7f1d7378932f9d3593e29f87698c838ac6c98e08d044ca5339d2639"
+    },
+    {
+      "path": "build/pt_estimate/constraints.rpt",
+      "bytes": 217,
+      "sha256": "98f66125ba334c6f030cf331bb5b915024dc0efc10947d4ceed03f19ebd4567b"
+    },
+    {
+      "path": "build/pt_estimate/power.rpt",
+      "bytes": 1286,
+      "sha256": "f07b19c24f9e52e2c84e6f48173e4140288b18cefd20eade04f92b44948a8bb2"
+    },
+    {
+      "path": "build/pt_estimate/activity_annotation.rpt",
+      "bytes": 299,
+      "sha256": "0ab134e621290d14223a6ab925f52d863a7a78f4c289d1c2ef4ffb3615ef38ae"
+    },
+    {
+      "path": "build/pt_estimate/activity_coverage.rpt",
+      "bytes": 943,
+      "sha256": "778ada22509a4b4170adec9df521e8a509e9254282adc43a42968cd93391ac16"
+    },
+    {
+      "path": "build/pt_estimate/counter.saif",
+      "bytes": 1300,
+      "sha256": "9a9ca990ea3c2476ed4daeec718d803fb5a5d860204bdf132e6d982a5dac21d1"
+    }
+  ],
+  "status": "completed"
+}

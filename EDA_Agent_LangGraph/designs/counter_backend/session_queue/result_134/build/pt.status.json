@@ -1,0 +1,13 @@
+{
+  "boot_id": "db31cb71-ca58-4eb5-b601-7cfefae05c41", 
+  "finished_epoch": 1792912424.2596419, 
+  "process_start_ticks": "486768", 
+  "script": "/home/IC/Desktop/EDA_Projects/counter_backend/runs/upload_20261025_151318_9699f6f2/src/generated/scripts/pt_wireload_estimate.tcl", 
+  "started_epoch": 1792912416.711096, 
+  "state": "exited", 
+  "timeout_seconds": 90, 
+  "tool": "pt", 
+  "tool_exit_code": 0, 
+  "tool_pid": 13138, 
+  "worker_pid": 13137
+}
